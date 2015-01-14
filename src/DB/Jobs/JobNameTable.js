@@ -14,6 +14,8 @@ define(["./JobConst"], function( JobId )
 
 
 	var JobNameTable = {};
+	
+	JobNameTable[JobId.SORC_]            = "\xC7\xCF\xC0\xCC\xC0\xA7\xC0\xFA\xB5\xE5";
 
 	JobNameTable[JobId.NOVICE]           = "\xC3\xCA\xBA\xB8\xC0\xDA";
 

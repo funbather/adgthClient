@@ -329,7 +329,7 @@ define(['./JobConst', 'DB/Items/WeaponType'], function( JobId, WeaponType )
 	duplicateEntry(JobId.KNIGHT,     JobId.KNIGHT_B,     JobId.KNIGHT_H,     JobId.RUNE_KNIGHT,      JobId.RUNE_KNIGHT_H,      JobId.RUNE_KNIGHT_B);
 	duplicateEntry(JobId.KNIGHT2,    JobId.KNIGHT2_B,    JobId.KNIGHT2_H,    JobId.RUNE_KNIGHT2,     JobId.RUNE_KNIGHT2_H,     JobId.RUNE_KNIGHT2_B);
 	duplicateEntry(JobId.PRIEST,     JobId.PRIEST_B,     JobId.PRIEST_H,     JobId.ARCHBISHOP,       JobId.ARCHBISHOP_H,       JobId.ARCHBISHOP_B);
-	duplicateEntry(JobId.WIZARD,     JobId.WIZARD_B,     JobId.WIZARD_H,     JobId.WARLOCK,          JobId.WARLOCK_H,          JobId.WARLOCK_B);
+	duplicateEntry(JobId.WIZARD,     JobId.WIZARD_B,     JobId.WIZARD_H,     JobId.WARLOCK,          JobId.WARLOCK_H,          JobId.WARLOCK_B,              JobId.SORC_);
 	duplicateEntry(JobId.BLACKSMITH, JobId.BLACKSMITH_B, JobId.BLACKSMITH_H, JobId.MECHANIC,         JobId.MECHANIC_H,         JobId.MECHANIC_B);
 	duplicateEntry(JobId.HUNTER,     JobId.HUNTER_B,     JobId.HUNTER_H,     JobId.RANGER,           JobId.RANGER_H,           JobId.RANGER_B);
 	duplicateEntry(JobId.ASSASSIN,   JobId.ASSASSIN_B,   JobId.ASSASSIN_H,   JobId.GUILLOTINE_CROSS, JobId.GUILLOTINE_CROSS_H, JobId.GUILLOTINE_CROSS_B);

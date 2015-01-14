@@ -38,6 +38,7 @@ define(function()
 		23: "Super Novice",
 		24: "Gunslinger",
 		25: "Ninja",
+		30: "Sorcerer",
 		//45: "1_ETC_01",
 		46: "1_ETC_01",
 		47: "1_M_01",

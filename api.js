@@ -103,7 +103,7 @@
 	 *    a) YYYYMMDD     (number: date you want)
 	 *    c) 'executable' (detect packetver from executable compilation date)
 	 */
-	ROBrowser.prototype.packetver    = 'auto';
+	ROBrowser.prototype.packetver    = '20130807';
 
 
 	/**

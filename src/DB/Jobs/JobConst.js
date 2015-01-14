@@ -42,6 +42,7 @@ define(function()
 		NINJA:                25,
 		XMAS:                 26,
 		SUMMER:               27,
+		SORC_:                30,
 		NOVICE_H:           4001,
 		SWORDMAN_H:         4002,
 		MAGICIAN_H:         4003,
