@@ -105,10 +105,31 @@ define(function(require)
 		var it       = DB.getItemInfo(item.ITID);
 		var display  = DB.getItemName(item);
 		var resource = item.IsIdentified ? it.identifiedResourceName : it.unidentifiedResourceName;
+		var itdis   = '';
+		var enchtitle = '';
+		
+    if(item.slot.card4) { 
+      itdis = ' class="purple"';
+      enchtitle = 'Mystic ';
+    } else if(item.slot.card3) {
+      itdis = ' class="blue"';
+      enchtitle = 'Superior ';
+    } else if(item.slot.card2) {
+      itdis = ' class="green"';
+      enchtitle = 'Greater ';
+    } else if(item.slot.card1) {
+      itdis = ' class="yellow"';
+      enchtitle = 'Embued ';
+    } else {
+      itdis = ' class="black"';
+    }
 
 		this.ui.find('.content').html(
 			'<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" class="'+ item.ITID +'" width="24" height="24" /> ' +
-			jQuery.escape(display + ' ' + DB.getMessage(696).replace('%d', item.count || 1))
+			'<span'+itdis+'>' +
+			jQuery.escape(enchtitle+display) +
+			'</span>' +
+			jQuery.escape(' ' + DB.getMessage(696).replace('%d', item.count || 1))
 		);
 
 		this.ui.css('left', ( Renderer.width - (this.ui.width()) ) >> 1 );

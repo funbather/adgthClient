@@ -18,7 +18,7 @@ function(   DB,            EntityManager,            Entity,                Alti
 	 *
 	 * @param {number} gid
 	 * @param {number} itemid
-	 * @param {boolean} identify
+	 * @param {number} identify - Currently used to hold number of cards/enchantments, probably just make a new packet for this later
 	 * @param {number} count
 	 * @param {number} x
 	 * @param {number} y
@@ -30,16 +30,31 @@ function(   DB,            EntityManager,            Entity,                Alti
 		var path   = DB.getItemPath(itemid, identify);
 		var entity = new Entity();
 		var name   = identify ? it.identifiedDisplayName : it.unidentifiedDisplayName;
+		var enchtitle = '';
 
 		entity.GID          = gid;
 		entity.objecttype   = Entity.TYPE_ITEM;
 		entity.position[0]  = x;
 		entity.position[1]  = y;
 		entity.position[2]  = z;
+		
+    switch(identify) {
+      case 2: enchtitle = 'Embued '; break;
+      case 3: enchtitle = 'Greater '; break;
+      case 4: enchtitle = 'Superior '; break;
+      case 5: enchtitle = 'Mythical '; break;
+    }
 
 		entity.display.load = entity.display.TYPE.COMPLETE;
-		entity.display.name = DB.getMessage(183).replace('%s', name).replace('%d', count);
+		entity.display.name = DB.getMessage(183).replace('%s', enchtitle+name).replace('%d', count);
 		entity.display.update('#FFEF94');
+    switch(identify) {
+      case 1: entity.display.update('#ffffff'); break;
+      case 2: entity.display.update('#ffefad'); break;
+      case 3: entity.display.update('#b9ffad'); break;
+      case 4: entity.display.update('#8aa5ff'); break;
+      case 5: entity.display.update('#bb91ff'); break;
+    }
 
 		entity.files.body.spr = path + '.spr';
 		entity.files.body.act = path + '.act';

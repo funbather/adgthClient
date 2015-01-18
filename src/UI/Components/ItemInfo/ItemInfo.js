@@ -108,15 +108,37 @@ define(function(require)
 		var it = DB.getItemInfo( item.ITID );
 		var ui = this.ui;
 		var cardList = ui.find('.cardlist .border');
+		var enchtitle = '';
+		var enchdesc = '';
+		var enchant;
+		var rarity = 0;
 
 		this.item = it;
 		Client.loadFile( DB.INTERFACE_PATH + 'collection/' + ( item.IsIdentified ? it.identifiedResourceName : it.unidentifiedResourceName ) + '.bmp', function(data){
 			ui.find('.collection').css('backgroundImage', 'url('+data+')' );
 		});
+		
+		for(i = 0; i < 4; i++) {
+      if((item.slot && item.slot['card' + (i+1)])) { 
+        if(i == 0) {
+          enchdesc = '\n\nThis item has been embued with the following qualities:\n';
+        }
+        enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));//item.slot['card'+(i+1)].ITID);
+        enchdesc += enchant.identifiedDescriptionName + '\n';//enchant.identifiedDescriptionName + '\n';
+        rarity++;
+      }
+		}
+		
+		switch(rarity) {
+      case 1: enchtitle = 'Embued '; break;
+      case 2: enchtitle = 'Greater '; break;
+      case 3: enchtitle = 'Superior '; break;
+      case 4: enchtitle = 'Mythical '; break;
+		}
 
 
-		ui.find('.title').text( item.IsIdentified ? it.identifiedDisplayName : it.unidentifiedDisplayName );
-		ui.find('.description').text( item.IsIdentified ? it.identifiedDescriptionName : it.unidentifiedDescriptionName );
+		ui.find('.title').text( item.IsIdentified ? enchtitle + it.identifiedDisplayName : it.unidentifiedDisplayName );
+		ui.find('.description').text( item.IsIdentified ? it.identifiedDescriptionName + enchdesc : it.unidentifiedDescriptionName);
 
 		// Add view button (for cards)
 		if (item.type === ItemType.CARD) {

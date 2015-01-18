@@ -97,7 +97,7 @@ define(function( require )
 	/**
 	 * @var {number} camera zoom
 	 */
-	Camera.MAX_ZOOM = 10;
+	Camera.MAX_ZOOM = 11;
 	
 
 	/**

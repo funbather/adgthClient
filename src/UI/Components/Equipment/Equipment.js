@@ -242,6 +242,9 @@ define(function(require)
 	Equipment.equip = function equip( item, location )
 	{
 		var it            = DB.getItemInfo( item.ITID );
+		var itdis         = '';
+		var enchtitle     = '';
+		var enchbreak     = '';
 		_list[item.index] = item;
 
 		if (arguments.length === 1) {
@@ -252,11 +255,29 @@ define(function(require)
 				location = item.location;
 			}
 		}
+		
+    if(item.slot.card4) { 
+      itdis = ' class="purple"';
+      enchtitle = 'Mythical ';
+      enchbreak = '<br />';
+    } else if(item.slot.card3) {
+      itdis = ' class="blue"';
+      enchtitle = 'Superior ';
+      enchbreak = '<br />';
+    } else if(item.slot.card2) {
+      itdis = ' class="green"';
+      enchtitle = 'Greater ';
+      enchbreak = '<br />';
+    } else if(item.slot.card1) {
+      itdis = ' class="yellow"';
+      enchtitle = 'Embued ';
+      enchbreak = '<br />';
+    }
 
 		this.ui.find(getSelectorFromLocation(location)).html(
 			'<div class="item" data-index="'+ item.index +'">' +
 				'<button></button>' +
-				'<span>' + jQuery.escape(DB.getItemName(item)) + '</span>' +
+				'<span'+itdis+'>' + jQuery.escape(enchtitle) + enchbreak + jQuery.escape(DB.getItemName(item)) + '</span>' +
 			'</div>'
 		);
 
@@ -562,16 +583,36 @@ define(function(require)
 		// Get back data
 		var overlay = Equipment.ui.find('.overlay');
 		var pos     = jQuery(this).position();
+		var enchtitle = '';
 
 		// Possible jquery error
 		if (!pos.top && !pos.left) {
 			return;
 		}
 
+		overlay.removeClass('yellow');
+		overlay.removeClass('green');
+		overlay.removeClass('blue');
+		overlay.removeClass('purple');
+
+    if(item.slot.card4) { 
+      overlay.addClass('purple');
+      enchtitle = 'Mythical ';
+    } else if(item.slot.card3) {
+      overlay.addClass('blue');
+      enchtitle = 'Superior ';
+    } else if(item.slot.card2) {
+      overlay.addClass('green');
+      enchtitle = 'Greater ';
+    } else if(item.slot.card1) {
+      overlay.addClass('yellow');
+      enchtitle = 'Embued ';
+    }
+
 		// Display box
 		overlay.show();
 		overlay.css({top: pos.top-22, left:pos.left-22});
-		overlay.text(DB.getItemName(item));
+		overlay.text(enchtitle + DB.getItemName(item));
 	}
 
 

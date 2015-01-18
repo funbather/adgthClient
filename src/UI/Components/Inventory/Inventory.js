@@ -651,6 +651,7 @@ define(function(require)
 	{
 		var idx  = parseInt( this.getAttribute('data-index'), 10);
 		var item = Inventory.getItemByIndex(idx);
+		var enchtitle = '';
 
 		if (!item) {
 			return;
@@ -660,10 +661,29 @@ define(function(require)
 		var pos     = jQuery(this).position();
 		var overlay = Inventory.ui.find('.overlay');
 
+		overlay.removeClass('yellow');
+		overlay.removeClass('green');
+		overlay.removeClass('blue');
+		overlay.removeClass('purple');
+
+    if(item.slot.card4) { 
+      overlay.addClass('purple');
+      enchtitle = 'Mythical ';
+    } else if(item.slot.card3) {
+      overlay.addClass('blue');
+      enchtitle = 'Superior ';
+    } else if(item.slot.card2) {
+      overlay.addClass('green');
+      enchtitle = 'Greater ';
+    } else if(item.slot.card1) {
+      overlay.addClass('yellow');
+      enchtitle = 'Embued ';
+    }
+
 		// Display box
 		overlay.show();
 		overlay.css({top: pos.top, left:pos.left+35});
-		overlay.text(DB.getItemName(item) + ' ' + (item.count || 1) + ' ea');
+		overlay.text(enchtitle + DB.getItemName(item) + ' ' + (item.count || 1) + ' ea');
 
 		if (item.IsIdentified) {
 			overlay.removeClass('grey');

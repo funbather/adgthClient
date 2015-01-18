@@ -335,10 +335,14 @@ define(function( require )
 
 			// Damage
 			else if (damage.type & Damage.TYPE.DAMAGE) {
-				size = ( 1 - perc ) * 4;
-				SpriteRenderer.position[0] = damage.entity.position[0] + perc * 4;
-				SpriteRenderer.position[1] = damage.entity.position[1] - perc * 4;
-				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + Math.sin( -Math.PI/2 + ( Math.PI * (0.5 + perc * 1.5 ) ) ) * 5;
+				//size = ( 1 - perc ) * 4;
+				size = 3;
+				SpriteRenderer.position[0] = damage.entity.position[0];
+				SpriteRenderer.position[1] = damage.entity.position[1];
+				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + perc * 20;
+				/*SpriteRenderer.position[0] = damage.entity.position[0] + perc * 7;
+				SpriteRenderer.position[1] = damage.entity.position[1] - perc * 7;
+				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + Math.sin( -Math.PI/2 + ( Math.PI * (0.5 + perc * 1.5 ) ) ) * 5;*/
 			}
 
 			// Heal

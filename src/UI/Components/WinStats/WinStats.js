@@ -93,11 +93,14 @@ define(function(require)
 				this.ui.find('.' + type).text(val);
 				break;
 
-			case 'guildname':
+			//case 'guildname':
 			case 'atak':
-			case 'matak':
-			case 'def':
-			case 'mdef':
+			str = val/100;
+			this.ui.find('.' + type).text(str.toFixed(2));
+				break;
+			//case 'matak':
+			//case 'def':
+			//case 'mdef':
 			case 'hit':
 			case 'flee':
 			case 'critical':
@@ -105,16 +108,19 @@ define(function(require)
 				break;
 
 			case 'aspd':
-				this.ui.find('.' + type).text( Math.floor(200-val/10) );
+        str = 500 / (2000-Math.floor(2000-val));
+				this.ui.find('.' + type).text(str.toFixed(2));
 				break;
 
 			case 'atak2':
 			case 'matak2':
+        this.ui.find('.' + type).text(val);
+				break;
 			case 'def2':
 			case 'mdef2':
 			case 'flee2':
-				str = val < 0 ? '- ' + (-val) : '+ ' + val;
-				this.ui.find('.' + type).text(str);
+				//str = val < 0 ? '- ' + (-val) : '+ ' + val;
+				this.ui.find('.' + type).text(val);
 				break;
 
 			case 'str':
@@ -122,8 +128,8 @@ define(function(require)
 			case 'vit':
 			case 'int':
 			case 'dex':
-			case 'luk':
-				this.ui.find('.stats .'+ type).text(val);
+			//case 'luk':
+        this.ui.find('.stats .'+ type).text(val);
 				break;
 
 			case 'str2':
@@ -131,9 +137,12 @@ define(function(require)
 			case 'vit2':
 			case 'int2':
 			case 'dex2':
-			case 'luk2':
 				str = val < 0 ? '- ' + (-val) : val > 0 ? '+' + val : '';
 				this.ui.find('.bonus .'+ type.replace('2','')).text( str );
+				break;
+			case 'luk2':
+				//str = val < 0 ? '- ' + (-val) : val > 0 ? '+' + val : '';
+				this.ui.find('.stats .'+ type.replace('2','')).text( val );
 				break;
 
 			case 'str3':
@@ -141,8 +150,11 @@ define(function(require)
 			case 'vit3':
 			case 'int3':
 			case 'dex3':
-			case 'luk3':
 				this.ui.find('.requirements .'+ type.replace('3','')).text(val);
+				this.ui.find('.up .'+ type.replace('3','')).css('opacity', val <= this.statuspoint ? 1 : 0 );
+				break;
+			case 'luk3':
+        this.ui.find('.requirements .'+ type.replace('3','')).text('');
 				this.ui.find('.up .'+ type.replace('3','')).css('opacity', val <= this.statuspoint ? 1 : 0 );
 				break;
 		}
