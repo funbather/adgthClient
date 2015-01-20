@@ -14,7 +14,15 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 
 
 	var SkillInfo = {};
-
+	
+	SkillInfo[SK.MG_FIREBOLT] = {
+		Name: "MG_FIREBOLT",
+		SkillName : "Fire Bolt",
+		MaxLv : 10,
+		SpAmount : [ 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 ],
+		bSeperateLv : true,
+		AttackRange : [ 9, 9, 9, 9, 9, 9, 9, 9, 9, 9 ]
+	};
 
 	SkillInfo[SK.SN_WINDWALK] = {
 		Name: "SN_WINDWALK",
@@ -9586,15 +9594,6 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		SpAmount : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
 		bSeperateLv : false,
 		AttackRange : [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ]
-	};
-
-	SkillInfo[SK.MG_FIREBOLT] = {
-		Name: "MG_FIREBOLT",
-		SkillName : "Fire Bolt",
-		MaxLv : 10,
-		SpAmount : [ 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 ],
-		bSeperateLv : true,
-		AttackRange : [ 9, 9, 9, 9, 9, 9, 9, 9, 9, 9 ]
 	};
 
 	SkillInfo[SK.BD_ADAPTATION] = {

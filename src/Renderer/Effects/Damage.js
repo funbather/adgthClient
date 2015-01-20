@@ -48,7 +48,8 @@ define(function( require )
 		ENEMY:       1 << 3,
 		COMBO:       1 << 4,
 		COMBO_FINAL: 1 << 5,
-		SP:          1 << 6
+		SP:          1 << 6,
+		CRIT:        1 << 7
 	};
 
 
@@ -127,7 +128,7 @@ define(function( require )
 	 * @param {number} tick
 	 * @param {number} type - Damage|Heal
 	 */
-	Damage.add = function add( damage, entity, tick, type )
+	Damage.add = function add( damage, entity, tick, type, critical )
 	{
 		// Can not display negative damages.
 		// Need to wait the client to load damage sprite
@@ -183,7 +184,13 @@ define(function( require )
 			obj.color[1] = 0.9;
 			obj.color[2] = 0.15;
 			obj.delay    = 3000;
-		}
+		} 	
+		else if (obj.type & Damage.TYPE.CRIT) {
+			obj.color[0] = 1.0;
+			obj.color[1] = 0.15;
+			obj.color[2] = 0.15;
+			obj.delay    = 1500; // Signify critical hit to render, fix later
+		} 
 		else {
 			// white
 			obj.color[0] = 1.0;
@@ -335,16 +342,25 @@ define(function( require )
 
 			// Damage
 			else if (damage.type & Damage.TYPE.DAMAGE) {
-				//size = ( 1 - perc ) * 4;
-				size = 3;
+        size = 3;
 				SpriteRenderer.position[0] = damage.entity.position[0];
 				SpriteRenderer.position[1] = damage.entity.position[1];
-				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + perc * 20;
+				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + perc * 15;
 				/*SpriteRenderer.position[0] = damage.entity.position[0] + perc * 7;
 				SpriteRenderer.position[1] = damage.entity.position[1] - perc * 7;
 				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + Math.sin( -Math.PI/2 + ( Math.PI * (0.5 + perc * 1.5 ) ) ) * 5;*/
 			}
+			
+      // Crit?
+			else if (damage.type & Damage.TYPE.CRIT) {
+          //size = max(3,((1-perc)*6));
+          size = Math.max( (1-perc*10)/15, 0.035 ) * 100;
 
+				SpriteRenderer.position[0] = damage.entity.position[0];
+				SpriteRenderer.position[1] = damage.entity.position[1];
+				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + perc * 15;
+			}
+			
 			// Heal
 			else if (damage.type & Damage.TYPE.HEAL) {
 				size = Math.max( (1 - perc * 2) * 3, 0.8);

@@ -107,21 +107,23 @@ define(function(require)
 		var resource = item.IsIdentified ? it.identifiedResourceName : it.unidentifiedResourceName;
 		var itdis   = '';
 		var enchtitle = '';
-		
-    if(item.slot.card4) { 
-      itdis = ' class="purple"';
-      enchtitle = 'Mystic ';
-    } else if(item.slot.card3) {
-      itdis = ' class="blue"';
-      enchtitle = 'Superior ';
-    } else if(item.slot.card2) {
-      itdis = ' class="green"';
-      enchtitle = 'Greater ';
-    } else if(item.slot.card1) {
-      itdis = ' class="yellow"';
-      enchtitle = 'Embued ';
-    } else {
-      itdis = ' class="black"';
+		var rarity = 0;
+				
+		for(var i = 0; i < 4; i++) {
+      if(item.slot['card' + i]) { 
+        rarity++;
+      }
+    }
+    
+    if(rarity) {
+      enchtitle = DB.getRarity(rarity);
+    } 
+    
+    switch(rarity) {
+      case 1: itdis = ' class="yellow"'; break;
+      case 2: itdis = ' class="green"'; break;
+      case 3: itdis = ' class="blue"'; break;
+      case 4: itdis = ' class="purple"'; break;
     }
 
 		this.ui.find('.content').html(

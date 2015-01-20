@@ -452,6 +452,7 @@ define(function(require)
 	{
 		var index   = parseInt(this.parentNode.getAttribute('data-index'), 10);
 		var element = _list[index];
+		var skill = SkillWindow.getSkillById(list[i].ID);
 
 		event.stopImmediatePropagation();
 
@@ -462,7 +463,7 @@ define(function(require)
 			}
 			else {
 				SkillDescription.append();
-				SkillDescription.setSkill( _list[index].ID );
+				SkillDescription.setSkill( _list[index].ID , skill.level);
 			}
 		}
 

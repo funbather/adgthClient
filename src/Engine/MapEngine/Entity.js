@@ -287,7 +287,7 @@ define(function( require )
 
 							// TODO: critical damage
 							case 10:
-								Damage.add( pkt.damage, target, Renderer.tick + pkt.attackMT );
+								Damage.add( pkt.damage, target, Renderer.tick + pkt.attackMT, Damage.TYPE.CRIT );
 								break;
 
 							// TODO: lucky miss

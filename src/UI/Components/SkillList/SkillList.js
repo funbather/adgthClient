@@ -529,7 +529,7 @@ define(function(require)
 
 		// Add ui to window
 		SkillDescription.append();
-		SkillDescription.setSkill(skill.SKID);
+		SkillDescription.setSkill(skill.SKID, skill.level);
 	}
 
 

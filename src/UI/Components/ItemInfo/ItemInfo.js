@@ -112,6 +112,7 @@ define(function(require)
 		var enchdesc = '';
 		var enchant;
 		var rarity = 0;
+		var i;
 
 		this.item = it;
 		Client.loadFile( DB.INTERFACE_PATH + 'collection/' + ( item.IsIdentified ? it.identifiedResourceName : it.unidentifiedResourceName ) + '.bmp', function(data){
@@ -119,7 +120,7 @@ define(function(require)
 		});
 		
 		for(i = 0; i < 4; i++) {
-      if((item.slot && item.slot['card' + (i+1)])) { 
+      if(item.slot['card' + (i+1)]) { 
         if(i == 0) {
           enchdesc = '\n\nThis item has been embued with the following qualities:\n';
         }
@@ -129,11 +130,8 @@ define(function(require)
       }
 		}
 		
-		switch(rarity) {
-      case 1: enchtitle = 'Embued '; break;
-      case 2: enchtitle = 'Greater '; break;
-      case 3: enchtitle = 'Superior '; break;
-      case 4: enchtitle = 'Mythical '; break;
+		if(rarity) {
+      enchtitle = DB.getRarity(rarity);
 		}
 
 
@@ -166,7 +164,6 @@ define(function(require)
 			case ItemType.EQUIP:
 			case ItemType.PETEGG:
 				var slotCount = it.slotCount || 0;
-				var i;
 
 				cardList.parent().show();
 				cardList.empty();

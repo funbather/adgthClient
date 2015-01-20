@@ -15,6 +15,13 @@ define(["./SkillConst"], function( SKID )
 
 	var SkillDescription = {};
 
+	SkillDescription[SKID.MG_FIREBOLT] = [
+		"Fire Bolt",
+		"Active",
+		"Magical",
+		" ",
+		"Deals $sklvl$ ($matk$) damage to an enemy.",
+	].join("\n");
 
 	SkillDescription[SKID.NV_BASIC] = [
 		"Basic Skill",
@@ -321,19 +328,6 @@ define(["./SkillConst"], function( SKID )
 		"[LV 8]^777777 12 Hits, 12 sec ^000000",
 		"[LV 9]^777777 13 Hits, 13 sec ^000000",
 		"[LV 10]^777777 14 Hits, 14 sec ^000000",
-	].join("\n");
-
-	SkillDescription[SKID.MG_FIREBOLT] = [
-		"Fire Bolt",
-		"Max Level:^777777 10 ^000000",
-		"Type:^777777 Offensive, Level Selectable ^000000",
-		"SP Cost:^777777 10 + 2*SkillLV ^000000",
-		"Target:^777777 1 Enemy ^000000",
-		"Range:^777777 9 cells ^000000",
-		"Cast Time:^777777 (0.7*SkillLV) sec ^000000",
-		"Cool Down:^777777 0.8 + (0.2*SkillLV) sec ^000000",
-		"Duration:^777777 Instant ^000000",
-		"Effect:^777777 Hits the targeted enemy with 1 Fire Element Bolt per SkillLV for 1*MATK each. ^000000",
 	].join("\n");
 
 	SkillDescription[SKID.MG_LIGHTNINGBOLT] = [

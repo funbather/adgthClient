@@ -32,6 +32,7 @@ define(function(require)
 	var WeaponTable      = require('./Items/WeaponTable');
 	var WeaponType       = require('./Items/WeaponType');
 	var WeaponSoundTable = require('./Items/WeaponSoundTable');
+	var RarityTable      = require('./Items/RarityTable');
 
 
 	/**
@@ -638,7 +639,12 @@ define(function(require)
 		return BabyTable.indexOf(jobid) > -1;
 	};
 
-
+  // Rarity Prefix
+	DB.getRarity = function getRarity( rarity )
+	{
+		return RarityTable[rarity];
+	};
+	
 	/**
 	 * Export
 	 */

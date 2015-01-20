@@ -24,6 +24,7 @@ define(function(require)
 	var UIComponent = require('UI/UIComponent');
 	var htmlText    = require('text!./SkillDescription.html');
 	var cssText     = require('text!./SkillDescription.css');
+	var WinStats    = require('UI/Components/WinStats/WinStats');
 
 
 	/**
@@ -91,10 +92,27 @@ define(function(require)
 	 *
 	 * @param {number} skill id
 	 */
-	SkillDescription.setSkill = function setSkill( id )
+	SkillDescription.setSkill = function setSkill( id , level )
 	{
 		this.uid = id;
-		this.ui.find('.content').text(SkillDB[id] || '...');
+		var desc = SkillDB[id] || '...';
+		var var1 = level || 1; // Should always be Skill Level
+		var var2 = 0;
+		
+		if(id == 19) {
+      
+      if(var1) {
+        var2 = WinStats.ui.find('.matak2').text();
+        desc = desc.replace('$sklvl$', '^0000BB'+var1*100+'^000000%');
+        desc = desc.replace('$matk$', '^FF0000'+var2*var1+'^000000');
+      }
+      
+      if(level && var1 < 10) {
+        desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*100)+100)+"^000000% (^FF0000" + (var2*(var1+1)) + "^000000)";
+      }
+		}
+		
+		this.ui.find('.content').text(desc);
 
 		this.ui.css({
 			top:  Math.min( Mouse.screen.y + 10, Renderer.height - this.ui.height()),

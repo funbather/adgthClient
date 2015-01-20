@@ -245,6 +245,7 @@ define(function(require)
 		var itdis         = '';
 		var enchtitle     = '';
 		var enchbreak     = '';
+		var rarity        = 0;
 		_list[item.index] = item;
 
 		if (arguments.length === 1) {
@@ -256,22 +257,22 @@ define(function(require)
 			}
 		}
 		
-    if(item.slot.card4) { 
-      itdis = ' class="purple"';
-      enchtitle = 'Mythical ';
+		for(var i = 0; i < 4; i++) {
+      if(item.slot['card' + i]) { 
+        rarity++;
+      }
+    }
+    
+    if(rarity) {
+      enchtitle = DB.getRarity(rarity);
       enchbreak = '<br />';
-    } else if(item.slot.card3) {
-      itdis = ' class="blue"';
-      enchtitle = 'Superior ';
-      enchbreak = '<br />';
-    } else if(item.slot.card2) {
-      itdis = ' class="green"';
-      enchtitle = 'Greater ';
-      enchbreak = '<br />';
-    } else if(item.slot.card1) {
-      itdis = ' class="yellow"';
-      enchtitle = 'Embued ';
-      enchbreak = '<br />';
+    }
+    
+    switch(rarity) {
+      case 1: itdis = ' class="yellow"'; break;
+      case 2: itdis = ' class="green"'; break;
+      case 3: itdis = ' class="blue"'; break;
+      case 4: itdis = ' class="purple"'; break;
     }
 
 		this.ui.find(getSelectorFromLocation(location)).html(
@@ -584,6 +585,7 @@ define(function(require)
 		var overlay = Equipment.ui.find('.overlay');
 		var pos     = jQuery(this).position();
 		var enchtitle = '';
+		var rarity = 0;
 
 		// Possible jquery error
 		if (!pos.top && !pos.left) {
@@ -594,19 +596,22 @@ define(function(require)
 		overlay.removeClass('green');
 		overlay.removeClass('blue');
 		overlay.removeClass('purple');
-
-    if(item.slot.card4) { 
-      overlay.addClass('purple');
-      enchtitle = 'Mythical ';
-    } else if(item.slot.card3) {
-      overlay.addClass('blue');
-      enchtitle = 'Superior ';
-    } else if(item.slot.card2) {
-      overlay.addClass('green');
-      enchtitle = 'Greater ';
-    } else if(item.slot.card1) {
-      overlay.addClass('yellow');
-      enchtitle = 'Embued ';
+		
+		for(var i = 0; i < 4; i++) {
+      if(item.slot['card' + i]) { 
+        rarity++;
+      }
+    }
+    
+    if(rarity) {
+      enchtitle = DB.getRarity(rarity);
+    }
+    
+    switch(rarity) {
+      case 1: overlay.addClass('yellow'); break;
+      case 2: overlay.addClass('green'); break;
+      case 3: overlay.addClass('blue'); break;
+      case 4: overlay.addClass('purple'); break;
     }
 
 		// Display box

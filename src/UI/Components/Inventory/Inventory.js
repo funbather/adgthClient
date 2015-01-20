@@ -652,6 +652,7 @@ define(function(require)
 		var idx  = parseInt( this.getAttribute('data-index'), 10);
 		var item = Inventory.getItemByIndex(idx);
 		var enchtitle = '';
+		var rarity = 0;
 
 		if (!item) {
 			return;
@@ -665,19 +666,22 @@ define(function(require)
 		overlay.removeClass('green');
 		overlay.removeClass('blue');
 		overlay.removeClass('purple');
-
-    if(item.slot.card4) { 
-      overlay.addClass('purple');
-      enchtitle = 'Mythical ';
-    } else if(item.slot.card3) {
-      overlay.addClass('blue');
-      enchtitle = 'Superior ';
-    } else if(item.slot.card2) {
-      overlay.addClass('green');
-      enchtitle = 'Greater ';
-    } else if(item.slot.card1) {
-      overlay.addClass('yellow');
-      enchtitle = 'Embued ';
+		
+		for(var i = 0; i < 4; i++) {
+      if(item.slot['card' + i]) { 
+        rarity++;
+      }
+    }
+    
+    if(rarity) {
+      enchtitle = DB.getRarity(rarity);
+    }
+    
+    switch(rarity) {
+      case 1: overlay.addClass('yellow'); break;
+      case 2: overlay.addClass('green'); break;
+      case 3: overlay.addClass('blue'); break;
+      case 4: overlay.addClass('purple'); break;
     }
 
 		// Display box

@@ -38,11 +38,8 @@ function(   DB,            EntityManager,            Entity,                Alti
 		entity.position[1]  = y;
 		entity.position[2]  = z;
 		
-    switch(identify) {
-      case 2: enchtitle = 'Embued '; break;
-      case 3: enchtitle = 'Greater '; break;
-      case 4: enchtitle = 'Superior '; break;
-      case 5: enchtitle = 'Mythical '; break;
+    if(identify-1) {
+      enchtitle = DB.getRarity(identify-1);
     }
 
 		entity.display.load = entity.display.TYPE.COMPLETE;
