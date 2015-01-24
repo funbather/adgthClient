@@ -58,6 +58,18 @@ define(function( require )
 
 
 	return {
+	
+		2000: [{
+			type: 'CYLINDER',
+			topSize: 4,
+			bottomSize: 1,
+			height: 3,
+			textureName: 'tarot02'
+			//file: 'firewall%d',
+			//wav:  'effect/ef_firewall',
+			//rand: [1, 2],
+			//attachedEntity: true
+		}],
 
 		10: [{
 			type: 'STR',

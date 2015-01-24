@@ -772,6 +772,7 @@ define(function( require )
 	function onEntityStatusChange( pkt )
 	{
 		var entity = EntityManager.get( pkt.AID );
+		var extras = 0;
 
 		if (!entity) {
 			return;
@@ -813,11 +814,21 @@ define(function( require )
 					}
 				});
 				break;
+				
+      case StatusConst.SPIRIT_1:
+          if(pkt.val) { extras = pkt.val[0]+3000; }
+      break;
+      case StatusConst.SPIRIT_2:
+          if(pkt.val) { extras = pkt.val[0]+3000; }
+      break;
+      case StatusConst.SPIRIT_3:
+          if(pkt.val) { extras = pkt.val[0]+3000; }
+      break;
 		}
 
 		// Modify icon
 		if (entity === Session.Entity) {
-			StatusIcons.update( pkt.index, pkt.state, pkt.RemainMS );
+			StatusIcons.update( pkt.index, pkt.state, pkt.RemainMS, extras );
 		}
 	}
 

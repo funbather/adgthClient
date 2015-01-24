@@ -316,7 +316,7 @@ define(function( require )
 				break;
 
 			case 'CYLINDER':
-				EffectManager.add(new Cylinder( position, effect.topSize, effect.bottomSize, effect.height, effect.textureName, tick), AID);
+				EffectManager.add(new Cylinder( position, effect.topSize, effect.bottomSize, effect.height, effect.textureName, tick, tick+60), AID);
 				break;
 
 			case 'FUNC':

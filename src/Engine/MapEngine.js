@@ -258,8 +258,7 @@ define(function( require )
 
 			// TODO: find a better place to put it
 			jQuery(window).on('keydown.map', function( event ){
-        if (event.which === KEYS.W) {
-				//if (event.which === KEYS.INSERT) {
+				if (event.which === KEYS.INSERT) {
 					var pkt = new PACKET.CZ.REQUEST_ACT();
 					pkt.action = Session.Entity.action === Session.Entity.ACTION.SIT ? 3 : 2;
 					Network.sendPacket(pkt);

@@ -771,5 +771,8 @@ define(function()
 		// ...
 		HEAT_BARREL_AFTER:                      778,
 		DECORATION_OF_MUSIC:                    779,
+		SPIRIT_1:                               817,
+		SPIRIT_2:                               818,
+		SPIRIT_3:                               819,
 	};
 });

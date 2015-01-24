@@ -14,6 +14,40 @@ define(["./SkillConst"], function( SKID )
 
 
 	var SkillDescription = {};
+	
+	SkillDescription[SKID.SC_INVOKE] = [
+		"Invoke",
+		"Active",
+		" ",
+		"Channel the energy from your summoned spirits to cast a powerful spell. Which spell is cast depends on what spirits you currently have summoned.",
+	].join("\n");
+	
+	SkillDescription[SKID.SC_ICESPIRIT] = [
+		"Summon: Ice Spirit",
+		"Active",
+		" ",
+		"Summons an ice spirit to your aid. Each ice spirit reduces incoming physical and magical damage by $sklvl$.",
+		" ",
+		"You can only have a maximum of three spirits at one time.",
+	].join("\n");
+	
+	SkillDescription[SKID.SC_FIRESPIRIT] = [
+		"Summon: Fire Spirit",
+		"Active",
+		" ",
+		"Summons a fire spirit to your aid. Each fire spirit increases your strength by $sklvl1$ and your intelligence by $sklvl2$.",
+		" ",
+		"You can only have a maximum of three spirits at one time.",
+	].join("\n");
+	
+	SkillDescription[SKID.SC_WINDSPIRIT] = [
+		"Summon: Wind Spirit",
+		"Active",
+		" ",
+		"Summons a wind spirit to your aid. Each wind spirit increases your attack speed by $sklvl1$ and your celerity by $sklvl2$.",
+		" ",
+		"You can only have a maximum of three spirits at one time.",
+	].join("\n");
 
 	SkillDescription[SKID.MG_FIREBOLT] = [
 		"Fire Bolt",

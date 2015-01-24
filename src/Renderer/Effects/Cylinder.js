@@ -158,7 +158,7 @@ function(      WebGL,         Texture,          glMatrix,        Client) {
 	 * @param {string} texture name
 	 * @param {number} game tick
 	 */
-	function Cylinder( position, topSize, bottomSize, height, textureName, tick)
+	function Cylinder( position, topSize, bottomSize, height, textureName, tick, endLifeTime)
 	{
 		this.position    = position;
 		this.topSize     = topSize;
@@ -166,6 +166,7 @@ function(      WebGL,         Texture,          glMatrix,        Client) {
 		this.textureName = textureName;
 		this.height      = height;
 		this.tick        = tick;
+		this.endLifeTime = endLifeTime;
 	}
 
 
@@ -225,6 +226,8 @@ function(      WebGL,         Texture,          glMatrix,        Client) {
 		gl.uniform1f(  uniform.uHeight,     this.height);
 
 		gl.drawArrays( gl.TRIANGLES, 0, _verticeCount );
+		
+		this.needCleanUp = this.endLifeTime < tick;
 	};
 
 

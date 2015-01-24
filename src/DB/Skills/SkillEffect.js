@@ -14,7 +14,9 @@ define(['./SkillConst'], function( SK )
 
 
 	var SkillEffect = {};
-
+  SkillEffect[SK.MG_FIREBOLT] = {
+		effectId: 2000
+	};
 
 	SkillEffect[SK.SM_PROVOKE] = {
 		effectId: 67

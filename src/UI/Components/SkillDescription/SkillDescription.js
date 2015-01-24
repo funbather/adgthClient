@@ -99,17 +99,55 @@ define(function(require)
 		var var1 = level || 1; // Should always be Skill Level
 		var var2 = 0;
 		
-		if(id == 19) {
+		switch(id) { // TODO: Do this better
       
-      if(var1) {
-        var2 = WinStats.ui.find('.matak2').text();
-        desc = desc.replace('$sklvl$', '^0000BB'+var1*100+'^000000%');
-        desc = desc.replace('$matk$', '^FF0000'+var2*var1+'^000000');
-      }
+      case 19:
+        if(var1) {
+          var2 = WinStats.ui.find('.matak2').text();
+          desc = desc.replace('$sklvl$', '^0000BB'+var1*100+'^000000%');
+          desc = desc.replace('$matk$', '^FF0000'+var2*var1+'^000000');
+        }
       
-      if(level && var1 < 10) {
-        desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*100)+100)+"^000000% (^FF0000" + (var2*(var1+1)) + "^000000)";
-      }
+        if(level && var1 < 10) {
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*100)+100)+"^000000% (^FF0000" + (var2*(var1+1)) + "^000000)";
+        }
+      break;
+      
+      case 4001:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+(var1*.3).toFixed(1)+'^000000%');
+        }
+      
+        if(level && var1 < 50) {
+          desc += "\n\nNext Level:\nDamage Reduction: ^0000BB"+((var1+1)*.3).toFixed(1)+"^000000%";
+        }
+      break;
+      
+      case 4002:
+        if(var1) {
+          desc = desc.replace('$sklvl1$', '^0000BB'+Math.floor(var1*.5)+'^000000');
+          desc = desc.replace('$sklvl2$', '^0000BB'+Math.floor(var1*.5)+'^000000');
+        }
+      
+        if(level && var1 < 50) {
+          desc += "\n\nNext Level:\nBonus STR: ^0000BB"+Math.floor(((var1+1)*.5))+"^000000";
+          desc += "\nBonus INT: ^0000BB"+Math.floor(((var1+1)*.5))+"^000000";
+        }
+      break;
+      
+      case 4003:
+        if(var1) {
+          desc = desc.replace('$sklvl1$', '^0000BB'+(var1*.2).toFixed(1)+'^000000%');
+          desc = desc.replace('$sklvl2$', '^0000BB'+(var1*.2).toFixed(1)+'^000000%');
+        }
+      
+        if(level && var1 < 50) {
+          desc += "\n\nNext Level:\nBonus ASPD: ^0000BB"+((var1+1)*.2).toFixed(1)+"^000000%";
+          desc += "\nBonus Celerity: ^0000BB"+((var1+1)*.2).toFixed(1)+"^000000%";
+        }
+      break;
+      
+    
 		}
 		
 		this.ui.find('.content').text(desc);

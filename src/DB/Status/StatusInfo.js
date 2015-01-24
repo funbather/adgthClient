@@ -25,7 +25,54 @@ define(['./StatusConst'], function( SC )
 
 
 	var StatusInfo = {};
+	
+  StatusInfo[3068] = {
+		icon: "\xc7\xc1\xb7\xce\xbd\xba\xc6\xae\xbf\xfe\xc6\xf9.tga",
+		descript: [
+			["Ice Spirit", COLOR_TITLE_BUFF],
+			["Incoming damage reduced."],
+		]
+	};
+	
+	StatusInfo[3069] = {
+		icon: "\xc7\xc1\xb7\xb9\xc0\xd3\xb7\xb1\xc3\xc4.tga",
+		descript: [
+			["Fire Spirit", COLOR_TITLE_BUFF],
+			["STR and INT increased."],
+		]
+	};
+	
+	StatusInfo[3070] = {
+		icon: "\xb6\xf3\xc0\xcc\xc6\xae\xb4\xd7\xb7\xce\xb4\xf5.tga",
+		descript: [
+			["Wind Spirit", COLOR_TITLE_BUFF],
+			["Celerity and ASPD increased."],
+		]
+	};
+	
+  StatusInfo[SC.SPIRIT_1] = {
+		icon: "\xbf\xc0\xb9\xf6\xc6\xae\xb7\xaf\xbd\xba\xc6\xae.tga",
+		descript: [
+			["Spirit 1", COLOR_TITLE_BUFF],
+			["Dummy description."],
+		]
+	};
 
+  StatusInfo[SC.SPIRIT_2] = {
+		icon: "\xbf\xc0\xb9\xf6\xc6\xae\xb7\xaf\xbd\xba\xc6\xae.tga",
+		descript: [
+			["Spirit 2", COLOR_TITLE_BUFF],
+			["Dummy description."],
+		]
+	};
+	
+  StatusInfo[SC.SPIRIT_3] = {
+		icon: "\xbf\xc0\xb9\xf6\xc6\xae\xb7\xaf\xbd\xba\xc6\xae.tga",
+		descript: [
+			["Spirit 3", COLOR_TITLE_BUFF],
+			["Dummy description."],
+		]
+	};
 
 	StatusInfo[SC.OVERTHRUSTMAX] = {
 		haveTimeLimit:   1,

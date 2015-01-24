@@ -14,7 +14,41 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 
 
 	var SkillInfo = {};
+	SkillInfo[SK.SC_INVOKE] = {
+		Name: "SC_INVOKE",
+		SkillName : "Invoke",
+		MaxLv : 1,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 9 ]
+	};
 	
+	SkillInfo[SK.SC_ICESPIRIT] = {
+		Name: "SC_ICESPIRIT",
+		SkillName : "Summon: Ice Spirit",
+		MaxLv : 1,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};
+	
+		SkillInfo[SK.SC_FIRESPIRIT] = {
+		Name: "SC_FIRESPIRIT",
+		SkillName : "Summon: Fire Spirit",
+		MaxLv : 1,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};
+	
+	SkillInfo[SK.SC_WINDSPIRIT] = {
+		Name: "SC_WINDSPIRIT",
+		SkillName : "Summon: Wind Spirit",
+		MaxLv : 1,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};	
 	SkillInfo[SK.MG_FIREBOLT] = {
 		Name: "MG_FIREBOLT",
 		SkillName : "Fire Bolt",

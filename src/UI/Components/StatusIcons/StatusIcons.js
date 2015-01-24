@@ -94,7 +94,7 @@ define(function( require )
 	 * @param {number} enable/disable
 	 * @param {number} life time
 	 */
-	StatusIcons.update = function update( index, state, life )
+	StatusIcons.update = function update( index, state, life, extras )
 	{
 		// Not in DB, no icons...
 		if (!(index in StatusTable) || !StatusTable[index].icon) {
@@ -110,7 +110,7 @@ define(function( require )
 
 		// Intialize slot
 		if (!(index in _status)) {
-			createElement(index);
+        createElement(index, extras);
 		}
 
 		// Save tick for progressbar
@@ -128,6 +128,16 @@ define(function( require )
 		}
 
 		// Load image
+		if(extras) {
+		Client.loadFile( 'data/texture/effect/' + StatusTable[extras].icon, function(data){
+			Texture.load( data, function(){
+				if (_status[index] && !_status[index].img) {
+					_status[index].img = this;
+					addElement(_status[index].element);
+				}
+			});
+		});		
+		} else {
 		Client.loadFile( 'data/texture/effect/' + StatusTable[index].icon, function(data){
 			Texture.load( data, function(){
 				if (_status[index] && !_status[index].img) {
@@ -136,6 +146,7 @@ define(function( require )
 				}
 			});
 		});
+		}
 	};
 
 
@@ -192,7 +203,7 @@ define(function( require )
 	 *
 	 * @param {number} index
 	 */
-	function createElement( index )
+	function createElement( index, extras )
 	{
 		var state, canvas;
 
@@ -217,7 +228,11 @@ define(function( require )
 			info = document.createElement('div');
 			info.className = 'description';
 
+      if(extras) {
+			lines = StatusTable[extras].descript;
+			} else {
 			lines = StatusTable[index].descript;
+			}
 			count = lines.length;
 
 			for (i = 0; i < count; ++i) {
