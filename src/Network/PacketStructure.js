@@ -9351,7 +9351,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 	// 0x43d
 	PACKET.ZC.SKILL_POSTDELAY = function PACKET_ZC_SKILL_POSTDELAY(fp, end) {
 		this.SKID = fp.readUShort();
-		this.DelayTM = fp.readULong();
+		this.DelayTM = 0;//fp.readULong();
 	};
 	PACKET.ZC.SKILL_POSTDELAY.size = 8;
 

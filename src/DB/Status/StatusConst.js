@@ -774,5 +774,17 @@ define(function()
 		SPIRIT_1:                               817,
 		SPIRIT_2:                               818,
 		SPIRIT_3:                               819,
+		III_EXHAUST:                            820,
+		IIF_EXHAUST:                            821,
+		IFF_EXHAUST:                            822,
+		FFF_EXHAUST:                            823,
+		FFW_EXHAUST:                            824,
+		FWW_EXHAUST:                            825,
+		WWW_EXHAUST:                            826,
+		WWI_EXHAUST:                            827,
+		WII_EXHAUST:                            828,
+		IFW_EXHAUST:                            829,
+		INVIGORATE:                             830,
+		ENERGIZE:                               831,
 	};
 });

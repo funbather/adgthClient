@@ -305,14 +305,14 @@ define(function( require )
 			end = now;
 		}
 
-		if (end < now + 60000) {
+		/*if (end < now + 60000) {
 			color = 'rgba(255,150,50,0.65)';
 			perc  = 1 - (end-now)/60000;
 		}
-		else {
+		else {*/
 			color = 'rgba(255,255,255,0.65)';
-			perc  = (now-start) / (end-60000-start);
-		}
+			perc  = (now-start) / (end-start);//perc  = (now-start) / (end-60000-start);
+		//}
 
 		ctx.clearRect(0, 0, 32, 32);
 		ctx.drawImage(status.img, 0, 0);

@@ -26,30 +26,99 @@ define(['./StatusConst'], function( SC )
 
 	var StatusInfo = {};
 	
-  StatusInfo[3068] = {
+  StatusInfo[3001] = {
 		icon: "\xc7\xc1\xb7\xce\xbd\xba\xc6\xae\xbf\xfe\xc6\xf9.tga",
 		descript: [
-			["Ice Spirit", COLOR_TITLE_BUFF],
-			["Incoming damage reduced."],
+			["Varuna", COLOR_TITLE_BUFF],
 		]
 	};
 	
-	StatusInfo[3069] = {
+	StatusInfo[3016] = {
 		icon: "\xc7\xc1\xb7\xb9\xc0\xd3\xb7\xb1\xc3\xc4.tga",
 		descript: [
-			["Fire Spirit", COLOR_TITLE_BUFF],
-			["STR and INT increased."],
+			["Agni", COLOR_TITLE_BUFF],
 		]
 	};
 	
-	StatusInfo[3070] = {
+	StatusInfo[3256] = {
 		icon: "\xb6\xf3\xc0\xcc\xc6\xae\xb4\xd7\xb7\xce\xb4\xf5.tga",
 		descript: [
-			["Wind Spirit", COLOR_TITLE_BUFF],
-			["Celerity and ASPD increased."],
+			["Indra", COLOR_TITLE_BUFF],
 		]
 	};
 	
+	StatusInfo[SC.III_EXHAUST] = {
+		icon: "\xbc\xf6\xc1\xdd\xc0\xba\xc7\xcf\xb7\xe7\xc0\xc7\xbf\xec\xbf\xef.tga",
+		descript: [
+			["Rejuvenate is on cooldown.", COLOR_TITLE_BUFF],
+		]
+	};
+	StatusInfo[SC.IIF_EXHAUST] = {
+		icon: "\xbc\xf6\xc1\xdd\xc0\xba\xc7\xcf\xb7\xe7\xc0\xc7\xbf\xec\xbf\xef.tga",
+		descript: [
+			["Invigorate is on cooldown.", COLOR_TITLE_BUFF],
+		]
+	};
+	StatusInfo[SC.IFF_EXHAUST] = {
+		icon: "\xbc\xf6\xc1\xdd\xc0\xba\xc7\xcf\xb7\xe7\xc0\xc7\xbf\xec\xbf\xef.tga",
+		descript: [
+			["Call Sentinel is on cooldown.", COLOR_TITLE_BUFF],
+		]
+	};
+	StatusInfo[SC.FFF_EXHAUST] = {
+		icon: "\xbc\xf6\xc1\xdd\xc0\xba\xc7\xcf\xb7\xe7\xc0\xc7\xbf\xec\xbf\xef.tga",
+		descript: [
+			["Arcane Cannon is on cooldown.", COLOR_TITLE_BUFF],
+		]
+	};
+	StatusInfo[SC.FFW_EXHAUST] = {
+		icon: "\xbc\xf6\xc1\xdd\xc0\xba\xc7\xcf\xb7\xe7\xc0\xc7\xbf\xec\xbf\xef.tga",
+		descript: [
+			["Surge is on cooldown.", COLOR_TITLE_BUFF],
+		]
+	};
+	StatusInfo[SC.FWW_EXHAUST] = {
+		icon: "\xbc\xf6\xc1\xdd\xc0\xba\xc7\xcf\xb7\xe7\xc0\xc7\xbf\xec\xbf\xef.tga",
+		descript: [
+			["Plasma Field is on cooldown.", COLOR_TITLE_BUFF],
+		]
+	};
+	StatusInfo[SC.WWW_EXHAUST] = {
+		icon: "\xbc\xf6\xc1\xdd\xc0\xba\xc7\xcf\xb7\xe7\xc0\xc7\xbf\xec\xbf\xef.tga",
+		descript: [
+			["Arcane Vortex is on cooldown.", COLOR_TITLE_BUFF],
+		]
+	};
+	StatusInfo[SC.WWI_EXHAUST] = {
+		icon: "\xbc\xf6\xc1\xdd\xc0\xba\xc7\xcf\xb7\xe7\xc0\xc7\xbf\xec\xbf\xef.tga",
+		descript: [
+			["Flash Freeze is on cooldown.", COLOR_TITLE_BUFF],
+		]
+	};
+	StatusInfo[SC.WII_EXHAUST] = {
+		icon: "\xbc\xf6\xc1\xdd\xc0\xba\xc7\xcf\xb7\xe7\xc0\xc7\xbf\xec\xbf\xef.tga",
+		descript: [
+			["Energize is on cooldown.", COLOR_TITLE_BUFF],
+		]
+	};
+	StatusInfo[SC.IFW_EXHAUST] = {
+		icon: "\xbc\xf6\xc1\xdd\xc0\xba\xc7\xcf\xb7\xe7\xc0\xc7\xbf\xec\xbf\xef.tga",
+		descript: [
+			["Aurabolt is on cooldown.", COLOR_TITLE_BUFF],
+		]
+	};
+	StatusInfo[SC.INVIGORATE] = {
+		icon: "i_kaupe.tga",
+		descript: [
+			["ATK, MAG, and Precision increased.", COLOR_TITLE_BUFF],
+		]
+	};
+	StatusInfo[SC.ENERGIZE] = {
+		icon: "\xbf\xc0\xb9\xf6\xc6\xae\xb7\xaf\xbd\xba\xc6\xae.tga",
+		descript: [
+			["ASPD and Celerity increased.", COLOR_TITLE_BUFF],
+		]
+	};		
   StatusInfo[SC.SPIRIT_1] = {
 		icon: "\xbf\xc0\xb9\xf6\xc6\xae\xb7\xaf\xbd\xba\xc6\xae.tga",
 		descript: [

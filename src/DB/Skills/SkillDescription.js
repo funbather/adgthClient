@@ -23,32 +23,107 @@ define(["./SkillConst"], function( SKID )
 	].join("\n");
 	
 	SkillDescription[SKID.SC_ICESPIRIT] = [
-		"Summon: Ice Spirit",
-		"Active",
+		"Varuna",
+		"Active - Self",
 		" ",
-		"Summons an ice spirit to your aid. Each ice spirit reduces incoming physical and magical damage by $sklvl$.",
-		" ",
-		"You can only have a maximum of three spirits at one time.",
+		"Summons a water spirit to your side, whose energy can be invoked into a powerful spell. This skill grants a permanent $sklvl$ Vitality, and $sklvl2$ resistance to all damage.",
 	].join("\n");
 	
 	SkillDescription[SKID.SC_FIRESPIRIT] = [
-		"Summon: Fire Spirit",
-		"Active",
+		"Agni",
+		"Active - Self",
 		" ",
-		"Summons a fire spirit to your aid. Each fire spirit increases your strength by $sklvl1$ and your intelligence by $sklvl2$.",
-		" ",
-		"You can only have a maximum of three spirits at one time.",
+		"Summons a fire spirit to your side, whose energy can be invoked into a powerful spell. This skill grants a permanent $sklvl$ Strength and Intelligence.",
 	].join("\n");
 	
 	SkillDescription[SKID.SC_WINDSPIRIT] = [
-		"Summon: Wind Spirit",
-		"Active",
+		"Indra",
+		"Active - Self",
 		" ",
-		"Summons a wind spirit to your aid. Each wind spirit increases your attack speed by $sklvl1$ and your celerity by $sklvl2$.",
-		" ",
-		"You can only have a maximum of three spirits at one time.",
+		"Summons a thunder spirit to your side, whose energy can be invoked into a powerful spell. This skill grants a permanent $sklvl$ Agility and Precision.",
 	].join("\n");
 
+	SkillDescription[SKID.SC_REJUVENATE] = [
+		"Rejuvenate - ^0000BBVVV^000000",
+		"Active - Magical - Support",
+		"3s Cooldown",
+		" ",
+		"Restores $heal$ health to an ally. This spell becomes more potent as you level ^0000BBVaruna^000000.",
+	].join("\n");
+	
+	SkillDescription[SKID.SC_INVIGORATE] = [
+		"Invigorate - ^0000BBVV^BB0000A^000000",
+		"Active - Support",
+		" ",
+		"Grants a $ice$ bonus to ATK and MAG, and increases Precision by $fire$ for yourself and all nearby allies. This spell becomes more potent as you level ^0000BBVaruna^000000 and ^BB0000Agni^000000.",
+	].join("\n");
+	
+	SkillDescription[SKID.SC_CALLSENTINEL] = [
+		"Call Sentinel - ^0000BBV^BB0000AA^000000",
+		"Active - Summon",
+		"60s Cooldown",
+		" ",
+		"Summon an arcane turret to fight by your side. Your Sentinels have $fire$ of your ATK, and $ice$ of your maximum HP. Sentinels become more powerful as you level ^0000BBVaruna^000000 and ^BB0000Agni^000000.",
+		" ",
+		"You gain the ability to summon additional Sentinels when the combined level of ^0000BBVaruna^000000 and ^BB0000Agni^000000 reaches 25, 50, and 75.",
+	].join("\n");
+	
+	SkillDescription[SKID.SC_ARCANECANNON] = [
+		"Arcane Cannon - ^BB0000AAA^000000",
+		"Active - Magical",
+		"2s Cooldown",
+		" ",
+		"Send a powerful wave of arcane energy at an enemy using both your magical and physical attack power, dealing $fire$ damage. Grows more potent as you level ^BB0000Agni^000000.",
+	].join("\n");
+	
+	SkillDescription[SKID.SC_SURGE] = [
+		"Surge - ^BB0000AA^8A8400I^000000",
+		"Active - Magical",
+		"7s Cooldown",
+		" ",
+		"Zap an enemy with electrical energy for $fire$ damage, bouncing off of other enemies up to $wind$ times. If no other enemies are nearby, the energy wells up and the target is shocked repeatedly. Grows more potent as you level ^BB0000Agni^000000.",
+		" ",
+		"Bounces one additional time for every 10 levels in ^8A8400Indra^000000.",
+	].join("\n");
+	
+	SkillDescription[SKID.SC_PLASMAFIELD] = [
+		"Plasma Field - ^BB0000A^8A8400II^000000",
+		"Active - Magical - Area",
+		"$cd$s Cooldown",
+		" ",
+		"Cover an area with a burst of plasma, dealing $fire$ damage and stunning all enemies in the area for $wind$ seconds. Grows more potent as you level ^BB0000Agni^000000 and ^8A8400Indra^000000.",
+	].join("\n");
+
+	SkillDescription[SKID.SC_ARCANEVORTEX] = [
+		"Arcane Vortex - ^8A8400III^000000",
+		"Active - Magical - Area",
+		"$cd$s Cooldown",
+		" ",
+		"Create a swirling vortex of arcane energy, dealing $wind$ damage while sucking in all affected enemies. Grows more potent as you level ^8A8400Indra^000000.",
+	].join("\n");
+	
+  SkillDescription[SKID.SC_FLASHFREEZE] = [
+		"Flash Freeze - ^8A8400II^0000BBV^000000",
+		"Active - Magical - Self - Area",
+		"$cd$s Cooldown",
+		" ",
+		"Explode in a torrent of ice magic, dealing $ice$ damage and freezing nearby enemies in their tracks for 3 seconds. Grows more potent as you level ^8A8400Indra^000000 and ^0000BBVaruna^000000.",
+	].join("\n");
+	
+  SkillDescription[SKID.SC_ENERGIZE] = [
+		"Energize - ^8A8400I^0000BBVV^000000",
+		"Active - Support",
+		" ",
+		"Grants a $ice$ bonus to attack speed, and increases Celerity by $wind$ for yourself and all nearby allies. This spell becomes more potent as you level ^8A8400Indra^000000 and ^0000BBVaruna^000000.",
+	].join("\n");
+	
+  SkillDescription[SKID.SC_PHASEWALK] = [
+		"Phase Walk - ^0000BBV^BB0000A^8A8400I^000000",
+		"Active",
+		" ",
+		"Teleport a short distance away.",
+	].join("\n");
+		
 	SkillDescription[SKID.MG_FIREBOLT] = [
 		"Fire Bolt",
 		"Active",

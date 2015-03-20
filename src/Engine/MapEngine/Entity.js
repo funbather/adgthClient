@@ -547,7 +547,7 @@ define(function( require )
 		// Only mob to don't display skill name ?
 		if (srcEntity && srcEntity.objecttype !== Entity.TYPE_MOB) {
 			srcEntity.dialog.set(
-				( (SkillInfo[pkt.SKID] && SkillInfo[pkt.SKID].SkillName ) || 'Unknown Skill' ) + ' !!',
+				( (SkillInfo[pkt.SKID] && SkillInfo[pkt.SKID].SkillName ) || 'Unknown Skill' ) + '!',
 				'white'
 			);
 		}
@@ -608,7 +608,7 @@ define(function( require )
 
 
 			if (srcEntity.objecttype !== Entity.TYPE_MOB) {
-				srcEntity.dialog.set( ( (SkillInfo[pkt.SKID] && SkillInfo[pkt.SKID].SkillName ) || 'Unknown Skill' ) + ' !!' );
+				srcEntity.dialog.set( ( (SkillInfo[pkt.SKID] && SkillInfo[pkt.SKID].SkillName ) || 'Unknown Skill' ) + '!' );
 			}
 
 			var action = (SkillInfo[pkt.SKID] && SkillInfo[pkt.SKID].ActionType) || 'SKILL';
@@ -724,7 +724,7 @@ define(function( require )
 		// Only mob to don't display skill name ?
 		if (srcEntity.objecttype !== Entity.TYPE_MOB) {
 			srcEntity.dialog.set(
-				( ( SkillInfo[pkt.SKID] && SkillInfo[pkt.SKID].SkillName ) || 'Unknown Skill' ) + ' !!',
+				( ( SkillInfo[pkt.SKID] && SkillInfo[pkt.SKID].SkillName ) || 'Unknown Skill' ) + '!',
 				'white'
 			);
 		}
@@ -813,7 +813,7 @@ define(function( require )
 						next:   false
 					}
 				});
-				break;
+			break;
 				
       case StatusConst.SPIRIT_1:
           if(pkt.val) { extras = pkt.val[0]+3000; }

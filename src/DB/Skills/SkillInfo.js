@@ -25,7 +25,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 	
 	SkillInfo[SK.SC_ICESPIRIT] = {
 		Name: "SC_ICESPIRIT",
-		SkillName : "Summon: Ice Spirit",
+		SkillName : "Varuna",
 		MaxLv : 1,
 		SpAmount : [ 0 ],
 		bSeperateLv : false,
@@ -34,7 +34,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 	
 		SkillInfo[SK.SC_FIRESPIRIT] = {
 		Name: "SC_FIRESPIRIT",
-		SkillName : "Summon: Fire Spirit",
+		SkillName : "Agni",
 		MaxLv : 1,
 		SpAmount : [ 0 ],
 		bSeperateLv : false,
@@ -43,12 +43,103 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 	
 	SkillInfo[SK.SC_WINDSPIRIT] = {
 		Name: "SC_WINDSPIRIT",
-		SkillName : "Summon: Wind Spirit",
+		SkillName : "Indra",
 		MaxLv : 1,
 		SpAmount : [ 0 ],
 		bSeperateLv : false,
 		AttackRange : [ 1 ]
+	};
+	
+	SkillInfo[SK.SC_REJUVENATE] = {
+		Name: "SC_REJUVENATE",
+		SkillName : "Rejuvenate",
+		MaxLv : 1,
+		SpAmount : [ 35 ],
+		bSeperateLv : false,
+		AttackRange : [ 15 ]
 	};	
+	
+	SkillInfo[SK.SC_INVIGORATE] = {
+		Name: "SC_INVIGORATE",
+		SkillName : "Invigorate",
+		MaxLv : 1,
+		SpAmount : [ 40 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};
+	
+	SkillInfo[SK.SC_CALLSENTINEL] = {
+		Name: "SC_CALLSENTINEL",
+		SkillName : "Call Sentinel",
+		MaxLv : 1,
+		SpAmount : [ 75 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};
+	
+	SkillInfo[SK.SC_ARCANECANNON] = {
+		Name: "SC_ARCANECANNON",
+		SkillName : "Arcane Cannon",
+		MaxLv : 1,
+		SpAmount : [ 20 ],
+		bSeperateLv : false,
+		AttackRange : [ 15 ]
+	};
+	
+	SkillInfo[SK.SC_SURGE] = {
+		Name: "SC_SURGE",
+		SkillName : "Surge",
+		MaxLv : 1,
+		SpAmount : [ 35 ],
+		bSeperateLv : false,
+		AttackRange : [ 15 ]
+	};
+	
+	SkillInfo[SK.SC_PLASMAFIELD] = {
+		Name: "SC_PLASMAFIELD",
+		SkillName : "Plasma Field",
+		MaxLv : 1,
+		SpAmount : [ 55 ],
+		bSeperateLv : false,
+		AttackRange : [ 15 ]
+	};
+	
+	SkillInfo[SK.SC_ARCANEVORTEX] = {
+		Name: "SC_ARCANEVORTEX",
+		SkillName : "Arcane Vortex",
+		MaxLv : 1,
+		SpAmount : [ 55 ],
+		bSeperateLv : false,
+		AttackRange : [ 15 ]
+	};
+	
+	SkillInfo[SK.SC_FLASHFREEZE] = {
+		Name: "SC_FLASHFREEZE",
+		SkillName : "Flash Freeze",
+		MaxLv : 1,
+		SpAmount : [ 55 ],
+		bSeperateLv : false,
+		AttackRange : [ 15 ]
+	};		
+	
+	SkillInfo[SK.SC_ENERGIZE] = {
+		Name: "SC_ENERGIZE",
+		SkillName : "Energize",
+		MaxLv : 1,
+		SpAmount : [ 40 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};
+
+	SkillInfo[SK.SC_PHASEWALK] = {
+		Name: "SC_PHASEWALK",
+		SkillName : "Phase Walk",
+		MaxLv : 1,
+		SpAmount : [ 15 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};					
+		
 	SkillInfo[SK.MG_FIREBOLT] = {
 		Name: "MG_FIREBOLT",
 		SkillName : "Fire Bolt",

@@ -513,13 +513,16 @@ define(function(require)
 	function onRequestSkillInfo()
 	{
 		var main = jQuery(this).parent();
-		var skill;
+		var skill, spirit1, spirit2, spirit3; // [ADGTH] Goofy workaround
 
 		if (!main.hasClass('skill')) {
 			main = main.parent();
 		}
 
 		skill = getSkillById(parseInt(main.data('index'), 10));
+		spirit1 = getSkillById(4001);
+		spirit2 = getSkillById(4002);
+		spirit3 = getSkillById(4003);
 
 		// Don't add the same UI twice, remove it
 		if (SkillDescription.uid === skill.SKID) {
@@ -529,7 +532,11 @@ define(function(require)
 
 		// Add ui to window
 		SkillDescription.append();
-		SkillDescription.setSkill(skill.SKID, skill.level);
+		if(skill.SKID >= 4004 && skill.SKID < 4014) {
+      SkillDescription.setSkill(skill.SKID, skill.level, spirit1.level, spirit2.level, spirit3.level);
+		} else {
+      SkillDescription.setSkill(skill.SKID, skill.level, 0, 0, 0);
+		}
 	}
 
 
