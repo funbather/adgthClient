@@ -229,7 +229,7 @@ define(function(require)
 				'<td class="selectable type">' +
 					'<div class="consume">' +
 					(
-						skill.type ? 'Sp : <span class="spcost">' + skill.spcost + '</span>' : 'Passive'
+						skill.type ? skill.spcost ? 'MP : <span class="spcost">' + skill.spcost + '</span>' : 'Toggle' : 'Passive' // Toggle - Active skill with spcost 0
 					) +
 					'</div>' +
 				'</td>' +

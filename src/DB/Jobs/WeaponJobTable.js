@@ -40,7 +40,7 @@ define(["./JobConst", "./JobNameTable"], function( JobId, JobNameTable)
 	duplicateEntry(JobId.MERCHANT,   JobId.MERCHANT_H,   JobId.MERCHANT_B);
 	duplicateEntry(JobId.THIEF,      JobId.THIEF_H,      JobId.THIEF_B);
 
-	duplicateEntry(JobId.KNIGHT,     JobId.KNIGHT_H,     JobId.KNIGHT_B,     JobId.RUNE_KNIGHT,      JobId.RUNE_KNIGHT_H,      JobId.RUNE_KNIGHT_B);
+	duplicateEntry(JobId.KNIGHT,     JobId.KNIGHT_H,     JobId.KNIGHT_B,     JobId.RUNE_KNIGHT,      JobId.RUNE_KNIGHT_H,      JobId.RUNE_KNIGHT_B,          JobId.WARRIOR);
 	duplicateEntry(JobId.KNIGHT2,    JobId.KNIGHT2_H,    JobId.KNIGHT2_B,    JobId.RUNE_KNIGHT2,     JobId.RUNE_KNIGHT2_H,     JobId.RUNE_KNIGHT2_B);
 	duplicateEntry(JobId.PRIEST,     JobId.PRIEST_H,     JobId.PRIEST_B,     JobId.ARCHBISHOP,       JobId.ARCHBISHOP_H,       JobId.ARCHBISHOP_B);
 	duplicateEntry(JobId.WIZARD,     JobId.WIZARD_H,     JobId.WIZARD_B,     JobId.WARLOCK,          JobId.WARLOCK_H,          JobId.WARLOCK_B,             JobId.SORC_);

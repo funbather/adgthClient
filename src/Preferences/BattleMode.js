@@ -62,6 +62,7 @@ define( ['Core/Preferences', 'Controls/KeyEventHandler'], function( Preferences,
 	// UI
 	defaultKey[ KEYS.C + 300 ]   = { component:'ChatRoomCreate',  cmd:'TOGGLE', alt:true };
 	defaultKey[ KEYS.E + 300 ]   = { component:'Inventory',       cmd:'TOGGLE', alt:true };
+	defaultKey[ KEYS.G + 300 ]   = { component:'Guild',           cmd:'TOGGLE', alt:true };
 	defaultKey[ KEYS.J + 300 ]   = { component:'PetInformations', cmd:'TOGGLE', alt:true };
 	defaultKey[ KEYS.L + 300 ]   = { component:'Emoticons',       cmd:'TOGGLE', alt:true };
 	defaultKey[ KEYS.Q + 300 ]   = { component:'Equipment',       cmd:'TOGGLE', alt:true };
@@ -75,5 +76,5 @@ define( ['Core/Preferences', 'Controls/KeyEventHandler'], function( Preferences,
 	/**
 	 * Export
 	 */
-	return Preferences.get( 'BattleMode', defaultKey, 1.8 );
+	return Preferences.get( 'BattleMode', defaultKey, 1.9 );
 });

@@ -451,7 +451,7 @@ define(function(require)
 			case ItemType.EQUIP:
 			case ItemType.PETEQUIP:
 			case ItemType.AMMO:
-				if (item.IsIdentified && !item.IsDamaged) {
+				if (item.IsIdentified) {
 					Inventory.onEquipItem( item.index, item.location );
 				}
 				break;
@@ -667,7 +667,7 @@ define(function(require)
 		overlay.removeClass('blue');
 		overlay.removeClass('purple');
 		
-		for(var i = 0; i < 4; i++) {
+		for(var i = 0; i <= 4; i++) {
       if(item.slot['card' + i]) { 
         rarity++;
       }
@@ -688,7 +688,8 @@ define(function(require)
 		overlay.show();
 		overlay.css({top: pos.top, left:pos.left+35});
 		overlay.text(enchtitle + DB.getItemName(item) + ' ' + (item.count || 1) + ' ea');
-
+    //overlay.text(enchtitle + DB.getItemName(item) + ' ' + (item.IsDamaged || 99) + ' ilvl');
+    
 		if (item.IsIdentified) {
 			overlay.removeClass('grey');
 		}

@@ -313,8 +313,18 @@ define(function(require)
 		if (id === 0) {
 			return null;
 		}
+		
+		// Dual weapon (based on range id)
+		if (id > 500 && (id < 2100 || id > 2200)) {
+			return DB.getWeaponPath(id, job, sex);
+		}
 
 		var baseClass = WeaponJobTable[job] || WeaponJobTable[0];
+		
+		// ItemID to View Id
+		if ((id in ItemTable) && ('ClassNum' in ItemTable[id])) {
+			id = ItemTable[id].ClassNum;
+		}
 
 		return 'data/sprite/\xb9\xe6\xc6\xd0/' + baseClass + '/' + baseClass + '_' + SexTable[sex] + '_' + ( ShieldTable[id] || ShieldTable[1] );
 	};
@@ -333,6 +343,11 @@ define(function(require)
 		}
 
 		var baseClass = WeaponJobTable[job] || WeaponJobTable[0];
+
+		// ItemID to View Id
+		if ((id in ItemTable) && ('ClassNum' in ItemTable[id])) {
+			id = ItemTable[id].ClassNum;
+		}
 
 		return 'data/sprite/\xc0\xce\xb0\xa3\xc1\xb7/' + baseClass + '/' + baseClass + '_' + SexTable[sex] + ( WeaponTable[id] || ('_' + id) ) ;
 	};
@@ -490,6 +505,14 @@ define(function(require)
 				item.identifiedDisplayName       = TextEncoding.decodeString(item.identifiedDisplayName);
 				item.unidentifiedDisplayName     = TextEncoding.decodeString(item.unidentifiedDisplayName);
 				item.prefixNameTable             = TextEncoding.decodeString(item.prefixNameTable || '');
+				item.BaseHP                      = item.BaseHP || 0;
+				item.BaseMP                      = item.BaseMP || 0;
+				item.BaseDEF                     = item.BaseDEF || 0;
+				item.BaseMDEF                    = item.BaseMDEF || 0;
+				item.BaseATK                     = item.BaseATK || 0;
+				item.BaseEVADE                   = item.BaseEVADE || 0;
+				item.BaseCRIT                    = item.BaseCRIT || 0;
+				item.BaseCEL                     = item.BaseCEL || 0;
 				item._decoded                    = true;
 			}
 
@@ -527,9 +550,16 @@ define(function(require)
 			return it.unidentifiedDisplayName;
 		}
 
-		if (item.RefiningLevel) {
+		/*if (item.RefiningLevel) {
 			str = '+' + item.RefiningLevel + ' ';
-		}
+		}*/
+		
+		if(item.RefiningLevel >= 125) { str = 'Perfect' + ' '; }
+		else if(item.RefiningLevel > 100) { str = 'Masterwork' + ' '; }
+		else if(item.RefiningLevel == 100) { str = 'Superior' + ' '; }
+		else if(item.RefiningLevel > 85)  {  }
+		else if(item.RefiningLevel > 60) { str = 'Inferior' + ' '; }
+		else if(item.RefiningLevel >= 50) { str = 'Damaged' + ' '; }
 
 		if (item.slot) {
 			switch (item.slot.card1) {

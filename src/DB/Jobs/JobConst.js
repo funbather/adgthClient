@@ -43,6 +43,7 @@ define(function()
 		XMAS:                 26,
 		SUMMER:               27,
 		SORC_:                30,
+		WARRIOR:              31,
 		NOVICE_H:           4001,
 		SWORDMAN_H:         4002,
 		MAGICIAN_H:         4003,

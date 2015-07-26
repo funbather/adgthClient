@@ -108,6 +108,7 @@ define(function(require)
 		var it = DB.getItemInfo( item.ITID );
 		var ui = this.ui;
 		var cardList = ui.find('.cardlist .border');
+		var desc = '';
 		var enchtitle = '';
 		var enchdesc = '';
 		var enchant;
@@ -134,9 +135,16 @@ define(function(require)
       enchtitle = DB.getRarity(rarity);
 		}
 
+    desc = it.identifiedDescriptionName + enchdesc;
+    desc = desc.replace('$ilvl$', '^FF0000'+item.IsDamaged+'^000000');
+    desc = desc.replace('$quality$', '^FF0000'+item.RefiningLevel+'^000000');
+		desc = desc.replace('$hp$', '^FF0000'+Math.floor((14*item.IsDamaged*2*it.BaseHP / 100 + it.BaseHP) * item.RefiningLevel / 100)+'^000000');
+		desc = desc.replace('$def$', '^FF0000'+Math.floor((3*item.IsDamaged*2*it.BaseDEF / 100 + it.BaseDEF) * item.RefiningLevel / 100)+'^000000');
+		desc = desc.replace('$atk$', '^FF0000'+Math.floor((10*item.IsDamaged*2*it.BaseATK / 100 + it.BaseATK) * item.RefiningLevel / 100)+'^000000');
 
 		ui.find('.title').text( item.IsIdentified ? enchtitle + it.identifiedDisplayName : it.unidentifiedDisplayName );
-		ui.find('.description').text( item.IsIdentified ? it.identifiedDescriptionName + enchdesc : it.unidentifiedDescriptionName);
+		ui.find('.description').text( desc );
+		
 
 		// Add view button (for cards)
 		if (item.type === ItemType.CARD) {

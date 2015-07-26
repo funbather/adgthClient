@@ -257,7 +257,7 @@ define(function(require)
 			}
 		}
 		
-		for(var i = 0; i < 4; i++) {
+		for(var i = 0; i <= 4; i++) {
       if(item.slot['card' + i]) { 
         rarity++;
       }
@@ -278,7 +278,7 @@ define(function(require)
 		this.ui.find(getSelectorFromLocation(location)).html(
 			'<div class="item" data-index="'+ item.index +'">' +
 				'<button></button>' +
-				'<span'+itdis+'>' + jQuery.escape(enchtitle) + enchbreak + jQuery.escape(DB.getItemName(item)) + '</span>' +
+				'<span'+itdis+'>' + jQuery.escape(enchtitle) + jQuery.escape(DB.getItemName(item)) + '</span>' +
 			'</div>'
 		);
 
@@ -473,7 +473,7 @@ define(function(require)
 				item = data.data;
 
 				if ((item.type === ItemType.WEAPON || item.type === ItemType.EQUIP) &&
-				    item.IsIdentified && !item.IsDamaged) {
+				    item.IsIdentified) {
 					selector = getSelectorFromLocation( 'location' in item ? item.location : item.WearLocation);
 					ui       = Equipment.ui.find(selector);
 
@@ -519,7 +519,7 @@ define(function(require)
 			item = data.data;
 
 			if ((item.type === ItemType.WEAPON || item.type === ItemType.EQUIP || item.type === ItemType.AMMO) &&
-			    item.IsIdentified && !item.IsDamaged) {
+			    item.IsIdentified) {
 			    Equipment.ui.find('td').css('backgroundImage','none');
 				Equipment.onEquipItem( item.index, 'location' in item ? item.location : item.WearState );
 			}
@@ -597,7 +597,7 @@ define(function(require)
 		overlay.removeClass('blue');
 		overlay.removeClass('purple');
 		
-		for(var i = 0; i < 4; i++) {
+		for(var i = 0; i <= 4; i++) {
       if(item.slot['card' + i]) { 
         rarity++;
       }

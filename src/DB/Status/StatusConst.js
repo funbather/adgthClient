@@ -786,5 +786,8 @@ define(function()
 		IFW_EXHAUST:                            829,
 		INVIGORATE:                             830,
 		ENERGIZE:                               831,
+		MONKEYGRIP:                             832,
+		TWINHAND:                               833,
+		SHATTER:                                834,
 	};
 });

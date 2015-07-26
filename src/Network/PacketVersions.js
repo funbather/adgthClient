@@ -433,7 +433,6 @@ define( ['./PacketStructure'], function( PACKET )
 			[PACKET.CZ.REQUEST_ACT,0x0190,23,9,22],
 		],
 		
-		
 		//2009-08-18aRagexeRE
 		20090818: [
 			[PACKET.CZ.ITEMLISTWIN_RES,0x07e4,-1,2,4,8],

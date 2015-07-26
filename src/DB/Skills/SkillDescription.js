@@ -14,6 +14,22 @@ define(["./SkillConst"], function( SKID )
 
 
 	var SkillDescription = {};
+
+	SkillDescription[SKID.ALL_RESURRECTION] = [
+		"Recucitate",
+		"Active - Support",
+		" ",
+		"Revive a fallen ally.",
+	].join("\n");
+
+	SkillDescription[SKID.AL_WARP] = [
+		"Town Portal",
+		"Active - Support",
+		" ",
+		"Open a portal on the ground for yourself and others leading to either your current save point or checkpoint.",
+		" ",
+		"Type /checkpoint or /cp in chat to set a temporary checkpoint; talk to an Innkeeper in a town or encampment to set a save point.",
+	].join("\n");
 	
 	SkillDescription[SKID.SC_INVOKE] = [
 		"Invoke",
@@ -26,21 +42,21 @@ define(["./SkillConst"], function( SKID )
 		"Varuna",
 		"Active - Self",
 		" ",
-		"Summons a water spirit to your side, whose energy can be invoked into a powerful spell. This skill grants a permanent $sklvl$ Vitality, and $sklvl2$ resistance to all damage.",
+		"Summons a water spirit to your side, whose energy can be invoked into a powerful spell. This skill grants a permanent $sklvl$ VIT, and $sklvl2$% increased Damage Resistance.",
 	].join("\n");
 	
 	SkillDescription[SKID.SC_FIRESPIRIT] = [
 		"Agni",
 		"Active - Self",
 		" ",
-		"Summons a fire spirit to your side, whose energy can be invoked into a powerful spell. This skill grants a permanent $sklvl$ Strength and Intelligence.",
+		"Summons a fire spirit to your side, whose energy can be invoked into a powerful spell. This skill grants a permanent $sklvl$ STR and INT.",
 	].join("\n");
 	
 	SkillDescription[SKID.SC_WINDSPIRIT] = [
 		"Indra",
 		"Active - Self",
 		" ",
-		"Summons a thunder spirit to your side, whose energy can be invoked into a powerful spell. This skill grants a permanent $sklvl$ Agility and Precision.",
+		"Summons a thunder spirit to your side, whose energy can be invoked into a powerful spell. This skill grants a permanent $sklvl$ AGI and PRE.",
 	].join("\n");
 
 	SkillDescription[SKID.SC_REJUVENATE] = [
@@ -48,14 +64,14 @@ define(["./SkillConst"], function( SKID )
 		"Active - Magical - Support",
 		"3s Cooldown",
 		" ",
-		"Restores $heal$ health to an ally. This spell becomes more potent as you level ^0000BBVaruna^000000.",
+		"Heal an ally for $heal$% MAG. This spell becomes more potent as you level ^0000BBVaruna^000000.",
 	].join("\n");
 	
 	SkillDescription[SKID.SC_INVIGORATE] = [
 		"Invigorate - ^0000BBVV^BB0000A^000000",
 		"Active - Support",
 		" ",
-		"Grants a $ice$ bonus to ATK and MAG, and increases Precision by $fire$ for yourself and all nearby allies. This spell becomes more potent as you level ^0000BBVaruna^000000 and ^BB0000Agni^000000.",
+		"Grant a $ice$% bonus to ATK and MAG and increase PRE by $fire$ for yourself and all nearby allies. This spell becomes more potent as you level ^0000BBVaruna^000000 and ^BB0000Agni^000000.",
 	].join("\n");
 	
 	SkillDescription[SKID.SC_CALLSENTINEL] = [
@@ -63,9 +79,9 @@ define(["./SkillConst"], function( SKID )
 		"Active - Summon",
 		"60s Cooldown",
 		" ",
-		"Summon an arcane turret to fight by your side. Your Sentinels have $fire$ of your ATK, and $ice$ of your maximum HP. Sentinels become more powerful as you level ^0000BBVaruna^000000 and ^BB0000Agni^000000.",
+		"Summon a Sentinel to fight by your side, who can fire upon enemies from afar. Your Sentinels have $fire$% of your ATK, and $ice$% of your Max HP. Sentinels become more powerful as you level ^0000BBVaruna^000000 and ^BB0000Agni^000000.",
 		" ",
-		"You gain the ability to summon additional Sentinels when the combined level of ^0000BBVaruna^000000 and ^BB0000Agni^000000 reaches 25, 50, and 75.",
+		"You gain the ability to summon additional Sentinels simultaneously when the combined level of ^0000BBVaruna^000000 and ^BB0000Agni^000000 reaches 25, 50, and 75.",
 	].join("\n");
 	
 	SkillDescription[SKID.SC_ARCANECANNON] = [
@@ -73,7 +89,7 @@ define(["./SkillConst"], function( SKID )
 		"Active - Magical",
 		"2s Cooldown",
 		" ",
-		"Send a powerful wave of arcane energy at an enemy using both your magical and physical attack power, dealing $fire$ damage. Grows more potent as you level ^BB0000Agni^000000.",
+		"Send a powerful bolt of arcane energy at an enemy for $fire$% MAG and $fire2$% ATK damage. Grows more potent as you level ^BB0000Agni^000000.",
 	].join("\n");
 	
 	SkillDescription[SKID.SC_SURGE] = [
@@ -81,7 +97,7 @@ define(["./SkillConst"], function( SKID )
 		"Active - Magical",
 		"7s Cooldown",
 		" ",
-		"Zap an enemy with electrical energy for $fire$ damage, bouncing off of other enemies up to $wind$ times. If no other enemies are nearby, the energy wells up and the target is shocked repeatedly. Grows more potent as you level ^BB0000Agni^000000.",
+		"Zap an enemy with electrical energy for $fire$% MAG damage, bouncing off of other enemies up to $wind$ times. If no other enemies are nearby, the energy wells up within, and the target is shocked repeatedly. Grows more potent as you level ^BB0000Agni^000000.",
 		" ",
 		"Bounces one additional time for every 10 levels in ^8A8400Indra^000000.",
 	].join("\n");
@@ -91,7 +107,7 @@ define(["./SkillConst"], function( SKID )
 		"Active - Magical - Area",
 		"$cd$s Cooldown",
 		" ",
-		"Cover an area with a burst of plasma, dealing $fire$ damage and stunning all enemies in the area for $wind$ seconds. Grows more potent as you level ^BB0000Agni^000000 and ^8A8400Indra^000000.",
+		"Cover an area with a burst of plasma, dealing $fire$% MAG damage and stunning all enemies in the area for $wind$ seconds. Grows more potent as you level ^BB0000Agni^000000 and ^8A8400Indra^000000.",
 	].join("\n");
 
 	SkillDescription[SKID.SC_ARCANEVORTEX] = [
@@ -99,7 +115,7 @@ define(["./SkillConst"], function( SKID )
 		"Active - Magical - Area",
 		"$cd$s Cooldown",
 		" ",
-		"Create a swirling vortex of arcane energy, dealing $wind$ damage while sucking in all affected enemies. Grows more potent as you level ^8A8400Indra^000000.",
+		"Create a swirling vortex of arcane energy, dealing $wind$% MAG damage while vacuuming in all affected enemies. Grows more potent as you level ^8A8400Indra^000000.",
 	].join("\n");
 	
   SkillDescription[SKID.SC_FLASHFREEZE] = [
@@ -107,14 +123,14 @@ define(["./SkillConst"], function( SKID )
 		"Active - Magical - Self - Area",
 		"$cd$s Cooldown",
 		" ",
-		"Explode in a torrent of ice magic, dealing $ice$ damage and freezing nearby enemies in their tracks for 3 seconds. Grows more potent as you level ^8A8400Indra^000000 and ^0000BBVaruna^000000.",
+		"Explode in a torrent of ice magic, dealing $ice$% MAG damage and freezing nearby enemies in their tracks for 3 seconds. Grows more potent as you level ^8A8400Indra^000000 and ^0000BBVaruna^000000.",
 	].join("\n");
 	
   SkillDescription[SKID.SC_ENERGIZE] = [
 		"Energize - ^8A8400I^0000BBVV^000000",
 		"Active - Support",
 		" ",
-		"Grants a $ice$ bonus to attack speed, and increases Celerity by $wind$ for yourself and all nearby allies. This spell becomes more potent as you level ^8A8400Indra^000000 and ^0000BBVaruna^000000.",
+		"Grant a $ice$% bonus to attack speed and increase Celerity by $wind$% for yourself and all nearby allies. This spell becomes more potent as you level ^8A8400Indra^000000 and ^0000BBVaruna^000000.",
 	].join("\n");
 	
   SkillDescription[SKID.SC_PHASEWALK] = [
@@ -122,6 +138,217 @@ define(["./SkillConst"], function( SKID )
 		"Active",
 		" ",
 		"Teleport a short distance away.",
+	].join("\n");
+	
+  SkillDescription[SKID.ALL_FIRSTAID] = [
+		"First Aid",
+		"Active - Support",
+		" ",
+		"Tend to an ally's wounds, curing Poison, Bleeding, Silence, and Blind status effects.",
+	].join("\n");
+	
+	SkillDescription[SKID.ALL_TENACITY] = [
+		"Tenacity",
+		"Passive",
+		" ",
+		"Take $sklvl$% less damage.",
+	].join("\n");
+	
+	SkillDescription[SKID.ALL_BRUTALITY] = [
+		"Brutality",
+		"Passive",
+		" ",
+		"Gain $sklvl$ CRIT and $sklvl2$% increased CRIT DAM.",
+	].join("\n");
+	
+	SkillDescription[SKID.ALL_POWER] = [
+		"Power",
+		"Passive",
+		" ",
+		"Deal $sklvl$% more damage with physical attacks.",
+	].join("\n");
+	
+	SkillDescription[SKID.ALL_FOCUS] = [
+		"Focus",
+		"Passive",
+		" ",
+		"Gain $sklvl$% increased MAG.",
+	].join("\n");
+	
+	SkillDescription[SKID.ALL_REFLEXES] = [
+		"Reflexes",
+		"Passive",
+		" ",
+		"Gain $sklvl$ EVA.",
+	].join("\n");
+	
+	SkillDescription[SKID.ALL_FINESSE] = [
+		"Finesse",
+		"Passive",
+		" ",
+		"Gain $sklvl$% increased ASPD.",
+	].join("\n");
+	
+	SkillDescription[SKID.ALL_IRONWILL] = [
+		"Iron Will",
+		"Passive",
+		" ",
+		"Gain $sklvl$ MDEF.",
+	].join("\n");
+	
+	SkillDescription[SKID.ALL_ENDURANCE] = [
+		"Endurance",
+		"Passive",
+		" ",
+		"Gain $sklvl$% more Max HP and $sklvl2$% increased HP Regen.",
+	].join("\n");
+	
+	SkillDescription[SKID.ALL_CLARITY] = [
+		"Clarity",
+		"Passive",
+		" ",
+		"Gain $sklvl$ Max MP and $sklvl2$% increased MP Regen.",
+	].join("\n");
+	
+	SkillDescription[SKID.ALL_FEATHERFOOT] = [
+		"Featherfoot",
+		"Passive",
+		" ",
+		"Gain $sklvl$ CEL.",
+	].join("\n");
+	
+	SkillDescription[SKID.WR_SHIELDBEARER] = [
+		"Shieldbearer",
+		"Passive",
+		" ",
+		"Requires: Shield",
+		" ",
+		"Gain $sklvl$ EVA and DEF while equipped with a Shield.",
+	].join("\n");
+	
+	SkillDescription[SKID.WR_DEFTDUELIST] = [
+		"Deft Duelist",
+		"Passive",
+		" ",
+		"Requires: Shortsword",
+		" ",
+		"Gain $sklvl$ CRIT, $sklvl2$% increased CRIT DAM, and $sklvl3$% more Weapon Power while equipped with a Shortsword.",
+	].join("\n");
+	
+	SkillDescription[SKID.WR_MONKEYGRIP] = [
+		"Monkey Grip",
+		"Passive - Toggle",
+		" ",
+		"While toggled on, you can wield Knightswords and Mauls in one hand, and a shield in the other. Your equipped weapons have $sklvl$% of their base Weapon Power, and your skill cooldowns are increased by 30%.",
+		" ",
+		"Toggling this skill on or off unequips any held weapon or shield.",
+	].join("\n");
+	
+	SkillDescription[SKID.WR_TWINHAND] = [
+		"Twinhand",
+		"Passive - Toggle",
+		" ",
+		"While toggled on, you hold Shortswords with both hands to raise their destructive power. Your equipped weapons have $sklvl$% of their base Weapon Power, and you gain $sklvl2$% increased ASPD.",
+		" ",
+		"Toggling this skill on or off unequips any held weapon or shield.",
+	].join("\n");
+	
+	SkillDescription[SKID.WR_HARDHEARTED] = [
+		"Hardhearted",
+		"Passive",
+		" ",
+		"Take less damage depending on your current HP. Damage reduction starts at $sklvl$% and ramps up to a maximum of $sklvl2$% at 25% HP.",
+	].join("\n");
+	
+	SkillDescription[SKID.WR_SUNDER] = [
+		"Sunder",
+		"Active - Physical",
+		"2s Cooldown",
+		" ",
+		"Deal $sklvl$% ATK damage to your target with a mighty blow.",
+	].join("\n");
+	
+	SkillDescription[SKID.WR_HILTBASH] = [
+		"Hilt Bash",
+		"Active - Physical",
+		"3s Cooldown",
+		" ",
+		"Slam the hilt of your weapon into your target, dealing $sklvl$% ATK damage to a single enemy, and stunning them for $sklvl2$ seconds.",
+	].join("\n");
+	
+	SkillDescription[SKID.WR_CLEAVE] = [
+		"Cleave",
+		"Active - Physical - Area",
+		"3s Cooldown",
+		" ",
+		"Deal $sklvl$% ATK damage to your target and all enemies around them with a wide swing.",
+	].join("\n");
+	
+	SkillDescription[SKID.WR_PILEBUNKER] = [
+		"Pile Bunker",
+		"Active - Physical",
+		"3s Cooldown",
+		" ",
+		"Pierce your target with your weapon, dealing $sklvl$% ATK damage and shattering its DEF for 8 seconds.",
+	].join("\n");
+	
+	SkillDescription[SKID.WR_ECHOBLADE] = [
+		"Echo Blade",
+		"Active - Physical",
+		"5s Cooldown",
+		" ",
+		"Unleash a barrage of attacks, dealing $sklvl$% ATK damage over several hits.",
+	].join("\n");
+	
+	SkillDescription[SKID.WR_BULWARKBOOMERANG] = [
+		"Bulwark Boomerang",
+		"Active - Physical",
+		"2s Cooldown",
+		" ",
+		"Requires: Shield",
+		" ",
+		"Fling your shield at an enemy, dealing $sklvl$% ATK damage to your target.",
+	].join("\n");
+	
+	SkillDescription[SKID.WR_BULWARKBLITZ] = [
+		"Bulwark Blitz",
+		"Active - Physical",
+		" ",
+		"Requires: Shield",
+		" ",
+		"Dash toward an enemy shield first, dealing $sklvl$% ATK damage on impact.",
+	].join("\n");
+	
+	SkillDescription[SKID.WR_BULWARKBASH] = [
+		"Bulwark Bash",
+		"Active - Physical - Self",
+		"5s Cooldown",
+		" ",
+		"Requires: Shield",
+		" ",
+		"Slam your shield into the ground, dealing $sklvl$% ATK damage and stunning nearby enemies for 3 seconds.",
+	].join("\n");
+
+	SkillDescription[SKID.SM_PROVOKE] = [
+		"Taunt",
+		"Active - Support - Self",
+		" ",
+		"Provoke all nearby enemies into attacking you, creating space for your allies.",
+	].join("\n");
+
+	SkillDescription[SKID.CR_DEVOTION] = [
+		"Cover",
+		"Active - Support",
+		" ",
+		"Protect an ally, taking all damage they would recieve for them. Moving too far away from them breaks the effect.",
+	].join("\n");
+
+	SkillDescription[SKID.KN_BOWLINGBASH] = [
+		"Bowling Bash",
+		"Active - Physical",
+		"5s Cooldown",
+		" ",
+		"Strike an enemy with such force that they are knocked away, taking $sklvl$% ATK damage. Any enemies the target collides with also take $sklvl$% ATK damage.", 
 	].join("\n");
 		
 	SkillDescription[SKID.MG_FIREBOLT] = [
@@ -223,24 +450,6 @@ define(["./SkillConst"], function( SKID )
 		"[Lv 8]: ^777777+Atk 340%^000000",
 		"[Lv 9]: ^777777+Atk 370%^000000",
 		"[Lv 10]: ^777777+Atk 400%^000000",
-	].join("\n");
-
-	SkillDescription[SKID.SM_PROVOKE] = [
-		"Provoke",
-		"MAX Lv : 10",
-		"Type:^33cc00 Supportive ^000000",
-		"Target:^777777 Enemy ^000000",
-		"Effect:^777777Enrage a target to decrease its Defense while increasing its Attack Strength. Ineffective against the Undead.^000000",
-		"[Lv 1]: ^777777+5% Atk, -10% DEF^000000",
-		"[Lv 2]: ^777777+8% Atk, -15% DEF^000000",
-		"[Lv 3]: ^777777+11% Atk, -20% DEF^000000",
-		"[Lv 4]: ^777777+14% Atk, -25% DEF^000000",
-		"[Lv 5]: ^777777+17% Atk, -30% DEF^000000",
-		"[Lv 6]: ^777777+20% Atk, -35% DEF^000000",
-		"[Lv 7]: ^777777+23% Atk, -40% DEF^000000",
-		"[Lv 8]: ^777777+26% Atk, -45% DEF^000000",
-		"[Lv 9]: ^777777+29% Atk, -50% DEF^000000",
-		"[Lv 10]: ^777777+32% Atk, -55% DEF^000000",
 	].join("\n");
 
 	SkillDescription[SKID.SM_MAGNUM] = [
@@ -553,29 +762,6 @@ define(["./SkillConst"], function( SKID )
 		"You must actually select an option by clicking or with the up/down arrow keys and pressing enter for the effect to occur. Once you actually teleport, you will count as having \"just entered the map\". This means that Aggressive monsters won't see you for 3 seconds or until you move. ^000000",
 		"[LV 1]^777777 Random ^000000",
 		"[LV 2]^777777 Save Point. ^000000",
-	].join("\n");
-
-	SkillDescription[SKID.AL_WARP] = [
-		"Warp Portal",
-		"Max Level:^777777 4 ^000000",
-		"Type:^33cc00 Active ^000000",
-		"SP Cost:^777777 38 - 3*SkillLV ^000000",
-		"Target:^777777 1 cell ^000000",
-		"Range:^777777 9 cells ^000000",
-		"Cast Time:^777777 1 sec ^000000",
-		"Cool Down:^777777 Time of Casting motion ^000000",
-		"Duration:^777777 5 + 5*SkillLV sec ^000000",
-		"Catalyst:^0000ff 1 Blue Gemstone ^000000",
-		"Effect:^777777 Creates a warp portal at the targeted cell after a destination is selected from a list. This spell cannot be cast under a monster or player.",
-		"If anyone steps onto the targeted cell while the destination is being selected, the spell will fail. After successful casting, anyone stepping onto the affected cell will be teleported to the selected destination.",
-		"The destinations that may be selected are set by the use of the /memo command while standing in the desired location and by your current Save Point.",
-		"You may not set a memo point on Indoors map (dungeons and inside buildings in cities) and some maps that are far away from cities. If you make a new Memo Point on a map where you already have a Memo Point, that Memo Point will be replaced.",
-		"After filling all 3 possible Memo Points, setting a new Memo Point will replace the oldest current Memo Point (the bottom one on the list). The number of Memo Points available to you is equal to the SkillLV - 1 (therefore, at level 1 you have no memo points available and can only cast a Warp Portal to your Save Point).",
-		"The maximum capacity of people that the caster can warp at a time is 8 regardless of its skill level. No more than 3 Warp Portals cast by the one caster can be in effect at the same time. If the caster leaves the map where the portal has been cast, the portal disappears. ^000000",
-		"[LV 1]^777777 Warp to the Save Point. ^000000",
-		"[LV 2]^777777 Enable to Use 1 Memo point. ^000000",
-		"[LV 3]^777777 Enable to Use 2 Memo points. ^000000",
-		"[LV 4]^777777 Enable to Use 3 Memo points. ^000000",
 	].join("\n");
 
 	SkillDescription[SKID.AL_HEAL] = [
@@ -1098,25 +1284,6 @@ define(["./SkillConst"], function( SKID )
 		"Effect:^777777 Cures poison status on target. ^000000",
 	].join("\n");
 
-	SkillDescription[SKID.ALL_RESURRECTION] = [
-		"Resurrection",
-		"Max Level:^777777 4 ^000000",
-		"Type:^33cc00 Active ^000000",
-		"SP Cost:^777777 60 ^000000",
-		"Target:^777777 1 Dead Ally or 1 Monster ^000000",
-		"Range:^777777 9 cells ^000000",
-		"ATK Type:^777777 Holy, Long Range, Magic attack ^000000",
-		"Cast Time:^777777 8 - 2*SkillLV sec; 1 sec when used against monster ^000000",
-		"Cool Down:^777777 SkillLV - 1 sec (yes, it is longer for higher LVs); 3 sec when used against monster ^000000",
-		"Duration:^777777 Instant ^000000",
-		"Catalyst:^0000ff 1 Blue Gemstone ^000000",
-		"Effect:^777777 Returns a dead character to life with the indicated percentage of HP restored (see list below). When used on Undead property monsters, it has a chance to instantly kill or at least damage in the same way as Turn Undead at the same level. ^000000",
-		"[LV 1]^777777 Revive at 10% HP ^000000",
-		"[LV 2]^777777 Revive at 30% HP ^000000",
-		"[LV 3]^777777 Revive at 50% HP ^000000",
-		"[LV 4]^777777 Revive at 80% HP ^000000",
-	].join("\n");
-
 	SkillDescription[SKID.KN_SPEARMASTERY] = [
 		"Spear Mastery",
 		"Max Level:^777777 10 ^000000",
@@ -1276,29 +1443,6 @@ define(["./SkillConst"], function( SKID )
 		"[LV 3]^777777 1.2 Seconds ^000000",
 		"[LV 4]^777777 1.6 Seconds ^000000",
 		"[LV 5]^777777 2.0 Seconds ^000000",
-	].join("\n");
-
-	SkillDescription[SKID.KN_BOWLINGBASH] = [
-		"Bowling Bash",
-		"Max Level:^777777 10 ^000000",
-		"Type:^777777 Offensive ^000000",
-		"SP Cost:^777777 12 + SkillLV ^000000",
-		"Target:^777777 1 Enemy ^000000",
-		"Range:^777777 2 cells ^000000",
-		"Cast Time:^777777 0.7 sec (uninterruptible) ^000000",
-		"Cool Down:^777777 1 sec ^000000",
-		"Duration:^777777 Instant ^000000",
-		"Effect:^777777 Hits one enemy with an ATK of (100+40*SkillLV)%. The enemy is knocked back up to 5 cells. If that enemy hits any other enemies, then the hit becomes a 3x3 cell melee splash attack at that point with additional damage to these secondary targets. During the Cast Time character's DEF is reduced to 2/3. ^000000",
-		"[LV 1]^777777 140% Damage, Knock back 1 cell ^000000",
-		"[LV 2]^777777 180% Damage, Knock back 1 cell ^000000",
-		"[LV 3]^777777 220% Damage, Knock back 2 cell ^000000",
-		"[LV 4]^777777 260% Damage, Knock back 2 cell ^000000",
-		"[LV 5]^777777 300% Damage, Knock back 3 cell ^000000",
-		"[LV 6]^777777 340% Damage, Knock back 3 cell ^000000",
-		"[LV 7]^777777 380% Damage, Knock back 4 cell ^000000",
-		"[LV 8]^777777 420% Damage, Knock back 4 cell ^000000",
-		"[LV 9]^777777 460% Damage, Knock back 5 cell ^000000",
-		"[LV 10]^777777 500% Damage, Knock back 5 cell ^000000",
 	].join("\n");
 
 	SkillDescription[SKID.KN_RIDING] = [
@@ -4138,28 +4282,6 @@ define(["./SkillConst"], function( SKID )
 		"[LV 8]^777777 420% ATK ^000000",
 		"[LV 9]^777777 460% ATK ^000000",
 		"[LV 10]^777777 500% ATK ^000000",
-	].join("\n");
-
-	SkillDescription[SKID.CR_DEVOTION] = [
-		"Devotion",
-		"Max Level:^777777 5 ^000000",
-		"Type:^777777 Support ^000000",
-		"SP Cost:^777777 25 ^000000",
-		"Target:^777777 Selected Party Member(s) maximum is one per SkillLV ^000000",
-		"Range:^777777 6 + SkillLV ^000000",
-		"Cast Time:^777777 3 sec ^000000",
-		"Cool Down:^777777 None ^000000",
-		"Duration:^777777 15 + 15*SkillLV sec ^000000",
-		"Effect:^777777 Protect party members by taking the full damage that they are receiving. They must be in range to benefit from this, once they leave the skill is canceled and needs to be recasted.",
-		"Damage taken is based on the DEF of the person who gets hit, not the Crusader that takes the hit.",
-		"If the caster has any self casted, class native enhancements on him, e.g. Endure (Endure transfer is disabled in WoE), Providence or Reflect Shield, the party member(s) will share these benefits, too.",
-		"This skill cannot be used on other Crusaders. The level difference between the caster and the target must be equal or less than 10 (within normal EXP share range).",
-		"The number of possible protected party members is 1*SkillLV. Should the HP of Crusader drop below 25%, Devotion will be canceled. ^000000",
-		"[LV 1]^777777 30 sec, 1 Player ^000000",
-		"[LV 2]^777777 45 sec, 2 Players ^000000",
-		"[LV 3]^777777 60 sec, 3 Players ^000000",
-		"[LV 4]^777777 75 sec, 4 Players ^000000",
-		"[LV 5]^777777 90 sec, 5 Players ^000000",
 	].join("\n");
 
 	SkillDescription[SKID.CR_PROVIDENCE] = [

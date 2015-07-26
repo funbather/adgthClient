@@ -22,6 +22,7 @@ define(function( require )
 	var Emotions      = require('DB/Emotions');
 	var Events        = require('Core/Events');
 	var Session       = require('Engine/SessionStorage');
+	var Guild         = require('Engine/MapEngine/Guild');
 	var Network       = require('Network/NetworkManager');
 	var PACKET        = require('Network/PacketStructure');
 	var Renderer      = require('Renderer/Renderer');
@@ -269,8 +270,8 @@ define(function( require )
 
 							// regular damage (and endure)
 							case 9:
-							case 0:
-								Damage.add( pkt.damage, target, Renderer.tick + pkt.attackMT );
+							case 0:       
+                Damage.add( pkt.damage, target, Renderer.tick + pkt.attackMT );
 								break;
 
 							// double attack
@@ -301,21 +302,23 @@ define(function( require )
 					srcEntity.lookTo( dstEntity.position[0], dstEntity.position[1] );
 				}
 
-				srcEntity.attack_speed = pkt.attackMT;
-				srcEntity.setAction({
-					action: srcEntity.ACTION.ATTACK,
-					frame:  0,
-					repeat: false,
-					play:   true,
-					next: {
-						delay:  Renderer.tick + pkt.attackMT,
-						action: srcEntity.ACTION.READYFIGHT,
-						frame:  0,
-						repeat: true,
-						play:   true,
-						next:  false
-					}
-				});
+        if(srcEntity != dstEntity) { // Devotion fix (devotion caster would get stuck in attack animation)
+          srcEntity.attack_speed = pkt.attackMT;
+          srcEntity.setAction({
+            action: srcEntity.ACTION.ATTACK,
+            frame:  0,
+            repeat: false,
+            play:   true,
+            next: {
+              delay:  Renderer.tick + pkt.attackMT,
+              action: srcEntity.ACTION.READYFIGHT,
+              frame:  0,
+              repeat: true,
+              play:   true,
+              next:  false
+            }
+          });
+				}
 				break;
 
 			// Pickup item
@@ -439,6 +442,21 @@ define(function( require )
 			entity.display.guild_rank = pkt.RName || '';
 
 			entity.display.load = entity.display.TYPE.COMPLETE;
+			
+			if (entity.GUID) {
+				Guild.requestGuildEmblem(entity.GUID, entity.GEmblemVer, function(image) {
+					entity.display.emblem = image;
+					entity.display.update(
+						entity.objecttype === Entity.TYPE_MOB ? '#ffc6c6' :
+						entity.objecttype === Entity.TYPE_NPC ? '#94bdf7' :
+						'white'
+					)
+				});
+			}
+			else {
+				entity.display.emblem = null;
+			}
+			
 			entity.display.update(
 				entity.objecttype === Entity.TYPE_MOB ? '#ffc6c6' :
 				entity.objecttype === Entity.TYPE_NPC ? '#94bdf7' :
@@ -640,7 +658,10 @@ define(function( require )
 						var isCombo = target.objecttype !== Entity.TYPE_PC && pkt.count > 1;
 
 						EffectManager.spamSkillHit( pkt.SKID, dstEntity.GID, Renderer.tick);
-						Damage.add( pkt.damage / pkt.count, target, Renderer.tick);
+						if(pkt.action == 10) // Skill crit?
+              Damage.add( pkt.damage / pkt.count, target, Renderer.tick, Damage.TYPE.CRIT);
+            else
+              Damage.add( pkt.damage / pkt.count, target, Renderer.tick);
 
 						// Only display combo if the target is not entity and
 						// there are multiple attacks

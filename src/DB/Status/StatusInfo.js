@@ -119,6 +119,28 @@ define(['./StatusConst'], function( SC )
 			["ASPD and Celerity increased.", COLOR_TITLE_BUFF],
 		]
 	};		
+	StatusInfo[SC.MONKEYGRIP] = {
+		icon: "sc_monkeygrip.tga",
+		descript: [
+			["Can equip two-handed weapons with one hand.", COLOR_TITLE_BUFF],
+		]
+	};
+			
+	StatusInfo[SC.TWINHAND] = {
+		icon: "sc_twinhand.tga",
+		descript: [
+			["Hold one-handed weapons with two hands.", COLOR_TITLE_BUFF],
+		]
+	};
+	
+				
+	StatusInfo[SC.SHATTER] = {
+		icon: "\xc1\xfd\xc1\xdf\xb7\xc2\xc7\xe2\xbb\xf3.tga",
+		descript: [
+			["Defense reduced to 0.", COLOR_TITLE_BUFF],
+		]
+	};
+	
   StatusInfo[SC.SPIRIT_1] = {
 		icon: "\xbf\xc0\xb9\xf6\xc6\xae\xb7\xaf\xbd\xba\xc6\xae.tga",
 		descript: [

@@ -14,6 +14,24 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 
 
 	var SkillInfo = {};
+	SkillInfo[SK.ALL_RESURRECTION] = {
+		Name: "ALL_RESURRECTION",
+		SkillName : "Recucitate",
+		MaxLv : 1,
+		SpAmount : [ 35 ],
+		bSeperateLv : false,
+		AttackRange : [ 2 ],
+	};
+
+	SkillInfo[SK.AL_WARP] = {
+		Name: "AL_WARP",
+		SkillName : "Town Portal",
+		MaxLv : 4,
+		SpAmount : [ 35 ],
+		bSeperateLv : false,
+		AttackRange : [ 9 ],
+	};
+	
 	SkillInfo[SK.SC_INVOKE] = {
 		Name: "SC_INVOKE",
 		SkillName : "Invoke",
@@ -139,7 +157,259 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		bSeperateLv : false,
 		AttackRange : [ 1 ]
 	};					
-		
+
+	SkillInfo[SK.ALL_FIRSTAID] = {
+		Name: "ALL_FIRSTAID",
+		SkillName : "First Aid",
+		MaxLv : 1,
+		SpAmount : [ 35 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};						
+
+	SkillInfo[SK.ALL_TENACITY] = {
+		Name: "ALL_TENACITY",
+		SkillName : "Tenacity",
+		MaxLv : 10,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};					
+
+	SkillInfo[SK.ALL_BRUTALITY] = {
+		Name: "ALL_BRUTALITY",
+		SkillName : "Brutality",
+		MaxLv : 10,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};							
+
+	SkillInfo[SK.ALL_POWER] = {
+		Name: "ALL_POWER",
+		SkillName : "Power",
+		MaxLv : 10,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};							
+
+	SkillInfo[SK.ALL_FOCUS] = {
+		Name: "ALL_FOCUS",
+		SkillName : "Focus",
+		MaxLv : 10,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};						
+
+	SkillInfo[SK.ALL_REFLEXES] = {
+		Name: "ALL_REFLEXES",
+		SkillName : "Reflexes",
+		MaxLv : 10,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};						
+
+	SkillInfo[SK.ALL_FINESSE] = {
+		Name: "ALL_FINESSE",
+		SkillName : "Finesse",
+		MaxLv : 10,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};						
+
+	SkillInfo[SK.ALL_IRONWILL] = {
+		Name: "ALL_IRONWILL",
+		SkillName : "Iron Will",
+		MaxLv : 10,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};						
+
+	SkillInfo[SK.ALL_ENDURANCE] = {
+		Name: "ALL_ENDURANCE",
+		SkillName : "Endurance",
+		MaxLv : 10,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};						
+
+	SkillInfo[SK.ALL_CLARITY] = {
+		Name: "ALL_CLARITY",
+		SkillName : "Clarity",
+		MaxLv : 10,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};						
+
+	SkillInfo[SK.ALL_FEATHERFOOT] = {
+		Name: "ALL_FEATHERFOOT",
+		SkillName : "Featherfoot",
+		MaxLv : 10,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};						
+
+	SkillInfo[SK.WR_SHIELDBEARER] = {
+		Name: "WR_SHIELDBEARER",
+		SkillName : "Shieldbearer",
+		MaxLv : 10,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};						
+
+	SkillInfo[SK.WR_DEFTDUELIST] = {
+		Name: "WR_DEFTDUELIST",
+		SkillName : "Deft Duelist",
+		MaxLv : 10,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};						
+
+	SkillInfo[SK.WR_MONKEYGRIP] = {
+		Name: "WR_MONKEYGRIP",
+		SkillName : "Monkey Grip",
+		MaxLv : 5,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};						
+
+	SkillInfo[SK.WR_TWINHAND] = {
+		Name: "WR_TWINHAND",
+		SkillName : "Twinhand",
+		MaxLv : 5,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};						
+
+	SkillInfo[SK.WR_HARDHEARTED] = {
+		Name: "WR_HARDHEARTED",
+		SkillName : "Hardhearted",
+		MaxLv : 10,
+		SpAmount : [ 0 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};						
+
+	SkillInfo[SK.WR_SUNDER] = {
+		Name: "WR_SUNDER",
+		SkillName : "Sunder",
+		MaxLv : 5,
+		SpAmount : [ 15 ],
+		bSeperateLv : false,
+		AttackRange : [ 3 ],
+		ActionType: "ATTACK"
+	};						
+
+	SkillInfo[SK.WR_HILTBASH] = {
+		Name: "WR_HILTBASH",
+		SkillName : "Hilt Bash",
+		MaxLv : 5,
+		SpAmount : [ 15 ],
+		bSeperateLv : false,
+		AttackRange : [ 3 ],
+		ActionType: "ATTACK"
+	};						
+
+	SkillInfo[SK.WR_CLEAVE] = {
+		Name: "WR_CLEAVE",
+		SkillName : "Cleave",
+		MaxLv : 5,
+		SpAmount : [ 20 ],
+		bSeperateLv : false,
+		AttackRange : [ 3 ],
+		ActionType: "ATTACK"
+	};						
+
+	SkillInfo[SK.WR_PILEBUNKER] = {
+		Name: "WR_PILEBUNKER",
+		SkillName : "Pile Bunker",
+		MaxLv : 5,
+		SpAmount : [ 25 ],
+		bSeperateLv : false,
+		AttackRange : [ 3 ],
+		ActionType: "ATTACK"
+	};						
+
+	SkillInfo[SK.WR_ECHOBLADE] = {
+		Name: "WR_ECHOBLADE",
+		SkillName : "Echo Blade",
+		MaxLv : 5,
+		SpAmount : [ 25 ],
+		bSeperateLv : false,
+		AttackRange : [ 3 ],
+		ActionType: "ATTACK"
+	};						
+
+	SkillInfo[SK.WR_BULWARKBOOMERANG] = {
+		Name: "WR_BULWARKBOOMERANG",
+		SkillName : "Bulwark Boomerang",
+		MaxLv : 5,
+		SpAmount : [ 15 ],
+		bSeperateLv : false,
+		AttackRange : [ 12 ],
+		ActionType: "ATTACK"
+	};						
+
+	SkillInfo[SK.WR_BULWARKBLITZ] = {
+		Name: "WR_BULWARKBLITZ",
+		SkillName : "Bulwark Blitz",
+		MaxLv : 5,
+		SpAmount : [ 15 ],
+		bSeperateLv : false,
+		AttackRange : [ 12 ],
+		ActionType: "ATTACK"
+	};						
+
+	SkillInfo[SK.WR_BULWARKBASH] = {
+		Name: "WR_BULWARKBASH",
+		SkillName : "Bulwark Bash",
+		MaxLv : 5,
+		SpAmount : [ 25 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ],
+		ActionType: "ATTACK"
+	};
+	
+	SkillInfo[SK.KN_BOWLINGBASH] = {
+		Name: "KN_BOWLINGBASH",
+		SkillName : "Bowling Bash",
+		MaxLv : 5,
+		SpAmount : [ 20 ],
+		bSeperateLv : false,
+		AttackRange : [ 2 ],
+		ActionType: "ATTACK"
+	};
+
+	SkillInfo[SK.SM_PROVOKE] = {
+		Name: "SM_PROVOKE",
+		SkillName : "Taunt",
+		MaxLv : 5,
+		SpAmount : [ 10 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ]
+	};
+
+	SkillInfo[SK.CR_DEVOTION] = {
+		Name: "CR_DEVOTION",
+		SkillName : "Cover",
+		MaxLv : 5,
+		SpAmount : [ 25 ],
+		bSeperateLv : false,
+		AttackRange : [ 20 ],
+	};
+	
 	SkillInfo[SK.MG_FIREBOLT] = {
 		Name: "MG_FIREBOLT",
 		SkillName : "Fire Bolt",
@@ -774,18 +1044,6 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		AttackRange : [ 1, 1, 1, 1 ],
 		_NeedSkillList : [
 			[ SK.SG_FEEL,1 ]
-		]
-	};
-
-	SkillInfo[SK.AL_WARP] = {
-		Name: "AL_WARP",
-		SkillName : "Warp Portal",
-		MaxLv : 4,
-		SpAmount : [ 35, 32, 29, 26 ],
-		bSeperateLv : false,
-		AttackRange : [ 9, 9, 9, 9 ],
-		_NeedSkillList : [
-			[ SK.AL_TELEPORT,2 ]
 		]
 	};
 
@@ -3846,19 +4104,6 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		]
 	};
 
-	SkillInfo[SK.ALL_RESURRECTION] = {
-		Name: "ALL_RESURRECTION",
-		SkillName : "Resurrection",
-		MaxLv : 4,
-		SpAmount : [ 60, 60, 60, 60 ],
-		bSeperateLv : false,
-		AttackRange : [ 9, 9, 9, 9 ],
-		_NeedSkillList : [
-			[ SK.MG_SRECOVERY,4 ],
-			[ SK.PR_STRECOVERY,1 ]
-		]
-	};
-
 	SkillInfo[SK.KN_SPEARMASTERY] = {
 		Name: "KN_SPEARMASTERY",
 		SkillName : "Spear Mastery",
@@ -3986,28 +4231,6 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		_NeedSkillList : [
 			[ SK.SM_TWOHAND,1 ]
 		]
-	};
-
-	SkillInfo[SK.KN_BOWLINGBASH] = {
-		Name: "KN_BOWLINGBASH",
-		SkillName : "Bowling Bash",
-		MaxLv : 10,
-		SpAmount : [ 13, 14, 15, 16, 17, 18, 19, 20, 21, 22 ],
-		bSeperateLv : true,
-		AttackRange : [ 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 ],
-		_NeedSkillList : [
-			[ SK.SM_BASH,10 ],
-			[ SK.SM_MAGNUM,3 ],
-			[ SK.SM_TWOHAND,5 ],
-			[ SK.KN_TWOHANDQUICKEN,10 ],
-			[ SK.KN_AUTOCOUNTER,5 ]
-		],
-		NeedSkillList : new function(){
-			this[JobId.JT_SUPERNOVICE2] = [
-				[ SK.KN_AUTOCOUNTER,5 ]
-			]
-		},
-		ActionType: "ATTACK"
 	};
 
 	SkillInfo[SK.KN_CHARGEATK] = {
@@ -5312,15 +5535,6 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		_NeedSkillList : [
 			[ SK.BS_IRON,1 ],
 		]
-	};
-
-	SkillInfo[SK.SM_PROVOKE] = {
-		Name: "SM_PROVOKE",
-		SkillName : "Provoke",
-		MaxLv : 10,
-		SpAmount : [ 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ],
-		bSeperateLv : true,
-		AttackRange : [ 9, 9, 9, 9, 9, 9, 9, 9, 9, 9 ]
 	};
 
 	SkillInfo[SK.BS_ENCHANTEDSTONE] = {
@@ -8532,19 +8746,6 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		AttackRange : [ 3 ],
 		_NeedSkillList : [
 			[ SK.MO_CALLSPIRITS,5 ]
-		]
-	};
-
-	SkillInfo[SK.CR_DEVOTION] = {
-		Name: "CR_DEVOTION",
-		SkillName : "Devotion",
-		MaxLv : 5,
-		SpAmount : [ 25, 25, 25, 25, 25 ],
-		bSeperateLv : false,
-		AttackRange : [ 7, 8, 9, 10, 11 ],
-		_NeedSkillList : [
-			[ SK.CR_GRANDCROSS,4 ],
-			[ SK.CR_REFLECTSHIELD,5 ]
 		]
 	};
 

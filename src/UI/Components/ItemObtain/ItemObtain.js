@@ -109,7 +109,7 @@ define(function(require)
 		var enchtitle = '';
 		var rarity = 0;
 				
-		for(var i = 0; i < 4; i++) {
+		for(var i = 0; i <= 4; i++) {
       if(item.slot['card' + i]) { 
         rarity++;
       }

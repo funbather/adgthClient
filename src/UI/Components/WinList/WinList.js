@@ -63,6 +63,12 @@ define(function(require)
 
 		this.list = list;
 		this.ui_list.empty();
+		
+		function onSelectListIndex(event) {
+			WinList.setIndex( jQuery(this).data('id') );
+			event.stopImmediatePropagation();
+			return false;
+		}
 
 		for (i = 0, count = list.length; i < count; ++i) {
 			this.ui_list.append(
@@ -70,12 +76,8 @@ define(function(require)
 					addClass('menu_node').
 					text(list[i]).
 					data('id', i).
-					mousedown(function(event){
-						WinList.setIndex( jQuery(this).data('id') );
-						event.stopImmediatePropagation();
-						return false;
-					}).
-					dblclick( this.selectIndex.bind(this) )
+					mousedown(onSelectListIndex).
+					dblclick(this.selectIndex.bind(this))
 			);
 		}
 

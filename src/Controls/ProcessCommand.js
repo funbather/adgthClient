@@ -157,8 +157,9 @@ define(function( require )
 				pkt = new PACKET.CZ.REQ_USER_COUNT();
 				Network.sendPacket(pkt);
 				return;
-
-			case 'memo':
+				
+      case 'cp':
+			case 'checkpoint':
 				pkt = new PACKET.CZ.REMEMBER_WARPPOINT();
 				Network.sendPacket(pkt);
 				return;
@@ -194,12 +195,28 @@ define(function( require )
 			case 'hi':
 				getModule('Engine/MapEngine/Friends').sayHi();
 				return;
+				
+			case 'guild':
+				matches = text.match(/^guild\s+(")?([^"]+)(")?/);
+				if (matches && matches[2]) {
+					getModule('Engine/MapEngine/Guild').createGuild(matches[2]);
+					return;
+				}
+				break;
+
+			case 'breakguild':
+				matches = text.match(/^breakguild\s+(")?([^"]+)(")?/);
+				if (matches && matches[2]) {
+					getModule('Engine/MapEngine/Guild').breakGuild(matches[2]);
+					return;
+				}
+				break;
 		}
 
 
 		// /str+
 		// TODO: do we have to spam the server with "1" unit or do we have to fix the servers code ?
-		var matches = text.match(/^(\w{3})\+ (\d+)$/);
+		matches = text.match(/^(\w{3})\+ (\d+)$/);
 		if (matches) {
 			var pos = ['str', 'agi', 'vit', 'int', 'pre'].indexOf(matches[1]);
 			if (pos > -1 && matches[2] !== 0) {

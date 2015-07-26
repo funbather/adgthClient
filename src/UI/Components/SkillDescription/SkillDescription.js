@@ -115,22 +115,21 @@ define(function(require)
         }
       break;
       
-      case 4001:
+      case 4001: // SC_INVOKE
         if(var1) {
           desc = desc.replace('$sklvl$', '^0000BB'+var1+'^000000');
-          desc = desc.replace('$sklvl2$', '^0000BB'+(var1*.66).toFixed(1)+'^000000%');
+          desc = desc.replace('$sklvl2$', '^0000BB'+(var1*.66).toFixed(1)+'^000000');
         }
       
         if(level && var1 < 50) {
           desc += "\n\nNext Level:\nBonus VIT: ^0000BB"+(var1+1)+"^000000";
-          desc += "\nDamage Reduction: ^0000BB"+((var1+1)*.66).toFixed(1)+"^000000";
+          desc += "\nDamage Reduction: ^0000BB"+((var1+1)*.66).toFixed(1)+"^000000%";
         }
       break;
       
-      case 4002:
-        if(var1) {
+      case 4002: // SC_ICESPIRIT
+        if(var1)
           desc = desc.replace('$sklvl$', '^0000BB'+var1+'^000000');
-        }
       
         if(level && var1 < 50) {
           desc += "\n\nNext Level:\nBonus STR: ^0000BB"+(var1+1)+"^000000";
@@ -138,10 +137,9 @@ define(function(require)
         }
       break;
       
-      case 4003:
-        if(var1) {
+      case 4003: // SC_FIRESPIRIT
+        if(var1)
           desc = desc.replace('$sklvl$', '^0000BB'+var1+'^000000');
-        }
       
         if(level && var1 < 50) {
           desc += "\n\nNext Level:\nBonus AGI: ^0000BB"+(var1+1)+"^000000";
@@ -149,140 +147,332 @@ define(function(require)
         }
       break;
       
-     case 4004:
-        if(var1) {
-          var2 = WinStats.ui.find('.matak2').text();
-          
-          desc = desc.replace('$heal$', '^006600'+Math.floor((var2*(200+(val1*10))) / 100)+'^000000');
-        }
+     case 4004: // SC_WINDSPIRIT
+        if(var1)
+          desc = desc.replace('$heal$', '^006600' + (200+(val1*10)) + '^000000');
         
-        if(val1 < 50) {
-          desc += "\n\nNext Varuna Level:\nHealing: ^006600" + Math.floor((var2*(200+((val1+1)*10))) / 100) + "^000000";
-        }
+        if(val1 < 50)
+          desc += "\n\nNext Varuna Level:\nHealing: ^006600" + (210+(val1*10)) + "^000000%";
       break;
       
-     case 4005:
+     case 4005: // SC_REJUVENATE
         if(var1) {
-          desc = desc.replace('$ice$', '^0000BB'+(20+(val1*1))+'^000000%');
+          desc = desc.replace('$ice$', '^0000BB'+(20+(val1*1))+'^000000');
           desc = desc.replace('$fire$', '^0000BB'+(10+val2)+'^000000');
         }
         
-        if(val1 < 50) {
+        if(val1 < 50)
           desc += "\n\nNext Varuna Level:\nBonus ATK/MAG: ^0000BB"+(20+((val1+1)*1))+"^000000%";
-        }
-        if(val2 < 50) {
+        if(val2 < 50)
           desc += "\n\nNext Agni Level:\nBonus PRE: ^0000BB"+(11+val2)+"^000000";
-        }
       break;
       
-     case 4006:
-        var2 = WinStats.ui.find('.atak2').text();
-     
+     case 4006: // SC_CALLSENTINEL
         if(var1) {
-          desc = desc.replace('$ice$', '^0000BB'+(50+(val1*2))+'^000000%');
-          desc = desc.replace('$fire$', '^0000BB'+(30+val2)+'^000000%');
+          desc = desc.replace('$ice$', '^0000BB'+(50+(val1*2))+'^000000');
+          desc = desc.replace('$fire$', '^0000BB'+(30+val2)+'^000000');
         }
         
-        if(val1 < 50) {
-          desc += "\n\nNext Varuna Level:\nHealth: ^0000BB"+(50+((val1+1)*2))+"^000000%";
-        }
-        if(val2 < 50) {
+        if(val1 < 50)
+          desc += "\n\nNext Varuna Level:\nHP: ^0000BB"+(50+((val1+1)*2))+"^000000%";
+        if(val2 < 50)
           desc += "\n\nNext Agni Level:\nATK: ^0000BB"+(31+val2)+"^000000%";
-        }
       break;
       
-    case 4007:
-        var2 = WinStats.ui.find('.matak2').text();
-        var3 = WinStats.ui.find('.atak2').text();
-        var4 = Number(WinStats.ui.find('.stats .str').text()) + Number(WinStats.ui.find('.bonus .str').text());
-
-     
+    case 4007: // SC_ARCANECANNON
         if(var1) {
-          desc = desc.replace('$fire$', '^0000BB'+Math.floor(((var2*(200+10*val2)) + (var3*(200+10*val2)*(1+(var4/200)))) / 100)+'^000000');
+          desc = desc.replace('$fire$', '^0000BB' + (200+(val1*10)) + '^000000');
+          desc = desc.replace('$fire2$', '^0000BB' + (200+(val1*10)) + '^000000');
         }
         
         if(val2 < 50) {
-          desc += "\n\nNext Agni Level:\nDamage: ^0000BB"+Math.floor(((var2*(210+10*val2)) + (var3*(210+10*val2)*(1+(var4/200)))) / 100)+"^000000";
+          desc += "\n\nNext Agni Level:\nDamage: ^0000BB" + (210+(val1*10)) + "^000000% MAG, ^0000BB" + (210+(val1*10)) + "^000000% ATK";
         }
       break;
       
-    case 4008:
-        var2 = WinStats.ui.find('.matak2').text();
-     
+    case 4008: // SC_SURGE
         if(var1) {
-          desc = desc.replace('$fire$', '^0000BB'+Math.floor(var2*(100+5*val2) / 100)+'^000000');
+          desc = desc.replace('$fire$', '^0000BB'+(100+5*val2)+'^000000');
           desc = desc.replace('$wind$', '^0000BB'+Math.floor(3 + (val3/10))+'^000000');
         }
         
-        if(val2 < 50) {
-          desc += "\n\nNext Agni Level:\nDamage: ^0000BB"+Math.floor(var2*(105+5*val2) / 100)+"^000000";
-        }
+        if(val2 < 50)
+          desc += "\n\nNext Agni Level:\nDamage: ^0000BB"+(105+5*val2)+"^000000%";
       break;
       
-    case 4009:
-        var2 = WinStats.ui.find('.matak2').text();
-     
+    case 4009: // SC_PLASMAFIELD
         if(var1) {
           desc = desc.replace('$cd$', '^0000BB'+(35-val3/2).toFixed(1)+'^000000');
-          desc = desc.replace('$fire$', '^0000BB'+Math.floor(var2*(150+5*val2) / 100)+'^000000');
+          desc = desc.replace('$fire$', '^0000BB'+(150+5*val2)+'^000000');
           desc = desc.replace('$wind$', '^0000BB'+(1+.02*val3).toFixed(2)+'^000000');
         }
         
-        if(val2 < 50) {
-          desc += "\n\nNext Agni Level:\nDamage: ^0000BB"+Math.floor(var2*(155+5*val2) / 100)+"^000000";
-        }
-        
-        if(val3 < 50) {
+        if(val2 < 50) 
+          desc += "\n\nNext Agni Level:\nDamage: ^0000BB"+(155+5*val2)+"^000000%";
+        if(val3 < 50)
           desc += "\n\nNext Indra Level:\nCooldown: ^0000BB"+(34.5-val3/2).toFixed(1)+"^000000 seconds\nStun Duration: ^0000BB"+(1.02+.02*val3).toFixed(2)+"^000000 seconds";
-        }
       break;
       
-     case 4010:
-        var2 = WinStats.ui.find('.matak2').text();
-     
+     case 4010: // SC_ARCANEVORTEX
         if(var1) {
           desc = desc.replace('$cd$', '^0000BB'+(21-val3/3).toFixed(1)+'^000000');
-          desc = desc.replace('$wind$', '^0000BB'+Math.floor(var2*(150+5*val2) / 100)+'^000000');
+          desc = desc.replace('$wind$', '^0000BB'+(150+5*val2)+'^000000');
         }
       
-        if(val3 < 50) {
-          desc += "\n\nNext Indra Level:\nDamage: ^0000BB"+Math.floor(var2*(155+5*val2) / 100)+"^000000\nCooldown: ^0000BB"+(20.66 - val3/3).toFixed(1)+"^000000";
-        }
+        if(val3 < 50)
+          desc += "\n\nNext Indra Level:\nDamage: ^0000BB"+(155+5*val2)+"^000000%\nCooldown: ^0000BB"+(20.66 - val3/3).toFixed(1)+"^000000";
       break;
       
-    case 4011:
-        var2 = WinStats.ui.find('.matak2').text();
-     
+    case 4011: // SC_FROSTNOVA
         if(var1) {
           desc = desc.replace('$cd$', '^0000BB'+(12-val3/5).toFixed(1)+'^000000');
-          desc = desc.replace('$ice$', '^0000BB'+Math.floor(var2*(150+5*val1) / 100)+'^000000');
+          desc = desc.replace('$ice$', '^0000BB'+(150+5*val1)+'^000000');
         }
         
-        if(val3 < 50) {
-          desc += "\n\nNext Indra Level:\nCooldown: ^0000BB"+(11.8-val3/5).toFixed(1)+"^000000 seconds";
-        }
-        
-        if(val1 < 50) {
-          desc += "\n\nNext Varuna Level:\nDamage: ^0000BB"+Math.floor(var2*(155+5*val1) / 100)+"^000000";
-        }
+        if(val3 < 50)
+          desc += "\n\nNext Indra Level:\nCooldown: ^0000BB"+(11.8-val3/5).toFixed(1)+"^000000 seconds";  
+        if(val1 < 50)
+          desc += "\n\nNext Varuna Level:\nDamage: ^0000BB"+(155+5*val1)+"^000000%";
       break;
       
-    case 4012:
-        var2 = WinStats.ui.find('.matak2').text();
-     
+    case 4012: // SC_ENERGIZE
         if(var1) {
           desc = desc.replace('$wind$', '^0000BB'+(10 + val3 * .25).toFixed(1)+'^000000');
           desc = desc.replace('$ice$', '^0000BB'+(10 + val1 * .25).toFixed(1)+'^000000');
         }
         
-        if(val3 < 50) {
-          desc += "\n\nNext Indra Level:\Bonus Celerity: ^0000BB"+(10.25 + val3 * .25).toFixed(1)+"^000000%";
+        if(val3 < 50)
+          desc += "\n\nNext Indra Level:\nBonus Celerity: ^0000BB"+(10.25 + val3 * .25).toFixed(1)+"^000000%";
+        if(val1 < 50)
+          desc += "\n\nNext Varuna Level:\nBonus ASPD: ^0000BB"+(10.25 + val1 * .25).toFixed(1)+"^000000%";
+      break; 
+      
+      case 4015:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+(var1 * 1.5).toFixed(1)+'^000000');
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nDamage Reduction: ^0000BB"+((var1+1) * 1.5).toFixed(1)+"^000000%";
+      break; 
+      
+      case 4016:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+var1+'^000000');
+          desc = desc.replace('$sklvl2$', '^0000BB'+(var1*2)+'^000000');
         }
-        
-        if(val1 < 50) {
-          desc += "\n\nNext Varuna Level:\Bonus ASPD: ^0000BB"+(10.25 + val1 * .25).toFixed(1)+"^000000%";
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nIncreased CRIT: ^0000BB"+(var1+1)+"^000000\nIncreased CRIT DAM: ^0000BB"+(var1+2)+"^000000%";
+      break;   
+      
+      case 4017:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+var1+'^000000');
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nIncreased Damage: ^0000BB"+(var1+1)+"^000000%";
+      break;   
+      
+      case 4018:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+(var1*2)+'^000000');
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nIncreased MAG: ^0000BB"+((var1+1) * 2)+"^000000%";
+      break;    
+      
+      case 4019:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+var1+'^000000');
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nIncreased EVA: ^0000BB"+(var1+1)+"^000000";
+      break;   
+      
+      case 4020:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+(var1*2)+'^000000');
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nIncreased ASPD: ^0000BB"+((var1+1)*2)+"^000000%";
+      break;   
+      
+      case 4021:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+(var1*2)+'^000000');
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nIncreased MDEF: ^0000BB"+((var1+1)*2)+"^000000";
+      break;   
+      
+      case 4022:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+var1+'^000000');
+          desc = desc.replace('$sklvl2$', '^0000BB'+(var1*2.5).toFixed(1)+'^000000');
         }
-      break;      
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nIncreased HP: ^0000BB"+(var1+1)+"^000000%\nIncreased HP Regen: ^0000BB"+((var1+1)*2.5).toFixed(1)+"^000000%";
+      break;   
+      
+      case 4023:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+(var1*3)+'^000000');
+          desc = desc.replace('$sklvl2$', '^0000BB'+(var1*2.5).toFixed(1)+'^000000');
+        }
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nIncreased MP: ^0000BB"+((var1+1)*3)+"^000000\nIncreased MP Regen: ^0000BB"+((var1+1)*2.5).toFixed(1)+"^000000%";
+      break;   
+      
+      case 4024:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+(var1*2)+'^000000');
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nIncreased Celerity: ^0000BB"+((var1+1)*2)+"^000000%";
+      break;
+      
+      case 4025:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+(var1)+'^000000');
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nBonus EVA: ^0000BB"+(var1+1)+"^000000\nBonus DEF: ^0000BB"+(var1+1)+"^000000";
+      break;
+      
+      case 4026:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+(var1)+'^000000');
+          desc = desc.replace('$sklvl2$', '^0000BB'+(var1*3)+'^000000');
+          desc = desc.replace('$sklvl3$', '^0000BB'+(var1*3)+'^000000');
+        }
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nBonus CRIT: ^0000BB"+(var1+1)+"^000000\nIncreased CRIT DAM: ^0000BB"+((var1+1)*3)+"^000000%\nIncreased Weapon Power: ^0000BB"+((var1+1)*3)+"^000000%";
+      break;
+      
+      case 4027:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*5)+70)+'^000000');
+        }
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nWeapon Power: ^0000BB"+((var1*5)+75)+"^000000%";
+      break;
+      
+      case 4028:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*5)+120)+'^000000');
+          desc = desc.replace('$sklvl2$', '^0000BB'+(var1*2)+'^000000');
+        }
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nWeapon Power: ^0000BB"+((var1*5)+125)+"^000000%\nIncreased ASPD: ^0000BB"+((var1+1)*2)+"^000000%";
+      break;  
+      
+      case 4029:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+(var1)+'^000000');
+          desc = desc.replace('$sklvl2$', '^0000BB'+(var1*4)+'^000000');
+        }
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nBase Damage Resistance: ^0000BB"+(var1+1)+"^000000%\nMax Damage Resistance: ^0000BB"+((var1+1)*4)+"^000000%";
+      break;  
+      
+      case 4030:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*50)+150)+'^000000');
+        }
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*50)+200)+"^000000%";
+      break;  
+      
+      case 4031:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*25)+100)+'^000000');
+          desc = desc.replace('$sklvl2$', '^0000BB'+((var1*.5)+1.5).toFixed(1)+'^000000');
+        }
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*25)+125)+"^000000%\nStun Duration: ^0000BB"+((var1*.5)+2).toFixed(1)+"^000000 seconds";
+      break;  
+      
+      case 4032:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*25)+150)+'^000000');
+        }
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*25)+175)+"^000000%";
+      break;  
+      
+      case 4033:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+175)+'^000000');
+        }
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*75)+250)+"^000000%";
+      break;  
+      
+      case 4034:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*100)+300)+'^000000');
+        }
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*100)+400)+"^000000%";
+      break;  
+      
+      case 4035:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*50)+100)+'^000000');
+        }
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*50)+150)+"^000000%";
+      break;  
+      
+      case 4036:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*50)+100)+'^000000');
+        }
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*50)+150)+"^000000%";
+      break;  
+      
+      case 4037:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+200)+'^000000');
+        }
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*75)+275)+"^000000%";
+      break;  
+      
+      case 62:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+100)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+100)+'^000000');
+        }
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*75)+175)+"^000000%";
+      break;  
+      
+      case 6:     
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nMP Cost: ^0000BB"+(50-(var1*10))+"^000000";
+      break;   
+      
+      case 255:     
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nMP Cost: ^0000BB"+(50-(var1*10))+"^000000";
+      break;                       
 		}
 		
 		this.ui.find('.content').text(desc);
