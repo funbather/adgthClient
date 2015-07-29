@@ -408,10 +408,14 @@ define(function(require)
 			if (gunGatling.indexOf(id) > -1) return WeaponType.GUN_GATLING;
 			if (gunShotGun.indexOf(id) > -1) return WeaponType.GUN_SHOTGUN;
 			if (gunGranade.indexOf(id) > -1) return WeaponType.GUN_GRANADE;
-
+			
+			if(id >= 51000 && id <= 51002)   return WeaponType.SWORD;
+			if(id >= 51003 && id <= 51005)   return WeaponType.TWOHANDSWORD;
+			if(id >= 51006 && id <= 51008)   return WeaponType.MACE;
+      
 			// Ranges
 			return (
-				id <  1150 ? WeaponType.SWORD        :
+          id <  1150 ? WeaponType.SWORD        :
 			    id <  1200 ? WeaponType.TWOHANDSWORD :
 			    id <  1250 ? WeaponType.SHORTSWORD   :
 			    id <  1300 ? WeaponType.CATARRH      :
