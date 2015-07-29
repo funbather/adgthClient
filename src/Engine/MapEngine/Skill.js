@@ -33,6 +33,11 @@ define(function( require )
 	var Inventory            = require('UI/Components/Inventory/Inventory');
 	var NpcMenu              = require('UI/Components/NpcMenu/NpcMenu');
 
+	// SKILL_POSTDELAY x043d
+	function onSkillCooldown( pkt )
+	{
+		ShortCut.startCooldown( pkt.SKID, pkt.tick, true );
+	}
 
 	/**
 	 * Spam an effect
@@ -553,5 +558,6 @@ define(function( require )
 		Network.hookPacket( PACKET.ZC.WARPLIST,               onTeleportList );
 		Network.hookPacket( PACKET.ZC.NOTIFY_MAPINFO,         onTeleportResult );
 		Network.hookPacket( PACKET.ZC.ACK_REMEMBER_WARPPOINT, onMemoResult );
+    Network.hookPacket( PACKET.ZC.SKILL_POSTDELAY,        onSkillCooldown);
 	};
 });

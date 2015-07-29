@@ -202,7 +202,30 @@ define(function(require)
 		}
 	};
 
+  // Really rough cooldown indicator, redo this with a canvas or something later
+	ShortCut.startCooldown = function cooldown( id, tick ) {
+    var i, index, count, ui;
+    
+    for (i = 0, count = _list.length; i < count; ++i) {
+      if (_list[i] && _list[i].isSkill && _list[i].ID === id) {
+        index = i;
+      }
+    }
 
+    ui = ShortCut.ui.find('.container:eq(' + index + ')');
+
+    Client.loadFile( DB.INTERFACE_PATH + 'item/cooldowngray.png', function(url){
+			ui.find('.cd').css('backgroundImage', 'url('+ url +')');
+    });
+
+    setTimeout(function(){ cooldownRefresh(index) }, tick);
+	};
+	
+	function cooldownRefresh( index ) {
+    var ui = ShortCut.ui.find('.container:eq(' + index + ')');
+    ui.find('.cd').css('backgroundImage', 'none');
+	}
+  
 	/**
 	 * Stop event propagation
 	 */
@@ -316,7 +339,7 @@ define(function(require)
 		Client.loadFile( DB.INTERFACE_PATH + 'item/' + file + '.bmp', function(url){
 			ui.html(
 				'<div draggable="true" class="icon">' +
-					'<div class="img"></div>' +
+					'<div class="img"><div class="cd"></div></div>' +
 					'<div class="amount"></div>' +
 					'<span class="name"></span>' +
 				'</div>'

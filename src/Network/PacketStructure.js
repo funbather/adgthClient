@@ -9358,8 +9358,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 	// 0x43d
 	PACKET.ZC.SKILL_POSTDELAY = function PACKET_ZC_SKILL_POSTDELAY(fp, end) {
 		this.SKID = fp.readUShort();
-		//this.DelayTM = 0;//fp.readULong();
-		this.DelayTM = fp.readULong();
+		this.tick = fp.readULong();
 	};
 	PACKET.ZC.SKILL_POSTDELAY.size = 8;
 
@@ -9372,7 +9371,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 			for (i = 0; i < count; ++i) {
 				out[i] = {};
 				out[i].SKID = fp.readUShort();
-				out[i].DelayTM = fp.readULong();
+				out[i].tick = fp.readULong();
 			}
 			return out;
 		})();

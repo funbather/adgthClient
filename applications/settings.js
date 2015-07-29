@@ -6,4 +6,5 @@ var ROConfig = {
 	packetver:     20130807,
 	skipServerList: true,
 	autoLogin: ['test', 'test'],
+	skipIntro: true,
 };
