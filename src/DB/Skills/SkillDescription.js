@@ -350,6 +350,13 @@ define(["./SkillConst"], function( SKID )
 		" ",
 		"Strike an enemy with such force that they are knocked away, taking $sklvl$% ATK damage. Any enemies the target collides with also take $sklvl$% ATK damage.", 
 	].join("\n");
+
+	SkillDescription[SKID.ALL_PENGUIN] = [
+		"Call Penguin",
+		"Active - Physical",
+		" ",
+		"Call a Penguin Buddy to your aid, who will throw refreshing drinks to you while in battle. You can only have one Penguin Buddy active at a time.", 
+	].join("\n");
 		
 	SkillDescription[SKID.MG_FIREBOLT] = [
 		"Fire Bolt",

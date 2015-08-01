@@ -409,6 +409,20 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		bSeperateLv : false,
 		AttackRange : [ 20 ],
 	};
+
+	SkillInfo[SK.ALL_PENGUIN] = {
+		Name: "ALL_PENGUIN",
+		SkillName : "Call Penguin",
+		MaxLv : 1,
+		SpAmount : [ 0 ],
+	};
+
+	SkillInfo[SK.ALL_COMINRIGHTUP] = {
+		Name: "ALL_COMINRIGHTUP",
+		SkillName : "Comin' Right Up",
+		MaxLv : 1,
+		SpAmount : [ 0 ],
+	};
 	
 	SkillInfo[SK.MG_FIREBOLT] = {
 		Name: "MG_FIREBOLT",

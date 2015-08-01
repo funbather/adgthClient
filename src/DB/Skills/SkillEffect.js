@@ -14,8 +14,8 @@ define(['./SkillConst'], function( SK )
 
 
 	var SkillEffect = {};
-  SkillEffect[SK.WR_SUNDER] = {
-		effectId: 1
+  SkillEffect[SK.ALL_COMINRIGHTUP] = {
+		effectId: 509
 	};
 
 	SkillEffect[SK.SM_PROVOKE] = {

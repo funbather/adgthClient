@@ -121,26 +121,32 @@ define(function(require)
 		});
 		
 		for(i = 0; i < 4; i++) {
-      if(item.slot['card' + (i+1)]) { 
-        if(i == 0) {
-          enchdesc = '\n\nThis item has been embued with the following qualities:\n';
-        }
-        enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));//item.slot['card'+(i+1)].ITID);
-        enchdesc += enchant.identifiedDescriptionName + '\n';//enchant.identifiedDescriptionName + '\n';
-        rarity++;
-      }
+      		if(item.slot['card' + (i+1)]) { 
+        		if(i == 0) {
+         			enchdesc = '\n\nThis item has been embued with the following qualities:\n';
+        	}
+        	
+        	enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));//item.slot['card'+(i+1)].ITID);
+        	enchdesc += enchant.identifiedDescriptionName + '\n';//enchant.identifiedDescriptionName + '\n';
+        	rarity++;
+      		}
 		}
 		
 		if(rarity) {
-      enchtitle = DB.getRarity(rarity);
+      		enchtitle = DB.getRarity(rarity);
 		}
 
-    desc = it.identifiedDescriptionName + enchdesc;
-    desc = desc.replace('$ilvl$', '^FF0000'+item.IsDamaged+'^000000');
-    desc = desc.replace('$quality$', '^FF0000'+item.RefiningLevel+'^000000');
-		desc = desc.replace('$hp$', '^FF0000'+Math.floor((14*item.IsDamaged*2*it.BaseHP / 100 + it.BaseHP) * item.RefiningLevel / 100)+'^000000');
-		desc = desc.replace('$def$', '^FF0000'+Math.floor((3*item.IsDamaged*2*it.BaseDEF / 100 + it.BaseDEF) * item.RefiningLevel / 100)+'^000000');
-		desc = desc.replace('$atk$', '^FF0000'+Math.floor((10*item.IsDamaged*2*it.BaseATK / 100 + it.BaseATK) * item.RefiningLevel / 100)+'^000000');
+    	desc = it.identifiedDescriptionName + enchdesc;
+    	desc = desc.replace('$ilvl$', '^FF0000'+item.IsDamaged+'^000000');
+    	desc = desc.replace('$quality$', '^FF0000'+item.RefiningLevel+'^000000');
+		desc = desc.replace('$hp$', '^FF0000'+Math.floor(Math.floor(14*item.IsDamaged*2*it.BaseHP / 100 + it.BaseHP) * item.RefiningLevel / 100)+'^000000');
+		desc = desc.replace('$mp$', '^FF0000'+Math.floor(Math.floor(10*item.IsDamaged*2*it.BaseMP / 100 + it.BaseMP) * item.RefiningLevel / 100)+'^000000');
+		desc = desc.replace('$def$', '^FF0000'+Math.floor(Math.floor(3*item.IsDamaged*2*it.BaseDEF / 100 + it.BaseDEF) * item.RefiningLevel / 100)+'^000000');
+		desc = desc.replace('$mdef$', '^FF0000'+Math.floor(Math.floor(3*item.IsDamaged*2*it.BaseMDEF / 100 + it.BaseMDEF) * item.RefiningLevel / 100)+'^000000');
+		desc = desc.replace('$atk$', '^FF0000'+Math.floor(Math.floor(10*item.IsDamaged*2*it.BaseATK / 100 + it.BaseATK) * item.RefiningLevel / 100)+'^000000');
+		desc = desc.replace('$mag$', '^FF0000'+Math.floor(Math.floor(10*item.IsDamaged*2*it.BaseMAG / 100 + it.BaseMAG) * item.RefiningLevel / 100)+'^000000');
+		desc = desc.replace('$eva$', '^FF0000'+Math.floor(Math.floor(item.IsDamaged*2*it.BaseEVADE / 100 + it.BaseEVADE) * item.RefiningLevel / 100)+'^000000');
+		desc = desc.replace('$cel$', '^FF0000'+Math.floor(Math.floor(2*item.IsDamaged*2*it.BaseCEL / 100 + it.BaseCEL) * item.RefiningLevel / 100)+'^000000');
 
 		ui.find('.title').text( item.IsIdentified ? enchtitle + it.identifiedDisplayName : it.unidentifiedDisplayName );
 		ui.find('.description').text( desc );

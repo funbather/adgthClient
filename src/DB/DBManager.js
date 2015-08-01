@@ -517,6 +517,7 @@ define(function(require)
 				item.BaseEVADE                   = item.BaseEVADE || 0;
 				item.BaseCRIT                    = item.BaseCRIT || 0;
 				item.BaseCEL                     = item.BaseCEL || 0;
+				item.BaseMAG					 = item.BaseMAG || 0;
 				item._decoded                    = true;
 			}
 

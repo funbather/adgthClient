@@ -425,6 +425,16 @@ define(function( require )
 		ChatBox.addText( pkt.msg, ChatBox.TYPE.PUBLIC, color);
 	}
 
+  function onTalkBox( pkt ) {
+    var entity;
+    
+		pkt.msg = pkt.msg.replace(/\: \|\d{2}/, ': ');
+		
+		entity = EntityManager.get(pkt.accountID);
+		if (entity) {
+			entity.dialog.set( pkt.msg );
+		}	
+  }
 
 	/**
 	 * Display entity's name
@@ -1040,5 +1050,6 @@ define(function( require )
 		Network.hookPacket( PACKET.ZC.RESURRECTION,                 onEntityResurect);
 		Network.hookPacket( PACKET.ZC.EMOTION,                      onEntityEmotion);
 		Network.hookPacket( PACKET.ZC.NOTIFY_MONSTER_HP,            onEntityLifeUpdate);
+		Network.hookPacket( PACKET.ZC.TALKBOX_CHATCONTENTS,         onTalkBox);
 	};
 });

@@ -6593,8 +6593,8 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 
 	// 0x191
 	PACKET.ZC.TALKBOX_CHATCONTENTS = function PACKET_ZC_TALKBOX_CHATCONTENTS(fp, end) {
-		this.AID = fp.readULong();
-		this.contents = fp.readBinaryString(80);
+		this.accountID = fp.readULong();
+		this.msg = fp.readBinaryString(80);
 	};
 	PACKET.ZC.TALKBOX_CHATCONTENTS.size = 86;
 
