@@ -24,7 +24,7 @@ function(   DB,            EntityManager,            Entity,                Alti
 	 * @param {number} y
 	 * @param {number} z
 	 */
-	function add( gid, itemid, identify, count, x, y, z )
+	function add( gid, itemid, identify, count, x, y, z, quality, ilvl )
 	{
 		var it     = DB.getItemInfo(itemid);
 		var path   = DB.getItemPath(itemid, identify);
@@ -43,14 +43,21 @@ function(   DB,            EntityManager,            Entity,                Alti
     }
 
 		entity.display.load = entity.display.TYPE.COMPLETE;
-		entity.display.name = DB.getMessage(183).replace('%s', enchtitle+name).replace('%d', count);
-		entity.display.update('#FFEF94');
+		
+		if(count > 1) // Consumable? Misc?
+      entity.display.name = DB.getMessage(183).replace('%s',name).replace('%d', count);
+    else if(!quality && !ilvl) // Accessories & Single misc items
+      entity.display.name = name;
+    else
+      entity.display.name = ' '+name+' -- Lv. '+ilvl+' | '+quality+'% ';
+      
+		entity.display.update('#FFEF94',1);
     switch(identify) {
-      case 1: entity.display.update('#ffffff'); break;
-      case 2: entity.display.update('#ffefad'); break;
-      case 3: entity.display.update('#b9ffad'); break;
-      case 4: entity.display.update('#8aa5ff'); break;
-      case 5: entity.display.update('#bb91ff'); break;
+      case 1: entity.display.update('#ffffff',1); break;
+      case 2: entity.display.update('#ffefad',1); break;
+      case 3: entity.display.update('#b9ffad',1); break;
+      case 4: entity.display.update('#C4D2FF',1); break;
+      case 5: entity.display.update('#D6BDFF',1); break;
     }
 
 		entity.files.body.spr = path + '.spr';
@@ -61,7 +68,7 @@ function(   DB,            EntityManager,            Entity,                Alti
 		// Item falling
 		entity.animations.add(function(tick) {
 			var level          = Altitude.getCellHeight(entity.position[0], entity.position[1]);
-			entity.position[2] = Math.max(level, z - (tick / 40));
+			entity.position[2] = Math.max(level, z - (tick / 50));
 
 			return entity.position[2] === level;
 		});

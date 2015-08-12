@@ -342,23 +342,26 @@ define(function( require )
 
 			// Damage
 			else if (damage.type & Damage.TYPE.DAMAGE) {
-        size = 3;
-				SpriteRenderer.position[0] = damage.entity.position[0];
-				SpriteRenderer.position[1] = damage.entity.position[1];
-				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + perc * 15;
-				/*SpriteRenderer.position[0] = damage.entity.position[0] + perc * 7;
+        size = 2;
+				//SpriteRenderer.position[0] = damage.entity.position[0];
+				//SpriteRenderer.position[1] = damage.entity.position[1];
+				//SpriteRenderer.position[2] = damage.entity.position[2] + 2 + perc * 15;
+				SpriteRenderer.position[0] = damage.entity.position[0] + perc * 7;
 				SpriteRenderer.position[1] = damage.entity.position[1] - perc * 7;
-				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + Math.sin( -Math.PI/2 + ( Math.PI * (0.5 + perc * 1.5 ) ) ) * 5;*/
+				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + Math.sin( -Math.PI/2 + ( Math.PI * (0.5 + perc * 1.5 ) ) ) * 5;
 			}
 			
       // Crit?
 			else if (damage.type & Damage.TYPE.CRIT) {
           //size = max(3,((1-perc)*6));
-          size = Math.max( (1-perc*10)/15, 0.035 ) * 100;
+          size = Math.max( (1-perc*10)/15, 0.025 ) * 100;
 
-				SpriteRenderer.position[0] = damage.entity.position[0];
-				SpriteRenderer.position[1] = damage.entity.position[1];
-				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + perc * 15;
+				//SpriteRenderer.position[0] = damage.entity.position[0];
+				//SpriteRenderer.position[1] = damage.entity.position[1];
+				//SpriteRenderer.position[2] = damage.entity.position[2] + 2 + perc * 15;
+				SpriteRenderer.position[0] = damage.entity.position[0] + perc * 7;
+				SpriteRenderer.position[1] = damage.entity.position[1] - perc * 7;
+				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + Math.sin( -Math.PI/2 + ( Math.PI * (0.5 + perc * 1.5 ) ) ) * 5;
 			}
 			
 			// Heal

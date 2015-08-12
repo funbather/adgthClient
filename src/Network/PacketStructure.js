@@ -4912,8 +4912,10 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.count = fp.readShort();
 		this.subX = fp.readUChar();
 		this.subY = fp.readUChar();
+		this.quality = fp.readUChar();
+		this.ilvl = fp.readUChar();
 	};
-	PACKET.ZC.ITEM_ENTRY.size = 17;
+	PACKET.ZC.ITEM_ENTRY.size = 19;
 
 
 	// 0x9e
@@ -10276,8 +10278,10 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.subX = fp.readUChar();
 		this.subY = fp.readUChar();
 		this.count = fp.readShort();
+		this.quality = fp.readUChar();
+		this.ilvl = fp.readUChar();
 	};
-	PACKET.ZC.ITEM_FALL_ENTRY2.size = 19;
+	PACKET.ZC.ITEM_FALL_ENTRY2.size = 21;
 
 
 	// 0x856

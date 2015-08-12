@@ -41,7 +41,7 @@ define(function( require )
 		var y = pkt.yPos - 0.5 + pkt.subY / 12;
 		var z = Altitude.getCellHeight( x, y );
 
-		ItemObject.add( pkt.ITAID, pkt.ITID, pkt.IsIdentified, pkt.count, x, y, z );
+		ItemObject.add( pkt.ITAID, pkt.ITID, pkt.IsIdentified, pkt.count, x, y, z, pkt.quality, pkt.ilvl );
 	}
 
 
@@ -55,6 +55,8 @@ define(function( require )
 		var x = pkt.xPos - 0.5 + pkt.subX / 12;
 		var y = pkt.yPos - 0.5 + pkt.subY / 12;
 		var z = Altitude.getCellHeight( x, y ) + 5.0;
+		var q = pkt.quality ? pkt.quality : 0;
+		var i = pkt.ilvl ? pkt.ilvl : 0;
 
 		ItemObject.add(
 			pkt.ITAID,
@@ -63,7 +65,9 @@ define(function( require )
 			pkt.count,
 			x,
 			y,
-			z
+			z,
+			q,
+			i
 		);
 	}
 

@@ -44,6 +44,21 @@ define(['Utils/gl-matrix', 'Renderer/Renderer'], function( glMatrix, Renderer )
 		ctx.fillText(text, x, y);
 	}
 
+	// Helper to render round rectangle
+	function roundRect(ctx, x, y, width, height, radius)
+	{
+		ctx.beginPath();
+		ctx.moveTo(x + radius, y);
+		ctx.lineTo(x + width - radius, y);
+		ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+		ctx.lineTo(x + width, y + height - radius);
+		ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+		ctx.lineTo(x + radius, y + height);
+		ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+		ctx.lineTo(x, y + radius);
+		ctx.quadraticCurveTo(x, y, x + radius, y);
+		ctx.closePath();
+	}
 
 	/**
 	 * @var {boolean} is the shadow ugly in the GPU ?
@@ -166,13 +181,13 @@ define(['Utils/gl-matrix', 'Renderer/Renderer'], function( glMatrix, Renderer )
 
 	/**
 	 * Update the display
-	 * @param {string} color
+	 * @param {string} color {bool} bg
 	 */
-	Display.prototype.update = function update( color )
+	Display.prototype.update = function update( color, bg )
 	{
 		// Setup variables
 		var lines    = new Array(2);
-		var fontSize = 12;
+		var fontSize = 16;
 		var ctx      = this.ctx;
 		var start_x  = (this.emblem ? 26 : 0) + 5;
 		var width, height;
@@ -182,12 +197,14 @@ define(['Utils/gl-matrix', 'Renderer/Renderer'], function( glMatrix, Renderer )
 		lines[1] = '';
 
 		// Add the party name
-		if (this.party_name.length) {
+		if (this.party_name.length && this.guild_name == "X") {
+      lines[0] = this.party_name + ' ' + this.name.split('#')[0];
+		} else if (this.party_name.length) { // Dumb workaround
 			lines[0] += ' (' + this.party_name + ')';
 		}
 
 		// Add guild name
-		if (this.guild_name.length) {
+		if (this.guild_name.length && this.guild_name != "X") {
 			lines[1]  = this.guild_name;
 
 			// Add guild rank
@@ -195,9 +212,9 @@ define(['Utils/gl-matrix', 'Renderer/Renderer'], function( glMatrix, Renderer )
 				lines[1] +=  ' [' + this.guild_rank + ']';
 			}
 		}
-
+		
 		// Setup the canvas
-		ctx.font          = fontSize + 'px Arial';
+		ctx.font          = fontSize + 'px Andale Mono';
 		width             = Math.max( ctx.measureText(lines[0]).width, ctx.measureText(lines[1]).width ) + start_x + 5;
 		height            = fontSize * 3 * (lines[1].length ? 2 : 1);
 		ctx.canvas.width  = width;
@@ -206,29 +223,37 @@ define(['Utils/gl-matrix', 'Renderer/Renderer'], function( glMatrix, Renderer )
 
 		// Draw emblem
 		if (this.emblem) {
-			ctx.drawImage( this.emblem, 0, 0 );
+			ctx.drawImage( this.emblem, 0, 8 );
 		}
 
 
 		// TODO: complete the color list in the Entity display
 		color = color || 'white';
-		ctx.font         = fontSize + 'px Arial';
+		ctx.font         = fontSize + 'px Andale Mono';
 		ctx.textBaseline = 'top';
-
+		
+		if(bg) {
+			ctx.fillStyle="rgba(0,0,0,.6)";
+			ctx.fillRect(0,0,width,height/2);
+			ctx.strokeStyle = color;
+			roundRect(ctx, .5, .5, ctx.canvas.width-1, ctx.canvas.height/2-1, 1);
+			ctx.stroke();
+		}
+		
 		// Shadow renderer
 		if (!_isUglyShadow) {
-			multiShadow(ctx, lines[0], start_x, 0,  0, -1, 0);
-			multiShadow(ctx, lines[0], start_x, 0,  0,  1, 0);
-			multiShadow(ctx, lines[0], start_x, 0, -1,  0, 0);
-			multiShadow(ctx, lines[0], start_x, 0,  1,  0, 0);
+			multiShadow(ctx, lines[0], start_x, 4,  0, -1, 0);
+			multiShadow(ctx, lines[0], start_x, 4,  0,  1, 0);
+			multiShadow(ctx, lines[0], start_x, 4, -1,  0, 0);
+			multiShadow(ctx, lines[0], start_x, 4,  1,  0, 0);
 			multiShadow(ctx, lines[1], start_x, fontSize * 1.2,  0, -1, 0);
 			multiShadow(ctx, lines[1], start_x, fontSize * 1.2,  0,  1, 0);
 			multiShadow(ctx, lines[1], start_x, fontSize * 1.2, -1,  0, 0);
 			multiShadow(ctx, lines[1], start_x, fontSize * 1.2,  1,  0, 0);
 			ctx.fillStyle   = color;
 			ctx.strokeStyle = 'black';
-			ctx.strokeText(lines[0], start_x, 0);
-			ctx.fillText(  lines[0], start_x, 0);
+			ctx.strokeText(lines[0], start_x, 4);
+			ctx.fillText(  lines[0], start_x, 4);
 			ctx.strokeText(lines[1], start_x, fontSize * 1.2);
 			ctx.fillText(  lines[1], start_x, fontSize * 1.2);
 		}
@@ -237,10 +262,10 @@ define(['Utils/gl-matrix', 'Renderer/Renderer'], function( glMatrix, Renderer )
 		else {
 			ctx.translate(0.5, 0.5);
 			ctx.fillStyle    = 'black';
-			ctx.outlineText( lines[0], start_x, 0 );
+			ctx.outlineText( lines[0], start_x, 4 );
 			ctx.outlineText( lines[1], start_x, fontSize * 1.2 );
 			ctx.fillStyle    = color;
-			ctx.fillText( lines[0], start_x, 0 );
+			ctx.fillText( lines[0], start_x, 4 );
 			ctx.fillText( lines[1], start_x, fontSize * 1.2 );
 		}
 	};

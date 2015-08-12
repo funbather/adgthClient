@@ -532,19 +532,328 @@ define(function()
 			"ClassNum": 0
 		},
 		"54000": {
-			"identifiedDisplayName": "Lesser Strength",
+			"identifiedDisplayName": "Shard of Strength",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"STR +4",
+				"STR +5",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
 		},
 		"54001": {
-			"identifiedDisplayName": "Lesser Agility",
+			"identifiedDisplayName": "Shard of Agility",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"AGI +4",
+				"AGI +5",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54002": {
+			"identifiedDisplayName": "Shard of Vitality",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"VIT +5",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54003": {
+			"identifiedDisplayName": "Shard of Intelligence",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"INT +5",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54004": {
+			"identifiedDisplayName": "Shard of Precision",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"PRE +5",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54005": {
+			"identifiedDisplayName": "Shard of Luck",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"LUK +15",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54006": {
+			"identifiedDisplayName": "Shard of Health",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"HP +4%",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54007": {
+			"identifiedDisplayName": "Shard of Mana",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"MP +10",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54008": {
+			"identifiedDisplayName": "Shard of Defense",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"DEF +1",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54009": {
+			"identifiedDisplayName": "Shard of Magic Defense",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"MDEF +2",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54010": {
+			"identifiedDisplayName": "Shard of Critical Chance",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"CRIT +3",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54011": {
+			"identifiedDisplayName": "Shard of Critical Damage",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"CRIT DAM +7%",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54012": {
+			"identifiedDisplayName": "Shard of Attack Speed",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"ASPD +4%",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54013": {
+			"identifiedDisplayName": "Shard of Evasion",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"EVA +3",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54014": {
+			"identifiedDisplayName": "Shard of Celerity",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"CEL +4",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54015": {
+			"identifiedDisplayName": "Shard of Health Regen",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"HP Regen +10%",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54016": {
+			"identifiedDisplayName": "Shard of Mana Regen",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"MP Regen +10%",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54017": {
+			"identifiedDisplayName": "Shard of Lifesteal",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"Lifesteal +7%",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54018": {
+			"identifiedDisplayName": "Shard of Soulsteal",
+			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
+			"identifiedDescriptionName": [
+				"+7 MP on Monster Kill",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54100": {
+			"identifiedDisplayName": "Seal of Health",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"HP +15%",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54101": {
+			"identifiedDisplayName": "Seal of Mana",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"MP +25%",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54102": {
+			"identifiedDisplayName": "Seal of Lethality",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"CRIT +7",
+				"CRIT DAM +15%",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54103": {
+			"identifiedDisplayName": "Seal of Mastery",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"MP Consumption -15%",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54104": {
+			"identifiedDisplayName": "Seal of Tenacity",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"-10% Physical Damage Taken",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54105": {
+			"identifiedDisplayName": "Seal of Will",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"-20% Magical Damage Taken",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54106": {
+			"identifiedDisplayName": "Seal of Faith",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"Healing Power +25%",
+				"Healing Recieved +25%",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54107": {
+			"identifiedDisplayName": "Seal of Armor Piercing",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"DEF Penetration +33%",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54108": {
+			"identifiedDisplayName": "Seal of Broken Will",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"MDEF Penetration +33%",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54109": {
+			"identifiedDisplayName": "Seal of Paralysis",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"+7% Chance to Stun when attacking or getting attacked",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54110": {
+			"identifiedDisplayName": "Seal of Venom",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"+7% Chance to Poison when attacking or getting attacked",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54111": {
+			"identifiedDisplayName": "Seal of Hoarfrost",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"+7% Chance to Freeze when attacking or getting attacked",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54112": {
+			"identifiedDisplayName": "Seal of Echoes",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"+20% Chance to hit twice on basic attacks",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54113": {
+			"identifiedDisplayName": "Seal of Sunder",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"Sunder Skill Level +1",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54114": {
+			"identifiedDisplayName": "Seal of Cleave",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"Cleave Skill Level +1",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54115": {
+			"identifiedDisplayName": "Seal of Echo Blade",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"Echo Blade Skill Level +1",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54116": {
+			"identifiedDisplayName": "Seal of Fortune",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"LUK +50",
+				"Gain extra Munny when killing a monster",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
