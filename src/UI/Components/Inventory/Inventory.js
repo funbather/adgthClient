@@ -651,8 +651,12 @@ define(function(require)
 	{
 		var idx  = parseInt( this.getAttribute('data-index'), 10);
 		var item = Inventory.getItemByIndex(idx);
-		var enchtitle = '';
+		var it = DB.getItemInfo( item.ITID );
 		var rarity = 0;
+		var desc = '';
+		var enchdesc = '';
+		var enchant;
+
 
 		if (!item) {
 			return;
@@ -661,35 +665,55 @@ define(function(require)
 		// Get back data
 		var pos     = jQuery(this).position();
 		var overlay = Inventory.ui.find('.overlay');
-
-		overlay.removeClass('yellow');
-		overlay.removeClass('green');
-		overlay.removeClass('blue');
-		overlay.removeClass('purple');
 		
 		for(var i = 0; i <= 4; i++) {
       if(item.slot['card' + i]) { 
         rarity++;
       }
     }
-    
-    if(rarity) {
-      enchtitle = DB.getRarity(rarity);
-    }
-    
-    switch(rarity) {
-      case 1: overlay.addClass('yellow'); break;
-      case 2: overlay.addClass('green'); break;
-      case 3: overlay.addClass('blue'); break;
-      case 4: overlay.addClass('purple'); break;
-    }
 
 		// Display box
 		overlay.show();
-		overlay.css({top: pos.top, left:pos.left+35});
-		overlay.text(enchtitle + DB.getItemName(item) + ' ' + (item.count || 1) + ' ea');
-    //overlay.text(enchtitle + DB.getItemName(item) + ' ' + (item.IsDamaged || 99) + ' ilvl');
+
+    switch(rarity) {
+      case 0: overlay.css({color: "#ffffff"}); overlay.css({border: "4px solid #bbbbbb"}); break;
+      case 1: overlay.css({color: "#ffefad"}); overlay.css({border: "4px solid #ffefad"}); break;
+      case 2: overlay.css({color: "#b9ffad"}); overlay.css({border: "4px solid #b9ffad"}); break;
+      case 3: overlay.css({color: "#8aa5ff"}); overlay.css({border: "4px solid #8aa5ff"}); break;
+      case 4: overlay.css({color: "#bb91ff"}); overlay.css({border: "4px solid #bb91ff"}); break;
+    }
     
+		overlay.css({top: pos.top+20, left:pos.left+70});
+		
+		for(i = 0; i < 4; i++) {
+      		if(item.slot['card' + (i+1)]) { 
+        		if(i == 0) {
+							enchdesc = '\n-------------------\n';
+            }
+        	
+						enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));
+						enchdesc += enchant.identifiedDescriptionName + '\n';
+						rarity++;
+      		}
+		}
+		
+		desc = item.count > 1 ? DB.getItemName(item) + ' ' + (item.count || 1) + ' ea\n\n^FFFFFF'+it.condensedDesc + enchdesc : DB.getItemName(item) + '\n\n^FFFFFF'+it.condensedDesc + enchdesc;
+		desc = desc.replace('$ilvl$', '^99BBFF'+item.IsDamaged+'^FFFFFF');
+		desc = desc.replace('$quality$', '^99BBFF'+item.RefiningLevel+'^FFFFFF');
+		desc = desc.replace('$hp$', '^99BBFF'+getStatValue(it.BaseHP, 15, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$mp$', '^99BBFF'+getStatValue(it.BaseMP, 11, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$def$', '^99BBFF'+getStatValue(it.BaseDEF, 4, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$mdef$', '^99BBFF'+getStatValue(it.BaseMDEF, 4, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$atk$', '^99BBFF'+getStatValue(it.BaseATK, 11, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$mag$', '^99BBFF'+getStatValue(it.BaseMAG, 11, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$eva$', '^99BBFF'+getStatValue(it.BaseEVADE, 2, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$cel$', '^99BBFF'+getStatValue(it.BaseCEL, 3, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$crit$', '^99BBFF'+getStatValue(it.BaseCRIT, 2, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$bonus1$', '^99BBFF'+getStatValue(it.BaseBonus1, it.Multiplier1, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+
+		//overlay.css({border: "1px solid #444444"});
+		overlay.text(desc);		
+
 		if (item.IsIdentified) {
 			overlay.removeClass('grey');
 		}
@@ -698,6 +722,9 @@ define(function(require)
 		}
 	}
 
+	function getStatValue( base, multiplier, quality, ilvl ) {
+		return Math.floor(Math.floor((multiplier-1) * ilvl * 2 * base / 100 + base) * quality / 100);
+	}
 
 	/**
 	 * Hide the item name

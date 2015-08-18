@@ -44,6 +44,7 @@ define(function()
 		SUMMER:               27,
 		SORC_:                30,
 		WARRIOR:              31,
+		TERRAMANCER:					32,
 		NOVICE_H:           4001,
 		SWORDMAN_H:         4002,
 		MAGICIAN_H:         4003,

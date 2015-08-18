@@ -7,4 +7,5 @@ var ROConfig = {
 	skipServerList: true,
 	autoLogin: ['test', 'test'],
 	skipIntro: true,
+	disableKorean: true,
 };

@@ -49,7 +49,8 @@ define(function( require )
 		COMBO:       1 << 4,
 		COMBO_FINAL: 1 << 5,
 		SP:          1 << 6,
-		CRIT:        1 << 7
+		CRIT:        1 << 7,
+		MULTICRIT:   1 << 8
 	};
 
 
@@ -185,12 +186,12 @@ define(function( require )
 			obj.color[2] = 0.15;
 			obj.delay    = 3000;
 		} 	
-		else if (obj.type & Damage.TYPE.CRIT) {
+		else if ((obj.type & Damage.TYPE.CRIT) && !(obj.type & Damage.TYPE.MISS)) {
 			obj.color[0] = 1.0;
 			obj.color[1] = 0.15;
 			obj.color[2] = 0.15;
 			obj.delay    = 1500; // Signify critical hit to render, fix later
-		} 
+		}
 		else {
 			// white
 			obj.color[0] = 1.0;

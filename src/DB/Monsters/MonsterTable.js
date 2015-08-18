@@ -40,6 +40,7 @@ define(function()
 		25: "Ninja",
 		30: "Sorcerer",
 		31: "Warrior",
+		32: "Terramancer",
 		//45: "1_ETC_01",
 		46: "1_ETC_01",
 		47: "1_M_01",

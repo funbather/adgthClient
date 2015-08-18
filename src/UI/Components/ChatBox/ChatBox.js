@@ -223,6 +223,9 @@ define(function(require)
 
 		// Scroll feature should block at each line
 		this.ui.find('.content').on('mousewheel DOMMouseScroll', onScroll);
+		
+		this.ui.find('.input').hide();
+    this.ui.find('.battlemode').show();
 	};
 
 

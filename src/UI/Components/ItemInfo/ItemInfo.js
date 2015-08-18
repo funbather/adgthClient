@@ -109,11 +109,11 @@ define(function(require)
 		var ui = this.ui;
 		var cardList = ui.find('.cardlist .border');
 		var desc = '';
-		var enchtitle = '';
 		var enchdesc = '';
 		var enchant;
 		var rarity = 0;
 		var i;
+		var fl = document.getElementById('description');
 
 		this.item = it;
 		Client.loadFile( DB.INTERFACE_PATH + 'collection/' + ( item.IsIdentified ? it.identifiedResourceName : it.unidentifiedResourceName ) + '.bmp', function(data){
@@ -123,33 +123,34 @@ define(function(require)
 		for(i = 0; i < 4; i++) {
       		if(item.slot['card' + (i+1)]) { 
         		if(i == 0) {
-         			enchdesc = '\n\nThis item has been embued with the following qualities:\n';
-        	}
+							enchdesc = '\n--------------------------------\n';
+            }
         	
-        	enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));//item.slot['card'+(i+1)].ITID);
-        	enchdesc += enchant.identifiedDescriptionName + '\n';//enchant.identifiedDescriptionName + '\n';
-        	rarity++;
+						enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));
+						enchdesc += enchant.identifiedDescriptionName + '\n';
+						rarity++;
       		}
 		}
-		
-		if(rarity) {
-      		enchtitle = DB.getRarity(rarity);
-		}
 
-    	desc = it.identifiedDescriptionName + enchdesc;
-    	desc = desc.replace('$ilvl$', '^FF0000'+item.IsDamaged+'^000000');
-    	desc = desc.replace('$quality$', '^FF0000'+item.RefiningLevel+'^000000');
-		desc = desc.replace('$hp$', '^FF0000'+Math.floor(Math.floor(14*item.IsDamaged*2*it.BaseHP / 100 + it.BaseHP) * item.RefiningLevel / 100)+'^000000');
-		desc = desc.replace('$mp$', '^FF0000'+Math.floor(Math.floor(10*item.IsDamaged*2*it.BaseMP / 100 + it.BaseMP) * item.RefiningLevel / 100)+'^000000');
-		desc = desc.replace('$def$', '^FF0000'+Math.floor(Math.floor(3*item.IsDamaged*2*it.BaseDEF / 100 + it.BaseDEF) * item.RefiningLevel / 100)+'^000000');
-		desc = desc.replace('$mdef$', '^FF0000'+Math.floor(Math.floor(3*item.IsDamaged*2*it.BaseMDEF / 100 + it.BaseMDEF) * item.RefiningLevel / 100)+'^000000');
-		desc = desc.replace('$atk$', '^FF0000'+Math.floor(Math.floor(10*item.IsDamaged*2*it.BaseATK / 100 + it.BaseATK) * item.RefiningLevel / 100)+'^000000');
-		desc = desc.replace('$mag$', '^FF0000'+Math.floor(Math.floor(10*item.IsDamaged*2*it.BaseMAG / 100 + it.BaseMAG) * item.RefiningLevel / 100)+'^000000');
-		desc = desc.replace('$eva$', '^FF0000'+Math.floor(Math.floor(item.IsDamaged*2*it.BaseEVADE / 100 + it.BaseEVADE) * item.RefiningLevel / 100)+'^000000');
-		desc = desc.replace('$cel$', '^FF0000'+Math.floor(Math.floor(2*item.IsDamaged*2*it.BaseCEL / 100 + it.BaseCEL) * item.RefiningLevel / 100)+'^000000');
+		desc = it.identifiedDescriptionName + enchdesc;
+		desc = it.flavortext ? desc + '\n\n' : desc;
+		desc = desc.replace('$ilvl$', '^3366FF'+item.IsDamaged+'^000000');
+		desc = desc.replace('$quality$', '^3366FF'+item.RefiningLevel+'^000000');
+		desc = desc.replace('$hp$', '^3366FF'+getStatValue(it.BaseHP, 15, item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$mp$', '^3366FF'+getStatValue(it.BaseMP, 11, item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$def$', '^3366FF'+getStatValue(it.BaseDEF, 4, item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$mdef$', '^3366FF'+getStatValue(it.BaseMDEF, 4, item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$atk$', '^3366FF'+getStatValue(it.BaseATK, 11, item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$mag$', '^3366FF'+getStatValue(it.BaseMAG, 11, item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$eva$', '^3366FF'+getStatValue(it.BaseEVADE, 2, item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$cel$', '^3366FF'+getStatValue(it.BaseCEL, 3, item.RefiningLevel, item.IsDamaged)+'^000000');	
+		desc = desc.replace('$crit$', '^3366FF'+getStatValue(it.BaseCRIT, 2, item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$bonus1$', '^3366FF'+getStatValue(it.BaseBonus1, it.Multiplier1, item.RefiningLevel, item.IsDamaged)+'^000000');
 
-		ui.find('.title').text( item.IsIdentified ? enchtitle + it.identifiedDisplayName : it.unidentifiedDisplayName );
+		ui.find('.title').text( item.IsIdentified ? it.identifiedDisplayName : it.unidentifiedDisplayName );
 		ui.find('.description').text( desc );
+		ui.find('.description').append( it.flavortext.italics() );
+		
 		
 
 		// Add view button (for cards)
@@ -189,6 +190,10 @@ define(function(require)
 		}
 	};
 
+	// helper function so I don't have to keep typing out this calulation
+	function getStatValue( base, multiplier, quality, ilvl ) {
+		return Math.floor(Math.floor((multiplier-1) * ilvl * 2 * base / 100 + base) * quality / 100);
+	}
 
 	/**
 	 * Add a card into a slot

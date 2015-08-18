@@ -242,6 +242,7 @@ define(function( require )
 			case 8:  // double attack
 			case 9:  // endure
 			case 10: // critital
+			case 20:
 				if (dstEntity) {
 					// only if damage and do not have endure
 					// and damage isn't absorbed (healing)
@@ -278,12 +279,12 @@ define(function( require )
 							case 8:
 								// Display combo only if entity is mob and the attack don't miss
 								if (dstEntity.objecttype === Entity.TYPE_MOB && pkt.damage > 0) {
-									Damage.add( pkt.damage / 2, dstEntity, Renderer.tick + pkt.attackMT * 1, Damage.TYPE.COMBO );
-									Damage.add( pkt.damage ,    dstEntity, Renderer.tick + pkt.attackMT * 2, Damage.TYPE.COMBO | Damage.TYPE.COMBO_FINAL );
+									//Damage.add( pkt.damage / 2, dstEntity, Renderer.tick + pkt.attackMT * 1, Damage.TYPE.COMBO );
+									Damage.add( pkt.damage ,    dstEntity, Renderer.tick + pkt.attackMT * 1.3, Damage.TYPE.COMBO | Damage.TYPE.COMBO_FINAL );
 								}
 
 								Damage.add( pkt.damage / 2, target, Renderer.tick + pkt.attackMT * 1 );
-								Damage.add( pkt.damage / 2, target, Renderer.tick + pkt.attackMT * 2 );
+								Damage.add( pkt.damage / 2, target, Renderer.tick + pkt.attackMT * 1.3 );
 								break;
 
 							// TODO: critical damage
@@ -294,6 +295,16 @@ define(function( require )
 							// TODO: lucky miss
 							case 11:
 								Damage.add( 0, target, Renderer.tick + pkt.attackMT );
+								break;
+								
+							case 20:
+								if (dstEntity.objecttype === Entity.TYPE_MOB && pkt.damage > 0) {
+									//Damage.add( pkt.damage / 2, dstEntity, Renderer.tick + pkt.attackMT * 1, Damage.TYPE.COMBO );
+									Damage.add( pkt.damage ,    dstEntity, Renderer.tick + pkt.attackMT * 1.3, Damage.TYPE.COMBO | Damage.TYPE.COMBO_FINAL );
+								}
+
+								Damage.add( pkt.damage / 2, target, Renderer.tick + pkt.attackMT * 1, Damage.TYPE.CRIT  );
+								Damage.add( pkt.damage / 2, target, Renderer.tick + pkt.attackMT * 1.3, Damage.TYPE.CRIT  );
 								break;
 						}
 					}

@@ -402,29 +402,29 @@ define(function(require)
       
       case 4032:
         if(var1) {
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*25)+150)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*50)+250)+'^000000');
         }
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*25)+175)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*50)+300)+"^000000%";
       break;  
       
       case 4033:
         if(var1) {
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+175)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+250)+'^000000');
         }
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*75)+250)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*75)+325)+"^000000%";
       break;  
       
       case 4034:
         if(var1) {
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*100)+300)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*300)+500)+'^000000');
         }
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*100)+400)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*300)+800)+"^000000%";
       break;  
       
       case 4035:
@@ -447,6 +447,16 @@ define(function(require)
       
       case 4037:
         if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*100)+300)+'^000000');
+        }
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*100)+300)+"^000000%";
+      break;  
+      
+      case 62: // Bowling Bash
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+200)+'^000000');
           desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+200)+'^000000');
         }
       
@@ -454,26 +464,136 @@ define(function(require)
           desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*75)+275)+"^000000%";
       break;  
       
-      case 62:
-        if(var1) {
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+100)+'^000000');
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+100)+'^000000');
-        }
-      
-        if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*75)+175)+"^000000%";
-      break;  
-      
-      case 6:     
+      case 6: // Provoke   
         if(level && var1 < 5)
           desc += "\n\nNext Level:\nMP Cost: ^0000BB"+(50-(var1*10))+"^000000";
       break;   
       
-      case 255:     
+      case 255: // Devotion   
         if(level && var1 < 5)
           desc += "\n\nNext Level:\nMP Cost: ^0000BB"+(50-(var1*10))+"^000000";
-      break;                       
-		}
+      break;  
+      
+      case 4040:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*.25)+.75).toFixed(2)+'^000000');
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nHP Regen: ^0000BB"+((var1*.25)+1).toFixed(2)+"^000000% Max HP";
+      break;  
+      
+      case 4041:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*10))+'^000000');
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nIncreased MP Regen: ^0000BB"+((var1*10)+10)+"^000000%";
+      break;
+      
+      case 4042:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1)+5).toFixed(2)+'^000000');
+          desc = desc.replace('$sklvl2$', '^0000BB'+((var1*3))+'^000000');
+        }
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nHP Regen: ^0000BB"+((var1)+6).toFixed(2)+"^000000% Max HP\nBonus DEF: ^0000BB"+((var1*3)+3)+"^000000";
+      break;
+      
+      case 4043:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*1.5)+5).toFixed(2)+'^000000');
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nHP Regen: ^0000BB"+((var1*1.5)+6.5).toFixed(2)+"^000000% Max HP";
+      break;
+      
+      case 4044:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*5)+25)+'^000000');
+          desc = desc.replace('$sklvl2$', '^0000BB'+(var1*1.5).toFixed(1)+'^000000');
+        }
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nPoison Chance: ^0000BB"+((var1*5)+30)+"^000000%\nBonus Damage: ^0000BB"+((var1*1.5)+1.5).toFixed(1)+"^000000%";
+      break;
+      
+      case 4045:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*25)+100)+'^000000');
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nDamage Absorbed: ^0000BB"+((var1*25)+125)+"^000000%";
+      break;
+      
+      case 4046:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*25)+150)+'^000000');
+          desc = desc.replace('$sklvl2$', '^0000BB'+((var1*10)+20)+'^000000');
+        }
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*25)+175)+"^000000%\nPoison Chance: ^0000BB"+((var1*10)+30)+"^000000%";
+      break;
+      
+      case 4047:
+        if(var1) {
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*35)+180)+'^000000');
+          desc = desc.replace('$sklvl2$', '^0000BB'+((var1*10)+20)+'^000000');
+        }
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*35)+215)+"^000000%\nPoison Chance: ^0000BB"+((var1*10)+30)+"^000000%";
+      break;
+      
+      case 4048:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*10)+20)+'^000000');
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nSlow: ^0000BB"+((var1*10)+30)+"^000000%";
+      break;
+      
+      case 4049:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*250)+1100)+'^000000');
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*250)+1350)+"^000000%";
+      break;
+      
+      case 4050:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*50)+150)+'^000000');
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*50)+200)+"^000000%";
+      break;
+      
+      case 4051:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+175)+'^000000');
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*75)+250)+"^000000%";
+      break;
+      
+      case 4052:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*125)+200)+'^000000');
+      
+        if(level && var1 < 5)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*125)+325)+"^000000%";
+      break;
+      
+      case 4053:
+        if(var1)
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*200)+400)+'^000000');
+      
+        if(level && var1 < 10)
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*200)+600)+"^000000%";
+      break;
+		}  
 		
 		this.ui.find('.content').text(desc);
 

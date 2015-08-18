@@ -50,7 +50,7 @@ define(["./JobConst", "./JobNameTable"], function( JobId, JobNameTable)
 	duplicateEntry(JobId.CRUSADER,   JobId.CRUSADER_H,   JobId.CRUSADER_B,   JobId.ROYAL_GUARD,      JobId.ROYAL_GUARD_H,      JobId.ROYAL_GUARD_B);
 	duplicateEntry(JobId.CRUSADER2,  JobId.CRUSADER2_H,  JobId.CRUSADER2_B,  JobId.ROYAL_GUARD2,     JobId.ROYAL_GUARD2_H,     JobId.ROYAL_GUARD2_B);
 	duplicateEntry(JobId.MONK,       JobId.MONK_H,       JobId.MONK_B,       JobId.SURA,             JobId.SURA_H,             JobId.SURA_B);
-	duplicateEntry(JobId.SAGE,       JobId.SAGE_H,       JobId.SAGE_B,       JobId.SORCERER,         JobId.SORCERER_H,         JobId.SORCERER_B);
+	duplicateEntry(JobId.SAGE,       JobId.SAGE_H,       JobId.SAGE_B,       JobId.SORCERER,         JobId.SORCERER_H,         JobId.SORCERER_B,						 JobId.TERRAMANCER);
 	duplicateEntry(JobId.ROGUE,      JobId.ROGUE_H,      JobId.ROGUE_B,      JobId.SHADOW_CHASER,    JobId.SHADOW_CHASER_H,    JobId.SHADOW_CHASER_B);
 	duplicateEntry(JobId.ALCHEMIST,  JobId.ALCHEMIST_H,  JobId.ALCHEMIST_B,  JobId.GENETIC,          JobId.GENETIC_H,          JobId.GENETIC_B);
 	duplicateEntry(JobId.BARD,       JobId.BARD_H,       JobId.BARD_B,       JobId.MINSTREL,         JobId.MINSTREL_H,         JobId.MINSTREL_B);

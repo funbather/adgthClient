@@ -21,8 +21,8 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"DEF +$def$",
+				"+$hp$ HP",
+				"+$def$ DEF",
 			],
 			"BaseHP": 45,
 			"BaseDEF": 4,
@@ -37,8 +37,8 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"DEF +$def$",
+				"+$hp$ HP",
+				"+$def$ DEF",
 			],
 			"BaseHP": 50,
 			"BaseDEF": 4,
@@ -53,8 +53,8 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"DEF +$def$",
+				"+$hp$ HP",
+				"+$def$ DEF",
 			],
 			"BaseHP": 55,
 			"BaseDEF": 5,
@@ -69,9 +69,9 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"MP +$mp$",
-				"DEF +$def$",
+				"+$hp$ HP",
+				"+$mp$ MP",
+				"+$def$ DEF",
 			],
 			"BaseHP": 27,
 			"BaseMP": 5,
@@ -87,9 +87,9 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"MP +$mp$",
-				"DEF +$def$",
+				"+$hp$ HP",
+				"+$mp$ MP",
+				"+$def$ DEF",
 			],
 			"BaseHP": 30,
 			"BaseMP": 6,
@@ -105,9 +105,9 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"MP +$mp$",
-				"DEF +$def$",
+				"+$hp$ HP",
+				"+$mp$ MP",
+				"+$def$ DEF",
 			],
 			"BaseHP": 33,
 			"BaseMP": 7,
@@ -123,10 +123,10 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"MP +$mp$",
-				"DEF +$def$",
-				"MDEF +$mdef$",
+				"+$hp$ HP",
+				"+$mp$ MP",
+				"+$def$ DEF",
+				"+$mdef$ MDEF",
 			],
 			"BaseHP": 17,
 			"BaseMP": 17,
@@ -143,10 +143,10 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"MP +$mp$",
-				"DEF +$def$",
-				"MDEF +$mdef$",
+				"+$hp$ HP",
+				"+$mp$ MP",
+				"+$def$ DEF",
+				"+$mdef$ MDEF",
 			],
 			"BaseHP": 20,
 			"BaseMP": 20,
@@ -163,10 +163,10 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"MP +$mp$",
-				"DEF +$def$",
-				"MDEF +$mdef$",
+				"+$hp$ HP",
+				"+$mp$ MP",
+				"+$def$ DEF",
+				"+$mdef$ MDEF",
 			],
 			"BaseHP": 23,
 			"BaseMP": 23,
@@ -183,10 +183,10 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"DEF +$def$",
-				"MDEF +$mdef$",
-				"EVA +$eva$"
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$mdef$ MDEF",
+				"+$eva$ EVA"
 			],
 			"BaseHP": 12,
 			"BaseDEF": 5,
@@ -203,10 +203,10 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"DEF +$def$",
-				"MDEF +$mdef$",
-				"EVA +$eva$"
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$mdef$ MDEF",
+				"+$eva$ EVA"
 			],
 			"BaseHP": 14,
 			"BaseDEF": 5,
@@ -223,10 +223,10 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"DEF +$def$",
-				"MDEF +$mdef$",
-				"EVA +$eva$"
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$mdef$ MDEF",
+				"+$eva$ EVA"
 			],
 			"BaseHP": 16,
 			"BaseDEF": 6,
@@ -243,8 +243,8 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"DEF +$def$",
-				"EVA +$eva$"
+				"+$def$ DEF",
+				"+$eva$ EVA"
 			],
 			"BaseDEF": 2,
 			"BaseEVADE": 5,
@@ -259,8 +259,8 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"DEF +$def$",
-				"EVA +$eva$"
+				"+$def$ DEF",
+				"+$eva$ EVA"
 			],
 			"BaseDEF": 2,
 			"BaseEVADE": 6,
@@ -275,8 +275,8 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"DEF +$def$",
-				"EVA +$eva$"
+				"+$def$ DEF",
+				"+$eva$ EVA"
 			],
 			"BaseDEF": 2,
 			"BaseEVADE": 7,
@@ -291,9 +291,9 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"DEF +$def$",
-				"CEL +$cel$"
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$cel$ CEL"
 			],
 			"BaseHP": 13,
 			"BaseDEF": 2,
@@ -309,9 +309,9 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"DEF +$def$",
-				"CEL +$cel$"
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$cel$ CEL"
 			],
 			"BaseHP": 14,
 			"BaseDEF": 2,
@@ -327,9 +327,9 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"HP +$hp$",
-				"DEF +$def$",
-				"CEL +$cel$"
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$cel$ CEL"
 			],
 			"BaseHP": 15,
 			"BaseDEF": 2,
@@ -471,7 +471,7 @@ define(function()
 				"Item Level $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"MAG +$mag$",
+				"+$mag$ MAG",
 			],
 			"BaseMAG": 10,
 			"slotCount": 0,
@@ -485,7 +485,7 @@ define(function()
 				"Item Level $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"MAG +$mag$",
+				"+$mag$ MAG",
 			],
 			"BaseMAG": 11,
 			"slotCount": 0,
@@ -499,7 +499,7 @@ define(function()
 				"Item Level $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"MAG +$mag$",
+				"+$mag$ MAG",
 			],
 			"BaseMAG": 12,
 			"slotCount": 0,
@@ -511,12 +511,14 @@ define(function()
 			"identifiedDescriptionName": [
 				"Accessory",
 				" ",
-				"Calls a penguin buddy to your aid when equipped.",
+				"Grants you the ability to call a Penguin to your aid.",
 				" ",
-				"During battle, they will toss you refreshing drinks, healing 10% HP and 20 SP instantly, as well as putting one in your inventory to drink later.",
+				"During battle it will toss you refreshing drinks, healing 10% HP and 20 SP instantly as well as putting one in your inventory to drink later.",
 			],
 			"slotCount": 0,
-			"ClassNum": 0
+			"ClassNum": 0,
+			"flavortext": "\"Comin' right up, pal!\"",
+			"condensedDesc": ["Accessory"," ","Grants [Call Penguin]"]
 		},
 		"52001": {
 			"identifiedDisplayName": "James",
@@ -526,16 +528,39 @@ define(function()
 				" ",
 				"The cursed skull of James, the undying.",
 				" ",
-				"Every now and then James will whisper a dark secret to you, giving you a massive, albeit temporary, boost to a random stat.",
+				"Every now and then James will whisper a dark secret to you, giving you a massive boost to a random stat.",
 			],
 			"slotCount": 0,
-			"ClassNum": 0
+			"ClassNum": 0,
+			"flavortext": "Unimaginable power at an annoying, insufferable, cost.",
+			"condensedDesc": ["Accessory"," ","Periodic Stat Boosts"]
+		},
+		"53000": {
+			"identifiedDisplayName": "Hydrangea Sword",
+			"identifiedResourceName": "\x68\x79\x64\x72\x61\x6E\x67\x65\x61",
+			"identifiedDescriptionName": [
+				"Unique Knightsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"+$crit$ CRIT",
+				"+$bonus1$% Physical Skill Damage", 
+			],
+			"BaseATK": 10,
+			"BaseCRIT": 10,
+			"BaseBonus1": 15,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 3,
+			"flavortext": "Eternal determination."
 		},
 		"54000": {
 			"identifiedDisplayName": "Shard of Strength",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"STR +5",
+				"+5 STR",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -544,7 +569,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Agility",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"AGI +5",
+				"+5 AGI",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -553,7 +578,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Vitality",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"VIT +5",
+				"+5 VIT",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -562,7 +587,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Intelligence",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"INT +5",
+				"+5 INT",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -571,7 +596,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Precision",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"PRE +5",
+				"+5 PRE",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -580,7 +605,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Luck",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"LUK +15",
+				"+15 LUK",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -589,7 +614,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Health",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"HP +4%",
+				"+4% HP",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -598,7 +623,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Mana",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"MP +10",
+				"+10 MP",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -607,7 +632,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Defense",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"DEF +1",
+				"+1 DEF",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -616,7 +641,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Magic Defense",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"MDEF +2",
+				"+2 MDEF",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -625,7 +650,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Critical Chance",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"CRIT +3",
+				"+3 CRIT",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -634,7 +659,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Critical Damage",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"CRIT DAM +7%",
+				"+7% CRIT DAM",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -643,7 +668,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Attack Speed",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"ASPD +4%",
+				"+4% ASPD",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -652,7 +677,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Evasion",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"EVA +3",
+				"+3 EVA",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -661,7 +686,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Celerity",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"CEL +4",
+				"+4 CEL",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -670,7 +695,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Health Regen",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"HP Regen +10%",
+				"+10% HP Regen",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -679,7 +704,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Mana Regen",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"MP Regen +10%",
+				"+10% MP Regen",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -688,7 +713,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Lifesteal",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"Lifesteal +7%",
+				"+7% Lifesteal",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -697,7 +722,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Soulsteal",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+7 MP on Monster Kill",
+				"+7 MP on Kill",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -706,7 +731,7 @@ define(function()
 			"identifiedDisplayName": "Seal of Health",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"HP +15%",
+				"+15% HP",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -715,7 +740,7 @@ define(function()
 			"identifiedDisplayName": "Seal of Mana",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"MP +25%",
+				"+25% MP",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -724,8 +749,8 @@ define(function()
 			"identifiedDisplayName": "Seal of Lethality",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"CRIT +7",
-				"CRIT DAM +15%",
+				"+7 CRIT",
+				"+15% CRIT DAM",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -734,13 +759,13 @@ define(function()
 			"identifiedDisplayName": "Seal of Mastery",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"MP Consumption -15%",
+				"-15% MP Consumption",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
 		},
 		"54104": {
-			"identifiedDisplayName": "Seal of Tenacity",
+			"identifiedDisplayName": "Seal of Body",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
 				"-10% Physical Damage Taken",
@@ -749,7 +774,7 @@ define(function()
 			"ClassNum": 0
 		},
 		"54105": {
-			"identifiedDisplayName": "Seal of Will",
+			"identifiedDisplayName": "Seal of Mind",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
 				"-20% Magical Damage Taken",
@@ -761,26 +786,26 @@ define(function()
 			"identifiedDisplayName": "Seal of Faith",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"Healing Power +25%",
-				"Healing Recieved +25%",
+				"+25% Healing Power",
+				"+25% Healing Recieved",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
 		},
 		"54107": {
-			"identifiedDisplayName": "Seal of Armor Piercing",
+			"identifiedDisplayName": "Seal of Broken Will",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"DEF Penetration +33%",
+				"+33% DEF Penetration",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
 		},
 		"54108": {
-			"identifiedDisplayName": "Seal of Broken Will",
+			"identifiedDisplayName": "Seal of Broken Spirit",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"MDEF Penetration +33%",
+				"+33% MDEF Penetration",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -789,7 +814,8 @@ define(function()
 			"identifiedDisplayName": "Seal of Paralysis",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+7% Chance to Stun when attacking or getting attacked",
+				"+7% Chance to Stun on hit",
+				"+7% Chance to Stun attackers",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -798,7 +824,8 @@ define(function()
 			"identifiedDisplayName": "Seal of Venom",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+7% Chance to Poison when attacking or getting attacked",
+				"+7% Chance to Poison on hit",
+				"+7% Chance to Poison attackers",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -807,7 +834,8 @@ define(function()
 			"identifiedDisplayName": "Seal of Hoarfrost",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+7% Chance to Freeze when attacking or getting attacked",
+				"+7% Chance to Freeze on hit",
+				"+7% Chance to Freeze attackers",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -816,8 +844,8 @@ define(function()
 			"identifiedDisplayName": "Seal of Echoes",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+20% Chance to hit twice on basic attacks",
-			],
+				"+20% Chance to Double Strike",
+			], 
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -825,7 +853,7 @@ define(function()
 			"identifiedDisplayName": "Seal of Sunder",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"Sunder Skill Level +1",
+				"+1 to [Sunder]",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -834,7 +862,7 @@ define(function()
 			"identifiedDisplayName": "Seal of Cleave",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"Cleave Skill Level +1",
+				"+1 to [Cleave]",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -843,7 +871,7 @@ define(function()
 			"identifiedDisplayName": "Seal of Echo Blade",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"Echo Blade Skill Level +1",
+				"+1 to [Echo Blade]",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -852,7 +880,7 @@ define(function()
 			"identifiedDisplayName": "Seal of Fortune",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"LUK +50",
+				"+50 LUK",
 				"Gain extra Munny when killing a monster",
 			],
 			"slotCount": 0,

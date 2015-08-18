@@ -53,7 +53,7 @@ define(function( require )
 	/**
 	 * @var {boolean} magnetism while picking entites ?
 	 */
-	Cursor.magnetism = true;
+	Cursor.magnetism = false;
 
 
 	/**

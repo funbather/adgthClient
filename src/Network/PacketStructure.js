@@ -10280,8 +10280,12 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.count = fp.readShort();
 		this.quality = fp.readUChar();
 		this.ilvl = fp.readUChar();
+		this.slot1 = fp.readUChar();
+		this.slot2 = fp.readUChar();
+		this.slot3 = fp.readUChar();
+		this.slot4 = fp.readUChar();
 	};
-	PACKET.ZC.ITEM_FALL_ENTRY2.size = 21;
+	PACKET.ZC.ITEM_FALL_ENTRY2.size = 25;
 
 
 	// 0x856

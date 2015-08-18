@@ -306,7 +306,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		Name: "WR_SUNDER",
 		SkillName : "Sunder",
 		MaxLv : 5,
-		SpAmount : [ 15 ],
+		SpAmount : [ 20 ],
 		bSeperateLv : false,
 		AttackRange : [ 3 ],
 		ActionType: "ATTACK"
@@ -316,7 +316,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		Name: "WR_HILTBASH",
 		SkillName : "Hilt Bash",
 		MaxLv : 5,
-		SpAmount : [ 15 ],
+		SpAmount : [ 25 ],
 		bSeperateLv : false,
 		AttackRange : [ 3 ],
 		ActionType: "ATTACK"
@@ -326,7 +326,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		Name: "WR_CLEAVE",
 		SkillName : "Cleave",
 		MaxLv : 5,
-		SpAmount : [ 20 ],
+		SpAmount : [ 30 ],
 		bSeperateLv : false,
 		AttackRange : [ 3 ],
 		ActionType: "ATTACK"
@@ -336,7 +336,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		Name: "WR_PILEBUNKER",
 		SkillName : "Pile Bunker",
 		MaxLv : 5,
-		SpAmount : [ 25 ],
+		SpAmount : [ 35 ],
 		bSeperateLv : false,
 		AttackRange : [ 3 ],
 		ActionType: "ATTACK"
@@ -346,7 +346,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		Name: "WR_ECHOBLADE",
 		SkillName : "Echo Blade",
 		MaxLv : 5,
-		SpAmount : [ 25 ],
+		SpAmount : [ 50 ],
 		bSeperateLv : false,
 		AttackRange : [ 3 ],
 		ActionType: "ATTACK"
@@ -356,7 +356,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		Name: "WR_BULWARKBOOMERANG",
 		SkillName : "Bulwark Boomerang",
 		MaxLv : 5,
-		SpAmount : [ 15 ],
+		SpAmount : [ 20 ],
 		bSeperateLv : false,
 		AttackRange : [ 12 ],
 		ActionType: "ATTACK"
@@ -366,7 +366,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		Name: "WR_BULWARKBLITZ",
 		SkillName : "Bulwark Blitz",
 		MaxLv : 5,
-		SpAmount : [ 15 ],
+		SpAmount : [ 25 ],
 		bSeperateLv : false,
 		AttackRange : [ 12 ],
 		ActionType: "ATTACK"
@@ -376,7 +376,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		Name: "WR_BULWARKBASH",
 		SkillName : "Bulwark Bash",
 		MaxLv : 5,
-		SpAmount : [ 25 ],
+		SpAmount : [ 45 ],
 		bSeperateLv : false,
 		AttackRange : [ 1 ],
 		ActionType: "ATTACK"
@@ -386,7 +386,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		Name: "KN_BOWLINGBASH",
 		SkillName : "Bowling Bash",
 		MaxLv : 5,
-		SpAmount : [ 20 ],
+		SpAmount : [ 30 ],
 		bSeperateLv : false,
 		AttackRange : [ 2 ],
 		ActionType: "ATTACK"
@@ -422,6 +422,104 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		SkillName : "Comin' Right Up",
 		MaxLv : 1,
 		SpAmount : [ 0 ],
+	};						
+
+	SkillInfo[SK.TR_IMMUNITY] = {
+		Name: "TR_IMMUNITY",
+		SkillName : "Immunity",
+		MaxLv : 10,
+		bSeperateLv : false,
+	};
+
+	SkillInfo[SK.TR_LEYLINEWALKER] = {
+		Name: "TR_LEYLINEWALKER",
+		SkillName : "Leyline Walker",
+		MaxLv : 10,
+		bSeperateLv : false,
+	};
+
+	SkillInfo[SK.TR_STONESTANCE] = {
+		Name: "TR_STONESTANCE",
+		SkillName : "Stonestance",
+		MaxLv : 10,
+		bSeperateLv : false,
+	};
+
+	SkillInfo[SK.TR_NATURALCURE] = {
+		Name: "TR_NATURALCURE",
+		SkillName : "Natural Cure",
+		MaxLv : 10,
+		bSeperateLv : false,
+	};
+
+	SkillInfo[SK.TR_POISONIMPRINT] = {
+		Name: "TR_POISONIMPRINT",
+		SkillName : "Poison Imprint",
+		MaxLv : 10,
+		bSeperateLv : false,
+	};
+
+	SkillInfo[SK.TR_EARTHENSHIELD] = {
+		Name: "TR_EARTHENSHIELD",
+		SkillName : "Earthen Shield",
+		MaxLv : 10,
+		bSeperateLv : false,
+	};
+
+	SkillInfo[SK.TR_SLUDGEBOMB] = {
+		Name: "TR_SLUDGEBOMB",
+		SkillName : "Sludge Bomb",
+		MaxLv : 5,
+		bSeperateLv : false,
+	};
+
+	SkillInfo[SK.TR_POISONBLOW] = {
+		Name: "TR_POISONBLOW",
+		SkillName : "Poison Blow",
+		MaxLv : 5,
+		bSeperateLv : false,
+	};
+
+	SkillInfo[SK.TR_TOXICDELUGE] = {
+		Name: "TR_TOXICDELUGE",
+		SkillName : "Toxic Deluge",
+		MaxLv : 5,
+		bSeperateLv : false,
+	};
+
+	SkillInfo[SK.TR_EXPUNGE] = {
+		Name: "TR_EXPUNGE",
+		SkillName : "Expunge",
+		MaxLv : 10,
+		bSeperateLv : false,
+	};
+
+	SkillInfo[SK.TR_TERRASPINE] = {
+		Name: "TR_TERRASPINE",
+		SkillName : "Terraspine",
+		MaxLv : 5,
+		bSeperateLv : false,
+	};
+
+	SkillInfo[SK.TR_HEAVENSDRIVE] = {
+		Name: "TR_HEAVENSDRIVE",
+		SkillName : "Heaven's Drive",
+		MaxLv : 5,
+		bSeperateLv : false,
+	};
+
+	SkillInfo[SK.TR_GROUNDRIFT] = {
+		Name: "TR_GROUNDRIFT",
+		SkillName : "Ground Rift",
+		MaxLv : 5,
+		bSeperateLv : false,
+	};
+
+	SkillInfo[SK.TR_EARTHSHUDDER] = {
+		Name: "TR_EARTHSHUDDER",
+		SkillName : "Earth Shudder",
+		MaxLv : 10,
+		bSeperateLv : false,
 	};
 	
 	SkillInfo[SK.MG_FIREBOLT] = {

@@ -214,7 +214,7 @@ define(['Utils/gl-matrix', 'Renderer/Renderer'], function( glMatrix, Renderer )
 		}
 		
 		// Setup the canvas
-		ctx.font          = fontSize + 'px Andale Mono';
+		ctx.font          = fontSize + 'px Arial';
 		width             = Math.max( ctx.measureText(lines[0]).width, ctx.measureText(lines[1]).width ) + start_x + 5;
 		height            = fontSize * 3 * (lines[1].length ? 2 : 1);
 		ctx.canvas.width  = width;
@@ -229,14 +229,15 @@ define(['Utils/gl-matrix', 'Renderer/Renderer'], function( glMatrix, Renderer )
 
 		// TODO: complete the color list in the Entity display
 		color = color || 'white';
-		ctx.font         = fontSize + 'px Andale Mono';
+		ctx.font         = fontSize + 'px Arial';
 		ctx.textBaseline = 'top';
 		
 		if(bg) {
 			ctx.fillStyle="rgba(0,0,0,.6)";
 			ctx.fillRect(0,0,width,height/2);
 			ctx.strokeStyle = color;
-			roundRect(ctx, .5, .5, ctx.canvas.width-1, ctx.canvas.height/2-1, 1);
+			ctx.lineWidth = 3;
+			roundRect(ctx, .5, .5, ctx.canvas.width-1, ctx.canvas.height/2, 3);
 			ctx.stroke();
 		}
 		

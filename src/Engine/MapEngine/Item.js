@@ -41,7 +41,7 @@ define(function( require )
 		var y = pkt.yPos - 0.5 + pkt.subY / 12;
 		var z = Altitude.getCellHeight( x, y );
 
-		ItemObject.add( pkt.ITAID, pkt.ITID, pkt.IsIdentified, pkt.count, x, y, z, pkt.quality, pkt.ilvl );
+		ItemObject.add( pkt.ITAID, pkt.ITID, pkt.IsIdentified, pkt.count, x, y, z, pkt.quality, pkt.ilvl, pkt.slot1, pkt.slot2, pkt.slot3, pkt.slot4 );
 	}
 
 
@@ -57,6 +57,10 @@ define(function( require )
 		var z = Altitude.getCellHeight( x, y ) + 5.0;
 		var q = pkt.quality ? pkt.quality : 0;
 		var i = pkt.ilvl ? pkt.ilvl : 0;
+		var slot1 = pkt.slot1 ? pkt.slot1 : 0;
+		var slot2 = pkt.slot2 ? pkt.slot2 : 0;
+		var slot3 = pkt.slot3 ? pkt.slot3 : 0;
+		var slot4 = pkt.slot4 ? pkt.slot4 : 0;
 
 		ItemObject.add(
 			pkt.ITAID,
@@ -67,7 +71,11 @@ define(function( require )
 			y,
 			z,
 			q,
-			i
+			i,
+			slot1,
+			slot2,
+			slot3,
+			slot4
 		);
 	}
 

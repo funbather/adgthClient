@@ -412,6 +412,7 @@ define(function(require)
 			if(id >= 51000 && id <= 51002)   return WeaponType.SWORD;
 			if(id >= 51003 && id <= 51005)   return WeaponType.TWOHANDSWORD;
 			if(id >= 51006 && id <= 51008)   return WeaponType.MACE;
+			if(id >= 51009 && id <= 51011)   return WeaponType.ROD;
       
 			// Ranges
 			return (
@@ -509,15 +510,20 @@ define(function(require)
 				item.identifiedDisplayName       = TextEncoding.decodeString(item.identifiedDisplayName);
 				item.unidentifiedDisplayName     = TextEncoding.decodeString(item.unidentifiedDisplayName);
 				item.prefixNameTable             = TextEncoding.decodeString(item.prefixNameTable || '');
-				item.BaseHP                      = item.BaseHP || 0;
-				item.BaseMP                      = item.BaseMP || 0;
-				item.BaseDEF                     = item.BaseDEF || 0;
-				item.BaseMDEF                    = item.BaseMDEF || 0;
-				item.BaseATK                     = item.BaseATK || 0;
+				item.flavortext					 = item.flavortext ? item.flavortext : '';
+				item.condensedDesc               = item.condensedDesc ? TextEncoding.decodeString(item.condensedDesc.join('\n'))  : item.identifiedDescriptionName;
+				item.BaseHP                      = item.BaseHP    || 0;
+				item.BaseMP                      = item.BaseMP    || 0;
+				item.BaseDEF                     = item.BaseDEF   || 0;
+				item.BaseMDEF                    = item.BaseMDEF  || 0;
+				item.BaseATK                     = item.BaseATK   || 0;
 				item.BaseEVADE                   = item.BaseEVADE || 0;
-				item.BaseCRIT                    = item.BaseCRIT || 0;
-				item.BaseCEL                     = item.BaseCEL || 0;
-				item.BaseMAG					 = item.BaseMAG || 0;
+				item.BaseCRIT                    = item.BaseCRIT  || 0;
+				item.BaseCEL                     = item.BaseCEL   || 0;
+				item.BaseMAG										 = item.BaseMAG   || 0;
+				item.BaseCRIT                    = item.BaseCRIT  || 0;
+				item.BaseBonus1                  = item.BaseBonus1 || 0;
+				item.Multiplier1                 = item.Multiplier1 || 0;
 				item._decoded                    = true;
 			}
 
@@ -554,17 +560,6 @@ define(function(require)
 		if (!item.IsIdentified) {
 			return it.unidentifiedDisplayName;
 		}
-
-		/*if (item.RefiningLevel) {
-			str = '+' + item.RefiningLevel + ' ';
-		}*/
-		
-		if(item.RefiningLevel >= 125) { str = 'Perfect' + ' '; }
-		else if(item.RefiningLevel > 100) { str = 'Masterwork' + ' '; }
-		else if(item.RefiningLevel == 100) { str = 'Superior' + ' '; }
-		else if(item.RefiningLevel > 85)  {  }
-		else if(item.RefiningLevel > 60) { str = 'Inferior' + ' '; }
-		else if(item.RefiningLevel >= 50) { str = 'Damaged' + ' '; }
 
 		if (item.slot) {
 			switch (item.slot.card1) {

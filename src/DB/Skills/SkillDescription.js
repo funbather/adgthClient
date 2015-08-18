@@ -271,7 +271,7 @@ define(["./SkillConst"], function( SKID )
 	SkillDescription[SKID.WR_HILTBASH] = [
 		"Hilt Bash",
 		"Active - Physical",
-		"3s Cooldown",
+		"4s Cooldown",
 		" ",
 		"Slam the hilt of your weapon into your target, dealing $sklvl$% ATK damage to a single enemy, and stunning them for $sklvl2$ seconds.",
 	].join("\n");
@@ -279,7 +279,7 @@ define(["./SkillConst"], function( SKID )
 	SkillDescription[SKID.WR_CLEAVE] = [
 		"Cleave",
 		"Active - Physical - Area",
-		"3s Cooldown",
+		"5s Cooldown",
 		" ",
 		"Deal $sklvl$% ATK damage to your target and all enemies around them with a wide swing.",
 	].join("\n");
@@ -287,7 +287,7 @@ define(["./SkillConst"], function( SKID )
 	SkillDescription[SKID.WR_PILEBUNKER] = [
 		"Pile Bunker",
 		"Active - Physical",
-		"3s Cooldown",
+		"5s Cooldown",
 		" ",
 		"Pierce your target with your weapon, dealing $sklvl$% ATK damage and shattering its DEF for 8 seconds.",
 	].join("\n");
@@ -295,7 +295,7 @@ define(["./SkillConst"], function( SKID )
 	SkillDescription[SKID.WR_ECHOBLADE] = [
 		"Echo Blade",
 		"Active - Physical",
-		"5s Cooldown",
+		"12s Cooldown",
 		" ",
 		"Unleash a barrage of attacks, dealing $sklvl$% ATK damage over several hits.",
 	].join("\n");
@@ -313,6 +313,7 @@ define(["./SkillConst"], function( SKID )
 	SkillDescription[SKID.WR_BULWARKBLITZ] = [
 		"Bulwark Blitz",
 		"Active - Physical",
+		"2s Cooldown",
 		" ",
 		"Requires: Shield",
 		" ",
@@ -322,7 +323,7 @@ define(["./SkillConst"], function( SKID )
 	SkillDescription[SKID.WR_BULWARKBASH] = [
 		"Bulwark Bash",
 		"Active - Physical - Self",
-		"5s Cooldown",
+		"8s Cooldown",
 		" ",
 		"Requires: Shield",
 		" ",
@@ -346,16 +347,127 @@ define(["./SkillConst"], function( SKID )
 	SkillDescription[SKID.KN_BOWLINGBASH] = [
 		"Bowling Bash",
 		"Active - Physical",
-		"5s Cooldown",
+		"8s Cooldown",
 		" ",
 		"Strike an enemy with such force that they are knocked away, taking $sklvl$% ATK damage. Any enemies the target collides with also take $sklvl$% ATK damage.", 
 	].join("\n");
 
 	SkillDescription[SKID.ALL_PENGUIN] = [
 		"Call Penguin",
-		"Active - Physical",
+		"Active",
 		" ",
 		"Call a Penguin Buddy to your aid, who will throw refreshing drinks to you while in battle. You can only have one Penguin Buddy active at a time.", 
+	].join("\n");
+
+	SkillDescription[SKID.TR_IMMUNITY] = [
+		"Immunity",
+		"Passive",
+		" ",
+		"While afflicted with Poison, regenerate $sklvl$% of your Max HP per second instead of taking damage.", 
+	].join("\n");
+
+	SkillDescription[SKID.TR_LEYLINEWALKER] = [
+		"Leyline Walker",
+		"Passive",
+		" ",
+		"Gain $sklvl$% increased MP regeneration while moving.", 
+	].join("\n");
+
+	SkillDescription[SKID.TR_STONESTANCE] = [
+		"Stonestance",
+		"Active - Support - Self",
+		"20s Cooldown",
+		" ",
+		"Shift into a defensive stance, regenerating $sklvl$% of your Max HP per second and increasing your DEF by $sklvl2$ for 5 seconds. While in Stonestance your movement speed is halved.", 
+	].join("\n");
+
+	SkillDescription[SKID.TR_NATURALCURE] = [
+		"Natural Cure",
+		"Active - Support",
+		"8s Cooldown",
+		" ",
+		"Force your target underground for 4 seconds. If they are an ally, they are healed for $sklvl$% of your Max HP per second and are cured of most negative status effects.", 
+	].join("\n");
+
+	SkillDescription[SKID.TR_POISONIMPRINT] = [
+		"Poison Imprint",
+		"Active - Support",
+		" ",
+		"Coat an ally's weapon in poison, giving them a $sklvl$% chance to Poison when attacking, and increasing damage on Poisoned targets by $sklvl2$%.", 
+	].join("\n");
+
+	SkillDescription[SKID.TR_EARTHENSHIELD] = [
+		"Earthen Shield",
+		"Active - Support",
+		"5s Cooldown",
+		" ",
+		"Shield an ally in a barrier of solid rock that absorbs up to $sklvl$% MAG damage.", 
+	].join("\n");
+
+	SkillDescription[SKID.TR_SLUDGEBOMB] = [
+		"Sludge Bomb",
+		"Active - Magical",
+		"2s Cooldown",
+		" ",
+		"Launch a ball of sludge at an enemy, dealing $sklvl$% MAG damage and Poisoning at a $sklvl2$% chance.", 
+	].join("\n");
+
+	SkillDescription[SKID.TR_POISONBLOW] = [
+		"Poison Blow",
+		"Active - Magical",
+		"4s Cooldown",
+		" ",
+		"Cause a toxic explosion in an area, dealing $sklvl$% MAG damage and Poisoning afflicted enemies at a $sklvl2$% chance.", 
+	].join("\n");
+
+	SkillDescription[SKID.TR_TOXICDELUGE] = [
+		"Toxic Deluge",
+		"Active - Magical",
+		"12s Cooldown",
+		" ",
+		"Cover an area in a layer of poisonous sludge. Enemies passing through the area are Slowed by $sklvl$% and Poisoned.", 
+	].join("\n");
+
+	SkillDescription[SKID.TR_EXPUNGE] = [
+		"Expunge",
+		"Active - Magical",
+		"18s Cooldown",
+		" ",
+		"Force the poison in your target's veins to explode with magical energies, dealing a massive $sklvl$% MAG damage to it and any nearby enemies.", 
+		" ",
+		"If your target is not currently Poisoned this spell will fizzle, and instead deal pitiful damage.",
+	].join("\n");
+
+	SkillDescription[SKID.TR_TERRASPINE] = [
+		"Terraspine",
+		"Active - Magical",
+		"2s Cooldown",
+		" ",
+		"Send a stream of rock spines towards your target, dealing $sklvl$% MAG damage to it and any other enemies in the path.", 
+	].join("\n");
+
+	SkillDescription[SKID.TR_HEAVENSDRIVE] = [
+		"Heaven's Drive",
+		"Active - Magical",
+		"4s Cooldown",
+		" ",
+		"Cause the earth to erupt in rock spines, dealing $sklvl$% MAG damage to enemies in an area.", 
+	].join("\n");
+
+	SkillDescription[SKID.TR_GROUNDRIFT] = [
+		"Ground Rift",
+		"Active - Magical",
+		"12s Cooldown",
+		" ",
+		"Cause an upheaval in the ground, creating a rolling wave of broken earth. Deals $sklvl$% MAG damage to enemies in the path.", 
+	].join("\n");
+
+	SkillDescription[SKID.TR_EARTHSHUDDER] = [
+		"Earth Shudder",
+		"Active - Magical",
+		"18s Cooldown",
+		" ",
+		"Violently shake the earth beneath you, dealing a massive $sklvl$% MAG damage to nearby enemies.", 
 	].join("\n");
 		
 	SkillDescription[SKID.MG_FIREBOLT] = [

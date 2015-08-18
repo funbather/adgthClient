@@ -24,30 +24,25 @@ function(   DB,            EntityManager,            Entity,                Alti
 	 * @param {number} y
 	 * @param {number} z
 	 */
-	function add( gid, itemid, identify, count, x, y, z, quality, ilvl )
+	function add( gid, itemid, identify, count, x, y, z, quality, ilvl, slot1, slot2, slot3, slot4 )
 	{
 		var it     = DB.getItemInfo(itemid);
 		var path   = DB.getItemPath(itemid, identify);
 		var entity = new Entity();
 		var name   = identify ? it.identifiedDisplayName : it.unidentifiedDisplayName;
-		var enchtitle = '';
 
 		entity.GID          = gid;
 		entity.objecttype   = Entity.TYPE_ITEM;
 		entity.position[0]  = x;
 		entity.position[1]  = y;
 		entity.position[2]  = z;
-		
-    if(identify-1) {
-      enchtitle = DB.getRarity(identify-1);
-    }
 
 		entity.display.load = entity.display.TYPE.COMPLETE;
 		
 		if(count > 1) // Consumable? Misc?
-      entity.display.name = DB.getMessage(183).replace('%s',name).replace('%d', count);
+      entity.display.name = ' '+DB.getMessage(183).replace('%s',name).replace('%d', count)+' ';
     else if(!quality && !ilvl) // Accessories & Single misc items
-      entity.display.name = name;
+      entity.display.name = ' '+name+' ';
     else
       entity.display.name = ' '+name+' -- Lv. '+ilvl+' | '+quality+'% ';
       
@@ -63,7 +58,7 @@ function(   DB,            EntityManager,            Entity,                Alti
 		entity.files.body.spr = path + '.spr';
 		entity.files.body.act = path + '.act';
 
-		entity.files.shadow.size = 0.25;
+		entity.files.shadow.size = .5;
 
 		// Item falling
 		entity.animations.add(function(tick) {
