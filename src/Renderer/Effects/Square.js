@@ -1,12 +1,4 @@
-/**
- * Renderer/Effects/MagicTarget.js
- *
- * Rendering casting on ground (rotating plane)
- *
- * This file is part of ROBrowser, Ragnarok Online in the Web Browser (http://www.robrowser.com/).
- *
- * @author Vincent Thibault
- */
+// Render a square, adapted from MagicTarget.js
 define(function( require ) {
 
 	'use strict';
@@ -15,7 +7,6 @@ define(function( require ) {
 	// Load dependencies
 	var WebGL    = require('Utils/WebGL');
 	var glMatrix = require('Utils/gl-matrix');
-	var SkillId  = require('DB/Skills/SkillConst');
 	var Client   = require('Core/Client');
 	var Altitude = require('Renderer/Map/Altitude');
 
@@ -42,38 +33,6 @@ define(function( require ) {
 	 * @var {mat4} rotation matrix
 	 */
 	var _matrix = mat4.create();
-
-
-	/**
-	 * @var {object} CastSize for each skill
-	 */
-	var CastSize = {};
-	CastSize[ SkillId.MG_SAFETYWALL ]     =  1;
-	CastSize[ SkillId.MG_FIREWALL ]       =  1;
-	CastSize[ SkillId.MG_THUNDERSTORM ]   =  5;
-	CastSize[ SkillId.AL_WARP ]           =  1;
-	CastSize[ SkillId.PR_SANCTUARY ]      =  7;
-	CastSize[ SkillId.PR_MAGNUS ]         =  7;
-	CastSize[ SkillId.WZ_FIREPILLAR ]     =  1;
-	CastSize[ SkillId.WZ_METEOR ]         = 13;
-	CastSize[ SkillId.WZ_VERMILION ]      = 13;
-	CastSize[ SkillId.WZ_STORMGUST ]      = 13;
-	CastSize[ SkillId.WZ_HEAVENDRIVE ]    =  7;
-	CastSize[ SkillId.WZ_QUAGMIRE ]       =  7;
-	CastSize[ SkillId.AM_DEMONSTRATION ]  =  1;
-	CastSize[ SkillId.AM_CANNIBALIZE ]    =  1;
-	CastSize[ SkillId.AM_SPHEREMINE ]     =  1;
-	CastSize[ SkillId.SA_VOLCANO ]        = 13;
-	CastSize[ SkillId.SA_DELUGE ]         = 13;
-	CastSize[ SkillId.SA_VIOLENTGALE ]    = 13;
-	CastSize[ SkillId.SA_LANDPROTECTOR]   = 13;
-	CastSize[ SkillId.CR_SLIMPITCHER ]    =  7;
-	CastSize[ SkillId.HW_GANBANTEIN ]     =  1;
-	CastSize[ SkillId.HW_GRAVITATION ]    =  7;
-	CastSize[ SkillId.CR_CULTIVATION ]    =  7;
-	CastSize[ SkillId.TR_POISONBLOW ]     =  7;	
-	CastSize[ SkillId.TR_TOXICDELUGE ]    =  9;
-	CastSize[ SkillId.TR_HEAVENSDRIVE ]   =  11;
 
 
 	/**
@@ -130,18 +89,19 @@ define(function( require ) {
 
 
 	/**
-	 * MagicTarget constructor
+	 * Square constructor
 	 *
 	 * @param {number} position x
 	 * @param {number} position y
 	 * @param {number} cast size
 	 * @param {number} tick to remove it
 	 */
-	function MagicTarget( id, x, y, endLifeTime )
+	function Square( id, textureName, x, y, size, endLifeTime )
 	{
+		this.textureName = textureName;
 		this.x           = x;
 		this.y           = y;
-		this.size        = CastSize[id] || 1;
+		this.size        = size;
 		this.endLifeTime = endLifeTime;
 	}
 
@@ -151,7 +111,7 @@ define(function( require ) {
 	 *
 	 * @param {object} webgl context
 	 */
-	MagicTarget.prototype.init = function init( gl )
+	Square.prototype.init = function init( gl )
 	{
 		var data       = Altitude.generatePlane( this.x, this.y, this.size);
 		this.buffer    = gl.createBuffer();
@@ -169,7 +129,7 @@ define(function( require ) {
 	 *
 	 * @param {object} webgl context
 	 */
-	MagicTarget.prototype.free = function free( gl )
+	Square.prototype.free = function free( gl )
 	{
 		gl.deleteBuffer(this.buffer);
 		this.ready = false;
@@ -181,7 +141,7 @@ define(function( require ) {
 	 *
 	 * @param {object} wegl context
 	 */
-	MagicTarget.prototype.render = function render( gl, tick )
+	Square.prototype.render = function render( gl, tick )
 	{
 		var attribute = _program.attribute;
 
@@ -203,14 +163,14 @@ define(function( require ) {
 	 * 
 	 * @param {object} webgl context
 	 */
-	MagicTarget.init = function init(gl)
+	Square.init = function init(gl)
 	{
 		_program = WebGL.createShaderProgram( gl, _vertexShader, _fragmentShader );
 
-		Client.loadFile('data/texture/effect/magic_target.tga', function(buffer) {
+		Client.loadFile('data/texture/effect/damageplane.tga', function(buffer) {
 			WebGL.texture( gl, buffer, function(texture) {
 				_texture = texture;
-				MagicTarget.ready = true;
+				Square.ready = true;
 			});
 		});
 	};
@@ -219,7 +179,7 @@ define(function( require ) {
 	/**
 	 * @var {boolean} should we render it before entities ?
 	 */
-	MagicTarget.renderBeforeEntities = true;
+	Square.renderBeforeEntities = true;
 
 
 	/**
@@ -227,7 +187,7 @@ define(function( require ) {
 	 *
 	 * @param {object} webgl context
 	 */
-	MagicTarget.free = function free(gl)
+	Square.free = function free(gl)
 	{
 		if (_texture) {
 			gl.deleteTexture(_texture);
@@ -248,13 +208,13 @@ define(function( require ) {
 	 *
 	 * @param {object} webgl context
 	 */
-	MagicTarget.beforeRender = function beforeRender(gl, modelView, projection, fog, tick)
+	Square.beforeRender = function beforeRender(gl, modelView, projection, fog, tick)
 	{
 		var uniform   = _program.uniform;
 		var attribute = _program.attribute;
 
 		mat4.identity(_matrix);
-		mat4.rotateZ( _matrix, _matrix, (tick/1000*40) / 180 * Math.PI);
+		//mat4.rotateZ( _matrix, _matrix, (tick/1000*40) / 180 * Math.PI);
 
 		gl.useProgram( _program );
 
@@ -285,7 +245,7 @@ define(function( require ) {
 	 *
 	 * @param {object} webgl context
 	 */
-	MagicTarget.afterRender = function afterRender(gl)
+	Square.afterRender = function afterRender(gl)
 	{
 		gl.disableVertexAttribArray( _program.attribute.aPosition );
 		gl.disableVertexAttribArray( _program.attribute.aTextureCoord );
@@ -295,5 +255,5 @@ define(function( require ) {
 	/**
 	 * Export
 	 */
-	return MagicTarget;
+	return Square;
 });

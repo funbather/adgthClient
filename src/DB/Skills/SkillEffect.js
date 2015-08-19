@@ -14,8 +14,24 @@ define(['./SkillConst'], function( SK )
 
 
 	var SkillEffect = {};
-  SkillEffect[SK.ALL_COMINRIGHTUP] = {
+  SkillEffect[SK.AL_WARP] = {
+		groundEffectId: 2000
+	};
+	
+  SkillEffect[SK.TR_HEAVENSDRIVE] = {
+		groundEffectId: 2001
+	};
+	
+  SkillEffect[SK.TR_GROUNDRIFT] = {
+		groundEffectId: 2001
+	};
+	
+	SkillEffect[SK.ALL_RESURRECTION] = {
 		effectId: 509
+	};
+	
+	SkillEffect[SK.ALL_FIRSTAID] = {
+		effectId: 699
 	};
 
 	SkillEffect[SK.SM_PROVOKE] = {
@@ -67,10 +83,6 @@ define(['./SkillConst'], function( SK )
 
 	SkillEffect[SK.AC_CONCENTRATION] = {
 		effectId: 153
-	};
-
-	SkillEffect[SK.ALL_RESURRECTION] = {
-		effectId: 77
 	};
 
 	SkillEffect[SK.KN_PIERCE] =  {

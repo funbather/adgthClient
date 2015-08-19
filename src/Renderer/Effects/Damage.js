@@ -157,6 +157,7 @@ define(function( require )
 		var obj      = new Damage();
 
 		obj.type     = type || (damage ? Damage.TYPE.DAMAGE : Damage.TYPE.MISS);
+		obj.type     = damage ? obj.type : obj.type & ~(Damage.TYPE.CRIT); // Possible to "miss" a critical flagged attack, looked dumb in-client lol
 		if (entity.objecttype === entity.constructor.TYPE_PC) {
 			obj.type |= Damage.TYPE.ENEMY;
 		}
@@ -186,7 +187,7 @@ define(function( require )
 			obj.color[2] = 0.15;
 			obj.delay    = 3000;
 		} 	
-		else if ((obj.type & Damage.TYPE.CRIT) && !(obj.type & Damage.TYPE.MISS)) {
+		else if (obj.type & Damage.TYPE.CRIT) {
 			obj.color[0] = 1.0;
 			obj.color[1] = 0.15;
 			obj.color[2] = 0.15;
@@ -354,12 +355,8 @@ define(function( require )
 			
       // Crit?
 			else if (damage.type & Damage.TYPE.CRIT) {
-          //size = max(3,((1-perc)*6));
-          size = Math.max( (1-perc*10)/15, 0.025 ) * 100;
+				size = Math.max( (1-perc*10)/15, 0.025 ) * 100;
 
-				//SpriteRenderer.position[0] = damage.entity.position[0];
-				//SpriteRenderer.position[1] = damage.entity.position[1];
-				//SpriteRenderer.position[2] = damage.entity.position[2] + 2 + perc * 15;
 				SpriteRenderer.position[0] = damage.entity.position[0] + perc * 7;
 				SpriteRenderer.position[1] = damage.entity.position[1] - perc * 7;
 				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + Math.sin( -Math.PI/2 + ( Math.PI * (0.5 + perc * 1.5 ) ) ) * 5;

@@ -20,6 +20,7 @@ define(function( require )
 	var SkillUnit     = require('DB/Skills/SkillUnit');
 	var Events        = require('Core/Events');
 	var Cylinder      = require('Renderer/Effects/Cylinder');
+	var Square        = require('Renderer/Effects/Square');
 	var StrEffect     = require('Renderer/Effects/StrEffect');
 	var Entity        = require('Renderer/Entity/Entity');
 	var EntityManager = require('Renderer/EntityManager');
@@ -331,8 +332,12 @@ define(function( require )
 				break;
 
 			case 'CYLINDER':
-				EffectManager.add(new Cylinder( position, effect.topSize, effect.bottomSize, effect.height, effect.textureName, tick, tick+60), AID);
+				EffectManager.add(new Cylinder( position, effect.topSize, effect.bottomSize, effect.height, effect.textureName, tick, tick+effect.tickTime), AID);
 				break;
+				
+			case 'SQUARE':
+				EffectManager.add(new Square( position, effect.textureName, position[0], position[1], effect.size, tick+effect.tickTime), AID);
+				break;				
 
 			case 'FUNC':
 				if (effect.func) {

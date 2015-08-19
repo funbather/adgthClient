@@ -59,18 +59,24 @@ define(function( require )
 
 	return {
 	
-		2000: [{
+		2000: [{ // Warp Portal
 			type: 'CYLINDER',
-			topSize: 4,
-			bottomSize: 1,
-			height: 3,
-			textureName: 'tarot02'
-			//file: 'firewall%d',
-			//wav:  'effect/ef_firewall',
-			//rand: [1, 2],
-			//attachedEntity: true
+			wav:  'effect/ef_glasswall',
+			topSize: 0.75,
+			bottomSize: 0.75,
+			height: 10,
+			textureName: 'cylinder_blue',
+			tickTime: 15000,
+			attachedEntity: true
 		}],
-
+		
+		2001: [{ // Unit-based AoE
+			type: 'SQUARE',
+			size: 1,
+			tickTime: 4000,
+			attachedEntity: false
+		}],
+		
 		1: [{
 			//  Loads 2 tga-images, semi-randomly (alternating pattern but random position) aligns 4 instances of each (=8 in total) in a circle around the object and stretches them away.
 			//  Important note: It really is just stretching one end further and further out, one end of the images is tied to the object
@@ -1621,7 +1627,8 @@ define(function( require )
 		509: [{
 			type: 'SPR',
 			file: '05vallentine',
-			attachedEntity: true
+			attachedEntity: true,
+			wav: 'effect/ab_ancilla'
 		}],
 
 
@@ -2036,7 +2043,8 @@ define(function( require )
 		699: [{
 			type: 'STR',
 			file: 'flower_leaf',
-			attachedEntity: true
+			attachedEntity: true,
+			wav: 'effect/acolyte_cure'
 		}],
 
 
