@@ -13,6 +13,8 @@ define(['./SkillConst'], function( SK )
 	'use strict';
 
 	return {
+		0x150: SK.TR_POISONBLOW,
+	
 		0x7e: SK.MG_SAFETYWALL,
 		0x7f: SK.MG_FIREWALL,
 		0x81: SK.AL_WARP,

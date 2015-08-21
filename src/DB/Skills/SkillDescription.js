@@ -356,7 +356,7 @@ define(["./SkillConst"], function( SKID )
 		"Call Penguin",
 		"Active",
 		" ",
-		"Call a Penguin Buddy to your aid, who will throw refreshing drinks to you while in battle. You can only have one Penguin Buddy active at a time.", 
+		"Call a Penguin to your aid who will throw refreshing drinks to you while in battle. You can only have one Penguin Buddy active at a time.", 
 	].join("\n");
 
 	SkillDescription[SKID.TR_IMMUNITY] = [

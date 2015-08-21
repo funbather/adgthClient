@@ -242,7 +242,7 @@ define(function( require )
 			case 8:  // double attack
 			case 9:  // endure
 			case 10: // critital
-			case 20:
+			case 20: // double attack crit
 				if (dstEntity) {
 					// only if damage and do not have endure
 					// and damage isn't absorbed (healing)
@@ -584,7 +584,7 @@ define(function( require )
 		var dstEntity = EntityManager.get(pkt.targetAID);
 
 		// Only mob to don't display skill name ?
-		if (srcEntity && srcEntity.objecttype !== Entity.TYPE_MOB) {
+		if (srcEntity && srcEntity.objecttype !== Entity.TYPE_MOB && (SkillInfo[pkt.SKID] && SkillInfo[pkt.SKID].SkillName )) { // Normal attack splash damage sent as a skill
 			srcEntity.dialog.set(
 				( (SkillInfo[pkt.SKID] && SkillInfo[pkt.SKID].SkillName ) || 'Unknown Skill' ) + '!',
 				'white'
@@ -646,7 +646,7 @@ define(function( require )
 			srcEntity.attack_speed = pkt.attackMT;
 
 
-			if (srcEntity.objecttype !== Entity.TYPE_MOB) {
+			if (srcEntity.objecttype !== Entity.TYPE_MOB && (SkillInfo[pkt.SKID] && SkillInfo[pkt.SKID].SkillName )) {
 				srcEntity.dialog.set( ( (SkillInfo[pkt.SKID] && SkillInfo[pkt.SKID].SkillName ) || 'Unknown Skill' ) + '!' );
 			}
 
@@ -764,7 +764,7 @@ define(function( require )
 		}
 
 		// Only mob to don't display skill name ?
-		if (srcEntity.objecttype !== Entity.TYPE_MOB) {
+		if (srcEntity.objecttype !== Entity.TYPE_MOB && (SkillInfo[pkt.SKID] && SkillInfo[pkt.SKID].SkillName )) {
 			srcEntity.dialog.set(
 				( ( SkillInfo[pkt.SKID] && SkillInfo[pkt.SKID].SkillName ) || 'Unknown Skill' ) + '!',
 				'white'

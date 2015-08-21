@@ -14,6 +14,10 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 
 
 	var SkillInfo = {};
+	SkillInfo[0] = { // Normal attack splash damage sent as a skill
+		ActionType: "ATTACK"
+	};
+	
 	SkillInfo[SK.ALL_RESURRECTION] = {
 		Name: "ALL_RESURRECTION",
 		SkillName : "Recucitate",

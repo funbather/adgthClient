@@ -65,7 +65,7 @@ define(function()
 			"identifiedDisplayName": "Ironweave Coat",
 			"identifiedResourceName": "\xb8\xc7\xc6\xb2",
 			"identifiedDescriptionName": [
-				"Hybrid Armor",
+				"Mage Armor",
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
@@ -83,7 +83,7 @@ define(function()
 			"identifiedDisplayName": "Battlemage Robe",
 			"identifiedResourceName": "\xc3\xb5\xbb\xe7\xc0\xc7\xb0\xa1\xc8\xa3",
 			"identifiedDescriptionName": [
-				"Hybrid Armor",
+				"Mage Armor",
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
@@ -101,7 +101,7 @@ define(function()
 			"identifiedDisplayName": "Hero's Garb",
 			"identifiedResourceName": "\xbf\xc0\xb5\xf2\xc0\xc7\xc3\xe0\xba\xb9",
 			"identifiedDescriptionName": [
-				"Hybrid Armor",
+				"Mage Armor",
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
@@ -239,7 +239,7 @@ define(function()
 			"identifiedDisplayName": "Layered Shawl",
 			"identifiedResourceName": "\xb8\xd3\xc7\xc3\xb7\xaf",
 			"identifiedDescriptionName": [
-				"Mantle",
+				"Robe",
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
@@ -255,7 +255,7 @@ define(function()
 			"identifiedDisplayName": "Wool Scarf",
 			"identifiedResourceName": "\xbf\xef\xbd\xba\xc4\xab\xc7\xc1",
 			"identifiedDescriptionName": [
-				"Mantle",
+				"Robe",
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
@@ -271,7 +271,7 @@ define(function()
 			"identifiedDisplayName": "Feathered Muffler",
 			"identifiedResourceName": "\xb8\xc5\xc0\xc7\xb3\xaf\xb0\xb3\xbf\xca",
 			"identifiedDescriptionName": [
-				"Mantle",
+				"Robe",
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
@@ -783,11 +783,11 @@ define(function()
 			"ClassNum": 0
 		},
 		"54106": {
-			"identifiedDisplayName": "Seal of Faith",
+			"identifiedDisplayName": "Seal of Fortune",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+25% Healing Power",
-				"+25% Healing Recieved",
+				"+50 LUK",
+				"Gain extra Munny when killing a monster",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -877,11 +877,38 @@ define(function()
 			"ClassNum": 0
 		},
 		"54116": {
-			"identifiedDisplayName": "Seal of Fortune",
+			"identifiedDisplayName": "Seal of Terraspine",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+50 LUK",
-				"Gain extra Munny when killing a monster",
+				"+1 to [Terraspine]",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54117": {
+			"identifiedDisplayName": "Seal of Expunge",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"+1 to [Expunge]",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54118": {
+			"identifiedDisplayName": "Seal of Earth Shudder",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"+1 to [Earth Shudder]",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"54999": {
+			"identifiedDisplayName": "Seal of Faith",
+			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
+			"identifiedDescriptionName": [
+				"+25% Healing Power",
+				"+25% Healing Recieved",
 			],
 			"slotCount": 0,
 			"ClassNum": 0

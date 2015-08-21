@@ -18,6 +18,70 @@ define(['./SkillConst'], function( SK )
 		groundEffectId: 2000
 	};
 	
+	SkillEffect[SK.ALL_FIRSTAID] = {
+		effectId: 2018
+	};
+	
+	SkillEffect[SK.ALL_RESURRECTION] = {
+		effectId: 509
+	};
+	
+	SkillEffect[SK.WR_SUNDER] = {
+		effectId: 2008
+	};
+	
+	SkillEffect[SK.WR_HILTBASH] = {
+		effectId: 3
+	};
+	
+	SkillEffect[SK.WR_CLEAVE] = {
+		effectId: 2008
+	};
+	
+	SkillEffect[SK.WR_PILEBUNKER] = {
+		effectId: 2009
+	};
+	
+	SkillEffect[SK.WR_ECHOBLADE] = {
+		effectId: 2010
+	};
+	
+	SkillEffect[SK.WR_BULWARKBOOMERANG] = {
+		effectId: 2013
+	};
+	
+	SkillEffect[SK.WR_BULWARKBLITZ] = {
+		effectId: 2012
+	};
+	
+	SkillEffect[SK.WR_BULWARKBASH] = {
+		effectId: 2011
+	};
+	
+	SkillEffect[SK.TR_STONESTANCE] = {
+		effectId: 2014
+	};
+	
+	SkillEffect[SK.TR_NATURALCURE] = {
+		effectId: 2015
+	};
+	
+	SkillEffect[SK.TR_POISONIMPRINT] = {
+		effectId: 2016
+	};
+	
+	SkillEffect[SK.TR_EARTHENSHIELD] = {
+		effectId: 2017
+	};
+	
+	SkillEffect[SK.TR_SLUDGEBOMB] = {
+		hitEffectId: 2019
+	};
+	
+	SkillEffect[SK.TR_TERRASPINE] = {
+		hitEffectId: 2020
+	};
+	
   SkillEffect[SK.TR_HEAVENSDRIVE] = {
 		groundEffectId: 2001
 	};
@@ -26,12 +90,16 @@ define(['./SkillConst'], function( SK )
 		groundEffectId: 2001
 	};
 	
-	SkillEffect[SK.ALL_RESURRECTION] = {
-		effectId: 509
+  SkillEffect[SK.TR_POISONBLOW] = {
+		groundEffectId: 2002
 	};
 	
-	SkillEffect[SK.ALL_FIRSTAID] = {
-		effectId: 699
+  SkillEffect[4054] = { // TR_EXPUNGE_SPLASH dummy skill
+		effectId: 2007
+	};	
+	
+	SkillEffect[SK.TR_EARTHSHUDDER] = {
+		effectId: 666
 	};
 
 	SkillEffect[SK.SM_PROVOKE] = {

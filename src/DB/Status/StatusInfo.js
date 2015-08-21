@@ -120,16 +120,18 @@ define(['./StatusConst'], function( SC )
 		]
 	};		
 	StatusInfo[SC.MONKEYGRIP] = {
-		icon: "sc_monkeygrip.tga",
+		icon: "monkeygrip.tga",
 		descript: [
-			["Can equip two-handed weapons with one hand.", COLOR_TITLE_BUFF],
+			["Monkey Grip", COLOR_TITLE_BUFF],
+			["Hold two-handed weapons with one hand."],
 		]
 	};
 			
 	StatusInfo[SC.TWINHAND] = {
-		icon: "sc_twinhand.tga",
+		icon: "twinhand.tga",
 		descript: [
-			["Hold one-handed weapons with two hands.", COLOR_TITLE_BUFF],
+			["Twinhand", COLOR_TITLE_BUFF],
+			["Hold one-handed weapons with two hands."],
 		]
 	};
 	
@@ -137,7 +139,50 @@ define(['./StatusConst'], function( SC )
 	StatusInfo[SC.SHATTER] = {
 		icon: "\xc1\xfd\xc1\xdf\xb7\xc2\xc7\xe2\xbb\xf3.tga",
 		descript: [
-			["Defense reduced to 0.", COLOR_TITLE_BUFF],
+			["Shatter", COLOR_TITLE_BUFF],
+			["Defense reduced to 0."],
+		]
+	};
+				
+	StatusInfo[SC.STONESTANCE] = {
+		icon: "stonestance.tga",
+		descript: [
+			["Stonestance", COLOR_TITLE_BUFF],
+			["DEF increased."],
+			["Rapidly regenerating HP."],
+		]
+	};
+				
+	StatusInfo[SC.POISONIMPRINT] = {
+		icon: "poisonimprint.tga",
+		descript: [
+			["Poison Imprint", COLOR_TITLE_BUFF],
+			["Chance on-hit to cause Poison."],
+			["Increased damage vs. Poisoned enemies."],
+		]
+	};
+				
+	StatusInfo[SC.EARTHENSHIELD] = {
+		icon: "earthenshield.tga",
+		descript: [
+			["Earthen Shield", COLOR_TITLE_BUFF],
+			["Absorbs damage."],
+		]
+	};
+
+	StatusInfo[SC.HIDING] = {
+		icon: "\xc7\xcf\xc0\xcc\xb5\xf9.tga",
+		descript: [
+			["Hidden", COLOR_TITLE_BUFF],
+			["Hidden underground."]
+		]
+	};
+
+	StatusInfo[SC.DEVOTION] = {
+		icon: "devotion.tga",
+		descript: [
+			["Cover", COLOR_TITLE_BUFF],
+			["Incoming damage taken by someone else."]
 		]
 	};
 	
@@ -894,18 +939,6 @@ define(['./StatusConst'], function( SC )
 			["Recovers HP every 5 seconds"], 
 			["When used on Undead monsters"], 
 			["it deals high damage according to skill level"]
-		]
-	};
-
-	StatusInfo[SC.HIDING] = {
-		icon: "\xc7\xcf\xc0\xcc\xb5\xf9.tga",
-		haveTimeLimit: 1,
-		posTimeLimitStr: 2,
-		descript: [
-			["Hiding", COLOR_TITLE_BUFF], 
-			["%s", COLOR_TIME], 
-			["Avoids enemy attacks by hiding in the ground"], 
-			["Can be discovered with detection skills"]
 		]
 	};
 

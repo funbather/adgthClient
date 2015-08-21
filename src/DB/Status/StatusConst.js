@@ -789,5 +789,8 @@ define(function()
 		MONKEYGRIP:                             832,
 		TWINHAND:                               833,
 		SHATTER:                                834,
+		STONESTANCE:							835,
+		POISONIMPRINT:							836,
+		EARTHENSHIELD:							837,
 	};
 });

@@ -74,14 +74,142 @@ define(function( require )
 			type: 'SQUARE',
 			size: 1,
 			tickTime: 4000,
+			attachedEntity: true
+		}],
+		
+		2002: [{
+			type: 'STR',
+			wav: 'effect/ef_poisonattack',
+			file: 'venomsplasher',
+			attachedEntity: true
+		}],
+		
+		2003: [{
+			wav: 'effect/lg_earthdrive'
+		}],
+		
+		2004: [{
+			wav: 'effect/wizard_earthspike'
+		}],
+		
+		2005: [{
+			wav: 'effect/wizard_quagmire'
+		}],
+		
+		2006: [{
+			wav: 'earth_quake' // workaround... sound would play for every hit enemy and it got super loud
+		}],
+		
+		2007: [{
+			wav: 'effect/assasin_poisonreact'
+		}],
+
+		2008: [{
+			type: 'STR',
+			file: 'moonlight_1',
+			wav: '_hit_sword',
+			attachedEntity: true
+		}],
+
+		2009: [{
+			type: 'SPR',
+			file: '¸ÅÁöÄÃºÒ¸´',
+			wav: 'effect/ef_hit2',
+			attachedEntity: true
+		}],
+
+		2010: [{
+			type: 'STR',
+			file: 'hit',
+			wav: 'effect/t_È¸¿À¸®Â÷±â',
+			attachedEntity: true
+		}],
+
+		2011: [{
+			type: 'STR',
+			file: 'stun_effect',
+			wav: 'effect/ef_magnumbreak',
+			attachedEntity: true
+		}],
+
+		2012: [{
+			type: 'STR',
+			file: 'deffender',
+			wav: 'effect/lg_shieldpress',
+			attachedEntity: true
+		}],
+
+		2013: [{
+			type: 'STR',
+			file: 'eraser_cutter',
+			wav: 'effect/lg_shieldpress',
+			attachedEntity: true
+		}],
+
+		2014: [{
+			type: 'STR',
+			file: 'defense',
+			wav: 'effect/wizard_icewall',
+			attachedEntity: true
+		}],
+
+		2015: [{
+			type: 'STR',
+			file: 'earthhit',
+			wav: 'effect/º¹È£°Ý',
+			attachedEntity: true
+		}],
+
+		2016: [{
+			type: 'STR',
+			file: 'assasin_poisonreact_1st',
+			wav: 'effect/ab_duplelight',
+			attachedEntity: true
+		}],
+
+		2017: [{
+			type: 'STR',
+			file: 'stonecurse',
+			wav: 'effect/ef_stonecurse',
+			attachedEntity: true
+		}],
+
+		2018: [{
+			type: 'STR',
+			file: 'detoxication',
+			wav: 'effect/acolyte_cure',
+			attachedEntity: true
+		}],
+				
+		2019: [{
+			type: 'SPR',
+			file: 'sludgebomb',
+			wav: 'effect/ef_lightbolt',
+			attachedEntity: true
+		}],
+	
+		2020: [{
+			type: 'CYLINDER',
+			wav:  '_hit_dagger',
+			topSize: 0,
+			bottomSize: 0.3,
+			height: 4,
+			textureName: 'damageplane',
+			tickTime: 1000,
+			attachedEntity: false
+		}],
+				
+		666: [{
+			type: 'SPR',
+			file: '¾î½ºÄùÀÌÅ©',
 			attachedEntity: false
 		}],
 		
 		1: [{
 			//  Loads 2 tga-images, semi-randomly (alternating pattern but random position) aligns 4 instances of each (=8 in total) in a circle around the object and stretches them away.
 			//  Important note: It really is just stretching one end further and further out, one end of the images is tied to the object
-			type: 'FUNC',
-			file:  'lens1', // lens2 is also used
+			//type: 'FUNC',
+			//file:  'lens1', // lens2 is also used
 			wav: 'effect/ef_hit2',
 			attachedEntity: true
 		}],
@@ -717,7 +845,7 @@ define(function( require )
 
 		95: [{
 			type: 'STR',
-			file: 'quagmire',
+			file: 'bubble1_1',
 			attachedEntity: false
 		}],
 
@@ -1993,13 +2121,6 @@ define(function( require )
 		649: [{
 			type: 'STR',
 			file: 'ºÒ½º¾ÆÀÌ',
-			attachedEntity: true
-		}],
-
-
-		666: [{
-			type: 'SPR',
-			file: '¾î½ºÄùÀÌÅ©',
 			attachedEntity: true
 		}],
 
