@@ -146,6 +146,7 @@ define(function(require)
 		desc = desc.replace('$cel$', '^3366FF'+getStatValue(it.BaseCEL, 3, item.RefiningLevel, item.IsDamaged)+'^000000');	
 		desc = desc.replace('$crit$', '^3366FF'+getStatValue(it.BaseCRIT, 2, item.RefiningLevel, item.IsDamaged)+'^000000');
 		desc = desc.replace('$bonus1$', '^3366FF'+getStatValue(it.BaseBonus1, it.Multiplier1, item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$bonus2$', '^3366FF'+getStatValue(it.BaseBonus2, it.Multiplier2, item.RefiningLevel, item.IsDamaged)+'^000000');
 
 		ui.find('.title').text( item.IsIdentified ? it.identifiedDisplayName : it.unidentifiedDisplayName );
 		ui.find('.description').text( desc );

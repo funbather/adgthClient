@@ -528,7 +528,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 	
 	SkillInfo[SK.MG_FIREBOLT] = {
 		Name: "MG_FIREBOLT",
-		SkillName : "Fire Bolt",
+		SkillName : "Fire Lance",
 		MaxLv : 10,
 		SpAmount : [ 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 ],
 		bSeperateLv : true,
@@ -5516,7 +5516,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 
 	SkillInfo[SK.WZ_EARTHSPIKE] = {
 		Name: "WZ_EARTHSPIKE",
-		SkillName : "Earth Spike",
+		SkillName : "Stone Torch",
 		MaxLv : 5,
 		SpAmount : [ 12, 14, 16, 18, 20 ],
 		bSeperateLv : true,
@@ -7605,7 +7605,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 
 	SkillInfo[SK.MG_COLDBOLT] = {
 		Name: "MG_COLDBOLT",
-		SkillName : "Cold Bolt",
+		SkillName : "Icicle Edge",
 		MaxLv : 10,
 		SpAmount : [ 12, 14, 16, 18, 20, 22, 24, 26, 28, 30 ],
 		bSeperateLv : true,

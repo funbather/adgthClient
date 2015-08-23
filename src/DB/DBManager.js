@@ -510,7 +510,7 @@ define(function(require)
 				item.identifiedDisplayName       = TextEncoding.decodeString(item.identifiedDisplayName);
 				item.unidentifiedDisplayName     = TextEncoding.decodeString(item.unidentifiedDisplayName);
 				item.prefixNameTable             = TextEncoding.decodeString(item.prefixNameTable || '');
-				item.flavortext					 = item.flavortext ? item.flavortext : '';
+				item.flavortext                  = item.flavortext ? item.flavortext : '';
 				item.condensedDesc               = item.condensedDesc ? TextEncoding.decodeString(item.condensedDesc.join('\n'))  : item.identifiedDescriptionName;
 				item.BaseHP                      = item.BaseHP    || 0;
 				item.BaseMP                      = item.BaseMP    || 0;
@@ -523,7 +523,9 @@ define(function(require)
 				item.BaseMAG										 = item.BaseMAG   || 0;
 				item.BaseCRIT                    = item.BaseCRIT  || 0;
 				item.BaseBonus1                  = item.BaseBonus1 || 0;
+				item.BaseBonus2                  = item.BaseBonus2 || 0;
 				item.Multiplier1                 = item.Multiplier1 || 0;
+				item.Multiplier2                 = item.Multiplier2 || 0;
 				item._decoded                    = true;
 			}
 

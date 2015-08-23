@@ -35,6 +35,7 @@ define(function()
 			BLEEDING     : 0x0040,
 			DPOISON      : 0x0080,
 			FEAR         : 0x0100,
+			IGNITE       : 0x0200,
 		},
 
 		EffectState: {

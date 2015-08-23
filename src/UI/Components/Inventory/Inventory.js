@@ -710,6 +710,7 @@ define(function(require)
 		desc = desc.replace('$cel$', '^99BBFF'+getStatValue(it.BaseCEL, 3, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
 		desc = desc.replace('$crit$', '^99BBFF'+getStatValue(it.BaseCRIT, 2, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
 		desc = desc.replace('$bonus1$', '^99BBFF'+getStatValue(it.BaseBonus1, it.Multiplier1, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$bonus2$', '^99BBFF'+getStatValue(it.BaseBonus2, it.Multiplier2, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
 
 		//overlay.css({border: "1px solid #444444"});
 		overlay.text(desc);		

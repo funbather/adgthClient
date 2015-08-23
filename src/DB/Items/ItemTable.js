@@ -506,25 +506,697 @@ define(function()
 			"ClassNum": 10
 		},
 		"52000": {
+			"identifiedDisplayName": "Niflheim's Grasp",
+			"identifiedResourceName": "\xb3\xaa\xba\xea\xc0\xc7\xc5\xac\xb7\xce\xbd\xba",
+			"identifiedDescriptionName": [
+				"Unique Light Armor",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$mp$ MP",
+				"+$def$ DEF",
+				"+$mdef$ MDEF",
+				" ",
+				"Attackers feel the cold grip of\nNiflheim.",
+			],
+			"BaseHP": 20,
+			"BaseMP": 17,
+			"BaseDEF": 1,
+			"BaseMDEF": 10,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52001": {
+			"identifiedDisplayName": "Cleric's Robe",
+			"identifiedResourceName": "\xc0\xba\xc7\xfd\xc0\xc7\xbc\xba\xc0\xc7",
+			"identifiedDescriptionName": [
+				"Unique Light Armor",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$mp$ MP",
+				"+$def$ DEF",
+				"+$mdef$ MDEF",
+				"+$bonus1$% Healing Power",
+				" ",
+				"Grants [Tend Wounds].",
+			],
+			"BaseHP": 11,
+			"BaseMP": 25,
+			"BaseDEF": 1,
+			"BaseMDEF": 7,
+			"BaseBonus1": 20,
+			"Multiplier1": 2,			
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52002": {
+			"identifiedDisplayName": "Seraph's Grace",
+			"identifiedResourceName": "\xc7\xc1\xb7\xb9\xc0\xcc\xbe\xdf\xc0\xc7\xbf\xdc\xc5\xf5",
+			"identifiedDescriptionName": [
+				"Unique Light Armor",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$mp$ MP",
+				"+$def$ DEF",
+				"+$mdef$ MDEF",
+				"+100% HP Regen",
+			],
+			"BaseHP": 21,
+			"BaseMP": 18,
+			"BaseDEF": 2,
+			"BaseMDEF": 5,	
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52003": {
+			"identifiedDisplayName": "Blood Oath",
+			"identifiedResourceName": "\xb5\xf0\xbe\xc6\xba\xbc\xb7\xe7\xbd\xba\xb7\xce\xba\xea",
+			"identifiedDescriptionName": [
+				"Unique Light Armor",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$mp$ MP",
+				"+$def$ DEF",
+				"+$mdef$ MDEF",
+				"+$bonus1$% HP restored on Kill",
+				"+$bonus2$ MP restored on Kill",
+				" ",
+				"You no longer naturally\nregenerate HP or MP.",
+			],
+			"BaseHP": 27,
+			"BaseMP": 27,
+			"BaseDEF": 2,
+			"BaseMDEF": 10,
+			"BaseBonus1": 10,
+			"Multiplier1": 2,	
+			"BaseBonus2": 20,
+			"Multiplier2": 2,		
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52004": {
+			"identifiedDisplayName": "Assassin's Cloak",
+			"identifiedResourceName": "\xbb\xe7\xb6\xf3\xc0\xc7\xc0\xfc\xc5\xf5\xb7\xce\xba\xea",
+			"identifiedDescriptionName": [
+				"Unique Mage Armor",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$mp$ MP",
+				"+$def$ DEF",
+				"+$bonus1$ Skill CRIT",
+			],
+			"BaseHP": 24,
+			"BaseMP": 10,
+			"BaseDEF": 1,
+			"BaseBonus1": 8,
+			"Multiplier1": 2,			
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52005": {
+			"identifiedDisplayName": "Shifting Sands",
+			"identifiedResourceName": "\xc4\xad\xb5\xce\xb6\xf3",
+			"identifiedDescriptionName": [
+				"Unique Mage Armor",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$mp$ MP",
+				"+$def$ DEF",
+				"+$cel$ CEL",
+			],
+			"BaseHP": 11,
+			"BaseMP": 13,
+			"BaseDEF": 1,
+			"BaseCEL": 5,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52006": {
+			"identifiedDisplayName": "Mach Mail",
+			"identifiedResourceName": "\xbf\xeb\xbb\xe7\xc0\xc7\xc6\xae\xb7\xb9\xc0\xcc\xb5\xe5\xb8\xde\xc0\xcf",
+			"identifiedDescriptionName": [
+				"Unique Mage Armor",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$mp$ MP",
+				"+$def$ DEF",
+				" ",
+				"Build up speed while\nattacking."
+			],
+			"BaseHP": 29,
+			"BaseMP": 5,
+			"BaseDEF": 2,
+			"slotCount": 0,
+			"ClassNum": 0,
+		},
+		"52007": {
+			"identifiedDisplayName": "Mage Ward",
+			"identifiedResourceName": "\xc4\xa5\xc8\xe6\xc0\xc7\xb0\xa9\xbf\xca",
+			"identifiedDescriptionName": [
+				"Unique Mage Armor",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$mp$ MP",
+				"+$def$ DEF",
+				" ",
+				"Enemies who target you with\nskills are Silenced.",
+			],
+			"BaseHP": 27,
+			"BaseMP": 5,
+			"BaseDEF": 3,		
+			"slotCount": 0,
+			"ClassNum": 0,
+			"flavortext":"\"Maybe next time.\""
+		},
+		"52008": {
+			"identifiedDisplayName": "Golden Plate",
+			"identifiedResourceName": "\xb0\xad\xc8\xad\xb8\xde\xc0\xcf",
+			"identifiedDescriptionName": [
+				"Unique Heavy Armor",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+35 LUK",
+			],
+			"BaseHP": 30,
+			"BaseDEF": 3,		
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52009": {
+			"identifiedDisplayName": "Serpentine Mail",
+			"identifiedResourceName": "\xb3\xaa\xb0\xa1\xc0\xc7\xba\xf1\xb4\xc3\xb0\xa9\xbf\xca",
+			"identifiedDescriptionName": [
+				"Unique Heavy Armor",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				" ",
+				"Return $bonus1$% of physical\ndamage taken back to the\nattacker.",
+			],
+			"BaseHP": 80,	
+			"BaseBonus1": 50,
+			"Multiplier1": 5,		
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52010": {
+			"identifiedDisplayName": "Hardrock Barrier",
+			"identifiedResourceName": "\xb0\xd4\xba\xea\xb3\xd7\xc0\xcc\xc0\xc7\xb0\xa9\xbf\xca",
+			"identifiedDescriptionName": [
+				"Unique Heavy Armor",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+			],
+			"BaseHP": 37,
+			"BaseDEF": 8,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52011": {
+			"identifiedDisplayName": "Adamantite Armor",
+			"identifiedResourceName": "\xb8\xde\xc5\xd7\xbf\xc0\xc7\xc3\xb7\xb9\xc0\xcc\xc6\xae",
+			"identifiedDescriptionName": [
+				"Unique Heavy Armor",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				" ",
+				"+$bonus1$% Physical Damage Resistance",
+				"+$bonus2$% Magical Damage Vulnerability",
+			],
+			"BaseHP": 60,
+			"BaseBonus1": 15,
+			"Multiplier1": 2,
+			"BaseBonus2": 15,
+			"Multiplier2": 2,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52012": {
+			"identifiedDisplayName": "Soul of the Earth",
+			"identifiedResourceName": "\xb6\xf3\xc0\xcc\xc7\xc1\xb8\xb5\xc5\xa9",
+			"identifiedDescriptionName": [
+				"Unique Heavy Armor",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				" ",
+				"You gain massive HP\nregeneration while at low\nlife.",
+			],
+			"BaseHP": 77,
+			"BaseDEF": 2,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52013": {
+			"identifiedDisplayName": "Betrayer's Plate",
+			"identifiedResourceName": "\xb5\xf0\xbe\xc6\xba\xbc\xb7\xe7\xbd\xba\xbe\xc6\xb8\xd3",
+			"identifiedDescriptionName": [
+				"Unique Heavy Armor",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				" ",
+				"Some defeated enemies will join your side.",
+			],
+			"BaseHP": 48,
+			"BaseDEF": 4,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52014": {
+			"identifiedDisplayName": "Golden Buckler",
+			"identifiedResourceName": "\xb0\xad\xc8\xad\xb9\xf6\xc5\xac\xb7\xaf",
+			"identifiedDescriptionName": [
+				"Unique Shield",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$mdef$ MDEF",
+				"+$eva$ EVA",
+				"+35 LUK",
+			],
+			"BaseHP": 11,
+			"BaseDEF": 4,
+			"BaseMDEF": 2,
+			"BaseEVADE": 8,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+		"52015": {
+			"identifiedDisplayName": "Derelict Tome",
+			"identifiedResourceName": "\xc7\xf6\xc0\xda\xc0\xc7\xc0\xcf\xb1\xe2",
+			"identifiedDescriptionName": [
+				"Unique Off-Hand",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$mag$ MAG",
+			],
+			"BaseMAG": 10,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52016": {
+			"identifiedDisplayName": "Lodestone Shield",
+			"identifiedResourceName": "\xb7\xce\xbb\xe7\xbd\xaf\xb5\xe5",
+			"identifiedDescriptionName": [
+				"Unique Shield",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$mdef$ MDEF",
+				"+$eva$ EVA",
+				" ",
+				"Grants [Lodestone Burst].",
+			],
+			"BaseHP": 12,
+			"BaseDEF": 3,
+			"BaseMDEF": 8,
+			"BaseEVADE": 8,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+		"52017": {
+			"identifiedDisplayName": "Null Field",
+			"identifiedResourceName": "\xc0\xcc\xb9\xc3\xb5\xe5\xbd\xaf\xb5\xe5",
+			"identifiedDescriptionName": [
+				"Unique Shield",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$bonus1$% Magical Damage Resistance",
+				" ",
+				"You cannot evade attacks.",
+			],
+			"BaseHP": 75,	
+			"BaseBonus1": 25,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+		"52018": {
+			"identifiedDisplayName": "King's Guard",
+			"identifiedResourceName": "\xc0\xd3\xc6\xe4\xb8\xae\xbe\xf3\xb0\xa1\xb5\xe5",
+			"identifiedDescriptionName": [
+				"Unique Shield",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$mdef$ MDEF",
+				"+$eva$ EVA",
+				" ",
+				"Heal $bonus1$% of the damage an\nevaded attack would have\ndealt.",
+			],
+			"BaseHP": 16,
+			"BaseDEF": 5,
+			"BaseMDEF": 5,
+			"BaseEVADE": 10,	
+			"BaseBonus1": 15,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+		"52019": {
+			"identifiedDisplayName": "Main Gauche",
+			"identifiedResourceName": "\xc4\xda\xbf\xf6\xb5\xe5",
+			"identifiedDescriptionName": [
+				"Unique Off-Hand",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$eva$ EVA",
+			],
+			"BaseEVADE": 18,	
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52020": {
+			"identifiedDisplayName": "Backsword",
+			"identifiedResourceName": "\xbf\xac\xb0\xcb",
+			"identifiedDescriptionName": [
+				"Unique Off-Hand",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$bonus1$% ATK",
+			],
+			"BaseBonus1": 5,
+			"Multiplier1": 4,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52021": {
+			"identifiedDisplayName": "Immaterial Manteau",
+			"identifiedResourceName": "\xbd\xba\xc5\xb2\xbf\xc0\xba\xea\xba\xa5\xc5\xf5\xbd\xba",
+			"identifiedDescriptionName": [
+				"Unique Robe",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$def$ DEF",
+				"+$eva$ EVA",
+				" ",
+				"You gain additional EVA\nwhile at low life.",
+			],
+			"BaseDEF": 1,
+			"BaseEVADE": 4,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52022": {
+			"identifiedDisplayName": "Golden Shawl",
+			"identifiedResourceName": "\xb0\xad\xc8\xad\xb8\xd3\xc7\xc3\xb7\xaf",
+			"identifiedDescriptionName": [
+				"Unique Robe",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$def$ DEF",
+				"+$eva$ EVA",
+				"+35 LUK",
+			],
+			"BaseDEF": 1,
+			"BaseEVADE": 4,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52023": {
+			"identifiedDisplayName": "Prismatic Cloak",
+			"identifiedResourceName": "\xbf\xa1\xb1\xe6\xb8\xc1\xc5\xe4",
+			"identifiedDescriptionName": [
+				"Unique Robe",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$def$ DEF",
+				"+$eva$ EVA",
+				" ",
+				"Attacking enemies are Blinded.",
+			],
+			"BaseDEF": 2,
+			"BaseEVADE": 5,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52024": {
+			"identifiedDisplayName": "Midnight Mantle",
+			"identifiedResourceName": "\xbf\xbe\xbf\xb5\xc1\xd6\xc0\xc7\xb8\xc1\xc5\xe4",
+			"identifiedDescriptionName": [
+				"Unique Robe",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$def$ DEF",
+				"+$eva$ EVA",
+				"+$bonus1$% Lifesteal",
+			],
+			"BaseDEF": 1,
+			"BaseEVADE": 5,
+			"BaseBonus1": 10,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52025": {
+			"identifiedDisplayName": "Path of Bravery",
+			"identifiedResourceName": "\xb9\xdf\xc5\xb0\xb8\xae\xc0\xc7\xb8\xc1\xc5\xe4",
+			"identifiedDescriptionName": [
+				"Unique Robe",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$def$ DEF",
+				"+$eva$ EVA",
+				" ",
+				"Gain 2 EVA for every enemy\ntargeting you.",
+			],
+			"BaseDEF": 4,
+			"BaseEVADE": 2,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52026": {
+			"identifiedDisplayName": "Feline's Guile",
+			"identifiedResourceName": "\xbe\xdf\xbc\xba\xc0\xc7\xb2\xbf\xb8\xae",
+			"identifiedDescriptionName": [
+				"Unique Robe",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$eva$ EVA",
+				"+$cel$ CEL",
+			],
+			"BaseEVADE": 8,
+			"BaseCEL": 3,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52027": {
+			"identifiedDisplayName": "Assassin's Scarf",
+			"identifiedResourceName": "\xb7\xce\xc5\xb0\xc0\xc7\xb8\xd3\xc7\xc3\xb7\xaf",
+			"identifiedDescriptionName": [
+				"Unique Robe",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$def$ DEF",
+				"+$eva$ EVA",
+				" ",
+				"Your attacks can mark a\ntarget for death.\n\nMarked targets recieve 25%\nmore damage.", 
+			],
+			"BaseDEF": 1,
+			"BaseEVADE": 5,
+			"BaseBonus1": 15,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52028": {
+			"identifiedDisplayName": "Tyrant's Cape",
+			"identifiedResourceName": "\xc6\xe7\xb7\xcf\xc0\xc7\xb8\xc1\xc5\xe4",
+			"identifiedDescriptionName": [
+				"Unique Robe",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$def$ DEF",
+				"+$eva$ EVA",
+				" ",
+				"Grants [Dominate].",
+			],
+			"BaseDEF": 3,
+			"BaseEVADE": 3,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52029": {
+			"identifiedDisplayName": "Feline's Grace",
+			"identifiedResourceName": "\xbe\xdf\xbc\xba\xc0\xc7\xba\xce\xc3\xf7",
+			"identifiedDescriptionName": [
+				"Unique Shoes",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$cel$ CEL",
+			],
+			"BaseCEL": 13,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52030": {
+			"identifiedDisplayName": "Golden Boots",
+			"identifiedResourceName": "\xb0\xad\xc8\xad\xba\xce\xc3\xf7",
+			"identifiedDescriptionName": [
+				"Unique Shoes",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$cel$ CEL",
+				"+35 LUK",
+			],
+			"BaseHP": 10,
+			"BaseDEF": 1,
+			"BaseCEL": 5,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52031": {
+			"identifiedDisplayName": "Mystwalkers",
+			"identifiedResourceName": "\xbd\xa6\xb5\xb5\xbf\xec\xbf\xf6\xc5\xa9",
+			"identifiedDescriptionName": [
+				"Unique Shoes",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$cel$ CEL",
+				" ",
+				"Grants [Shadowstep].",
+			],
+			"BaseHP": 8,
+			"BaseDEF": 1,
+			"BaseCEL": 5,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52032": {
+			"identifiedDisplayName": "Bunny Slippers",
+			"identifiedResourceName": "\xbd\xbd\xb8\xae\xc6\xdb",
+			"identifiedDescriptionName": [
+				"Unique Shoes",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$cel$ CEL",
+				" ",
+				"Grants [Rest].",
+				" ",
+				"Your Sleep is much more\nrestful.",
+			],
+			"BaseHP": 9,
+			"BaseDEF": 1,
+			"BaseCEL": 7,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52033": {
+			"identifiedDisplayName": "Leg Augmentation",
+			"identifiedResourceName": "\xb9\xce\xc3\xb8\xbc\xba\xba\xb8\xbf\xcf\xc0\xe5\xc4\xa1",
+			"identifiedDescriptionName": [
+				"Unique Shoes",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$def$ DEF",
+				" ",
+				"Grants [Booster].",
+			],
+			"BaseDEF": 3,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"52034": {
+			"identifiedDisplayName": "Nomad's Passage",
+			"identifiedResourceName": "\xbb\xfd\xb8\xed\xb3\xaa\xb9\xab\xc1\xd9\xb1\xe2\xbd\xb4\xc1\xee",
+			"identifiedDescriptionName": [
+				"Unique Shoes",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$cel$ CEL",
+				" ",
+				"You can regenerate HP while moving.",
+			],
+			"BaseHP": 12,
+			"BaseDEF": 2,
+			"BaseCEL": 5,
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"53000": {
 			"identifiedDisplayName": "Penguin Feather",
 			"identifiedResourceName": "\xb5\xbf\xb1\xd7\xb6\xf5\xb1\xea\xc5\xd0",
 			"identifiedDescriptionName": [
 				"Accessory",
+				"Unique Equipped",
 				" ",
-				"Grants you the ability to call a Penguin to your aid.",
+				"Grants [Call Penguin], the ability to summon a Penguin to your side.",
 				" ",
-				"During battle it will toss you refreshing drinks, healing 10% HP and 20 SP instantly as well as putting one in your inventory to drink later.",
+				"During battle your summoned Penguin will toss you refreshing drinks, healing 10% HP and 20 SP instantly as well as putting one in your inventory to drink later.",
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
 			"flavortext": "\"Comin' right up, pal!\"",
-			"condensedDesc": ["Accessory"," ","Grants [Call Penguin]"]
+			"condensedDesc": ["Accessory"," ","Grants [Call Penguin]."]
 		},
-		"52001": {
+		"53001": {
 			"identifiedDisplayName": "James",
 			"identifiedResourceName": "\xb4\xfa\xb1\xd7\xb7\xb0\xb0\xc5\xb8\xae\xb4\xc2\xc7\xd8\xb0\xf1",
 			"identifiedDescriptionName": [
 				"Accessory",
+				"Unique Equipped",
 				" ",
 				"The cursed skull of James, the undying.",
 				" ",
@@ -532,10 +1204,115 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
-			"flavortext": "Unimaginable power at an annoying, insufferable, cost.",
-			"condensedDesc": ["Accessory"," ","Periodic Stat Boosts"]
+			"flavortext": "Unimaginable power at an insufferable cost.",
+			"condensedDesc": ["Accessory"," ","Periodic stat boosts."]
 		},
-		"53000": {
+		"53002": {
+			"identifiedDisplayName": "Mana Battery",
+			"identifiedResourceName": "\xba\xa3\xbd\xba\xc6\xdb\xc4\xda\xbe\xee",
+			"identifiedDescriptionName": [
+				"Accessory",
+				"Unique Equipped",
+				" ",
+				"Slowly leeches and stores up to 200 MP from you. Use [Recharge] to regain stored MP.",
+			],
+			"slotCount": 0,
+			"ClassNum": 0,
+			"condensedDesc": ["Accessory"," ","Stores MP."]
+		},
+		"53003": {
+			"identifiedDisplayName": "Temporal Orb",
+			"identifiedResourceName": "\xb0\xf1\xb5\xe7\xb7\xce\xb5\xe5\xbf\xc0\xba\xea",
+			"identifiedDescriptionName": [
+				"Accessory",
+				"Unique Equipped",
+				" ",
+				"Your skills will sometimes not trigger their cooldowns when used.",
+			],
+			"slotCount": 0,
+			"ClassNum": 0,
+			"condensedDesc": ["Accessory"," ","Chance to skip cooldowns."]
+		},
+		"53004": {
+			"identifiedDisplayName": "Mirror of a Thousand Truths",
+			"identifiedResourceName": "\xc8\xad\xb7\xc1\xc7\xd1\xb0\xc5\xbf\xef",
+			"identifiedDescriptionName": [
+				"Accessory",
+				"Unique Equipped",
+				" ",
+				"When hit by a spell, you will sometimes counterattack with the same spell.",
+			],
+			"slotCount": 0,
+			"ClassNum": 0,
+			"condensedDesc": ["Accessory"," ","Redirect spells by chance."]
+		},
+		"53005": {
+			"identifiedDisplayName": "Fractal Shard",
+			"identifiedResourceName": "\xbc\xf6\xc1\xa4\xc1\xb6\xb0\xa2",
+			"identifiedDescriptionName": [
+				"Accessory",
+				"Unique Equipped",
+				" ",
+				"While attacking, gain a chance to create a mirror image of yourself. Your images have reduced attack power and last a short duration.",
+			],
+			"slotCount": 0,
+			"ClassNum": 0,
+			"flavortext": "\"Those who are different are untrustworthy, unpredictable. Put your safety in the hands of your own kind.\"",
+			"condensedDesc": ["Accessory"," ","Clone yourself when attacking."]
+		},
+		"53006": {
+			"identifiedDisplayName": "Resolute Armband",
+			"identifiedResourceName": "\xb8\xed\xb1\xc3\xc0\xc7\xbd\xba\xc4\xab\xc7\xc1",
+			"identifiedDescriptionName": [
+				"Accessory",
+				"Unique Equipped",
+				" ",
+				"Lethal hits won't always kill you.",
+			],
+			"slotCount": 0,
+			"ClassNum": 0,
+			"condensedDesc": ["Accessory"," ","Lethal hits won't always kill you."]
+		},
+		"53007": {
+			"identifiedDisplayName": "Bonecrusher",
+			"identifiedResourceName": "\xbe\xcf\xbb\xec\xc0\xda\xc0\xc7\xbc\xf6\xb0\xa9",
+			"identifiedDescriptionName": [
+				"Accessory",
+				"Unique Equipped",
+				" ",
+				"While unarmed, you gain +300% increased Base ATK.",
+			],
+			"slotCount": 0,
+			"ClassNum": 0,
+			"condensedDesc": ["Accessory"," ","Quadrupled unarmed ATK."]
+		},
+		"53008": {
+			"identifiedDisplayName": "Seraph's Mercy",
+			"identifiedResourceName": "\xbe\xd8\xc1\xa9\xb8\xaf\xb8\xb5",
+			"identifiedDescriptionName": [
+				"Accessory",
+				"Unique Equipped",
+				" ",
+				"When revived, you will come back with full HP and MP.",
+			],
+			"slotCount": 0,
+			"ClassNum": 0,
+			"condensedDesc": ["Accessory"," ","Revive at full strength."]
+		},
+		"53009": {
+			"identifiedDisplayName": "Bag of Holding",
+			"identifiedResourceName": "\xc6\xf2\xb9\xfc\xc7\xd1\xc1\xd6\xb8\xd3\xb4\xcf",
+			"identifiedDescriptionName": [
+				"Accessory",
+				"Unique Equipped",
+				" ",
+				"Your weight capacity is increased by 200.",
+			],
+			"slotCount": 0,
+			"ClassNum": 0,
+			"condensedDesc": ["Accessory"," ","+200 Weight Capacity"]
+		},
+		"54000": {
 			"identifiedDisplayName": "Hydrangea Sword",
 			"identifiedResourceName": "\x68\x79\x64\x72\x61\x6E\x67\x65\x61",
 			"identifiedDescriptionName": [
@@ -556,7 +1333,607 @@ define(function()
 			"ClassNum": 3,
 			"flavortext": "Eternal determination."
 		},
-		"54000": {
+		"54001": {
+			"identifiedDisplayName": "Last Breath",
+			"identifiedResourceName": "\xbe\xee\xbb\xf5\xbd\xc5\xb4\xeb\xb0\xc5",
+			"identifiedDescriptionName": [
+				"Unique Shortsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"+$bonus1$ CRIT DAM",
+				" ",
+				"Your skills cannot critically hit." 
+			],
+			"BaseATK": 11,
+			"BaseBonus1": 50,
+			"Multiplier1": 3,
+			"slotCount": 0,
+			"ClassNum": 1,
+			"flavortext": "In time, all things turn to dust. Some things just take less time."
+		},
+		"54002": {
+			"identifiedDisplayName": "Soulstealer",
+			"identifiedResourceName": "\xc8\xab\xb7\xc3\xc0\xc7\xb0\xcb",
+			"identifiedDescriptionName": [
+				"Unique Shortsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"+$bonus1$% Manasteal",
+			],
+			"BaseATK": 2,
+			"BaseBonus1": 5,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 1,
+			"flavortext": "It would be a shame to let life slip away to nothing."
+		},
+		"54003": {
+			"identifiedDisplayName": "Lamentation",
+			"identifiedResourceName": "\xc5\xd7\xc0\xcf\xc7\xce",
+			"identifiedDescriptionName": [
+				"Unique Shortsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"You deal $bonus1$% more physical\ndamage while attacking from\nbehind.",
+			],
+			"BaseATK": 7,
+			"BaseBonus1": 60,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 1,
+			"flavortext": "The realization that one is dying is far more terrifying than death itself."
+		},
+		"54004": {
+			"identifiedDisplayName": "Firebrand",
+			"identifiedResourceName": "\xc5\xc2\xbe\xe7\xb0\xcb",
+			"identifiedDescriptionName": [
+				"Unique Shortsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"Your critical hits Ignite enemies.",
+			],
+			"BaseATK": 9,
+			"slotCount": 0,
+			"ClassNum": 1,
+		},
+		"54005": {
+			"identifiedDisplayName": "Tetra Vortex",
+			"identifiedResourceName": "\xbf\xa4\xb7\xb9\xb8\xe0\xc5\xbb\xbc\xd2\xb5\xe5",
+			"identifiedDescriptionName": [
+				"Unique Shortsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"You will unleash elemental fury\nwhile attacking.",
+			],
+			"BaseATK": 5,
+			"slotCount": 0,
+			"ClassNum": 1,
+		},
+		"54006": {
+			"identifiedDisplayName": "Godslayer",
+			"identifiedResourceName": "\xbf\xa2\xbd\xba\xc4\xae\xb8\xae\xb9\xf6",
+			"identifiedDescriptionName": [
+				"Unique Shortsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"You deal $bonus1$% more physical\ndamage to Boss Monsters.",
+			],
+			"BaseATK": 6,
+			"BaseBonus1": 40,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 1,
+		},
+		"54007": {
+			"identifiedDisplayName": "Estoc",
+			"identifiedResourceName": "\xb7\xb9\xc0\xcc\xc7\xc7\xbe\xee",
+			"identifiedDescriptionName": [
+				"Unique Shortsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"+$bonus1$% CRIT DAM",
+			],
+			"BaseATK": 2,
+			"BaseBonus1": 20,
+			"Multiplier1": 5,
+			"slotCount": 0,
+			"ClassNum": 1,
+		},
+		"54008": {
+			"identifiedDisplayName": "Icebrand",
+			"identifiedResourceName": "\xbe\xc6\xc0\xcc\xbd\xba\xc6\xc8\xbd\xc3\xbf\xc2",
+			"identifiedDescriptionName": [
+				"Unique Shortsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"20% Chance to Freeze on Hit",
+				" ",
+				"Your attacks against frozen\nenemies will always critically hit.",
+			],
+			"BaseATK": 9,
+			"slotCount": 0,
+			"ClassNum": 1,
+		},
+		"54009": {
+			"identifiedDisplayName": "Hardedge",
+			"identifiedResourceName": "\xbf\xc0\xc5\xb0\xbd\xac\xbc\xd2\xb5\xe5",
+			"identifiedDescriptionName": [
+				"Unique Shortsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"Your attacks cannot critically hit.",
+			],
+			"BaseATK": 13,
+			"slotCount": 0,
+			"ClassNum": 1,
+		},
+		"54010": {
+			"identifiedDisplayName": "Dueling Sword",
+			"identifiedResourceName": "\xb7\xe7\xba\xa3\xb8\xa3",
+			"identifiedDescriptionName": [
+				"Unique Shortsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"You deal $bonus1$% more physical\ndamage while dueling a\nmonster.",
+			],
+			"BaseATK": 9,
+			"BaseBonus1": 25,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 1,
+		},
+		"54011": {
+			"identifiedDisplayName": "Blooddrinker",
+			"identifiedResourceName": "\xba\xed\xb7\xaf\xb5\xf0\xc0\xcc\xc5\xcd",
+			"identifiedDescriptionName": [
+				"Unique Knightsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"$bonus1$% Chance to Bleed on Hit",
+				" ",
+				"Restore 5% of your HP when\nkilling a monster.",
+			],
+			"BaseATK": 11,
+			"BaseBonus1": 10,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 3,
+		},
+		"54012": {
+			"identifiedDisplayName": "Durandal",
+			"identifiedResourceName": "\xbe\xcb\xc4\xab\xba\xea\xb8\xb5\xb0\xc5",
+			"identifiedDescriptionName": [
+				"Unique Knightsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"+$bonus1$% ASPD",
+				"+25% MP Consumption",
+			],
+			"BaseATK": 15,
+			"BaseBonus1": 10,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 3,
+		},
+		"54013": {
+			"identifiedDisplayName": "Atlas",
+			"identifiedResourceName": "\xbe\xc6\xc6\xae\xb7\xce\xbd\xba\xc0\xc7\xc8\xe4\xb1\xe2",
+			"identifiedDescriptionName": [
+				"Unique Knightsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"-30% ASPD",
+				"+1 Weapon Range",
+				" ",
+				"This weapon has a large swing.",
+			],
+			"BaseATK": 16,
+			"slotCount": 0,
+			"ClassNum": 3,
+		},
+		"54014": {
+			"identifiedDisplayName": "Honor of the Pure",
+			"identifiedResourceName": "\xc4\xab\xc3\xf7\xb9\xdf\xb0\xd4\xb8\xa3",
+			"identifiedDescriptionName": [
+				"Unique Knightsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"+$bonus1$% HP",
+				" ",
+				"You are immune to Poison,\nStun, Bleed, Blind, and Silence.",
+			],
+			"BaseATK": 10,
+			"BaseBonus1": 5,
+			"Multiplier1": 3,
+			"slotCount": 0,
+			"ClassNum": 3,
+		},
+		"54015": {
+			"identifiedDisplayName": "Adamantite Blade",
+			"identifiedResourceName": "\xc5\xa9\xb7\xd2\xb8\xde\xc5\xbb\xc5\xf5\xc7\xda\xb5\xe5\xbc\xd2\xb5\xe5",
+			"identifiedDescriptionName": [
+				"Unique Knightsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"+$bonus1$% Physical Damage Resistance",
+				"+$bonus2$% Magical Damage Vulnerability",
+			],
+			"BaseATK": 10,
+			"BaseBonus1": 15,
+			"Multiplier1": 2,
+			"BaseBonus2": 15,
+			"Multiplier2": 2,
+			"slotCount": 0,
+			"ClassNum": 3,
+		},
+		"54016": {
+			"identifiedDisplayName": "Phantasm",
+			"identifiedResourceName": "\xc1\xd7\xc0\xbd\xc0\xc7\xc0\xce\xb5\xb5\xc0\xda",
+			"identifiedDescriptionName": [
+				"Unique Knightsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"Your attacks will always\nDouble Strike.",
+			],
+			"BaseATK": 5,
+			"slotCount": 0,
+			"ClassNum": 3,
+		},
+		"54017": {
+			"identifiedDisplayName": "Dragon's Ire",
+			"identifiedResourceName": "\xb5\xe5\xb7\xa1\xb0\xef\xbd\xbd\xb7\xb9\xc0\xcc\xbe\xee",
+			"identifiedDescriptionName": [
+				"Unique Knightsword",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"You can assume a\nDragonform while attacking,\ndoubling your Base ATK.",
+			],
+			"BaseATK": 8,
+			"slotCount": 0,
+			"ClassNum": 3,
+		},
+		"54018": {
+			"identifiedDisplayName": "Guillotine",
+			"identifiedResourceName": "\xb1\xe6\xb7\xce\xc6\xbe",
+			"identifiedDescriptionName": [
+				"Unique Maul",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"Cull the weak.",
+			],
+			"BaseATK": 14,
+			"slotCount": 0,
+			"ClassNum": 8,
+		},
+		"54019": {
+			"identifiedDisplayName": "Bardiche",
+			"identifiedResourceName": "\xb9\xf6\xb5\xf0\xbd\xb4",
+			"identifiedDescriptionName": [
+				"Unique Maul",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"+2 Weapon Range",
+			],
+			"BaseATK": 15,
+			"slotCount": 0,
+			"ClassNum": 8,
+		},
+		"54020": {
+			"identifiedDisplayName": "Behemoth Sledge",
+			"identifiedResourceName": "\xba\xea\xb6\xf3\xb5\xf0\xbf\xf2\xb5\xb9\xb8\xc1\xc4\xa1",
+			"identifiedDescriptionName": [
+				"Unique Maul",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"-20% ASPD",
+				"+$bonus1$ CRIT DAM",
+				"20% Chance to Stun on Hit",
+			],
+			"BaseATK": 15,
+			"BaseBonus1": 20,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 8,
+		},
+		"54021": {
+			"identifiedDisplayName": "Heartbreaker",
+			"identifiedResourceName": "\xb1\xd7\xb7\xb9\xc0\xcc\xc6\xae\xbe\xd7\xbd\xba",
+			"identifiedDescriptionName": [
+				"Unique Maul",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"Your attacks will ignore DEF.",
+			],
+			"BaseATK": 14,
+			"slotCount": 0,
+			"ClassNum": 8,
+		},
+		"54022": {
+			"identifiedDisplayName": "Frying Pan",
+			"identifiedResourceName": "\xb7\xe7\xb3\xaa\xc4\xae\xb8\xae\xb0\xed",
+			"identifiedDescriptionName": [
+				"Unique Maul",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"Slain enemies will be transformed\ninto delectable meals.",
+			],
+			"BaseATK": 13,
+			"slotCount": 0,
+			"ClassNum": 8,
+		},
+		"54023": {
+			"identifiedDisplayName": "Gravedigger",
+			"identifiedResourceName": "\xc7\xd8\xb0\xf1\xc1\xf6\xc6\xce\xc0\xcc",
+			"identifiedDescriptionName": [
+				"Unique Maul",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"Your attacks can send enemies\nto a premature grave.",
+			],
+			"BaseATK": 10,
+			"BaseBonus1": 5,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 8,
+		},
+		"54024": {
+			"identifiedDisplayName": "Strongarm Hammer",
+			"identifiedResourceName": "\xba\xa3\xc5\xd7\xb6\xfb\xc7\xdc\xb8\xd3",
+			"identifiedDescriptionName": [
+				"Unique Maul",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"+$bonus1$% STR",
+			],
+			"BaseATK": 13,
+			"BaseBonus1": 20,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 8,
+		},
+		"54025": {
+			"identifiedDisplayName": "Spanner",
+			"identifiedResourceName": "\xbd\xba\xc6\xd0\xb3\xca",
+			"identifiedDescriptionName": [
+				"Unique Maul",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"You can reconstruct slain\nenemies to do your bidding,\nif you can salvage enough of\nthem.",
+			],
+			"BaseATK": 13,
+			"slotCount": 0,
+			"ClassNum": 8,
+		},
+		"54026": {
+			"identifiedDisplayName": "Iron Driver",
+			"identifiedResourceName": "\xbe\xc6\xc0\xcc\xbe\xf0\xb5\xe5\xb6\xf3\xc0\xcc\xb9\xf6",
+			"identifiedDescriptionName": [
+				"Unique Maul",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"Your attacks can send an\nenemy flying.",
+			],
+			"BaseATK": 10,
+			"BaseBonus1": 5,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 8,
+		},
+		"54027": {
+			"identifiedDisplayName": "Feline's Ferocity",
+			"identifiedResourceName": "\xb0\xed\xbe\xe7\xc0\xcc\xc5\xac\xb7\xb4",
+			"identifiedDescriptionName": [
+				"Unique Maul",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"+$cel$ CEL",
+				"$bonus1$% Chance to Bleed on Hit",
+			],
+			"BaseATK": 1,
+			"BaseCEL": 3,
+			"BaseBonus1": 40,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 8,
+		},
+		"54028": {
+			"identifiedDisplayName": "Lodestone Staff",
+			"identifiedResourceName": "\xba\xfb\xc0\xc7\xbc\xf6\xc8\xa3\xc1\xf6\xc6\xce\xc0\xcc",
+			"identifiedDescriptionName": [
+				"Unique Staff",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$mag$ MAG",
+				" ",
+				"You deal $bonus1$% more physical\n damage with basic attacks.",
+			],
+			"BaseMAG": 8,
+			"BaseBonus1": 75,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 10,
+		},
+		"54029": {
+			"identifiedDisplayName": "Jormungandr",
+			"identifiedResourceName": "\xbf\xe4\xb8\xa3\xb9\xae\xb0\xa3\xb5\xe5",
+			"identifiedDescriptionName": [
+				"Unique Staff",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$mag$ MAG",
+				" ",
+				"Grants [Dragon Familiar].",
+			],
+			"BaseMAG": 10,
+			"slotCount": 0,
+			"ClassNum": 10,
+		},
+		"54030": {
+			"identifiedDisplayName": "From The Beyond",
+			"identifiedResourceName": "\xb8\xae\xc4\xa1\xc7\xd8\xb0\xf1\xc1\xf6\xc6\xce\xc0\xcc",
+			"identifiedDescriptionName": [
+				"Unique Staff",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$mag$ MAG",
+				" ",
+				"Your slain enemies won't rest in peace.",
+			],
+			"BaseMAG": 9,
+			"slotCount": 0,
+			"ClassNum": 10,
+		},
+		"54031": {
+			"identifiedDisplayName": "Crystalline Wand",
+			"identifiedResourceName": "\xb8\xb1\xb8\xae\xc1\xee\xbf\xc0\xba\xea\xc0\xa7\xbd\xba",
+			"identifiedDescriptionName": [
+				"Unique Staff",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$mag$ MAG",
+				" ",
+				"Your spells have a high\nchance to Freeze.",
+			],
+			"BaseMAG": 9,
+			"slotCount": 0,
+			"ClassNum": 10,
+		},
+		"54032": {
+			"identifiedDisplayName": "Tailwind Staff",
+			"identifiedResourceName": "\xbd\xba\xc5\xc2\xc7\xc1\xbf\xc0\xba\xea\xc0\xae",
+			"identifiedDescriptionName": [
+				"Unique Staff",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$mag$ MAG",
+				" ",
+				"You gain $bonus1$ CEL after hitting\nan enemy with a spell.",
+			],
+			"BaseMAG": 9,
+			"BaseBonus1": 10,
+			"Multiplier1": 2,
+			"slotCount": 0,
+			"ClassNum": 10,
+		},
+		"54033": {
+			"identifiedDisplayName": "Dead Man's Cane",
+			"identifiedResourceName": "\xb0\xed\xb8\xf1\xb3\xaa\xb9\xab\xc1\xf6\xc6\xce\xc0\xcc",
+			"identifiedDescriptionName": [
+				"Unique Staff",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$mag$ MAG",
+				" ",
+				"You no longer naturally\nregenerate HP.",
+			],
+			"BaseMAG": 16,
+			"slotCount": 0,
+			"ClassNum": 10,
+		},
+		"54034": {
+			"identifiedDisplayName": "Blightcaster",
+			"identifiedResourceName": "\xb8\xde\xc5\xbb\xbd\xba\xc5\xc2\xc7\xc1",
+			"identifiedDescriptionName": [
+				"Unique Staff",
+				"Item Level $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$mag$ MAG",
+				" ",
+				"Your spells have a chance to\ncause a random status effect.",
+			],
+			"BaseMAG": 8,
+			"slotCount": 0,
+			"ClassNum": 10,
+		},
+		"55000": {
 			"identifiedDisplayName": "Shard of Strength",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -565,7 +1942,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54001": {
+		"55001": {
 			"identifiedDisplayName": "Shard of Agility",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -574,7 +1951,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54002": {
+		"55002": {
 			"identifiedDisplayName": "Shard of Vitality",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -583,7 +1960,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54003": {
+		"55003": {
 			"identifiedDisplayName": "Shard of Intelligence",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -592,7 +1969,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54004": {
+		"55004": {
 			"identifiedDisplayName": "Shard of Precision",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -601,7 +1978,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54005": {
+		"55005": {
 			"identifiedDisplayName": "Shard of Luck",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -610,7 +1987,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54006": {
+		"55006": {
 			"identifiedDisplayName": "Shard of Health",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -619,7 +1996,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54007": {
+		"55007": {
 			"identifiedDisplayName": "Shard of Mana",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -628,7 +2005,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54008": {
+		"55008": {
 			"identifiedDisplayName": "Shard of Defense",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -637,7 +2014,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54009": {
+		"55009": {
 			"identifiedDisplayName": "Shard of Magic Defense",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -646,7 +2023,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54010": {
+		"55010": {
 			"identifiedDisplayName": "Shard of Critical Chance",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -655,7 +2032,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54011": {
+		"55011": {
 			"identifiedDisplayName": "Shard of Critical Damage",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -664,7 +2041,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54012": {
+		"55012": {
 			"identifiedDisplayName": "Shard of Attack Speed",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -673,7 +2050,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54013": {
+		"55013": {
 			"identifiedDisplayName": "Shard of Evasion",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -682,7 +2059,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54014": {
+		"55014": {
 			"identifiedDisplayName": "Shard of Celerity",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -691,7 +2068,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54015": {
+		"55015": {
 			"identifiedDisplayName": "Shard of Health Regen",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -700,7 +2077,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54016": {
+		"55016": {
 			"identifiedDisplayName": "Shard of Mana Regen",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -709,7 +2086,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54017": {
+		"55017": {
 			"identifiedDisplayName": "Shard of Lifesteal",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -718,7 +2095,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54018": {
+		"55018": {
 			"identifiedDisplayName": "Shard of Soulsteal",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
@@ -727,7 +2104,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54100": {
+		"55100": {
 			"identifiedDisplayName": "Seal of Health",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -736,7 +2113,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54101": {
+		"55101": {
 			"identifiedDisplayName": "Seal of Mana",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -745,7 +2122,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54102": {
+		"55102": {
 			"identifiedDisplayName": "Seal of Lethality",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -755,7 +2132,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54103": {
+		"55103": {
 			"identifiedDisplayName": "Seal of Mastery",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -764,7 +2141,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54104": {
+		"55104": {
 			"identifiedDisplayName": "Seal of Body",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -773,7 +2150,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54105": {
+		"55105": {
 			"identifiedDisplayName": "Seal of Mind",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -782,7 +2159,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54106": {
+		"55106": {
 			"identifiedDisplayName": "Seal of Fortune",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -792,7 +2169,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54107": {
+		"55107": {
 			"identifiedDisplayName": "Seal of Broken Will",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -801,7 +2178,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54108": {
+		"55108": {
 			"identifiedDisplayName": "Seal of Broken Spirit",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -810,7 +2187,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54109": {
+		"55109": {
 			"identifiedDisplayName": "Seal of Paralysis",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -820,7 +2197,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54110": {
+		"55110": {
 			"identifiedDisplayName": "Seal of Venom",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -830,7 +2207,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54111": {
+		"55111": {
 			"identifiedDisplayName": "Seal of Hoarfrost",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -840,7 +2217,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54112": {
+		"55112": {
 			"identifiedDisplayName": "Seal of Echoes",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -849,7 +2226,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54113": {
+		"55113": {
 			"identifiedDisplayName": "Seal of Sunder",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -858,7 +2235,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54114": {
+		"55114": {
 			"identifiedDisplayName": "Seal of Cleave",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -867,7 +2244,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54115": {
+		"55115": {
 			"identifiedDisplayName": "Seal of Echo Blade",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -876,7 +2253,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54116": {
+		"55116": {
 			"identifiedDisplayName": "Seal of Terraspine",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -885,7 +2262,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54117": {
+		"55117": {
 			"identifiedDisplayName": "Seal of Expunge",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -894,7 +2271,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54118": {
+		"55118": {
 			"identifiedDisplayName": "Seal of Earth Shudder",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -903,7 +2280,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"54999": {
+		"55999": {
 			"identifiedDisplayName": "Seal of Faith",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
@@ -913,7 +2290,7 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 0
 		},
-		"55000": {
+		"56000": {
 			"identifiedDisplayName": "Fruit Juice",
 			"identifiedResourceName": "\xb5\xa6\xbf\xe4\xb8\xae09",
 			"identifiedDescriptionName": [

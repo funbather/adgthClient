@@ -199,6 +199,13 @@ define(function( require )
 			}
 		}
 
+		// Poison
+		if (value & StatusConst.HealthState.IGNITE) {
+			this._healthStateColor[0] *= 1.0;
+			this._healthStateColor[1] *= 0.4;
+			this._healthStateColor[2] *= 0.4;
+		}
+
 		this._healthState = value;
 		recalculateBlendingColor.call(this);
 	}
