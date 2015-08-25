@@ -198,6 +198,13 @@ define(function( require )
 			tickTime: 1000,
 			attachedEntity: false
 		}],
+			
+		2021: [{
+			type: 'SPR',
+			file: 'status-silence',
+			head: true,
+			attachedEntity: true
+		}],
 				
 		666: [{
 			type: 'SPR',

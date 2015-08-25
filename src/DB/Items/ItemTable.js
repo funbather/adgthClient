@@ -654,7 +654,7 @@ define(function()
 				"+$mp$ MP",
 				"+$def$ DEF",
 				" ",
-				"Build up speed while\nattacking."
+				"You gain bonus attack\nspeed based on your\ncelerity."
 			],
 			"BaseHP": 29,
 			"BaseMP": 5,
@@ -676,8 +676,8 @@ define(function()
 				" ",
 				"Enemies who target you with\nskills are Silenced.",
 			],
-			"BaseHP": 27,
-			"BaseMP": 5,
+			"BaseHP": 25,
+			"BaseMP": 10,
 			"BaseDEF": 3,		
 			"slotCount": 0,
 			"ClassNum": 0,
@@ -766,7 +766,7 @@ define(function()
 				"+$hp$ HP",
 				"+$def$ DEF",
 				" ",
-				"You gain massive HP\nregeneration while at low\nlife.",
+				"You regenerate 5% of your\nMax HP per second, even\nwhile moving.",
 			],
 			"BaseHP": 77,
 			"BaseDEF": 2,
@@ -931,7 +931,7 @@ define(function()
 				"+$def$ DEF",
 				"+$eva$ EVA",
 				" ",
-				"You gain additional EVA\nwhile at low life.",
+				"You have an additional chance to evade any attack or spell while at low life.",
 			],
 			"BaseDEF": 1,
 			"BaseEVADE": 4,
@@ -1444,7 +1444,7 @@ define(function()
 		},
 		"54007": {
 			"identifiedDisplayName": "Estoc",
-			"identifiedResourceName": "\xb7\xb9\xc0\xcc\xc7\xc7\xbe\xee",
+			"identifiedResourceName": "\xbd\xb4\xb9\xd9\xc0\xcc\xc3\xbc\xb8\xa3\xbb\xfe\xba\xa7",
 			"identifiedDescriptionName": [
 				"Unique Shortsword",
 				"Item Level $ilvl$",

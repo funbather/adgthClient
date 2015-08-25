@@ -526,6 +526,13 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		bSeperateLv : false,
 	};
 	
+	SkillInfo[SK.AL_HEAL] = {
+		Name: "AL_HEAL",
+		SkillName : "Tend Wounds",
+		MaxLv : 1,
+		AttackRange : [ 9 ],
+	};
+	
 	SkillInfo[SK.MG_FIREBOLT] = {
 		Name: "MG_FIREBOLT",
 		SkillName : "Fire Lance",
@@ -1346,21 +1353,6 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		SpAmount : [ 460, 360, 260, 160, 60 ],
 		bSeperateLv : false,
 		AttackRange : [ 9, 9, 9, 9, 9 ]
-	};
-
-	SkillInfo[SK.AL_HEAL] = {
-		Name: "AL_HEAL",
-		SkillName : "Heal",
-		MaxLv : 10,
-		SpAmount : [ 13, 16, 19, 22, 25, 28, 31, 34, 37, 40 ],
-		bSeperateLv : true,
-		AttackRange : [ 9, 9, 9, 9, 9, 9, 9, 9, 9, 9 ],
-		NeedSkillList : new function(){
-			this[JobId.JT_CRUSADER] = [
-				[ SK.CR_TRUST,10 ],
-				[ SK.AL_DEMONBANE,5 ]
-			]
-		}
 	};
 
 	SkillInfo[SK.SL_STAR] = {

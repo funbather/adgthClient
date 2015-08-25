@@ -199,11 +199,46 @@ define(function( require )
 			}
 		}
 
-		// Poison
+		// Ignite
 		if (value & StatusConst.HealthState.IGNITE) {
 			this._healthStateColor[0] *= 1.0;
 			this._healthStateColor[1] *= 0.4;
 			this._healthStateColor[2] *= 0.4;
+		}
+		
+		// Silence
+		if (value & StatusConst.HealthState.SILENCE) {
+
+			// Do not attach multiple times.
+			if (!(this._healthState & StatusConst.HealthState.SILENCE)) {
+				Sound.play('_silence.wav');
+				this.attachments.add({
+					repeat:    true,
+					uid:       'status-silence',
+					file:      'status-silence',
+					head:      true,
+					opacity:   1
+				});
+			}
+		}
+		else if (!(value & StatusConst.HealthState.SILENCE)) {
+			this.attachments.remove('status-silence');
+		}
+		
+		// Rare Drop - Items Only
+		if (value & 0x4000) {
+
+			// Do not attach multiple times.
+			if (!(this._healthState & StatusConst.HealthState.SILENCE)) {
+				Sound.play('effect/ab_ancilla.wav');
+				this.attachments.add({
+					repeat:    true,
+					uid:       'raredrop',
+					file:      'raredrop',
+					head:      false,
+					opacity:   1
+				});
+			}
 		}
 
 		this._healthState = value;

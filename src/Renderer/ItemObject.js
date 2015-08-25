@@ -59,7 +59,13 @@ function(   DB,            EntityManager,            Entity,                Alti
 		entity.files.body.act = path + '.act';
 
 		entity.files.shadow.size = .5;
-
+		entity.xSize = 8;
+		entity.ySize = 8;
+		
+		// Unique?
+		if(itemid >= 52000 && itemid <= 54999)
+			entity.healthState = 0x4000;
+			
 		// Item falling
 		entity.animations.add(function(tick) {
 			var level          = Altitude.getCellHeight(entity.position[0], entity.position[1]);

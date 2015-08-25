@@ -469,6 +469,13 @@ define(["./SkillConst"], function( SKID )
 		" ",
 		"Violently shake the earth beneath you, dealing a massive $sklvl$% MAG damage to nearby enemies.", 
 	].join("\n");
+
+	SkillDescription[SKID.AL_HEAL] = [
+		"Tend Wounds",
+		"Active - Magical - Support",
+		" ",
+		"Restore 200% MAG HP to an ally.",
+	].join("\n");
 		
 	SkillDescription[SKID.MG_FIREBOLT] = [
 		"Fire Bolt",
@@ -881,20 +888,6 @@ define(["./SkillConst"], function( SKID )
 		"You must actually select an option by clicking or with the up/down arrow keys and pressing enter for the effect to occur. Once you actually teleport, you will count as having \"just entered the map\". This means that Aggressive monsters won't see you for 3 seconds or until you move. ^000000",
 		"[LV 1]^777777 Random ^000000",
 		"[LV 2]^777777 Save Point. ^000000",
-	].join("\n");
-
-	SkillDescription[SKID.AL_HEAL] = [
-		"Heal",
-		"Max Level:^777777 10 ^000000",
-		"Type:^33cc00 Active, Level Selectable ^000000",
-		"SP Cost:^777777 10 + 3*SkillLV ^000000",
-		"Target:^777777 1 Ally/ 1 Enemy w. Shift-Click ^000000",
-		"Range:^777777 9 cells ^000000",
-		"Cast Time:^777777 Instant ^000000",
-		"Cool Down:^777777 1 sec ^000000",
-		"Duration:^777777 Instant ^000000",
-		"Effect:^777777 Heals a target's HP for ([(BaseLV+INT)/5]*30)*(1+/%Modifier/100))*/HealLvl*0.1)+StatusMATK+EquipMATK+[(WeaponMATK*WeaponLvl)/10] HPs. When used against Undead property monsters, it is a holy attack that ignores MDEF and INT, but deals only half damage (that is, HealValue*ElementModifier/2).",
-		"To use against a monster, you must shift-click it or turn on /noshift. ^000000",
 	].join("\n");
 
 	SkillDescription[SKID.AL_INCAGI] = [
