@@ -476,7 +476,35 @@ define(["./SkillConst"], function( SKID )
 		" ",
 		"Restore 200% MAG HP to an ally.",
 	].join("\n");
-		
+
+	SkillDescription[SKID.ALL_DOMINATE] = [
+		"Dominate",
+		"Active",
+		" ",
+		"\"Persuade\" an enemy to join your cause, becoming one of your minions. Minions last 60 seconds.",
+	].join("\n");
+
+	SkillDescription[SKID.ALL_REST] = [
+		"Rest",
+		"Active - Support - Self",
+		" ",
+		"Take a relaxing nap.",
+	].join("\n");
+
+	SkillDescription[SKID.ALL_BOOSTER] = [
+		"Booster",
+		"Active - Support - Self",
+		" ",
+		"Give yourself a massive speed boost that rapidly decays over time.",
+	].join("\n");
+
+	SkillDescription[SKID.ALL_MANABATTERY] = [
+		"Siphon / Restore",
+		"Active - Support - Self",
+		" ",
+		"If your Mana Battery is not currently active, it will begin leeching mana from you until it is at capacity. If it is already active, you will restore the amount of currently charged MP.",
+	].join("\n");
+	
 	SkillDescription[SKID.MG_FIREBOLT] = [
 		"Fire Bolt",
 		"Active",

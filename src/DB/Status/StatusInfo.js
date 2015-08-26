@@ -169,6 +169,14 @@ define(['./StatusConst'], function( SC )
 			["Absorbs damage."],
 		]
 	};
+				
+	StatusInfo[SC.MANABATTERY] = {
+		icon: "manabattery.tga",
+		descript: [
+			["Mana Battery", COLOR_TITLE_BUFF],
+			["Your Mana Battery is active."],
+		]
+	};
 
 	StatusInfo[SC.HIDING] = {
 		icon: "\xc7\xcf\xc0\xcc\xb5\xf9.tga",

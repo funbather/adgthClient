@@ -533,6 +533,51 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		AttackRange : [ 9 ],
 	};
 	
+	SkillInfo[SK.ALL_DOMINATE] = {
+		Name: "ALL_DOMINATE",
+		SkillName : "Dominate",
+		MaxLv : 1,
+		SpAmount : [ 50 ],
+		bSeperateLv : false,
+		AttackRange : [ 5 ],
+	};
+	
+	SkillInfo[SK.ALL_REST] = {
+		Name: "ALL_REST",
+		SkillName : "Rest",
+		MaxLv : 1,
+		SpAmount : [ 35 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ],
+	};
+	
+	SkillInfo[SK.ALL_BOOSTER] = {
+		Name: "ALL_BOOSTER",
+		SkillName : "Booster",
+		MaxLv : 1,
+		SpAmount : [ 20 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ],
+	};
+	
+	SkillInfo[SK.ALL_MANABATTERY] = {
+		Name: "ALL_MANABATTERY",
+		SkillName : "Restore",
+		MaxLv : 1,
+		SpAmount : [ 5 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ],
+	};
+	
+	SkillInfo[SK.ALL_BEGINCHARGE] = {
+		Name: "ALL_BEGINCHARGE",
+		SkillName : "Siphon",
+		MaxLv : 1,
+		SpAmount : [ 5 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ],
+	};
+	
 	SkillInfo[SK.MG_FIREBOLT] = {
 		Name: "MG_FIREBOLT",
 		SkillName : "Fire Lance",

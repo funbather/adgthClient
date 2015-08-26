@@ -225,6 +225,25 @@ define(function( require )
 			this.attachments.remove('status-silence');
 		}
 		
+		// Marked for Death
+		if (value & StatusConst.HealthState.MARKED) {
+
+			// Do not attach multiple times.
+			if (!(this._healthState & StatusConst.HealthState.MARKED)) {
+				Sound.play('effect/laziness.wav');
+				this.attachments.add({
+					repeat:    true,
+					uid:       'status-marked',
+					file:      'status-marked',
+					head:      true,
+					opacity:   1
+				});
+			}
+		}
+		else if (!(value & StatusConst.HealthState.MARKED)) {
+			this.attachments.remove('status-marked');
+		}
+		
 		// Rare Drop - Items Only
 		if (value & 0x4000) {
 

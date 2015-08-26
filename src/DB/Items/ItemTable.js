@@ -1167,7 +1167,7 @@ define(function()
 				"+$def$ DEF",
 				"+$cel$ CEL",
 				" ",
-				"You can regenerate HP while moving.",
+				"You rapidly regenerate HP\nwhile moving.",
 			],
 			"BaseHP": 12,
 			"BaseDEF": 2,
@@ -1214,11 +1214,12 @@ define(function()
 				"Accessory",
 				"Unique Equipped",
 				" ",
-				"Slowly leeches and stores up to 200 MP from you. Use [Recharge] to regain stored MP.",
+				"Slowly leeches and stores up to 200 MP from you while active. Use [Restore] to gain any stored MP.",
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
-			"condensedDesc": ["Accessory"," ","Stores MP."]
+			"flavortext": "\"What was taken shall be restored\"",
+			"condensedDesc": ["Accessory"," ","Grants [Siphon / Restore]."]
 		},
 		"53003": {
 			"identifiedDisplayName": "Temporal Orb",
@@ -1231,6 +1232,7 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
+			"flavortext": "\"O! call back yesterday, bid time return.\"",
 			"condensedDesc": ["Accessory"," ","Chance to skip cooldowns."]
 		},
 		"53004": {
@@ -1244,6 +1246,7 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
+			"flavortext": "It offers you what you want, not what you need.",
 			"condensedDesc": ["Accessory"," ","Redirect spells by chance."]
 		},
 		"53005": {
@@ -1253,7 +1256,7 @@ define(function()
 				"Accessory",
 				"Unique Equipped",
 				" ",
-				"While attacking, gain a chance to create a mirror image of yourself. Your images have reduced attack power and last a short duration.",
+				"While attacking, you have a chance to create a mirror image of yourself.",
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
@@ -1271,6 +1274,7 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
+			"flavortext": "\"Death never stops to rest. Neither can we.\"",
 			"condensedDesc": ["Accessory"," ","Lethal hits won't always kill you."]
 		},
 		"53007": {
@@ -1284,6 +1288,7 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
+			"flavortext": "Anger can empower those who embrace it.",
 			"condensedDesc": ["Accessory"," ","Quadrupled unarmed ATK."]
 		},
 		"53008": {
@@ -1297,6 +1302,7 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
+			"flavortext": "In times like these, people need to be reminded of compassion.",
 			"condensedDesc": ["Accessory"," ","Revive at full strength."]
 		},
 		"53009": {
@@ -1310,6 +1316,7 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
+			"flavortext": "More.",
 			"condensedDesc": ["Accessory"," ","+200 Weight Capacity"]
 		},
 		"54000": {
@@ -1737,7 +1744,7 @@ define(function()
 				" ",
 				"Weapon Power: $atk$",
 				" ",
-				"Your attacks can send enemies\nto a premature grave.",
+				"Your attacks can send\nenemies to a premature\ngrave.",
 			],
 			"BaseATK": 10,
 			"BaseBonus1": 5,
