@@ -578,6 +578,15 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		AttackRange : [ 1 ],
 	};
 	
+	SkillInfo[SK.ALL_DRAGONFAMILIAR] = {
+		Name: "ALL_DRAGONFAMILIAR",
+		SkillName : "Call Dragon",
+		MaxLv : 1,
+		SpAmount : [ 25 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ],
+	};
+	
 	SkillInfo[SK.MG_FIREBOLT] = {
 		Name: "MG_FIREBOLT",
 		SkillName : "Fire Lance",
@@ -6534,14 +6543,20 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 
 	SkillInfo[SK.AS_CLOAKING] = {
 		Name: "AS_CLOAKING",
-		SkillName : "Cloaking",
-		MaxLv : 10,
-		SpAmount : [ 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 ],
+		SkillName : "Shadowstep",
+		MaxLv : 1,
+		SpAmount : [ 15 ],
 		bSeperateLv : false,
-		AttackRange : [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ],
-		_NeedSkillList : [
-			[ SK.TF_HIDING,2 ]
-		]
+		AttackRange : [ 1 ],
+	};
+
+	SkillInfo[SK.ALL_LODESTONEBURST] = {
+		Name: "ALL_LODESTONEBURST",
+		SkillName : "Lodestone Burst",
+		MaxLv : 1,
+		SpAmount : [ 35 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ],
 	};
 
 	SkillInfo[SK.AS_SONICBLOW] = {

@@ -793,6 +793,6 @@ define(function()
 		POISONIMPRINT:                          836,
 		EARTHENSHIELD:                          837,
 		MANABATTERY:                            838,
-		
+		LODESTONE_CHARGED:                      839,
 	};
 });

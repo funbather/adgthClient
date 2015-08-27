@@ -193,6 +193,14 @@ define(['./StatusConst'], function( SC )
 			["Incoming damage taken by someone else."]
 		]
 	};
+
+	StatusInfo[SC.LODESTONE_CHARGED] = {
+		icon: "lodestone.tga",
+		descript: [
+			["Charged", COLOR_TITLE_BUFF],
+			["Your shield is charged."]
+		]
+	};
 	
   StatusInfo[SC.SPIRIT_1] = {
 		icon: "\xbf\xc0\xb9\xf6\xc6\xae\xb7\xaf\xbd\xba\xc6\xae.tga",
@@ -1987,8 +1995,6 @@ define(['./StatusConst'], function( SC )
 		haveTimeLimit: 1,
 		posTimeLimitStr: 2,
 		descript: [
-			["Cloaking", COLOR_TITLE_BUFF],
-			["%s", COLOR_TIME],
 			["Invisible"]
 		]
 	};

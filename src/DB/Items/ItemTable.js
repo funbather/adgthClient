@@ -931,7 +931,7 @@ define(function()
 				"+$def$ DEF",
 				"+$eva$ EVA",
 				" ",
-				"You have an additional chance to evade any attack or spell while at low life.",
+				"You have an additional\nchance to evade any attack\nor spell while at low life.",
 			],
 			"BaseDEF": 1,
 			"BaseEVADE": 4,
@@ -1236,7 +1236,7 @@ define(function()
 			"condensedDesc": ["Accessory"," ","Chance to skip cooldowns."]
 		},
 		"53004": {
-			"identifiedDisplayName": "Mirror of a Thousand Truths",
+			"identifiedDisplayName": "Mirror of Ages",
 			"identifiedResourceName": "\xc8\xad\xb7\xc1\xc7\xd1\xb0\xc5\xbf\xef",
 			"identifiedDescriptionName": [
 				"Accessory",
@@ -1246,8 +1246,8 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
-			"flavortext": "It offers you what you want, not what you need.",
-			"condensedDesc": ["Accessory"," ","Redirect spells by chance."]
+			"flavortext": "\"Not bad, but I can think of a better use for that.\"",
+			"condensedDesc": ["Accessory"," ","Mirror spells by chance."]
 		},
 		"53005": {
 			"identifiedDisplayName": "Fractal Shard",
@@ -1316,7 +1316,7 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
-			"flavortext": "More.",
+			"flavortext": "\"More.\"",
 			"condensedDesc": ["Accessory"," ","+200 Weight Capacity"]
 		},
 		"54000": {
@@ -1693,14 +1693,14 @@ define(function()
 				"Weapon Power: $atk$",
 				" ",
 				"-20% ASPD",
-				"+$bonus1$ CRIT DAM",
-				"20% Chance to Stun on Hit",
+				"+$bonus1$% Lifesteal",
 			],
-			"BaseATK": 15,
-			"BaseBonus1": 20,
+			"BaseATK": 18,
+			"BaseBonus1": 10,
 			"Multiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 8,
+			"flavortext":"\"May this grant you all the strength of the behemoths and none of their serenity.\"",
 		},
 		"54021": {
 			"identifiedDisplayName": "Heartbreaker",
@@ -1712,15 +1712,15 @@ define(function()
 				" ",
 				"Weapon Power: $atk$",
 				" ",
-				"Your attacks will ignore DEF.",
+				"Your attacks will ignore your\ntarget's DEF.",
 			],
 			"BaseATK": 14,
 			"slotCount": 0,
 			"ClassNum": 8,
 		},
 		"54022": {
-			"identifiedDisplayName": "Frying Pan",
-			"identifiedResourceName": "\xb7\xe7\xb3\xaa\xc4\xae\xb8\xae\xb0\xed",
+			"identifiedDisplayName": "Mythril Axe",
+			"identifiedResourceName": "\xba\xa3\xc5\xd7\xb6\xfb\xbe\xd7\xbd\xba",
 			"identifiedDescriptionName": [
 				"Unique Maul",
 				"Item Level $ilvl$",
@@ -1728,9 +1728,12 @@ define(function()
 				" ",
 				"Weapon Power: $atk$",
 				" ",
-				"Slain enemies will be transformed\ninto delectable meals.",
+				"+$bonus1$% CRIT DAM",
+				"+10% Chance to Stun on hit",
 			],
 			"BaseATK": 13,
+			"BaseBonus1": 20,
+			"Multiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 8,
 		},
@@ -1886,7 +1889,7 @@ define(function()
 				" ",
 				"Your spells have a high\nchance to Freeze.",
 			],
-			"BaseMAG": 9,
+			"BaseMAG": 11,
 			"slotCount": 0,
 			"ClassNum": 10,
 		},

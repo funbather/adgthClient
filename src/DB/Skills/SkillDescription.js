@@ -356,7 +356,7 @@ define(["./SkillConst"], function( SKID )
 		"Call Penguin",
 		"Active",
 		" ",
-		"Call a Penguin to your aid who will throw refreshing drinks to you while in battle. You can only have one Penguin Buddy active at a time.", 
+		"Call a Penguin to your aid who will throw refreshing drinks to you while in battle. You can only have one Penguin active at a time.", 
 	].join("\n");
 
 	SkillDescription[SKID.TR_IMMUNITY] = [
@@ -503,6 +503,27 @@ define(["./SkillConst"], function( SKID )
 		"Active - Support - Self",
 		" ",
 		"If your Mana Battery is not currently active, it will begin leeching mana from you until it is at capacity. If it is already active, you will restore the amount of currently charged MP.",
+	].join("\n");
+
+	SkillDescription[SKID.ALL_DRAGONFAMILIAR] = [
+		"Call Dragon",
+		"Active",
+		" ",
+		"Call a Dragon Familiar to your aid who will attack alongside you using poison magics. You can only have one Dragon Familiar active at a time.", 
+	].join("\n");
+
+	SkillDescription[SKID.AS_CLOAKING] = [
+		"Shadowstep",
+		"Active",
+		" ",
+		"Sink into the shadows and become invisible until your next attack or skill use.", 
+	].join("\n");		
+	
+	SkillDescription[SKID.ALL_LODESTONEBURST] = [
+		"Lodestone Burst",
+		"Active - Magical",
+		" ",
+		"Only active after absorbing a magical attack. Release the stored energy from your shield, dealing 400% of the absorbed damage.",
 	].join("\n");
 	
 	SkillDescription[SKID.MG_FIREBOLT] = [
@@ -3084,34 +3105,6 @@ define(["./SkillConst"], function( SKID )
 		"[LV 8]^777777 ATK +24 ^000000",
 		"[LV 9]^777777 ATK +27 ^000000",
 		"[LV 10]^777777 ATK +30 ^000000",
-	].join("\n");
-
-	SkillDescription[SKID.AS_CLOAKING] = [
-		"Cloaking",
-		"Max Level:^777777 10 ^000000",
-		"Type:^33cc00 Active ^000000",
-		"SP Cost:^777777 15 ^000000",
-		"Upkeep Cost:^777777 1 per (SkillLV + 3) sec ^000000",
-		"Target:^777777 Self ^000000",
-		"Cast Time:^777777 Instant ^000000",
-		"Cool Down:^777777 1 sec ^000000",
-		"Duration:^777777 Until cancelled or SP runs out ^000000",
-		"Effect:^777777 Gives character the Cloaked effect, it makes the user invisible to players and monsters but you don't lose the ability to move. Cloaked characters do not regenerate HP or SP, they can attack but this uncloaks them.",
-		"Attacking while being cloaked doubles the critical rate for that hit. Insects, Demons and Boss monsters see through this invisibility.",
-		"The Cloaked effect may be cancelled at any time by using the skill again (no SP Cost), by getting hit, reaching SP 0 or by coming into the area of effect of Attention Concentrate, Ruwach or Sight.",
-		"Lower Skill Levels don't let you attack or use skills and require a wall next to you to allow movement. The movement speed increase does not stack with the one from Improve Dodge.",
-		"Movement speed:",
-		"with wall / without wall ^000000",
-		"[LV 1]^777777 100% / can't move ^000000",
-		"[LV 2]^777777 103% / can't move ^000000",
-		"[LV 3]^777777 106% / 79% ^000000",
-		"[LV 4]^777777 109% / 82% ^000000",
-		"[LV 5]^777777 112% / 85% ^000000",
-		"[LV 6]^777777 115% / 88% ^000000",
-		"[LV 7]^777777 118% / 91% ^000000",
-		"[LV 8]^777777 121% / 94% ^000000",
-		"[LV 9]^777777 124% / 97% ^000000",
-		"[LV 10]^777777 125% / 100% ^000000",
 	].join("\n");
 
 	SkillDescription[SKID.AS_SONICBLOW] = [
