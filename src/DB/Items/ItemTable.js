@@ -1947,7 +1947,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Strength",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+5 STR",
+				"+7 STR",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -1956,7 +1956,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Agility",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+5 AGI",
+				"+7 AGI",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -1965,7 +1965,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Vitality",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+5 VIT",
+				"+7 VIT",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -1974,7 +1974,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Intelligence",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+5 INT",
+				"+7 INT",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -1983,7 +1983,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Precision",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+5 PRE",
+				"+7 PRE",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -1992,7 +1992,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Luck",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+15 LUK",
+				"+10 LUK",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2001,7 +2001,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Health",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+4% HP",
+				"+7% HP",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2010,7 +2010,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Mana",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+10 MP",
+				"+15 MP",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2019,7 +2019,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Defense",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+1 DEF",
+				"+2 DEF",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2028,7 +2028,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Magic Defense",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+2 MDEF",
+				"+3 MDEF",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2037,7 +2037,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Critical Chance",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+3 CRIT",
+				"+4 CRIT",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2046,7 +2046,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Critical Damage",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+7% CRIT DAM",
+				"+11% CRIT DAM",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2055,7 +2055,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Attack Speed",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+4% ASPD",
+				"+10% ASPD",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2073,7 +2073,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Celerity",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+4 CEL",
+				"+5 CEL",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2082,7 +2082,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Health Regen",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+10% HP Regen",
+				"+20% HP Regen",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2091,7 +2091,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Mana Regen",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+10% MP Regen",
+				"+20% MP Regen",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2100,7 +2100,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Lifesteal",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+7% Lifesteal",
+				"+3% Lifesteal",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2109,7 +2109,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Soulsteal",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+7 MP on Kill",
+				"+10 MP on Kill",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2118,7 +2118,7 @@ define(function()
 			"identifiedDisplayName": "Seal of Health",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+15% HP",
+				"+20% HP",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2164,7 +2164,7 @@ define(function()
 			"identifiedDisplayName": "Seal of Mind",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"-20% Magical Damage Taken",
+				"-25% Magical Damage Taken",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2173,7 +2173,7 @@ define(function()
 			"identifiedDisplayName": "Seal of Fortune",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+50 LUK",
+				"+25 LUK",
 				"Gain extra Munny when killing a monster",
 			],
 			"slotCount": 0,
@@ -2183,7 +2183,7 @@ define(function()
 			"identifiedDisplayName": "Seal of Broken Will",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+33% DEF Penetration",
+				"+40% DEF Penetration",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2192,7 +2192,7 @@ define(function()
 			"identifiedDisplayName": "Seal of Broken Spirit",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+33% MDEF Penetration",
+				"+40% MDEF Penetration",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2201,8 +2201,8 @@ define(function()
 			"identifiedDisplayName": "Seal of Paralysis",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+7% Chance to Stun on hit",
-				"+7% Chance to Stun attackers",
+				"+8% Chance to Stun on hit",
+				"+8% Chance to Stun attackers",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2211,8 +2211,8 @@ define(function()
 			"identifiedDisplayName": "Seal of Venom",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+7% Chance to Poison on hit",
-				"+7% Chance to Poison attackers",
+				"+8% Chance to Poison on hit",
+				"+8% Chance to Poison attackers",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2221,8 +2221,8 @@ define(function()
 			"identifiedDisplayName": "Seal of Hoarfrost",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+7% Chance to Freeze on hit",
-				"+7% Chance to Freeze attackers",
+				"+8% Chance to Freeze on hit",
+				"+8% Chance to Freeze attackers",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2308,6 +2308,132 @@ define(function()
 				" ",
 				"Heals 10% of your Max HP and 20 MP.",
 			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"57000": {
+			"identifiedDisplayName": "Mythril Ore",
+			"identifiedResourceName": "\xb9\xcc\xbd\xba\xb8\xb1\xb1\xa4\xbc\xae",
+			"identifiedDescriptionName": [
+				"Crafting Item",
+				" ",
+				"The ore of a highly valuable metal amongst blacksmiths.",
+				" ",
+				"Can be taken to a Blacksmith to increase the quality of an item by 10%, up to a maximum of 100%.",
+			],
+			"condensedDesc": ["Crafting Item"," ","+10% Item Quality"],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"57001": {
+			"identifiedDisplayName": "Orichalcum Ore",
+			"identifiedResourceName": "\xc0\xba\xb1\xa4\xbc\xae",
+			"identifiedDescriptionName": [
+				"Crafting Item",
+				" ",
+				"The ore of a highly valuable metal amongst blacksmiths.",
+				" ",
+				"Can be taken to a Blacksmith to increase the item level of an item by 5, up to a maximum of your current Base Level.",
+			],
+			"condensedDesc": ["Crafting Item"," ","+5 Item Level"],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"57002": {
+			"identifiedDisplayName": "Empty Bijou",
+			"identifiedResourceName": "\x65\x6D\x70\x74\x79\x62\x69\x6A\x6F\x75",
+			"identifiedDescriptionName": [
+				"Crafting Item",
+				" ",
+				"A jewel prized amongst enchantresses for its affinity for the arcane, although this one is currently devoid of magic energies.",
+				" ",
+				"Can be taken to an Enchantress to store a shard from an enchanted item for use later, although doing so will destroy the equipment.",
+			],
+			"condensedDesc": ["Crafting Item"," ","Can hold an enchantment."],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"57003": {
+			"identifiedDisplayName": "Fervent Bijou",
+			"identifiedResourceName": "\xbf\xeb\xc0\xc7\xba\xb8\xc1\xd6_\xc8\xb2",
+			"identifiedDescriptionName": [
+				"Crafting Item",
+				" ",
+				"A jewel prized amongst enchantresses for its affinity for the arcane.",
+				" ",
+				"Can be taken to an Enchantress to replace a shard in an enchanted item with the shard stored within this one.",
+			],
+			"condensedDesc": ["Crafting Item"," "],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"57004": {
+			"identifiedDisplayName": "Arcane Bijou",
+			"identifiedResourceName": "\xbf\xeb\xc0\xc7\xba\xb8\xc1\xd6_\xc3\xbb",
+			"identifiedDescriptionName": [
+				"Crafting Item",
+				" ",
+				"A jewel prized amongst enchantresses for its affinity for the arcane.",
+				" ",
+				"Can be taken to an Enchantress to add a random shard to an item, up to a maximum of three.",
+			],
+			"condensedDesc": ["Crafting Item"," ","Adds a shard to an item."],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"57005": {
+			"identifiedDisplayName": "Blessed Bijou",
+			"identifiedResourceName": "\x62\x6C\x65\x73\x73\x65\x64\x62\x69\x6A\x6F\x75",
+			"identifiedDescriptionName": [
+				"Crafting Item",
+				" ",
+				"A jewel prized amongst enchantresses for its affinity for the arcane.",
+				" ",
+				"Can be taken to an Enchantress to replace an item's seal with another one, or to add a seal to an item with three shards.",
+			],
+			"condensedDesc": ["Crafting Item"," ","Adds a seal to an item."],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"57006": {
+			"identifiedDisplayName": "Capricious Bijou",
+			"identifiedResourceName": "\xbf\xeb\xc0\xc7\xba\xb8\xc1\xd6_\xb3\xec",
+			"identifiedDescriptionName": [
+				"Crafting Item",
+				" ",
+				"A jewel prized amongst enchantresses for its affinity for the arcane.",
+				" ",
+				"Can be taken to an Enchantress to randomize the current enchantments on an item.",
+			],
+			"condensedDesc": ["Crafting Item"," ","Rerolls item's enchantments."],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"57007": {
+			"identifiedDisplayName": "Discordant Bijou",
+			"identifiedResourceName": "\xbf\xeb\xc0\xc7\xba\xb8\xc1\xd6_\xc8\xab",
+			"identifiedDescriptionName": [
+				"Crafting Item",
+				" ",
+				"A jewel prized amongst enchantresses for its affinity for the arcane.",
+				" ",
+				"Can be taken to an Enchantress to completely change the properties of a piece of equipment, giving or taking away any number of enchantments as well as randomizing its quality, sometimes even beyond 100%.",
+			],
+			"condensedDesc": ["Crafting Item"," ","Completely rerolls an item."],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"57008": {
+			"identifiedDisplayName": "Divine Hammer",
+			"identifiedResourceName": "\xc8\xb2\xb1\xdd\xc0\xc7\xb8\xc1\xc4\xa1",
+			"identifiedDescriptionName": [
+				"Crafting Item",
+				" ",
+				"A blacksmith's hammer that has been blessed by a Goddess.",
+				" ",
+				"Can be taken to a Blacksmith to upgrade a normal item of a lower rank to the best of its type, while preserving all of its other aspects.",
+			],
+			"condensedDesc": ["Crafting Item"," ","Upgrades a normal item."],
 			"slotCount": 0,
 			"ClassNum": 0
 		},

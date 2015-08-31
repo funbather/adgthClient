@@ -438,10 +438,13 @@ define(function(require)
 		$text.val('');
 
 		// Command
-		if (text[0] === '/') {
+		if (text[0] === '/' && text != "/autotarget") { // SUUUUPER hacky, I'll fix it later
 			ProcessCommand.call(this, text.substr(1) );
 			return;
 		}
+		
+		if(text == "/autotarget")
+			text = "@autotarget";
 
 		this.onRequestTalk( user, text, _sendTo );
 	};
