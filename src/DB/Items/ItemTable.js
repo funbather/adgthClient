@@ -2001,7 +2001,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Health",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+7% HP",
+				"+10% HP",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2436,6 +2436,28 @@ define(function()
 			"condensedDesc": ["Crafting Item"," ","Upgrades a normal item."],
 			"slotCount": 0,
 			"ClassNum": 0
+		},
+		"19526": {
+			"identifiedDisplayName": "Helm",
+			"identifiedResourceName": "\xc7\xef\xb8\xa7",
+			"identifiedDescriptionName": [
+				"Costume - Upper",
+				" ",
+				"+12% Stability",
+			],
+			"slotCount": 0,
+			"ClassNum": 40
+		},
+		"20205": {
+			"identifiedDisplayName": "Fancy Flower",
+			"identifiedResourceName": "\xc0\xe5\xbd\xc4\xbf\xeb\xb2\xc9",
+			"identifiedDescriptionName": [
+				"Costume - Upper",
+				" ",
+				"+17% Photosynthesis Efficiency",
+			],
+			"slotCount": 0,
+			"ClassNum": 4
 		},
 	};
 });

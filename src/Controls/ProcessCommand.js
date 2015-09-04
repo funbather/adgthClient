@@ -211,6 +211,10 @@ define(function( require )
 					return;
 				}
 				break;
+				
+			case 'autotarget': // It's handled server-side, I dunno how else to do this and I'm trying avoid @command usage
+				this.onRequestTalk( "", "@autotarget", 0 );
+				return;
 		}
 
 
