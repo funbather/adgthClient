@@ -2307,6 +2307,92 @@ define(function()
 				"Consumable",
 				" ",
 				"Heals 10% of your Max HP and 20 MP.",
+				"Limit: 5",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"56001": {
+			"identifiedDisplayName": "Mini Potion",
+			"identifiedResourceName": "\xbf\xbb\xb7\xce\xbf\xec\xbd\xbd\xb8\xb2\xc6\xf7\xbc\xc7",
+			"identifiedDescriptionName": [
+				"Consumable",
+				" ",
+				"Heals 33% of your Max HP.",
+				"Limit: 10",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"56002": {
+			"identifiedDisplayName": "Stout Potion",
+			"identifiedResourceName": "\xb3\xeb\xb6\xf5\xc6\xf7\xbc\xc7",
+			"identifiedDescriptionName": [
+				"Consumable",
+				" ",
+				"Heals 66% of your Max HP.",
+				"Limit: 10",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"56003": {
+			"identifiedDisplayName": "Mega Potion",
+			"identifiedResourceName": "\xb6\xfb\xc4\xab",
+			"identifiedDescriptionName": [
+				"Consumable",
+				" ",
+				"Heals 100% of your Max HP.",
+				"Limit: 10",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"56004": {
+			"identifiedDisplayName": "Salve",
+			"identifiedResourceName": "\xb3\xf3\xc3\xe0\xbb\xf8\xb7\xaf\xb8\xb6\xc0\xce\xc1\xf3",
+			"identifiedDescriptionName": [
+				"Consumable",
+				" ",
+				"Cures Poison, Silence, and Blind.",
+				"Limit: 10",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"56005": {
+			"identifiedDisplayName": "Goddess Tear",
+			"identifiedResourceName": "\xc7\xcf\xb4\xc3\xbb\xf6\xba\xb8\xbc\xae",
+			"identifiedDescriptionName": [
+				"Consumable",
+				" ",
+				"Revives a player.",
+				"Limit: 5",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"56006": {
+			"identifiedDisplayName": "Faerie Wing",
+			"identifiedResourceName": "\xc4\xbf\xb4\xd9\xb6\xf5\xb3\xaf\xb0\xb3",
+			"identifiedDescriptionName": [
+				"Consumable",
+				" ",
+				"Teleport to your Party Leader.",
+				"Limit: 5",
+			],
+			"slotCount": 0,
+			"ClassNum": 0
+		},
+		"56007": {
+			"identifiedDisplayName": "Grand Faerie Wing",
+			"identifiedResourceName": "\xc8\xad\xb7\xc1\xc7\xd1\xbf\xe4\xc1\xa4\xb3\xaf\xb0\xb3",
+			"identifiedDescriptionName": [
+				"Consumable",
+				"Requires: Party Leader",
+				" ",
+				"Teleport your party to your side.",
+				"Limit: 5",
 			],
 			"slotCount": 0,
 			"ClassNum": 0

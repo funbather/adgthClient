@@ -120,16 +120,18 @@ define(function(require)
 			ui.find('.collection').css('backgroundImage', 'url('+data+')' );
 		});
 		
-		for(i = 0; i < 4; i++) {
-      		if(item.slot['card' + (i+1)]) { 
-        		if(i == 0) {
-							enchdesc = '\n--------------------------------\n';
-            }
-        	
-						enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));
-						enchdesc += enchant.identifiedDescriptionName + '\n';
-						rarity++;
-      		}
+		if(item.slot) { // Needed, but only sometimes...
+			for(i = 0; i < 4; i++) {
+						if(item.slot['card' + (i+1)]) { 
+							if(i == 0) {
+								enchdesc = '\n--------------------------------\n';
+							}
+						
+							enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));
+							enchdesc += enchant.identifiedDescriptionName + '\n';
+							rarity++;
+						}
+			}
 		}
 
 		desc = it.identifiedDescriptionName + enchdesc;
