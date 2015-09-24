@@ -388,7 +388,7 @@ define(function( require )
 	 */
 	function onPartyConfig( pkt )
 	{
-		ChatBox.addText( DB.getMessage(pkt.bRefuseJoinMsg ? 1325 : 1326), ChatBox.TYPE.INFO );
+		//ChatBox.addText( DB.getMessage(pkt.bRefuseJoinMsg ? 1325 : 1326), ChatBox.TYPE.INFO );
 	}
 
 

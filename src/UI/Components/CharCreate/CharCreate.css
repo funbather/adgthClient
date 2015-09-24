@@ -21,14 +21,27 @@
 #charcreate .graph canvas { position:absolute; left:209px; top: 86px; }
 
 /** Stats infos **/
-#charcreate .info { position:absolute; top:40px; left:480px; }
+#charcreate .info { position:absolute; top:41px; left:500px; }
 #charcreate .info div { position:absolute; left:0px; }
-#charcreate .info .str { top:0px; }
-#charcreate .info .agi { top:16px; }
-#charcreate .info .vit { top:32px; }
-#charcreate .info .int { top:48px; }
-#charcreate .info .dex { top:64px; }
-#charcreate .info .luk { top:80px; }
+#charcreate .info .str { top:16px; }
+#charcreate .info .agi { top:63px; }
+#charcreate .info .vit { top:110px; }
+#charcreate .info .int { top:157px; }
+#charcreate .info .pre { top:204px; }
+#charcreate .info .left { top:0px; }
+
+#charcreate .stats { position:absolute; top:41px; right:0px; width:50px; height:300px; }
+#charcreate .statbutton { position: absolute; border:0; width:13px; height:13px; background-repeat:no-repeat; background-color:transparent; }
+#charcreate .stradd { top:16px; right:23px; }
+#charcreate .strsub { top:16px; right:42px; }
+#charcreate .agiadd { top:63px; right:23px; }
+#charcreate .agisub { top:63px; right:42px; }
+#charcreate .vitadd { top:110px; right:23px; }
+#charcreate .vitsub { top:110px; right:42px; }
+#charcreate .intadd { top:157px; right:23px; }
+#charcreate .intsub { top:157px; right:42px; }
+#charcreate .preadd { top:204px; right:23px; }
+#charcreate .presub { top:204px; right:42px; }
 
 /** Buttons **/
 #charcreate .btns { position:absolute; bottom:4px; width:100%; height:20px; }

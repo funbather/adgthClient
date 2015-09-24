@@ -60,7 +60,7 @@ define(function(require)
 	 */
 	CharCreate.init = function init()
 	{
-		_graph       = this.ui.find('.graph canvas')[0].getContext('2d');
+		//_graph       = this.ui.find('.graph canvas')[0].getContext('2d');
 		_chargen.ctx = this.ui.find('.chargen canvas')[0].getContext('2d');
 
 		// Setup GUI
@@ -69,13 +69,14 @@ define(function(require)
 			left: (Renderer.width-576)/2
 		});
 
-		this.draggable();
+		//this.draggable();
 
 		// Bind Events
 		this.ui.find('.chargen .left' ).mousedown(updateCharacterGeneric('head', -1));
 		this.ui.find('.chargen .right').mousedown(updateCharacterGeneric('head', +1));
 		this.ui.find('.chargen .up'   ).mousedown(updateCharacterGeneric('headpalette', +1));
-		this.ui.find('.graph button'  ).mousedown(updateStats);
+		this.ui.find('.statbutton'    ).mousedown(updateStats);
+		//this.ui.find('.graph button'  ).mousedown(updateStats);
 
 		this.ui.find('input').mousedown(function(event){
 			this.focus();
@@ -114,7 +115,7 @@ define(function(require)
 		this.ui.find('input').val('').focus();
 
 		Renderer.render(render);
-		updateGraphic();
+		//updateGraphic();
 	};
 
 
@@ -178,8 +179,8 @@ define(function(require)
 			parseInt( ui.find('.info .agi').text(), 10),
 			parseInt( ui.find('.info .vit').text(), 10),
 			parseInt( ui.find('.info .int').text(), 10),
-			parseInt( ui.find('.info .dex').text(), 10),
-			parseInt( ui.find('.info .luk').text(), 10),
+			parseInt( ui.find('.info .pre').text(), 10),
+			0,
 			_chargen.entity.head,
 			_chargen.entity.headpalette
 		);
@@ -233,33 +234,33 @@ define(function(require)
 	 */
 	function updateStats()
 	{
-		// Can't be upper than 9
-		if (CharCreate.ui.find('.info .' + this.className).text() === '9') {
+		var str = this.className;
+		
+		// No more points remaining
+		if (CharCreate.ui.find('.info .left')[0].textContent === '0' && str.substring(14,17) == "add") {
+			return;
+		}
+		
+		// Stop at zero
+		if (CharCreate.ui.find('.info .' + str.substring(11,14))[0].textContent === '0' && str.substr(14,17) == "sub") {
 			return;
 		}
 
-		// Relation table
-		var group = {
-			'str': 'int',
-			'int': 'str',
-			'vit': 'dex',
-			'dex': 'vit',
-			'luk': 'agi',
-			'agi': 'luk'
-		};
-
 		// Update infos
-		CharCreate.ui.find('.info .' +       this.className )[0].textContent++;
-		CharCreate.ui.find('.info .' + group[this.className])[0].textContent--;
-
-		updateGraphic();
+		if(str.substring(14,17) == "add") {
+			CharCreate.ui.find('.info .' + str.substring(11,14))[0].textContent++;
+			CharCreate.ui.find('.info .left')[0].textContent--;
+		} else {
+			CharCreate.ui.find('.info .' + str.substring(11,14))[0].textContent--;
+			CharCreate.ui.find('.info .left')[0].textContent++;
+		}
 	}
 
 
 	/**
 	 * Update the polygon
 	 */
-	function updateGraphic()
+	/*function updateGraphic()
 	{
 		// Update graphique.
 		var ctx    = _graph;
@@ -283,7 +284,7 @@ define(function(require)
 		ctx.closePath();
 		ctx.fill();
 		ctx.restore();
-	}
+	}*/
 
 
 	/**

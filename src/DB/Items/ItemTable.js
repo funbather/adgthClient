@@ -681,7 +681,6 @@ define(function()
 			"BaseDEF": 3,		
 			"slotCount": 0,
 			"ClassNum": 0,
-			"flavortext":"\"Maybe next time.\""
 		},
 		"52008": {
 			"identifiedDisplayName": "Golden Plate",
@@ -1188,7 +1187,6 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
-			"flavortext": "\"Comin' right up, pal!\"",
 			"condensedDesc": ["Accessory"," ","Grants [Call Penguin]."]
 		},
 		"53001": {
@@ -1204,7 +1202,6 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
-			"flavortext": "Unimaginable power at an insufferable cost.",
 			"condensedDesc": ["Accessory"," ","Periodic stat boosts."]
 		},
 		"53002": {
@@ -1218,7 +1215,6 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
-			"flavortext": "\"What was taken shall be restored\"",
 			"condensedDesc": ["Accessory"," ","Grants [Siphon / Restore]."]
 		},
 		"53003": {
@@ -1232,7 +1228,6 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
-			"flavortext": "\"O! call back yesterday, bid time return.\"",
 			"condensedDesc": ["Accessory"," ","Chance to skip cooldowns."]
 		},
 		"53004": {
@@ -1246,7 +1241,6 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
-			"flavortext": "\"Not bad, but I can think of a better use for that.\"",
 			"condensedDesc": ["Accessory"," ","Mirror spells by chance."]
 		},
 		"53005": {
@@ -1260,7 +1254,6 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
-			"flavortext": "\"Those who are different are untrustworthy, unpredictable. Put your safety in the hands of your own kind.\"",
 			"condensedDesc": ["Accessory"," ","Clone yourself when attacking."]
 		},
 		"53006": {
@@ -1274,7 +1267,6 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
-			"flavortext": "\"Death never stops to rest. Neither can we.\"",
 			"condensedDesc": ["Accessory"," ","Lethal hits won't always kill you."]
 		},
 		"53007": {
@@ -1288,7 +1280,6 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
-			"flavortext": "Anger can empower those who embrace it.",
 			"condensedDesc": ["Accessory"," ","Quadrupled unarmed ATK."]
 		},
 		"53008": {
@@ -1302,7 +1293,6 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
-			"flavortext": "In times like these, people need to be reminded of compassion.",
 			"condensedDesc": ["Accessory"," ","Revive at full strength."]
 		},
 		"53009": {
@@ -1316,7 +1306,6 @@ define(function()
 			],
 			"slotCount": 0,
 			"ClassNum": 0,
-			"flavortext": "\"More.\"",
 			"condensedDesc": ["Accessory"," ","+200 Weight Capacity"]
 		},
 		"54000": {
@@ -1359,7 +1348,6 @@ define(function()
 			"Multiplier1": 3,
 			"slotCount": 0,
 			"ClassNum": 1,
-			"flavortext": "In time, all things turn to dust. Some things just take less time."
 		},
 		"54002": {
 			"identifiedDisplayName": "Soulstealer",
@@ -1378,7 +1366,6 @@ define(function()
 			"Multiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 1,
-			"flavortext": "It would be a shame to let life slip away to nothing."
 		},
 		"54003": {
 			"identifiedDisplayName": "Lamentation",
@@ -1397,7 +1384,6 @@ define(function()
 			"Multiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 1,
-			"flavortext": "The realization that one is dying is far more terrifying than death itself."
 		},
 		"54004": {
 			"identifiedDisplayName": "Firebrand",
@@ -1700,7 +1686,6 @@ define(function()
 			"Multiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 8,
-			"flavortext":"\"May this grant you all the strength of the behemoths and none of their serenity.\"",
 		},
 		"54021": {
 			"identifiedDisplayName": "Heartbreaker",

@@ -13,7 +13,7 @@ define(function()
 	"use strict";
 
 	return {
-		0: "Novice",
+		0: "Recruit",
 		1: "Swordman",
 		2: "Mage",
 		3: "Archer",

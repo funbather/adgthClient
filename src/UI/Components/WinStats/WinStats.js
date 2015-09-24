@@ -101,10 +101,11 @@ define(function(require)
 			//case 'matak':
 			//case 'def':
 			//case 'mdef':
+			case 'critical':
 			case 'hit':
 			case 'flee':
-			case 'critical':
-				this.ui.find('.' + type).text(val);
+			case 'flee2':
+				this.ui.find('.' + type).text(val + '%');
 				break;
 
 			case 'aspd':
@@ -118,7 +119,6 @@ define(function(require)
 				break;
 			case 'def2':
 			case 'mdef2':
-			case 'flee2':
 				//str = val < 0 ? '- ' + (-val) : '+ ' + val;
 				this.ui.find('.' + type).text(val);
 				break;

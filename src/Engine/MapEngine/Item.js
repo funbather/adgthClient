@@ -231,10 +231,10 @@ define(function( require )
 	function onConfigEquip( pkt )
 	{
 		Equipment.setEquipConfig( pkt.bOpenEquipmentWin );
-		ChatBox.addText(
-			DB.getMessage(1358 + (pkt.bOpenEquipmentWin ? 1 : 0) ),
-			ChatBox.TYPE.INFO
-		);
+		//ChatBox.addText(
+		//	DB.getMessage(1358 + (pkt.bOpenEquipmentWin ? 1 : 0) ),
+		//	ChatBox.TYPE.INFO
+		//);
 	}
 
 

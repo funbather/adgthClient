@@ -381,87 +381,87 @@ define(function(require)
           desc += "\n\nNext Level:\nBase Damage Resistance: ^0000BB"+(var1+1)+"^000000%\nMax Damage Resistance: ^0000BB"+((var1+1)*4)+"^000000%";
       break;  
       
-      case 4030:
+      case 4030: // Sunder
         if(var1) {
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*50)+150)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*100)+250)+'^000000');
         }
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*50)+200)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*100)+350)+"^000000%";
       break;  
       
-      case 4031:
+      case 4031: // Hilt Bash
         if(var1) {
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*25)+100)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*50)+150)+'^000000');
           desc = desc.replace('$sklvl2$', '^0000BB'+((var1*.5)+1.5).toFixed(1)+'^000000');
         }
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*25)+125)+"^000000%\nStun Duration: ^0000BB"+((var1*.5)+2).toFixed(1)+"^000000 seconds";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*50)+150)+"^000000%\nStun Duration: ^0000BB"+((var1*.5)+2).toFixed(1)+"^000000 seconds";
       break;  
       
-      case 4032:
+      case 4032: // Cleave
         if(var1) {
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*50)+250)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*40)+175)+'^000000');
         }
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*50)+300)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*40)+215)+"^000000%";
       break;  
       
-      case 4033:
+      case 4033: // Pile Bunker
         if(var1) {
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+250)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*105)+225)+'^000000');
         }
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*75)+325)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*105)+330)+"^000000%";
       break;  
       
-      case 4034:
+      case 4034: // Echoblade
         if(var1) {
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*300)+500)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*555)+555)+'^000000');
         }
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*300)+800)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*555)+1110)+"^000000%";
       break;  
       
-      case 4035:
+      case 4035: // BBoom
         if(var1) {
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*50)+100)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*85)+200)+'^000000');
         }
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*50)+150)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*85)+285)+"^000000%";
       break;  
       
-      case 4036:
+      case 4036: // BBlitz
         if(var1) {
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*50)+100)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*85)+200)+'^000000');
         }
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*50)+150)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*85)+285)+"^000000%";
       break;  
       
-      case 4037:
+      case 4037: //BBash
         if(var1) {
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*100)+300)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*70)+200)+'^000000');
         }
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*100)+300)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*70)+270)+"^000000%";
       break;  
       
       case 62: // Bowling Bash
         if(var1) {
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+200)+'^000000');
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+200)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*55)+200)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*55)+200)+'^000000');
         }
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*75)+275)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*55)+255)+"^000000%";
       break;  
       
       case 6: // Provoke   
@@ -526,17 +526,17 @@ define(function(require)
           desc += "\n\nNext Level:\nDamage Absorbed: ^0000BB"+((var1*25)+125)+"^000000%";
       break;
       
-      case 4046:
+      case 4046: // S Bomb
         if(var1) {
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*25)+150)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*55)+225)+'^000000');
           desc = desc.replace('$sklvl2$', '^0000BB'+((var1*10)+20)+'^000000');
         }
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*25)+175)+"^000000%\nPoison Chance: ^0000BB"+((var1*10)+30)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*55)+280)+"^000000%\nPoison Chance: ^0000BB"+((var1*10)+30)+"^000000%";
       break;
       
-      case 4047:
+      case 4047: // P Blow
         if(var1) {
           desc = desc.replace('$sklvl$', '^0000BB'+((var1*35)+180)+'^000000');
           desc = desc.replace('$sklvl2$', '^0000BB'+((var1*10)+20)+'^000000');
@@ -546,7 +546,7 @@ define(function(require)
           desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*35)+215)+"^000000%\nPoison Chance: ^0000BB"+((var1*10)+30)+"^000000%";
       break;
       
-      case 4048:
+      case 4048: // Toxic Deluge
         if(var1)
           desc = desc.replace('$sklvl$', '^0000BB'+((var1*10)+20)+'^000000');
       
@@ -554,44 +554,44 @@ define(function(require)
           desc += "\n\nNext Level:\nSlow: ^0000BB"+((var1*10)+30)+"^000000%";
       break;
       
-      case 4049:
+      case 4049: // Expunge
         if(var1)
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*250)+1100)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*175)+600)+'^000000');
       
         if(level && var1 < 10)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*250)+1350)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*175)+775)+"^000000%";
       break;
       
-      case 4050:
+      case 4050: // Terraspine
         if(var1)
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*50)+150)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*70)+240)+'^000000');
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*50)+200)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*70)+310)+"^000000%";
       break;
       
-      case 4051:
+      case 4051: // H Drive
         if(var1)
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*75)+175)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*45)+200)+'^000000');
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*75)+250)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*45)+245)+"^000000%";
       break;
       
-      case 4052:
+      case 4052: // G Rift
         if(var1)
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*125)+200)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*65)+250)+'^000000');
       
         if(level && var1 < 5)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*125)+325)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*65)+315)+"^000000%";
       break;
       
-      case 4053:
+      case 4053: // Earth Shudder
         if(var1)
-          desc = desc.replace('$sklvl$', '^0000BB'+((var1*200)+400)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+((var1*135)+400)+'^000000');
       
         if(level && var1 < 10)
-          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*200)+600)+"^000000%";
+          desc += "\n\nNext Level:\nDamage: ^0000BB"+((var1*135)+535)+"^000000%";
       break;
 		}  
 		
