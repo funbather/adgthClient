@@ -26,6 +26,7 @@ function(   DB,            EntityManager,            Entity,                Alti
 	 */
 	function add( gid, itemid, identify, count, x, y, z, quality, ilvl, slot1, slot2, slot3, slot4 )
 	{
+		var GraphicsSettings = require('Preferences/Graphics');
 		var it     = DB.getItemInfo(itemid);
 		var path   = DB.getItemPath(itemid, identify);
 		var entity = new Entity();
@@ -74,7 +75,11 @@ function(   DB,            EntityManager,            Entity,                Alti
 			return entity.position[2] === level;
 		});
 
-
+		if(GraphicsSettings.items) {
+			entity.display.alwaysOn = true;
+			entity.display.add();
+		}
+			
 		EntityManager.add(entity);
 	}
 

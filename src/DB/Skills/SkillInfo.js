@@ -35,6 +35,15 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 		bSeperateLv : false,
 		AttackRange : [ 9 ],
 	};
+
+	SkillInfo[SK.AL_TELEPORTATION] = {
+		Name: "AL_TELEPORT",
+		SkillName : "Teleportation",
+		MaxLv : 1,
+		SpAmount : [ 35 ],
+		bSeperateLv : false,
+		AttackRange : [ 1 ],
+	};
 	
 	SkillInfo[SK.SC_INVOKE] = {
 		Name: "SC_INVOKE",

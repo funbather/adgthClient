@@ -30,6 +30,15 @@ define(["./SkillConst"], function( SKID )
 		" ",
 		"Type /checkpoint or /cp in chat to set a temporary checkpoint; talk to an Innkeeper in a town or encampment to set a save point.",
 	].join("\n");
+
+	SkillDescription[SKID.AL_TELEPORT] = [
+		"Teleportation",
+		"Active - Support",
+		" ",
+		"Teleport yourself to either your current save point, or your current checkpoint.",
+		" ",
+		"Type /checkpoint or /cp in chat to set a temporary checkpoint; talk to an Innkeeper in a town or encampment to set a save point.",
+	].join("\n");
 	
 	SkillDescription[SKID.SC_INVOKE] = [
 		"Invoke",
@@ -922,21 +931,6 @@ define(["./SkillConst"], function( SKID )
 		"This means that it also blocks the bow attacks of players, so take care not to prevent any Hunters or Bow Thieves in the party from being able to do damage!",
 		"Monsters count as being \"ranged\" if their attack has a range of 4 or more cells. Pneuma cannot be cast if it is targeted to overlap an already existing Pneuma area or a Safety Wall cell.",
 		"Does not block splash damage or negate the Flee reducing effects of having multiple targets attacking you. Do note that although you can see the animation on top of a Land Protector, Pneuma will have no effect. ^000000",
-	].join("\n");
-
-	SkillDescription[SKID.AL_TELEPORT] = [
-		"Teleportation",
-		"Max Level:^777777 2 ^000000",
-		"Type:^33cc00 Active ^000000",
-		"SP Cost:^777777 11 - SkillLV ^000000",
-		"Target:^777777 Self ^000000",
-		"Cast Time:^777777 Instant ^000000",
-		"Cool Down:^777777 None ^000000",
-		"Duration:^777777 Instant ^000000",
-		"Effect:^777777 At level 1, you can teleport to a random spot on the same map. At level 2, you can also choose to teleport to your save point. When Teleportation is actually cast, a window will appear showing the available options (including cancel).",
-		"You must actually select an option by clicking or with the up/down arrow keys and pressing enter for the effect to occur. Once you actually teleport, you will count as having \"just entered the map\". This means that Aggressive monsters won't see you for 3 seconds or until you move. ^000000",
-		"[LV 1]^777777 Random ^000000",
-		"[LV 2]^777777 Save Point. ^000000",
 	].join("\n");
 
 	SkillDescription[SKID.AL_INCAGI] = [

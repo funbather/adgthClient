@@ -142,6 +142,7 @@ define(['Utils/gl-matrix', 'Renderer/Renderer'], function( glMatrix, Renderer )
 		this.guild_rank =  '';
 		this.emblem     =  null;
 		this.display    =  false;
+		this.alwaysOn   =  false;
 		this.canvas     =  document.createElement('canvas');
 		this.ctx        =  this.canvas.getContext('2d');
 		this.canvas.style.position = 'absolute';
@@ -233,7 +234,10 @@ define(['Utils/gl-matrix', 'Renderer/Renderer'], function( glMatrix, Renderer )
 		ctx.textBaseline = 'top';
 		
 		if(bg) {
-			ctx.fillStyle="rgba(0,0,0,.6)";
+			if(bg == 1)
+				ctx.fillStyle="rgba(0,0,0,.6)";
+			else
+				ctx.fillStyle="rgba(120,120,120,.6)"; // Hovering over item while always display item name option is on
 			ctx.fillRect(0,0,width,height/2);
 			ctx.strokeStyle = color;
 			ctx.lineWidth = 3;
