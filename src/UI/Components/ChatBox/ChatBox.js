@@ -288,24 +288,27 @@ define(function(require)
 	 */
 	ChatBox.processBattleMode = function processBattleMode( keyId )
 	{
-		// Direct process
-		if (this.ui.find('.battlemode').is(':visible') ||
-			KEYS.ALT || KEYS.SHIFT || KEYS.CTRL ||
-			(keyId >= KEYS.F1 && keyId <= KEYS.F24)) {
-			return BattleMode.process(keyId);
-		}
-
-		var messageBox = this.ui.find('.input .message');
-		var text       = messageBox.val();
-
-		// Hacky, need to wait the browser to add text in the input
-		// If there is no change, send the shortcut.
-		Events.setTimeout(function(){
-			// Nothing rendered, can process the shortcut
-			if (messageBox.val() === text) {
-				BattleMode.process(keyId);
+		if(!(document.activeElement.tagName === 'INPUT' &&
+				    document.activeElement !== messageBox[0])) { // Allow input in menus
+			// Direct process
+			if (this.ui.find('.battlemode').is(':visible') ||
+				KEYS.ALT || KEYS.SHIFT || KEYS.CTRL ||
+				(keyId >= KEYS.F1 && keyId <= KEYS.F24)) {
+				return BattleMode.process(keyId);
 			}
-		}.bind(this), 4);
+
+			var messageBox = this.ui.find('.input .message');
+			var text       = messageBox.val();
+
+			// Hacky, need to wait the browser to add text in the input
+			// If there is no change, send the shortcut.
+			Events.setTimeout(function(){
+				// Nothing rendered, can process the shortcut
+				if (messageBox.val() === text) {
+					BattleMode.process(keyId);
+				}
+			}.bind(this), 4);
+		}
 
 		return false;
 	};
