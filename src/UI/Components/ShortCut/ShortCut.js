@@ -159,7 +159,7 @@ define(function(require)
 
 		this.ui.find('.container').empty();
 		_list.length = list.length;
-		_rowCount    = Math.min( 4, Math.floor(list.length / 9) );
+		_rowCount    = Math.min( 3, Math.floor(list.length / 9) );
 
 		for (i = 0, count = list.length; i < count; ++i) {
 			if (list[i].isSkill) {
@@ -205,7 +205,7 @@ define(function(require)
   // Really rough cooldown indicator, redo this with a canvas or something later
 	ShortCut.startCooldown = function cooldown( id, tick ) {
     var i, index, count, ui;
-    
+
     for (i = 0, count = _list.length; i < count; ++i) {
       if (_list[i] && _list[i].isSkill && _list[i].ID === id) {
         index = i;
@@ -220,12 +220,12 @@ define(function(require)
 
     setTimeout(function(){ cooldownRefresh(index) }, tick);
 	};
-	
+
 	function cooldownRefresh( index ) {
     var ui = ShortCut.ui.find('.container:eq(' + index + ')');
     ui.find('.cd').css('backgroundImage', 'none');
 	}
-  
+
 	/**
 	 * Stop event propagation
 	 */

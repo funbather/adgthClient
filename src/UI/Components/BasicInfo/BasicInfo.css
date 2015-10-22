@@ -30,7 +30,7 @@
 #basicinfo .large .extra { padding-right:10px; }
 #basicinfo .buttons { position:absolute; left:0px; width:220px; opacity:0.5; }
 #basicinfo .buttons:hover { opacity:1.0; }
-#basicinfo .buttons button { float:left; width:54px; height:18px; border:none; margin:0; background-color:transparent; }
+#basicinfo .buttons button { float:left; width:36px; height:18px; border:none; margin:0; background-color:transparent; }
 #basicinfo .buttons .clear { clear:both; }
 
 /* REDUCED */

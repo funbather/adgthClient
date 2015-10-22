@@ -28,6 +28,7 @@ define(function(require)
 	var SkillList          = require('UI/Components/SkillList/SkillList');
 	var PartyFriends       = require('UI/Components/PartyFriends/PartyFriends');
 	var Guild              = require('UI/Components/Guild/Guild');
+	var Emoticons          = require('UI/Components/Emoticons/Emoticons');
 	var Escape             = require('UI/Components/Escape/Escape');
 	var htmlText           = require('text!./BasicInfo.html');
 	var cssText            = require('text!./BasicInfo.css');
@@ -89,20 +90,26 @@ define(function(require)
 					SkillList.toggle();
 					break;
 
-				case 'option':
-					Escape.ui.toggle();
-					break;
-
-				case 'party':
+				case 'friend':
+					if(!_preferences.friend) {
+						PartyFriends.changeTab();
+						_preferences.friend = true;
+					}
 					PartyFriends.toggle();
 					break;
 
-				case 'guild':
-          Guild.toggle();
+				case 'party':
+					if (_preferences.friend) {
+						PartyFriends.changeTab();
+						_preferences.friend = false;
+
+					}
+					PartyFriends.toggle();
 					break;
 
-				case 'map':
-				case 'quest':
+				case 'emoji':
+          			Emoticons.ui.toggle();
+					break;
 			}
 		});
 

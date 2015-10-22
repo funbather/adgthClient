@@ -223,7 +223,7 @@ define(function(require)
 
 		// Scroll feature should block at each line
 		this.ui.find('.content').on('mousewheel DOMMouseScroll', onScroll);
-		
+
 		this.ui.find('.input').hide();
     this.ui.find('.battlemode').show();
 	};
@@ -237,7 +237,7 @@ define(function(require)
 		var matches, i, count;
 
 		matches = this.ui.find('.content').html().match(/(blob:[^"]+)/g);
-		
+
 		if (matches) {
 			for (i = 0, count = matches.length; i < count; ++i) {
 				window.URL.revokeObjectURL(matches[i]);
@@ -326,10 +326,9 @@ define(function(require)
 		var nickBox    = this.ui.find('.input .username');
 
 		switch (event.which) {
-
 			// Battle mode system
 			default:
-				if (ChatBox.processBattleMode(event.which)) {
+				if (event.which != KEYS.ESCAPE && ChatBox.processBattleMode(event.which)) { // Don't process ESC keypress
 					event.stopImmediatePropagation();
 					return false;
 				}
@@ -456,7 +455,7 @@ define(function(require)
 	 * @param {string} text
 	 * @param {number} type
 	 * @param {string} color
-	 * @param {boolean} default false, html or text ? 
+	 * @param {boolean} default false, html or text ?
 	 */
 	ChatBox.addText = function addText( text, type, color, override )
 	{
@@ -499,7 +498,7 @@ define(function(require)
 		);
 
 		// If there is too many line, remove the older one
-		
+
 		var list = $content.find('div');
 		if (list.length > MAX_MSG) {
 			var element, matches;

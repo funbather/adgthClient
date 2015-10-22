@@ -658,6 +658,38 @@ define(function(require)
 		_index = -1;
 	}
 
+	PartyFriends.changeTab = function changeTab()
+	{
+		var ui = PartyFriends.ui;
+
+		_preferences.friend = !_preferences.friend;
+		_preferences.save();
+
+		// Initialize the tab
+		if (_preferences.friend) {
+			ui.find('.friend').show();
+			ui.find('.party').hide();
+		}
+		else {
+			ui.find('.friend').hide();
+			ui.find('.party').show();
+
+			if (Session.hasParty) {
+				ui.find('.party.create').hide();
+
+				if (!Session.isPartyLeader) {
+					ui.find('.party.add').hide();
+				}
+			}
+			else {
+				ui.find('.party.add, .party.leave').hide();
+			}
+		}
+
+		ui.find('.node').removeClass('.selection');
+		_index = -1;
+	};
+
 
 	/**
 	 * Ask confirmation to remove a character from the list
