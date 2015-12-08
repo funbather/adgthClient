@@ -1,7 +1,7 @@
 /**
  * Engine/MapEngine/Entity.js
  *
- * Manage Entity based on received packets from server 
+ * Manage Entity based on received packets from server
  *
  * This file is part of ROBrowser, Ragnarok Online in the Web Browser (http://www.robrowser.com/).
  *
@@ -235,18 +235,15 @@ define(function( require )
 		}
 
 		switch (pkt.action) {
-
 			// Damage
 			case 0:  // regular
-			case 4:  // absorbed
+			case 4:  // endure
 			case 8:  // double attack
-			case 9:  // endure
+			case 9:  // endure (multi-hit)
 			case 10: // critital
 			case 20: // double attack crit
 				if (dstEntity) {
-					// only if damage and do not have endure
-					// and damage isn't absorbed (healing)
-					if (pkt.damage && pkt.action !== 9 && pkt.action !== 4) {
+					if (pkt.damage) {
 						dstEntity.setAction({
 							delay:  Renderer.tick + pkt.attackMT,
 							action: dstEntity.ACTION.HURT,
@@ -271,8 +268,9 @@ define(function( require )
 
 							// regular damage (and endure)
 							case 9:
-							case 0:       
-                Damage.add( pkt.damage, target, Renderer.tick + pkt.attackMT );
+							case 4:
+							case 0:
+                				Damage.add( pkt.damage, target, Renderer.tick + pkt.attackMT );
 								break;
 
 							// double attack
@@ -296,7 +294,7 @@ define(function( require )
 							case 11:
 								Damage.add( 0, target, Renderer.tick + pkt.attackMT );
 								break;
-								
+
 							case 20:
 								if (dstEntity.objecttype === Entity.TYPE_MOB && pkt.damage > 0) {
 									//Damage.add( pkt.damage / 2, dstEntity, Renderer.tick + pkt.attackMT * 1, Damage.TYPE.COMBO );
@@ -313,22 +311,22 @@ define(function( require )
 					srcEntity.lookTo( dstEntity.position[0], dstEntity.position[1] );
 				}
 
-        if(srcEntity != dstEntity) { // Devotion fix (devotion caster would get stuck in attack animation)
-          srcEntity.attack_speed = pkt.attackMT;
-          srcEntity.setAction({
-            action: srcEntity.ACTION.ATTACK,
-            frame:  0,
-            repeat: false,
-            play:   true,
-            next: {
-              delay:  Renderer.tick + pkt.attackMT,
-              action: srcEntity.ACTION.READYFIGHT,
-              frame:  0,
-              repeat: true,
-              play:   true,
-              next:  false
-            }
-          });
+				if(srcEntity != dstEntity) { // Devotion fix (devotion caster would get stuck in attack animation)
+				  srcEntity.attack_speed = pkt.attackMT;
+				  srcEntity.setAction({
+					action: srcEntity.ACTION.ATTACK,
+					frame:  0,
+					repeat: false,
+					play:   true,
+					next: {
+					  delay:  Renderer.tick + pkt.attackMT + 5,
+					  action: srcEntity.ACTION.READYFIGHT,
+					  frame:  0,
+					  repeat: true,
+					  play:   true,
+					  next:  false
+					}
+				  });
 				}
 				break;
 
@@ -386,7 +384,7 @@ define(function( require )
 
 		// Remove "pseudo : |00Dialogue
 		pkt.msg = pkt.msg.replace(/\: \|\d{2}/, ': ');
-		
+
 		if (ChatRoom.isOpen) {
 			ChatRoom.message(pkt.msg);
 			return;
@@ -438,13 +436,13 @@ define(function( require )
 
   function onTalkBox( pkt ) {
     var entity;
-    
+
 		pkt.msg = pkt.msg.replace(/\: \|\d{2}/, ': ');
-		
+
 		entity = EntityManager.get(pkt.accountID);
 		if (entity) {
 			entity.dialog.set( pkt.msg );
-		}	
+		}
   }
 
 	/**
@@ -463,7 +461,7 @@ define(function( require )
 			entity.display.guild_rank = pkt.RName || '';
 
 			entity.display.load = entity.display.TYPE.COMPLETE;
-			
+
 			if (entity.GUID) {
 				Guild.requestGuildEmblem(entity.GUID, entity.GEmblemVer, function(image) {
 					entity.display.emblem = image;
@@ -477,7 +475,7 @@ define(function( require )
 			else {
 				entity.display.emblem = null;
 			}
-			
+
 			entity.display.update(
 				entity.objecttype === Entity.TYPE_MOB ? '#ffc6c6' :
 				entity.objecttype === Entity.TYPE_NPC ? '#94bdf7' :
@@ -690,7 +688,7 @@ define(function( require )
 							Damage.add(
 								pkt.damage / pkt.count * (i+1),
 								target,
-								Renderer.tick, 
+								Renderer.tick,
 								Damage.TYPE.COMBO | ( (i+1) === pkt.count ? Damage.TYPE.COMBO_FINAL : 0 )
 							);
 						}
@@ -856,7 +854,7 @@ define(function( require )
 					}
 				});
 			break;
-				
+
       case StatusConst.SPIRIT_1:
           if(pkt.val) { extras = pkt.val[0]+3000; }
       break;
@@ -948,7 +946,7 @@ define(function( require )
 						title = pkt.title; // no user limit
 						break;
 				}
-					
+
 				entity.room.title = pkt.title;
 				entity.room.limit = pkt.maxcount;
 				entity.room.count = pkt.curcount;
