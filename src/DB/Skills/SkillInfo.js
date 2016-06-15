@@ -439,7 +439,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 
 	SkillInfo[SK.TR_IMMUNITY] = {
 		Name: "TR_IMMUNITY",
-		SkillName : "Immunity",
+		SkillName : "Venomous Blood",
 		MaxLv : 10,
 		bSeperateLv : false,
 	};
@@ -530,7 +530,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 
 	SkillInfo[SK.TR_EARTHSHUDDER] = {
 		Name: "TR_EARTHSHUDDER",
-		SkillName : "Earth Shudder",
+		SkillName : "Quake",
 		MaxLv : 10,
 		bSeperateLv : false,
 	};

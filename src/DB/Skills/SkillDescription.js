@@ -33,7 +33,7 @@ define(["./SkillConst"], function( SKID )
 
 	SkillDescription[SKID.AL_TELEPORT] = [
 		"Teleportation",
-		"Active - Support",
+		"Active - Self",
 		" ",
 		"Teleport yourself to either your current save point, or your current checkpoint.",
 		" ",
@@ -153,14 +153,14 @@ define(["./SkillConst"], function( SKID )
 		"First Aid",
 		"Active - Support",
 		" ",
-		"Tend to an ally's wounds, curing Poison, Bleeding, Silence, and Blind status effects.",
+		"Remove Poison, Bleeding, Silence, and Blind status effects from yourself or an ally.",
 	].join("\n");
 	
 	SkillDescription[SKID.ALL_TENACITY] = [
 		"Tenacity",
 		"Passive",
 		" ",
-		"Take $sklvl$% less damage.",
+		"Receive $sklvl$% less damage.",
 	].join("\n");
 	
 	SkillDescription[SKID.ALL_BRUTALITY] = [
@@ -248,7 +248,7 @@ define(["./SkillConst"], function( SKID )
 		"Monkey Grip",
 		"Passive - Toggle",
 		" ",
-		"While toggled on, you can wield Knightswords and Mauls in one hand, and a shield in the other. Your equipped weapons have $sklvl$% of their base Weapon Power, and your skill cooldowns are increased by 30%.",
+		"While toggled on, you can wield two-handed weapons with only one hand. Your equipped weapons have $sklvl$% of their base Weapon Power, and your skill cooldowns are increased by 30%.",
 		" ",
 		"Toggling this skill on or off unequips any held weapon or shield.",
 	].join("\n");
@@ -266,7 +266,7 @@ define(["./SkillConst"], function( SKID )
 		"Hardhearted",
 		"Passive",
 		" ",
-		"Take less damage depending on your current HP. Damage reduction starts at $sklvl$% and ramps up to a maximum of $sklvl2$% at 25% HP.",
+		"Take less damage depending on your current HP. Damage reduction starts at $sklvl$% at full health and ramps up to a maximum of $sklvl2$% when you are below 25% HP.",
 	].join("\n");
 	
 	SkillDescription[SKID.WR_SUNDER] = [
@@ -298,7 +298,7 @@ define(["./SkillConst"], function( SKID )
 		"Active - Physical",
 		"5s Cooldown",
 		" ",
-		"Pierce your target with your weapon, dealing $sklvl$% ATK damage and shattering its DEF for 8 seconds.",
+		"Pierce your target with your weapon, dealing $sklvl$% ATK damage and inflicting Shatter for 8 seconds.",
 	].join("\n");
 	
 	SkillDescription[SKID.WR_ECHOBLADE] = [
@@ -326,12 +326,12 @@ define(["./SkillConst"], function( SKID )
 		" ",
 		"Requires: Shield",
 		" ",
-		"Dash toward an enemy shield first, dealing $sklvl$% ATK damage on impact.",
+		"Dash toward an enemy shield-first, dealing $sklvl$% ATK damage on impact.",
 	].join("\n");
 	
 	SkillDescription[SKID.WR_BULWARKBASH] = [
 		"Bulwark Bash",
-		"Active - Physical - Self",
+		"Active - Physical",
 		"8s Cooldown",
 		" ",
 		"Requires: Shield",
@@ -341,7 +341,7 @@ define(["./SkillConst"], function( SKID )
 
 	SkillDescription[SKID.SM_PROVOKE] = [
 		"Taunt",
-		"Active - Support - Self",
+		"Active - Support",
 		" ",
 		"Provoke all nearby enemies into attacking you, creating space for your allies.",
 	].join("\n");
@@ -350,7 +350,7 @@ define(["./SkillConst"], function( SKID )
 		"Cover",
 		"Active - Support",
 		" ",
-		"Protect an ally, taking all damage they would recieve for them. Moving too far away from them breaks the effect.",
+		"Protect an ally, taking all damage they would receive for them. Moving too far away from them breaks the effect.",
 	].join("\n");
 
 	SkillDescription[SKID.KN_BOWLINGBASH] = [
@@ -369,7 +369,7 @@ define(["./SkillConst"], function( SKID )
 	].join("\n");
 
 	SkillDescription[SKID.TR_IMMUNITY] = [
-		"Immunity",
+		"Venomous Blood",
 		"Passive",
 		" ",
 		"While afflicted with Poison, regenerate $sklvl$% of your Max HP per second instead of taking damage.", 
@@ -468,11 +468,11 @@ define(["./SkillConst"], function( SKID )
 		"Active - Magical",
 		"12s Cooldown",
 		" ",
-		"Cause an upheaval in the ground, creating a rolling wave of broken earth. Deals $sklvl$% MAG damage to enemies in the path.", 
+		"Cause an upheaval in the ground, dealing $sklvl$% MAG damage to enemies in the path.", 
 	].join("\n");
 
 	SkillDescription[SKID.TR_EARTHSHUDDER] = [
-		"Earth Shudder",
+		"Quake",
 		"Active - Magical",
 		"18s Cooldown",
 		" ",
