@@ -653,9 +653,6 @@ define(function(require)
 		var item = Inventory.getItemByIndex(idx);
 		var it = DB.getItemInfo( item.ITID );
 		var rarity = 0;
-		var desc = '';
-		var enchdesc = '';
-		var enchant;
 
 
 		if (!item) {
@@ -665,15 +662,16 @@ define(function(require)
 		// Get back data
 		var pos     = jQuery(this).position();
 		var overlay = Inventory.ui.find('.overlay');
+		var compare = Inventory.ui.find('.compare');
 		
 		for(var i = 0; i <= 4; i++) {
-      if(item.slot['card' + i]) { 
+      if(item.slot['card' + i])
         rarity++;
-      }
     }
 
 		// Display box
 		overlay.show();
+		compare.show();
 
     switch(rarity) {
       case 0: overlay.css({color: "#ffffff"}); overlay.css({border: "4px solid #bbbbbb"}); break;
@@ -684,20 +682,54 @@ define(function(require)
     }
     
 		overlay.css({top: pos.top+20, left:pos.left+70});
+
+		var desc = dynamicDescription(item);
+		var _str;
+		var _ls = Equipment.getEquips();
 		
-		for(i = 0; i < 4; i++) {
-      		if(item.slot['card' + (i+1)]) { 
-        		if(i == 0) {
-							enchdesc = '\n-------------------\n';
-            }
-        	
-						enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));
-						enchdesc += enchant.identifiedDescriptionName + '\n';
-						rarity++;
-      		}
+		overlay.text(desc);
+		
+		for (var j in _ls) {
+			if (item.location == _ls[j].location || item.location & _ls[j].location & 1 << 1)
+				_str = dynamicDescription(_ls[j], 1);
 		}
 		
-		desc = item.count > 1 ? DB.getItemName(item) + ' ' + (item.count || 1) + ' ea\n\n^FFFFFF'+it.condensedDesc + enchdesc : DB.getItemName(item) + '\n\n^FFFFFF'+it.condensedDesc + enchdesc;
+		if (!_str)
+			compare.hide();
+		else {
+			var offset = overlay.width();
+			
+			compare.css({top: pos.top+20, left: pos.left+offset+90});
+			compare.text(_str);	
+		}
+	}
+
+	function getStatValue( base, multiplier, quality, ilvl ) {
+		return Math.floor(Math.floor((multiplier-1) * ilvl * 2 * base / 100 + base) * quality / 100);
+	}
+
+	function dynamicDescription( item, equipped ) {
+		var it = DB.getItemInfo( item.ITID );
+		var enchdesc = '';
+		var enchant = '';
+		var desc = '';
+		
+		for(var i = 0; i < 4; i++) {
+			if(item.slot['card' + (i+1)]) { 
+				if(i == 0) {
+					enchdesc = '\n-------------------\n';
+				}
+
+				enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));
+				enchdesc += enchant.identifiedDescriptionName + '\n';
+			}
+		}
+
+		if (equipped)
+			desc = DB.getItemName(item) + ' \uFF3B\uFF25\uFF3D\n\n^FFFFFF' + it.condensedDesc + enchdesc;
+		else
+			desc = item.count > 1 ? DB.getItemName(item) + ' ' + (item.count || 1) + ' ea\n\n^FFFFFF'+it.condensedDesc + enchdesc : DB.getItemName(item) + '\n\n^FFFFFF'+it.condensedDesc + enchdesc;
+			
 		desc = desc.replace('$ilvl$', '^99BBFF'+item.IsDamaged+'^FFFFFF');
 		desc = desc.replace('$quality$', '^99BBFF'+item.RefiningLevel+'^FFFFFF');
 		desc = desc.replace('$hp$', '^99BBFF'+getStatValue(it.BaseHP, 15, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
@@ -711,28 +743,16 @@ define(function(require)
 		desc = desc.replace('$crit$', '^99BBFF'+getStatValue(it.BaseCRIT, 2, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
 		desc = desc.replace('$bonus1$', '^99BBFF'+getStatValue(it.BaseBonus1, it.Multiplier1, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
 		desc = desc.replace('$bonus2$', '^99BBFF'+getStatValue(it.BaseBonus2, it.Multiplier2, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-
-		//overlay.css({border: "1px solid #444444"});
-		overlay.text(desc);		
-
-		if (item.IsIdentified) {
-			overlay.removeClass('grey');
-		}
-		else {
-			overlay.addClass('grey');
-		}
+		
+		return desc;
 	}
-
-	function getStatValue( base, multiplier, quality, ilvl ) {
-		return Math.floor(Math.floor((multiplier-1) * ilvl * 2 * base / 100 + base) * quality / 100);
-	}
-
 	/**
 	 * Hide the item name
 	 */
 	function onItemOut()
 	{
 		Inventory.ui.find('.overlay').hide();
+		Inventory.ui.find('.compare').hide();
 	}
 
 

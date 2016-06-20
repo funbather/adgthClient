@@ -648,6 +648,10 @@ define(function(require)
 	{
 		Equipment.ui.find('.overlay').hide();
 	}
+	
+	Equipment.getEquips = function getEQ() {
+		return _list;
+	}
 
 
 	/**

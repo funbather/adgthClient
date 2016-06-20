@@ -37,6 +37,7 @@ define(function()
 			FEAR         : 0x0100,
 			IGNITE       : 0x0200,
 			MARKED       : 0x0400,
+			SHATTER      : 0x0800,
 		},
 
 		EffectState: {

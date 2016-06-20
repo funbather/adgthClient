@@ -508,7 +508,7 @@ define(["./SkillConst"], function( SKID )
 	].join("\n");
 
 	SkillDescription[SKID.ALL_MANABATTERY] = [
-		"Siphon / Restore",
+		"Mana Charge",
 		"Active - Support - Self",
 		" ",
 		"If your Mana Battery is not currently active, it will begin leeching mana from you until it is at capacity. If it is already active, you will restore the amount of currently charged MP.",

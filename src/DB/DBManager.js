@@ -504,9 +504,11 @@ define(function(require)
 		{
 			var item = ItemTable[itemid] || unknownItem;
 
-			if (!item._decoded) {
+			if (!item._decoded) {				
+				var ratings = ["","\u2605\u2606\u2606","\u2605\u2605\u2606","\u2605\u2605\u2605","\u272A"];
+				
 				item.identifiedDescriptionName   = item.identifiedDescriptionName   ? TextEncoding.decodeString(item.identifiedDescriptionName.join('\n'))   : '';
-				item.unidentifiedDescriptionName = item.unidentifiedDescriptionName ? TextEncoding.decodeString(item.unidentifiedDescriptionName.join('\n')) : '';
+				item.unidentifiedDescriptionName = item.unidentifiedDescriptionName ? TextEncoding.decodeString(item.unidentifiedDescriptionName.join('\n')) : '';				
 				item.identifiedDisplayName       = TextEncoding.decodeString(item.identifiedDisplayName);
 				item.unidentifiedDisplayName     = TextEncoding.decodeString(item.unidentifiedDisplayName);
 				item.prefixNameTable             = TextEncoding.decodeString(item.prefixNameTable || '');
@@ -526,6 +528,11 @@ define(function(require)
 				item.BaseBonus2                  = item.BaseBonus2 || 0;
 				item.Multiplier1                 = item.Multiplier1 || 0;
 				item.Multiplier2                 = item.Multiplier2 || 0;
+								
+				item.Rating                      = item.Rating || 0;
+				item.identifiedDescriptionName   = item.identifiedDescriptionName.replace('$r$',ratings[item.Rating]);
+				item.condensedDesc               = item.condensedDesc.replace('$r$',ratings[item.Rating]);
+				
 				item._decoded                    = true;
 			}
 

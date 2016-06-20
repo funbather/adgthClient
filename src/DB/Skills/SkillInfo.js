@@ -571,7 +571,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 	
 	SkillInfo[SK.ALL_MANABATTERY] = {
 		Name: "ALL_MANABATTERY",
-		SkillName : "Restore",
+		SkillName : "Mana Charge",
 		MaxLv : 1,
 		SpAmount : [ 5 ],
 		bSeperateLv : false,
@@ -580,7 +580,7 @@ define(["./SkillConst", "DB/Jobs/JobConst"], function( SK, JobId )
 	
 	SkillInfo[SK.ALL_BEGINCHARGE] = {
 		Name: "ALL_BEGINCHARGE",
-		SkillName : "Siphon",
+		SkillName : "Mana Charge",
 		MaxLv : 1,
 		SpAmount : [ 5 ],
 		bSeperateLv : false,

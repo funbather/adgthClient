@@ -243,6 +243,28 @@ define(function( require )
 		else if (!(value & StatusConst.HealthState.MARKED)) {
 			this.attachments.remove('status-marked');
 		}
+
+		if (value & StatusConst.HealthState.SHATTER) {
+			
+			this._healthStateColor[0] *= 0.45;
+			this._healthStateColor[1] *= 0.45;
+			this._healthStateColor[2] *= 0.45;
+
+			// Do not attach multiple times.
+			if (!(this._healthState & StatusConst.HealthState.SHATTER)) {
+				Sound.play('effect/ef_frostdiver2.wav');
+				this.attachments.add({
+					repeat:    true,
+					uid:       'particle7',
+					file:      'particle7',
+					head:      true,
+					opacity:   1
+				});
+			}
+		}
+		else if (!(value & StatusConst.HealthState.SHATTER)) {
+			this.attachments.remove('particle7');
+		}
 		
 		// Rare Drop - Items Only
 		if (value & 0x4000) {
