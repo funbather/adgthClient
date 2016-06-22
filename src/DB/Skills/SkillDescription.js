@@ -232,7 +232,7 @@ define(["./SkillConst"], function( SKID )
 		" ",
 		"Requires: Shield",
 		" ",
-		"Gain $sklvl$ EVA and DEF while equipped with a Shield.",
+		"Gain $sklvl$% increased Physical and Magical Block.",
 	].join("\n");
 	
 	SkillDescription[SKID.WR_DEFTDUELIST] = [

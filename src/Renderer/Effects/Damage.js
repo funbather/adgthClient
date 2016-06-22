@@ -50,7 +50,8 @@ define(function( require )
 		COMBO_FINAL: 1 << 5,
 		SP:          1 << 6,
 		CRIT:        1 << 7,
-		MULTICRIT:   1 << 8
+		MULTICRIT:   1 << 8,
+		BLOCKED:     1 << 9
 	};
 
 
@@ -109,7 +110,9 @@ define(function( require )
 				texture: gl.createTexture(),
 				canvas:  canvas
 			};
-
+			
+			_sprite[11] = sprMiss.getCanvasFromFrame(1);
+			
 			gl.bindTexture( gl.TEXTURE_2D, _sprite[10].texture );
 			gl.texImage2D( gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, canvas );
 			gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
@@ -158,7 +161,7 @@ define(function( require )
 
 		obj.type     = type || (damage ? Damage.TYPE.DAMAGE : Damage.TYPE.MISS);
 		obj.type     = damage ? obj.type : obj.type & ~(Damage.TYPE.CRIT); // Possible to "miss" a critical flagged attack, looked dumb in-client lol
-		if (entity.objecttype === entity.constructor.TYPE_PC) {
+		if (entity.objecttype === entity.constructor.TYPE_PC && obj.type != Damage.TYPE.BLOCKED) { // Don't apply red overlay to blocked attacks
 			obj.type |= Damage.TYPE.ENEMY;
 		}
 
@@ -189,9 +192,15 @@ define(function( require )
 		} 	
 		else if (obj.type & Damage.TYPE.CRIT) {
 			obj.color[0] = 1.0;
-			obj.color[1] = 0.15;
-			obj.color[2] = 0.15;
+			obj.color[1] = 0.7;
+			obj.color[2] = 0.3;
 			obj.delay    = 1500; // Signify critical hit to render, fix later
+		}
+		else if (obj.type == Damage.TYPE.BLOCKED) {
+			obj.color[0] = 1.0;
+			obj.color[1] = 1.0;
+			obj.color[2] = 1.0;
+			obj.delay = 600;
 		}
 		else {
 			// white
@@ -200,13 +209,31 @@ define(function( require )
 			obj.color[2] = 1.0;
 		}
 
-		// Miss
+		// Miss or Blocked
 		if (!damage) {
 			if (MapPreferences.miss) {
-				obj.texture  = _sprite[10].texture;
-				obj.width    = _sprite[10].canvas.width;
-				obj.height   = _sprite[10].canvas.height;
-				_list.push(obj);
+				if (obj.type == Damage.TYPE.BLOCKED) {
+					ctx.canvas.width  = WebGL.toPowerOfTwo( _sprite[11].width );
+					ctx.canvas.height = WebGL.toPowerOfTwo( _sprite[11].height );
+					ctx.drawImage( _sprite[11], 0, 0, ctx.canvas.width, ctx.canvas.height );
+
+					texture = gl.createTexture();
+					gl.bindTexture( gl.TEXTURE_2D, texture );
+					gl.texImage2D( gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, canvas );
+					gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+					gl.texParameteri( gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+					gl.generateMipmap( gl.TEXTURE_2D );
+					
+					obj.texture  = texture;
+					obj.width    = _sprite[10].canvas.width;
+					obj.height   = _sprite[10].canvas.height;
+					_list.push( obj );
+				} else {
+					obj.texture  = _sprite[10].texture;
+					obj.width    = _sprite[10].canvas.width;
+					obj.height   = _sprite[10].canvas.height;
+					_list.push(obj);				
+				}
 			}
 			return;
 		}
@@ -377,6 +404,15 @@ define(function( require )
 				SpriteRenderer.position[0] = damage.entity.position[0];
 				SpriteRenderer.position[1] = damage.entity.position[1];
 				SpriteRenderer.position[2] = damage.entity.position[2] + 3.5 + perc * 7;
+			}
+
+			// Blocked
+			else if (damage.type & Damage.TYPE.BLOCKED) {
+				perc = (( tick - damage.start ) / 800);
+				size = 0.8;
+				SpriteRenderer.position[0] = damage.entity.position[0];
+				SpriteRenderer.position[1] = damage.entity.position[1];
+				SpriteRenderer.position[2] = damage.entity.position[2] + 3.5 + perc;
 			}
 
 			SpriteRenderer.size[0] = damage.width  * size;

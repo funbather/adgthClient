@@ -70,6 +70,19 @@ define(function(require)
 	 * @var {string} interface path
 	 */
 	DB.INTERFACE_PATH = 'data/texture/\xc0\xaf\xc0\xfa\xc0\xce\xc5\xcd\xc6\xe4\xc0\xcc\xbd\xba/';
+	
+	// For use with dynamic item descriptions
+	DB._mult = { "HP":15,
+	             "MP":11,
+	             "DEF":6,
+	             "MDEF":6,
+	             "ATK":11,
+	             "MAG":11,
+	             "EVA":2,
+	             "CEL":3,
+	             "CRIT":2,
+	             "DEF2":2,
+	             "MDEF2":2 }
 
 
 	/**
@@ -524,6 +537,8 @@ define(function(require)
 				item.BaseCEL                     = item.BaseCEL   || 0;
 				item.BaseMAG										 = item.BaseMAG   || 0;
 				item.BaseCRIT                    = item.BaseCRIT  || 0;
+				item.BaseDEF2                    = item.BaseDEF2  || 0;
+				item.BaseMDEF2                   = item.BaseMDEF2  || 0;
 				item.BaseBonus1                  = item.BaseBonus1 || 0;
 				item.BaseBonus2                  = item.BaseBonus2 || 0;
 				item.Multiplier1                 = item.Multiplier1 || 0;
@@ -540,6 +555,9 @@ define(function(require)
 		};
 	}();
 
+	DB.getStatMultiplier = function getMultiplier( stat ) {
+		
+	}
 
 	/**
 	 * Get back item path

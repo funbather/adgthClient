@@ -242,6 +242,7 @@ define(function( require )
 			case 9:  // endure (multi-hit)
 			case 10: // critital
 			case 20: // double attack crit
+			case 21: // blocked attack
 				if (dstEntity) {
 					if (pkt.damage) {
 						dstEntity.setAction({
@@ -303,6 +304,10 @@ define(function( require )
 
 								Damage.add( pkt.damage / 2, target, Renderer.tick + pkt.attackMT * 1, Damage.TYPE.CRIT  );
 								Damage.add( pkt.damage / 2, target, Renderer.tick + pkt.attackMT * 1.3, Damage.TYPE.CRIT  );
+								break;
+							
+							case 21:
+								Damage.add( 0, dstEntity, Renderer.tick, Damage.TYPE.BLOCKED );
 								break;
 						}
 					}
@@ -714,6 +719,8 @@ define(function( require )
 				for (i = 0; i < pkt.count; ++i) {
 					Events.setTimeout( addDamage(i), pkt.attackMT + (200 * i)); //TOFIX: why 200 ?
 				}
+			} else if (pkt.action == 21) { // Target blocked damage?
+				Damage.add( 0, dstEntity, Renderer.tick, Damage.TYPE.BLOCKED);
 			}
 		}
 

@@ -138,15 +138,17 @@ define(function(require)
 		desc = it.flavortext ? desc + '\n\n' : desc;
 		desc = desc.replace('$ilvl$', '^3366FF'+item.IsDamaged+'^000000');
 		desc = desc.replace('$quality$', '^3366FF'+item.RefiningLevel+'^000000');
-		desc = desc.replace('$hp$', '^3366FF'+getStatValue(it.BaseHP, 15, item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$mp$', '^3366FF'+getStatValue(it.BaseMP, 11, item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$def$', '^3366FF'+getStatValue(it.BaseDEF, 4, item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$mdef$', '^3366FF'+getStatValue(it.BaseMDEF, 4, item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$atk$', '^3366FF'+getStatValue(it.BaseATK, 11, item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$mag$', '^3366FF'+getStatValue(it.BaseMAG, 11, item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$eva$', '^3366FF'+getStatValue(it.BaseEVADE, 2, item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$cel$', '^3366FF'+getStatValue(it.BaseCEL, 3, item.RefiningLevel, item.IsDamaged)+'^000000');	
-		desc = desc.replace('$crit$', '^3366FF'+getStatValue(it.BaseCRIT, 2, item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$hp$', '^3366FF'+getStatValue(it.BaseHP, DB._mult["HP"], item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$mp$', '^3366FF'+getStatValue(it.BaseMP, DB._mult["MP"], item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$def$', '^3366FF'+getStatValue(it.BaseDEF, DB._mult["DEF"], item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$mdef$', '^3366FF'+getStatValue(it.BaseMDEF, DB._mult["MDEF"], item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$atk$', '^3366FF'+getStatValue(it.BaseATK, DB._mult["ATK"], item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$mag$', '^3366FF'+getStatValue(it.BaseMAG, DB._mult["MAG"], item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$eva$', '^3366FF'+getStatValue(it.BaseEVADE, DB._mult["EVA"], item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$cel$', '^3366FF'+getStatValue(it.BaseCEL, DB._mult["CEL"], item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$crit$', '^3366FF'+getStatValue(it.BaseCRIT, DB._mult["CRIT"], item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$def2$', '^3366FF'+getStatValue(it.BaseDEF2, DB._mult["DEF2"], item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace('$mdef2$', '^3366FF'+getStatValue(it.BaseMDEF2, DB._mult["MDEF2"], item.RefiningLevel, item.IsDamaged)+'^000000');
 		desc = desc.replace('$bonus1$', '^3366FF'+getStatValue(it.BaseBonus1, it.Multiplier1, item.RefiningLevel, item.IsDamaged)+'^000000');
 		desc = desc.replace('$bonus2$', '^3366FF'+getStatValue(it.BaseBonus2, it.Multiplier2, item.RefiningLevel, item.IsDamaged)+'^000000');
 

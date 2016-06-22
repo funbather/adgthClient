@@ -299,10 +299,10 @@ define(function(require)
       
       case 4021:
         if(var1)
-          desc = desc.replace('$sklvl$', '^0000BB'+(var1*2)+'^000000');
+          desc = desc.replace('$sklvl$', '^0000BB'+(var1*20)+'^000000');
       
         if(level && var1 < 10)
-          desc += "\n\nNext Level:\nIncreased MDEF: ^0000BB"+((var1+1)*2)+"^000000";
+          desc += "\n\nNext Level:\nIncreased MDEF: ^0000BB"+((var1+1)*20)+"^000000";
       break;   
       
       case 4022:
@@ -338,7 +338,7 @@ define(function(require)
           desc = desc.replace('$sklvl$', '^0000BB'+(var1)+'^000000');
       
         if(level && var1 < 10)
-          desc += "\n\nNext Level:\nBonus EVA: ^0000BB"+(var1+1)+"^000000\nBonus DEF: ^0000BB"+(var1+1)+"^000000";
+          desc += "\n\nNext Level:\nIncreased Block: ^0000BB"+(var1+1)+"%^000000";
       break;
       
       case 4026:
