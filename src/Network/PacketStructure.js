@@ -99,9 +99,10 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.CharNum = 0;
 		this.headPal = 0;
 		this.head = 0;
+		this.sex = 0;
 	};
 	PACKET.CH.MAKE_CHAR.prototype.build = function() {
-		var pkt_len = 2 + 24 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 2;
+		var pkt_len = 2 + 24 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 2 + 1 + 2;
 		var pkt_buf = new BinaryWriter(pkt_len);
 
 		pkt_buf.writeShort(0x67);
@@ -115,6 +116,8 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		pkt_buf.writeUChar(this.CharNum);
 		pkt_buf.writeShort(this.headPal);
 		pkt_buf.writeShort(this.head);
+		pkt_buf.writeUChar(this.sex);
+		pkt_buf.writeShort(this.job);
 		return pkt_buf;
 	};
 
@@ -9187,8 +9190,9 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.xSize = fp.readUChar();
 		this.ySize = fp.readUChar();
 		this.font = fp.readShort();
+		this.sex = fp.readUChar();
 	};
-	PACKET.ZC.ACCEPT_ENTER2.size = 13;
+	PACKET.ZC.ACCEPT_ENTER2.size = 14;
 
 
 	// 0x2ec

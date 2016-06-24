@@ -200,7 +200,7 @@ define(function( require )
 			obj.color[0] = 1.0;
 			obj.color[1] = 1.0;
 			obj.color[2] = 1.0;
-			obj.delay = 600;
+			obj.delay = 800;
 		}
 		else {
 			// white
@@ -400,7 +400,7 @@ define(function( require )
 			// Miss
 			else if (damage.type & Damage.TYPE.MISS) {
 				perc = (( tick - damage.start ) / 800);
-				size = 0.5;
+				size = 0.6;
 				SpriteRenderer.position[0] = damage.entity.position[0];
 				SpriteRenderer.position[1] = damage.entity.position[1];
 				SpriteRenderer.position[2] = damage.entity.position[2] + 3.5 + perc * 7;
@@ -409,7 +409,7 @@ define(function( require )
 			// Blocked
 			else if (damage.type & Damage.TYPE.BLOCKED) {
 				perc = (( tick - damage.start ) / 800);
-				size = 0.8;
+				size = 0.9;
 				SpriteRenderer.position[0] = damage.entity.position[0];
 				SpriteRenderer.position[1] = damage.entity.position[1];
 				SpriteRenderer.position[2] = damage.entity.position[2] + 3.5 + perc;
@@ -417,6 +417,10 @@ define(function( require )
 
 			SpriteRenderer.size[0] = damage.width  * size;
 			SpriteRenderer.size[1] = damage.height * size;
+			
+			if (damage.type & Damage.TYPE.MISS) // Miss looks a little too wide in-client
+				SpriteRenderer.size[1] = damage.height * 0.8;
+				
 			damage.color[3]        = 1.0 - perc;
 
 			SpriteRenderer.color.set( damage.color );

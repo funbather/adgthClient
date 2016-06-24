@@ -40,7 +40,6 @@ define(function(require)
 				case 'vit': WinStats.onRequestUpdate( 15, 1 ); break;
 				case 'int': WinStats.onRequestUpdate( 16, 1 ); break;
 				case 'dex': WinStats.onRequestUpdate( 17, 1 ); break;
-				case 'luk': WinStats.onRequestUpdate( 18, 1 ); break;
 			}
 		});
 	};
@@ -93,18 +92,11 @@ define(function(require)
 				this.ui.find('.' + type).text(val);
 				break;
 
-			//case 'guildname':
-			case 'atak':
-			str = val/100;
-			this.ui.find('.' + type).text(str.toFixed(2));
-				break;
-			//case 'matak':
-			//case 'def':
-			//case 'mdef':
-			case 'critical':
 			case 'hit':
+			case 'critical':
 			case 'flee':
-			case 'flee2':
+			case 'def':
+			case 'mdef':
 				this.ui.find('.' + type).text(val + '%');
 				break;
 
@@ -112,14 +104,16 @@ define(function(require)
         str = 500 / (2000-Math.floor(2000-val));
 				this.ui.find('.' + type).text(str.toFixed(2));
 				break;
-
+				
+			case 'flee2':
+				this.ui.find('.' + type).text((val + 100) + '%');
+				break;
+				
+			case 'atak':
 			case 'atak2':
 			case 'matak2':
-        this.ui.find('.' + type).text(val);
-				break;
 			case 'def2':
 			case 'mdef2':
-				//str = val < 0 ? '- ' + (-val) : '+ ' + val;
 				this.ui.find('.' + type).text(val);
 				break;
 

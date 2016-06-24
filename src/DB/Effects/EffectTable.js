@@ -192,10 +192,10 @@ define(function( require )
 			type: 'CYLINDER',
 			wav:  '_hit_dagger',
 			topSize: 0,
-			bottomSize: 0.3,
-			height: 4,
-			textureName: 'damageplane',
-			tickTime: 1000,
+			bottomSize: 0.4,
+			height: 5,
+			textureName: 'rocktex3',
+			tickTime: 1250,
 			attachedEntity: false
 		}],
 			
@@ -203,6 +203,16 @@ define(function( require )
 			type: 'SPR',
 			file: 'status-silence',
 			head: true,
+			attachedEntity: true
+		}],
+		
+		2022: [{
+			type: 'CYLINDER',
+			topSize: 0,
+			bottomSize: 0.65,
+			height: 3,
+			textureName: 'rocktex3',
+			tickTime: 4000,
 			attachedEntity: true
 		}],
 				

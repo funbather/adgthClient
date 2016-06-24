@@ -328,8 +328,10 @@ define(function( require )
 	 * @param {number} Luk - luck stat
 	 * @param {number} hair - hair style
 	 * @param {number} color - hair color
+	 * @param {number} sex - character gender
+	 * @param {number} job - job class
 	 */
-	function onCharCreationRequest( name, Str, Agi, Vit, Int, Dex, Luk, hair, color )
+	function onCharCreationRequest( name, Str, Agi, Vit, Int, Dex, Luk, hair, color, sex, job )
 	{
 		var pkt;
 
@@ -351,6 +353,8 @@ define(function( require )
 		pkt.head    = hair;
 		pkt.headPal = color;
 		pkt.CharNum = _creationSlot;
+		pkt.sex = sex;
+		pkt.job = job;
 
 		Network.sendPacket(pkt);
 	}

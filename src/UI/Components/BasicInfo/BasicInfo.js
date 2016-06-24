@@ -108,7 +108,7 @@ define(function(require)
 					break;
 
 				case 'emoji':
-          			Emoticons.ui.toggle();
+          Emoticons.ui.toggle();
 					break;
 			}
 		});

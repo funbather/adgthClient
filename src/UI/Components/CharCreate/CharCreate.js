@@ -76,6 +76,10 @@ define(function(require)
 		this.ui.find('.chargen .right').mousedown(updateCharacterGeneric('head', +1));
 		this.ui.find('.chargen .up'   ).mousedown(updateCharacterGeneric('headpalette', +1));
 		this.ui.find('.statbutton'    ).mousedown(updateStats);
+		this.ui.find('.male'          ).mousedown(updateCharacterGeneric('sex', 1));
+		this.ui.find('.female'        ).mousedown(updateCharacterGeneric('sex', 0));
+		this.ui.find('.pickWR'        ).mousedown(updateCharacterGeneric('job', 31));
+		this.ui.find('.pickTR'        ).mousedown(updateCharacterGeneric('job', 32));
 		//this.ui.find('.graph button'  ).mousedown(updateStats);
 
 		this.ui.find('input').mousedown(function(event){
@@ -107,9 +111,16 @@ define(function(require)
 		_chargen.render = true;
 		_chargen.entity.set({
 			sex:_accountSex,
-			job:    0,
+			job:    31,
 			head:   2,
 			action: 0
+		});
+		
+		_chargen.entity.setAction({
+			action: _chargen.entity.ACTION.WALK,
+			frame:  0,
+			play:   true,
+			repeat: true
 		});
 
 		this.ui.find('input').val('').focus();
@@ -182,7 +193,9 @@ define(function(require)
 			parseInt( ui.find('.info .pre').text(), 10),
 			0,
 			_chargen.entity.head,
-			_chargen.entity.headpalette
+			_chargen.entity.headpalette,
+			_chargen.entity.sex,
+			_chargen.entity.job
 		);
 	}
 
@@ -222,6 +235,25 @@ define(function(require)
 			case 'headpalette':
 				_chargen.entity.headpalette += increment;
 				_chargen.entity.headpalette %= 10;
+				break;
+				
+			case 'sex':
+				_chargen.entity.sex = increment;
+				break;
+				
+			case 'job':
+				_chargen.entity.job = increment;
+				
+				switch (increment) {
+					case 31:
+						CharCreate.ui.find('.jobname').text("Warrior");
+						CharCreate.ui.find('.jobdesc').text("Versatile Physical Fighter\n\nCan wield two-handed weapons in one hand.");
+						break;
+					case 32:
+						CharCreate.ui.find('.jobname').text("Terramancer");
+						CharCreate.ui.find('.jobdesc').text("Support Spellcaster.\n\nMastery over Earth and Poison elements.");
+						break;
+				}
 				break;
 		}
 
@@ -293,7 +325,7 @@ define(function(require)
 	function render( tick )
 	{
 		// Update direction each 500ms
-		if (_chargen.tick + 500 < tick) {
+		if (_chargen.tick + 1000 < tick) {
 			Camera.direction++;
 			Camera.direction %= 8;
 			_chargen.tick = tick;

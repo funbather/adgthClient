@@ -493,11 +493,11 @@ define(function(require)
       case 4042:
         if(var1) {
           desc = desc.replace('$sklvl$', '^0000BB'+((var1)+5).toFixed(2)+'^000000');
-          desc = desc.replace('$sklvl2$', '^0000BB'+((var1*3))+'^000000');
+          desc = desc.replace('$sklvl2$', '^0000BB'+((var1*50))+'^000000');
         }
       
         if(level && var1 < 10)
-          desc += "\n\nNext Level:\nHP Regen: ^0000BB"+((var1)+6).toFixed(2)+"^000000% Max HP\nBonus DEF: ^0000BB"+((var1*3)+3)+"^000000";
+          desc += "\n\nNext Level:\nHP Regen: ^0000BB"+((var1)+6).toFixed(2)+"^000000% Max HP\nBonus DEF: ^0000BB"+((var1*50)+50)+"^000000";
       break;
       
       case 4043:

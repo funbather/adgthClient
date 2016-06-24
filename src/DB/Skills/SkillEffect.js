@@ -83,11 +83,11 @@ define(['./SkillConst'], function( SK )
 	};
 	
   SkillEffect[SK.TR_HEAVENSDRIVE] = {
-		groundEffectId: 2001
+		groundEffectId: 2022
 	};
 	
   SkillEffect[SK.TR_GROUNDRIFT] = {
-		groundEffectId: 2001
+		groundEffectId: 2022
 	};
 	
   SkillEffect[SK.TR_POISONBLOW] = {

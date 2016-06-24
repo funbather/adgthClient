@@ -7,4 +7,5 @@
 #winstats .column1 { top:5px; right:87px; text-align:right; }
 #winstats .column2 { top:5px; right:5px; text-align:right; }
 #winstats .up { left:80px; top:2px; }
+#winstats .statuspoint { position:absolute; display:block; left:69px; top:86px; text-align:right; font-weight: bold;}
 #winstats .up button { display:block; margin-top:5px; border:none; width:11px; height:11px; background-color:transparent; background-repeat:no-repeat; }
