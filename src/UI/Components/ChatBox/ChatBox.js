@@ -288,6 +288,7 @@ define(function(require)
 	 */
 	ChatBox.processBattleMode = function processBattleMode( keyId )
 	{
+		var messageBox = this.ui.find('.input .message');
 		if(!(document.activeElement.tagName === 'INPUT' &&
 				    document.activeElement !== messageBox[0])) { // Allow input in menus
 			// Direct process

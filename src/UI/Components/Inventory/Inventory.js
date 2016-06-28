@@ -713,6 +713,7 @@ define(function(require)
 		var enchdesc = '';
 		var enchant = '';
 		var desc = '';
+		var enchroll = 0;
 		
 		for(var i = 0; i < 4; i++) {
 			if(item.slot['card' + (i+1)]) { 
@@ -721,7 +722,12 @@ define(function(require)
 				}
 
 				enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));
+
+				enchroll = (item.rolls >> (i * 8)) & 0xFF;
+				
 				enchdesc += enchant.identifiedDescriptionName + '\n';
+				enchdesc = enchdesc.replace('$roll1$','^99BBFF' + (Math.floor(enchroll * (enchant.BaseRoll1 * (enchant.RollMultiplier1-1) + 1) / 100) + enchant.BaseRoll1) + '^FFFFFF');
+				enchdesc = enchdesc.replace('$roll2$','^99BBFF' + (Math.floor(enchroll * (enchant.BaseRoll2 * (enchant.RollMultiplier2-1) + 1) / 100) + enchant.BaseRoll2) + '^FFFFFF');
 			}
 		}
 

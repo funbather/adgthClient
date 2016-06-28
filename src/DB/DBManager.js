@@ -543,6 +543,10 @@ define(function(require)
 				item.BaseBonus2                  = item.BaseBonus2 || 0;
 				item.Multiplier1                 = item.Multiplier1 || 0;
 				item.Multiplier2                 = item.Multiplier2 || 0;
+				item.BaseRoll1                   = item.BaseRoll1 || 0;
+				item.BaseRoll2                   = item.BaseRoll2 || 0;
+				item.RollMultiplier1             = item.RollMultiplier1 || 0;
+				item.RollMultiplier2             = item.RollMultiplier2 || 0;
 								
 				item.Rating                      = item.Rating || 0;
 				item.identifiedDescriptionName   = item.identifiedDescriptionName.replace('$r$',ratings[item.Rating]);

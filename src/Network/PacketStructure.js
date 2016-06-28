@@ -4917,8 +4917,9 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.subY = fp.readUChar();
 		this.quality = fp.readUChar();
 		this.ilvl = fp.readUChar();
+		this.rolls = fp.readULong();
 	};
-	PACKET.ZC.ITEM_ENTRY.size = 19;
+	PACKET.ZC.ITEM_ENTRY.size = 23;
 
 
 	// 0x9e
@@ -5127,6 +5128,11 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 	};
 	PACKET.ZC.WAIT_DIALOG.size = 6;
 
+	// 0xdee5
+	PACKET.ZC.CLEAR_TEXT = function PACKET_ZC_CLEAR_TEXT(fp, end) {
+		this.NAID = fp.readULong();
+	};
+	PACKET.ZC.CLEAR_TEXT.size = 2;
 
 	// 0xb6
 	PACKET.ZC.CLOSE_DIALOG = function PACKET_ZC_CLOSE_DIALOG(fp, end) {
@@ -5936,7 +5942,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 	PACKET.ZC.PC_PURCHASE_MYITEMLIST = function PACKET_ZC_PC_PURCHASE_MYITEMLIST(fp, end) {
 		this.AID = fp.readULong();
 		this.itemList = (function() {
-			var i, count=(end-fp.tell())/22|0, out=new Array(count);
+			var i, count=(end-fp.tell())/26|0, out=new Array(count);
 			for (i = 0; i < count; ++i) {
 				out[i] = {};
 				out[i].price = fp.readLong();
@@ -5952,6 +5958,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 				out[i].slot.card2 = fp.readUShort();
 				out[i].slot.card3 = fp.readUShort();
 				out[i].slot.card4 = fp.readUShort();
+				out[i].rolls = fp.readLong();
 			}
 			return out;
 		})();
@@ -6886,8 +6893,9 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.slot.card2 = fp.readUShort();
 		this.slot.card3 = fp.readUShort();
 		this.slot.card4 = fp.readUShort();
+		this.rolls = fp.readLong();
 	};
-	PACKET.ZC.ADD_ITEM_TO_STORE2.size = 22;
+	PACKET.ZC.ADD_ITEM_TO_STORE2.size = 26;
 
 
 	// 0x1c5
@@ -6904,8 +6912,9 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.slot.card2 = fp.readUShort();
 		this.slot.card3 = fp.readUShort();
 		this.slot.card4 = fp.readUShort();
+		this.rolls = fp.readLong();
 	};
-	PACKET.ZC.ADD_ITEM_TO_CART2.size = 22;
+	PACKET.ZC.ADD_ITEM_TO_CART2.size = 26;
 
 
 	// 0x1c7
@@ -8730,8 +8739,9 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.slot.card4 = fp.readUShort();
 		this.location = fp.readUShort();
 		this.type = fp.readUChar();
+		this.rolls = fp.readULong();
 	};
-	PACKET.ZC.ITEM_PICKUP_PARTY.size = 22;
+	PACKET.ZC.ITEM_PICKUP_PARTY.size = 26;
 
 
 	// 0x2b9
@@ -9859,7 +9869,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.AID = fp.readULong();
 		this.UniqueID = fp.readULong();
 		this.itemList = (function() {
-			var i, count = (end - fp.tell()) / 22 | 0,
+			var i, count = (end - fp.tell()) / 26 | 0,
 				out = new Array(count);
 			for (i = 0; i < count; ++i) {
 				out[i] = {};
@@ -9876,6 +9886,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 				out[i].slot.card2 = fp.readUShort();
 				out[i].slot.card3 = fp.readUShort();
 				out[i].slot.card4 = fp.readUShort();
+				out[i].rolls = fp.readLong();
 			}
 			return out;
 		})();
@@ -9993,8 +10004,9 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.slot.card2 = fp.readUShort();
 		this.slot.card3 = fp.readUShort();
 		this.slot.card4 = fp.readUShort();
+		this.rolls = fp.readLong();
 	};
-	PACKET.ZC.ADD_EXCHANGE_ITEM2.size = 20;
+	PACKET.ZC.ADD_EXCHANGE_ITEM2.size = 24;
 
 
 	// 0x810
@@ -10288,8 +10300,9 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.slot2 = fp.readUChar();
 		this.slot3 = fp.readUChar();
 		this.slot4 = fp.readUChar();
+		this.rolls = fp.readULong();
 	};
-	PACKET.ZC.ITEM_FALL_ENTRY2.size = 25;
+	PACKET.ZC.ITEM_FALL_ENTRY2.size = 29;
 
 
 	// 0x856
@@ -10720,14 +10733,15 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.result = fp.readUChar();
 		this.HireExpireDate = fp.readLong();
 		this.bindOnEquipType = fp.readUShort();
+		this.rolls = fp.readULong();
 	};
-	PACKET.ZC.ITEM_PICKUP_ACK5.size = 31;
+	PACKET.ZC.ITEM_PICKUP_ACK5.size = 35;
 
 
 	// 0x991
 	PACKET.ZC.NORMAL_ITEMLIST4 = function PACKET_ZC_NORMAL_ITEMLIST4(fp, end) {
 		this.ItemInfo = (function() {
-			var i, count = (end - fp.tell()) / 24 | 0,
+			var i, count = (end - fp.tell()) / 28 | 0,
 				out = new Array(count);
 			var flag;
 			for (i = 0; i < count; ++i) {
@@ -10746,6 +10760,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 				flag = fp.readUChar();
 				out[i].IsIdentified = flag & 1;
 				out[i].PlaceETCTab = flag & 2;
+				out[i].rolls = fp.readLong();
 			}
 			return out;
 		})();
@@ -10756,7 +10771,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 	// 0x992
 	PACKET.ZC.EQUIPMENT_ITEMLIST4 = function PACKET_ZC_EQUIPMENT_ITEMLIST4(fp, end) {
 		this.ItemInfo = (function() {
-			var i, count = (end - fp.tell()) / 31 | 0,
+			var i, count = (end - fp.tell()) / 35 | 0,
 				out = new Array(count);
 			var flag;
 			for (i = 0; i < count; ++i) {
@@ -10779,6 +10794,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 				out[i].IsIdentified = 1;
 				out[i].IsDamaged = flag;// = flag & 2;
 				out[i].PlaceETCTab = flag & 4;
+				out[i].rolls = fp.readLong();
 			}
 			return out;
 		})();
@@ -10789,7 +10805,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 	// 0x993
 	PACKET.ZC.CART_NORMAL_ITEMLIST4 = function PACKET_ZC_CART_NORMAL_ITEMLIST4(fp, end) {
 		this.ItemInfo = (function() {
-			var i, count = (end - fp.tell()) / 24 | 0,
+			var i, count = (end - fp.tell()) / 28 | 0,
 				out = new Array(count);
 			var flag;
 			for (i = 0; i < count; ++i) {
@@ -10808,6 +10824,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 				flag = fp.readUChar();
 				out[i].IsIdentified = flag & 1;
 				out[i].PlaceETCTab = flag & 2;
+				out[i].rolls = fp.readLong();
 			}
 			return out;
 		})();
@@ -10818,7 +10835,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 	// 0x994
 	PACKET.ZC.CART_EQUIPMENT_ITEMLIST4 = function PACKET_ZC_CART_EQUIPMENT_ITEMLIST4(fp, end) {
 		this.ItemInfo = (function() {
-			var i, count = (end - fp.tell()) / 31 | 0,
+			var i, count = (end - fp.tell()) / 35 | 0,
 				out = new Array(count);
 			var flag;
 			for (i = 0; i < count; ++i) {
@@ -10841,6 +10858,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 				out[i].IsIdentified = 1;
 				out[i].IsDamaged = flag;// = flag & 2;
 				out[i].PlaceETCTab = flag & 4;
+				out[i].rolls = fp.readLong();
 			}
 			return out;
 		})();
@@ -10852,7 +10870,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 	PACKET.ZC.STORE_NORMAL_ITEMLIST4 = function PACKET_ZC_STORE_NORMAL_ITEMLIST4(fp, end) {
 		this.Name = fp.readString(24);
 		this.ItemInfo = (function() {
-			var i, count = (end - fp.tell()) / 24 | 0,
+			var i, count = (end - fp.tell()) / 28 | 0,
 				out = new Array(count);
 			var flag;
 			for (i = 0; i < count; ++i) {
@@ -10871,6 +10889,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 				flag = fp.readUChar();
 				out[i].IsIdentified = flag & 1;
 				out[i].PlaceETCTab = flag & 2;
+				out[i].rolls = fp.readLong();
 			}
 			return out;
 		})();
@@ -10882,7 +10901,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 	PACKET.ZC.STORE_EQUIPMENT_ITEMLIST4 = function PACKET_ZC_STORE_EQUIPMENT_ITEMLIST4(fp, end) {
 		this.Name = fp.readString(24);
 		this.ItemInfo = (function() {
-			var i, count = (end - fp.tell()) / 31 | 0,
+			var i, count = (end - fp.tell()) / 35 | 0,
 				out = new Array(count);
 			var flag;
 			for (i = 0; i < count; ++i) {
@@ -10905,6 +10924,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 				out[i].IsIdentified = 1;
 				out[i].IsDamaged = flag;// = flag & 2;
 				out[i].PlaceETCTab = flag & 4;
+				out[i].rolls = fp.readLong();
 			}
 			return out;
 		})();

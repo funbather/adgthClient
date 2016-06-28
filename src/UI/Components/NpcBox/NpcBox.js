@@ -174,6 +174,10 @@ define(function(require)
 		this.onNextPressed( _ownerID );
 	};
 
+	NpcBox.cleartext = function ClearText()
+	{
+		_needCleanUp = true;
+	};
 
 	/**
 	 * Press "close" button

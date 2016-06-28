@@ -1042,7 +1042,7 @@ define(function()
 				"+$def$ DEF",
 				"+$eva$ EVA",
 				" ",
-				"Gain 2 EVA for every enemy\ntargeting you.",
+				"Gain 3 EVA for every enemy\ntargeting you.",
 			],
 			"BaseDEF": 24,
 			"BaseEVADE": 3,
@@ -2015,8 +2015,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Strength",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+7 STR",
+				"+$roll1$ STR",
 			],
+			"BaseRoll1": 4,
+			"RollMultiplier1": 3,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2024,8 +2026,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Agility",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+7 AGI",
+				"+$roll1$ AGI",
 			],
+			"BaseRoll1": 4,
+			"RollMultiplier1": 3,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2033,8 +2037,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Vitality",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+7 VIT",
+				"+$roll1$ VIT",
 			],
+			"BaseRoll1": 4,
+			"RollMultiplier1": 3,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2042,8 +2048,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Intelligence",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+7 INT",
+				"+$roll1$ INT",
 			],
+			"BaseRoll1": 4,
+			"RollMultiplier1": 3,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2051,8 +2059,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Precision",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+7 PRE",
+				"+$roll1$ PRE",
 			],
+			"BaseRoll1": 4,
+			"RollMultiplier1": 3,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2060,8 +2070,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Luck",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+10 LUK",
+				"+$roll1$ LUK",
 			],
+			"BaseRoll1": 5,
+			"RollMultiplier1": 4,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2069,8 +2081,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Health",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+10% HP",
+				"+$roll1$% HP",
 			],
+			"BaseRoll1": 5,
+			"RollMultiplier1": 3,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2078,8 +2092,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Mana",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+15 MP",
+				"+$roll1$ MP",
 			],
+			"BaseRoll1": 5,
+			"RollMultiplier1": 3,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2087,8 +2103,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Defense",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+13 DEF",
+				"+$roll1$ DEF",
 			],
+			"BaseRoll1": 3,
+			"RollMultiplier1": 5,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2096,8 +2114,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Magic Defense",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+20 MDEF",
+				"+$roll1$ MDEF",
 			],
+			"BaseRoll1": 5,
+			"RollMultiplier1": 5,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2105,8 +2125,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Critical Chance",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+4 CRIT",
+				"+$roll1$ CRIT",
 			],
+			"BaseRoll1": 1,
+			"RollMultiplier1": 6,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2114,8 +2136,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Critical Damage",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+11% CRIT DMG",
+				"+$roll1$% CRIT DMG",
 			],
+			"BaseRoll1": 6,
+			"RollMultiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2123,8 +2147,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Attack Speed",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+10% ASPD",
+				"+$roll1$% ASPD",
 			],
+			"BaseRoll1": 7,
+			"RollMultiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2132,8 +2158,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Evasion",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+3 EVA",
+				"+$roll1$ EVA",
 			],
+			"BaseRoll1": 1,
+			"RollMultiplier1": 4,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2141,8 +2169,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Movespeed",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+5% MSPD",
+				"+$roll1$% MSPD",
 			],
+			"BaseRoll1": 4,
+			"RollMultiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2150,8 +2180,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Health Regen",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+20% HP Regen",
+				"+$roll1$% HP Regen",
 			],
+			"BaseRoll1": 15,
+			"RollMultiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2159,8 +2191,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Mana Regen",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+20% MP Regen",
+				"+$roll1$% MP Regen",
 			],
+			"BaseRoll1": 15,
+			"RollMultiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2168,8 +2202,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Lifesteal",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+3% Lifesteal",
+				"+$roll1$% Lifesteal",
 			],
+			"BaseRoll1": 1,
+			"RollMultiplier1": 5,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2177,8 +2213,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Soulsteal",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+10 MP on Kill",
+				"+$roll1$ MP on Kill",
 			],
+			"BaseRoll1": 3,
+			"RollMultiplier1": 5,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2186,8 +2224,10 @@ define(function()
 			"identifiedDisplayName": "Seal of Health",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+20% HP",
+				"+$roll1$% HP",
 			],
+			"BaseRoll1": 15,
+			"RollMultiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2195,8 +2235,10 @@ define(function()
 			"identifiedDisplayName": "Seal of Mana",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+25% MP",
+				"+$roll1$ MP",
 			],
+			"BaseRoll1": 20,
+			"RollMultiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2204,9 +2246,13 @@ define(function()
 			"identifiedDisplayName": "Seal of Lethality",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+7 CRIT",
-				"+15% CRIT DMG",
+				"+$roll1$ CRIT",
+				"+$roll2$% CRIT DMG",
 			],
+			"BaseRoll1": 4,
+			"RollMultiplier1": 3,
+			"BaseRoll2": 10,
+			"RollMultiplier2": 3,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2214,8 +2260,10 @@ define(function()
 			"identifiedDisplayName": "Seal of Mastery",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"-15% MP Consumption",
+				"-$roll1$% MP Consumption",
 			],
+			"BaseRoll1": 10,
+			"RollMultiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2223,8 +2271,10 @@ define(function()
 			"identifiedDisplayName": "Seal of Body",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"-10% Physical Damage Taken",
+				"-$roll1$% Physical Damage Taken",
 			],
+			"BaseRoll1": 5,
+			"RollMultiplier1": 3,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2232,8 +2282,10 @@ define(function()
 			"identifiedDisplayName": "Seal of Mind",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"-25% Magical Damage Taken",
+				"-$roll1$% Magical Damage Taken",
 			],
+			"BaseRoll1": 15,
+			"RollMultiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2241,9 +2293,11 @@ define(function()
 			"identifiedDisplayName": "Seal of Fortune",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+25 LUK",
+				"+$roll1$ LUK",
 				"Gain extra Munny when killing a monster",
 			],
+			"BaseRoll1": 15,
+			"RollMultiplier1": 3,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2251,8 +2305,10 @@ define(function()
 			"identifiedDisplayName": "Seal of Broken Will",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+40% DEF Penetration",
+				"+$roll1$% DEF Penetration",
 			],
+			"BaseRoll1": 30,
+			"RollMultiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2260,8 +2316,10 @@ define(function()
 			"identifiedDisplayName": "Seal of Broken Spirit",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+40% MDEF Penetration",
+				"+$roll1$% MDEF Penetration",
 			],
+			"BaseRoll1": 30,
+			"RollMultiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2269,9 +2327,13 @@ define(function()
 			"identifiedDisplayName": "Seal of Paralysis",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+8% Chance to Stun on hit",
-				"+8% Chance to Stun attackers",
+				"+$roll1$% Chance to Stun on hit",
+				"+$roll2$% Chance to Stun attackers",
 			],
+			"BaseRoll1": 5,
+			"RollMultiplier1": 2,
+			"BaseRoll2": 5,
+			"RollMultiplier2": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2279,9 +2341,13 @@ define(function()
 			"identifiedDisplayName": "Seal of Venom",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+8% Chance to Poison on hit",
-				"+8% Chance to Poison attackers",
+				"+$roll1$% Chance to Poison on hit",
+				"+$roll2$% Chance to Poison attackers",
 			],
+			"BaseRoll1": 10,
+			"RollMultiplier1": 2,
+			"BaseRoll2": 10,
+			"RollMultiplier2": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2289,9 +2355,13 @@ define(function()
 			"identifiedDisplayName": "Seal of Hoarfrost",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+8% Chance to Freeze on hit",
-				"+8% Chance to Freeze attackers",
+				"+$roll1$% Chance to Freeze on hit",
+				"+$roll2$% Chance to Freeze attackers",
 			],
+			"BaseRoll1": 5,
+			"RollMultiplier1": 2,
+			"BaseRoll2": 5,
+			"RollMultiplier2": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2299,8 +2369,10 @@ define(function()
 			"identifiedDisplayName": "Seal of Echoes",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+20% Chance to Double Strike",
-			], 
+				"+$roll1$% Chance to Double Strike",
+			],
+			"BaseRoll1": 15,
+			"RollMultiplier1": 2,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2344,7 +2416,7 @@ define(function()
 			"identifiedDisplayName": "Seal of Expunge",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+1 to [Expunge]",
+				"+2 to [Expunge]",
 			],
 			"slotCount": 0,
 			"ClassNum": 0
@@ -2353,7 +2425,7 @@ define(function()
 			"identifiedDisplayName": "Seal of Quake",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+1 to [Quake]",
+				"+2 to [Quake]",
 			],
 			"slotCount": 0,
 			"ClassNum": 0

@@ -54,6 +54,10 @@ define(function( require )
 		NpcBox.append();
 		NpcBox.addNext( pkt.NAID );
 	}
+	
+	function onClearText ( pkt ) {
+		NpcBox.cleartext();
+	}
 
 
 	/**
@@ -435,6 +439,7 @@ define(function( require )
 	{
 		Network.hookPacket( PACKET.ZC.SAY_DIALOG,      onMessage );
 		Network.hookPacket( PACKET.ZC.WAIT_DIALOG,     onNextAppear );
+		Network.hookPacket( PACKET.ZC.CLEAR_TEXT,      onClearText );
 		Network.hookPacket( PACKET.ZC.CLOSE_DIALOG,    onCloseAppear );
 		Network.hookPacket( PACKET.ZC.OPEN_EDITDLG,    onInputAppear );
 		Network.hookPacket( PACKET.ZC.OPEN_EDITDLGSTR, onInputAppear );

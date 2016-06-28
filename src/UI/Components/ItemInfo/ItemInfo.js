@@ -111,7 +111,7 @@ define(function(require)
 		var desc = '';
 		var enchdesc = '';
 		var enchant;
-		var rarity = 0;
+		var enchroll;
 		var i;
 		var fl = document.getElementById('description');
 
@@ -122,15 +122,18 @@ define(function(require)
 		
 		if(item.slot) { // Needed, but only sometimes...
 			for(i = 0; i < 4; i++) {
-						if(item.slot['card' + (i+1)]) { 
-							if(i == 0) {
-								enchdesc = '\n--------------------------------\n';
-							}
+				if(item.slot['card' + (i+1)]) { 
+					if(i == 0)
+						enchdesc = '\n--------------------------------\n';
 						
-							enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));
-							enchdesc += enchant.identifiedDescriptionName + '\n';
-							rarity++;
-						}
+					enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));
+						
+					enchroll = (item.rolls >> (i * 8)) & 0xFF;
+			
+					enchdesc += enchant.identifiedDescriptionName + '\n';
+					enchdesc = enchdesc.replace('$roll1$','' + (Math.floor(enchroll * (enchant.BaseRoll1 * (enchant.RollMultiplier1-1) + 1) / 100) + enchant.BaseRoll1));
+					enchdesc = enchdesc.replace('$roll2$','' + (Math.floor(enchroll * (enchant.BaseRoll2 * (enchant.RollMultiplier2-1) + 1) / 100) + enchant.BaseRoll2));
+				}
 			}
 		}
 
