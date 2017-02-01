@@ -93,16 +93,20 @@ define(function(require)
 				break;
 
 			case 'hit':
-			case 'critical':
-			case 'flee':
-			case 'def':
-			case 'mdef':
 				this.ui.find('.' + type).text(val + '%');
 				break;
-
+				
+			case 'def':
+			case 'mdef':
+				this.ui.find('.' + type).text((val/10).toFixed(1));
+				break;
+				
+			case 'critical':
+				this.ui.find('.' + type).text((val/10).toFixed(1) + '%');
+				break;
+				
 			case 'aspd':
-        str = 500 / (2000-Math.floor(2000-val));
-				this.ui.find('.' + type).text(str.toFixed(2));
+				this.ui.find('.' + type).text((500 / val).toFixed(2));
 				break;
 				
 			case 'flee2':
@@ -114,6 +118,7 @@ define(function(require)
 			case 'matak2':
 			case 'def2':
 			case 'mdef2':
+			case 'flee':
 				this.ui.find('.' + type).text(val);
 				break;
 
@@ -122,7 +127,6 @@ define(function(require)
 			case 'vit':
 			case 'int':
 			case 'dex':
-			//case 'luk':
         this.ui.find('.stats .'+ type).text(val);
 				break;
 
@@ -152,8 +156,30 @@ define(function(require)
 				this.ui.find('.up .'+ type.replace('3','')).css('opacity', val <= this.statuspoint ? 1 : 0 );
 				break;
 		}
+		
+		// Update mitigation/avoid % values
+		var def = parseFloat(this.ui.find('.def2').text());
+		var def2 = parseFloat(this.ui.find('.def').text());
+		var eva = parseFloat(this.ui.find('.flee').text());
+		var mdef = parseFloat(this.ui.find('.mdef2').text());
+		var mdef2 = parseFloat(this.ui.find('.mdef').text());
+		
+		this.ui.find('.physmit').text((100 - (100*calcMitigation(def))).toFixed(1));
+		this.ui.find('.physavo').text(calcAvoidance(def2,eva).toFixed(1));
+		this.ui.find('.magmit').text((100 - (100*calcMitigation(mdef))).toFixed(1));
+		this.ui.find('.magavo').text(calcAvoidance(mdef2,0).toFixed(1));
 	};
-
+	
+	function calcMitigation(x) {
+		var a = 6000 + x;
+		var b = 6000 + x * 12;
+		return a/b;
+	}
+	
+	function calcAvoidance(y, z) {
+		var dodge = 1 - parseFloat(calcMitigation(z));
+		return 100 - ((1 * (1-dodge) * (1-(y/100))) * 100);
+	}
 
 	/**
 	 * Abstract method to define

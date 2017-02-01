@@ -113,7 +113,7 @@ define(['Core/Configs'], function( Configs )
 		}
 
 		var i, count, out = [];
-		var blockSize = Configs.get('charBlockSize') || calculateBlockSize();
+		var blockSize = 151;//Configs.get('charBlockSize') || calculateBlockSize();
 		var length = end - fp.tell();
 
 		// Nothing to parse
@@ -125,7 +125,7 @@ define(['Core/Configs'], function( Configs )
 		if (!blockSize || length % blockSize) {
 			console.error('CHARACTER_INFO size error!! blockSize : "'+ blockSize +'", list length: ' + length + ', auto-detect...');
 
-			var knownSize = [106, 108, 112, 116, 124, 128, 132, 136, 140, 144, 146, 147];
+			var knownSize = [106, 108, 112, 116, 124, 128, 132, 136, 140, 144, 146, 147, 151];
 			var matches = [];
 
 			for (i = 0, count = knownSize.length; i < count; ++i) {
@@ -233,6 +233,7 @@ define(['Core/Configs'], function( Configs )
 
 			if (blockSize >= 147) {
 				out[i].sex = fp.readUChar();
+				out[i].classes = fp.readLong();
 			}
 		}
 

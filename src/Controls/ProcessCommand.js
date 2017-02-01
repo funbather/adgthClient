@@ -222,7 +222,7 @@ define(function( require )
 		// TODO: do we have to spam the server with "1" unit or do we have to fix the servers code ?
 		matches = text.match(/^(\w{3})\+ (\d+)$/);
 		if (matches) {
-			var pos = ['str', 'agi', 'vit', 'int', 'pre'].indexOf(matches[1]);
+			var pos = ['str', 'agi', 'vit', 'int', 'mst'].indexOf(matches[1]);
 			if (pos > -1 && matches[2] !== 0) {
 				pkt = new PACKET.CZ.STATUS_CHANGE();
 				pkt.statusID     = pos + 13;

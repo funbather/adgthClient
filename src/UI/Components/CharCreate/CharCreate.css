@@ -27,7 +27,7 @@
 #charcreate .info .agi { top:63px; }
 #charcreate .info .vit { top:110px; }
 #charcreate .info .int { top:157px; }
-#charcreate .info .pre { top:204px; }
+#charcreate .info .mst { top:204px; }
 #charcreate .info .left { top:0px; }
 
 #charcreate .stats { position:absolute; top:41px; right:0px; width:50px; height:300px; }
@@ -40,12 +40,19 @@
 #charcreate .vitsub { top:110px; right:42px; }
 #charcreate .intadd { top:157px; right:23px; }
 #charcreate .intsub { top:157px; right:42px; }
-#charcreate .preadd { top:204px; right:23px; }
-#charcreate .presub { top:204px; right:42px; }
+#charcreate .mstadd { top:204px; right:23px; }
+#charcreate .mstsub { top:204px; right:42px; }
 
 #charcreate .job { position:absolute; top:41px; left:189px; width:184px; height:300px; }
 #charcreate .jobname { top:16px; padding-left:50px; }
 #charcreate .jobdesc { top:63px; }
+
+#charcreate .pickSWD { position: absolute; top:17px; border:0; width:30px; height:30px; background-repeat:no-repeat; background-color:transparent; } 
+#charcreate .pickTHF { position: absolute; top:48px; border:0; width:30px; height:30px; background-repeat:no-repeat; background-color:transparent; } 
+#charcreate .pickACO { position: absolute; top:79px; border:0; width:30px; height:30px; background-repeat:no-repeat; background-color:transparent; } 
+#charcreate .pickARC { position: absolute; top:110px; border:0; width:30px; height:30px; background-repeat:no-repeat; background-color:transparent; } 
+#charcreate .pickMGN { position: absolute; top:141px; border:0; width:30px; height:30px; background-repeat:no-repeat; background-color:transparent; } 
+#charcreate .pickMRC { position: absolute; top:172px; border:0; width:30px; height:30px; background-repeat:no-repeat; background-color:transparent; } 
 
 #charcreate .gender { position:absolute; top:41px; left:388px; }
 #charcreate .male { position: absolute; border:0; width:13px; height:13px; background-repeat:no-repeat; background-color:transparent; top:0px; right:34px; }

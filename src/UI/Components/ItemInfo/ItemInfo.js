@@ -108,58 +108,19 @@ define(function(require)
 		var it = DB.getItemInfo( item.ITID );
 		var ui = this.ui;
 		var cardList = ui.find('.cardlist .border');
-		var desc = '';
-		var enchdesc = '';
-		var enchant;
-		var enchroll;
-		var i;
+		var desc = DB.formatDesc(item);
 		var fl = document.getElementById('description');
 
 		this.item = it;
 		Client.loadFile( DB.INTERFACE_PATH + 'collection/' + ( item.IsIdentified ? it.identifiedResourceName : it.unidentifiedResourceName ) + '.bmp', function(data){
 			ui.find('.collection').css('backgroundImage', 'url('+data+')' );
 		});
-		
-		if(item.slot) { // Needed, but only sometimes...
-			for(i = 0; i < 4; i++) {
-				if(item.slot['card' + (i+1)]) { 
-					if(i == 0)
-						enchdesc = '\n--------------------------------\n';
-						
-					enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));
-						
-					enchroll = (item.rolls >> (i * 8)) & 0xFF;
-			
-					enchdesc += enchant.identifiedDescriptionName + '\n';
-					enchdesc = enchdesc.replace('$roll1$','' + (Math.floor(enchroll * (enchant.BaseRoll1 * (enchant.RollMultiplier1-1) + 1) / 100) + enchant.BaseRoll1));
-					enchdesc = enchdesc.replace('$roll2$','' + (Math.floor(enchroll * (enchant.BaseRoll2 * (enchant.RollMultiplier2-1) + 1) / 100) + enchant.BaseRoll2));
-				}
-			}
-		}
 
-		desc = it.identifiedDescriptionName + enchdesc;
-		desc = it.flavortext ? desc + '\n\n' : desc;
-		desc = desc.replace('$ilvl$', '^3366FF'+item.IsDamaged+'^000000');
-		desc = desc.replace('$quality$', '^3366FF'+item.RefiningLevel+'^000000');
-		desc = desc.replace('$hp$', '^3366FF'+getStatValue(it.BaseHP, DB._mult["HP"], item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$mp$', '^3366FF'+getStatValue(it.BaseMP, DB._mult["MP"], item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$def$', '^3366FF'+getStatValue(it.BaseDEF, DB._mult["DEF"], item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$mdef$', '^3366FF'+getStatValue(it.BaseMDEF, DB._mult["MDEF"], item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$atk$', '^3366FF'+getStatValue(it.BaseATK, DB._mult["ATK"], item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$mag$', '^3366FF'+getStatValue(it.BaseMAG, DB._mult["MAG"], item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$eva$', '^3366FF'+getStatValue(it.BaseEVADE, DB._mult["EVA"], item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$cel$', '^3366FF'+getStatValue(it.BaseCEL, DB._mult["CEL"], item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$crit$', '^3366FF'+getStatValue(it.BaseCRIT, DB._mult["CRIT"], item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$def2$', '^3366FF'+getStatValue(it.BaseDEF2, DB._mult["DEF2"], item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$mdef2$', '^3366FF'+getStatValue(it.BaseMDEF2, DB._mult["MDEF2"], item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$bonus1$', '^3366FF'+getStatValue(it.BaseBonus1, it.Multiplier1, item.RefiningLevel, item.IsDamaged)+'^000000');
-		desc = desc.replace('$bonus2$', '^3366FF'+getStatValue(it.BaseBonus2, it.Multiplier2, item.RefiningLevel, item.IsDamaged)+'^000000');
+		desc = desc.replace(/FFFFFF/g, "000000");
 
 		ui.find('.title').text( item.IsIdentified ? it.identifiedDisplayName : it.unidentifiedDisplayName );
 		ui.find('.description').text( desc );
 		ui.find('.description').append( it.flavortext.italics() );
-		
-		
 
 		// Add view button (for cards)
 		if (item.type === ItemType.CARD) {
@@ -191,17 +152,12 @@ define(function(require)
 				cardList.parent().show();
 				cardList.empty();
 
-				for (i = 0; i < 4; ++i) {
+				for (var i=0; i<4; ++i) {
 					addCard(cardList, (item.slot && item.slot['card' + (i+1)]) || 0, i, slotCount);
 				}
 				break;
 		}
 	};
-
-	// helper function so I don't have to keep typing out this calulation
-	function getStatValue( base, multiplier, quality, ilvl ) {
-		return Math.floor(Math.floor((multiplier-1) * ilvl * 2 * base / 100 + base) * quality / 100);
-	}
 
 	/**
 	 * Add a card into a slot

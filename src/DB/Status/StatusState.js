@@ -38,6 +38,7 @@ define(function()
 			IGNITE       : 0x0200,
 			MARKED       : 0x0400,
 			SHATTER      : 0x0800,
+			CAMO         : 0x1000,
 		},
 
 		EffectState: {

@@ -358,11 +358,13 @@ define( function( require )
         }
 
         // Delay on attack
-        if (entity.action === entity.ACTION.ATTACK  ||
-            entity.action === entity.ACTION.ATTACK1 ||
+        if (entity.action === entity.ACTION.ATTACK)
+					return entity.attack_speed / act.animations.length;
+        
+        if (entity.action === entity.ACTION.ATTACK1 || // adelay is doubled for players, plus a small buffer to keep animations smooth
             entity.action === entity.ACTION.ATTACK2 ||
             entity.action === entity.ACTION.ATTACK3) {
-            return entity.attack_speed / act.animations.length;
+            return (entity.attack_speed + 5) * 2 / act.animations.length;
         }
 
         return act.delay;

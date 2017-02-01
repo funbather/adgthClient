@@ -33,6 +33,7 @@ define(["./JobConst", "./JobNameTable"], function( JobId, JobNameTable)
 
 	// Rewrite inheritance
 	duplicateEntry(JobId.NOVICE,     JobId.NOVICE_H,     JobId.NOVICE_B);
+	duplicateEntry(JobId.SUPERNOVICE,JobId.COMMON);
 	duplicateEntry(JobId.SWORDMAN,   JobId.SWORDMAN_H,   JobId.SWORDMAN_B);
 	duplicateEntry(JobId.MAGICIAN,   JobId.MAGICIAN_H,   JobId.MAGICIAN_B);
 	duplicateEntry(JobId.ARCHER,     JobId.ARCHER_H,     JobId.ARCHER_B);

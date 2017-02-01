@@ -14,13 +14,13 @@ define(function()
 
 	return {
 			"50000": {
-			"identifiedDisplayName": "Breastplate",
-			"identifiedResourceName": "\xc3\xca\xba\xb8\xc0\xda\xbf\xeb\xc8\xe4\xb0\xa9",
+			"identifiedDisplayName": "Iron Lamellar",
+			"identifiedResourceName": "\xbe\xc6\xb8\xd3",
 			"identifiedDescriptionName": [
 				"Heavy Armor $r$",
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
-				"\u2605\u2606\u2606",
+				" ",
 				"+$hp$ HP",
 				"+$def$ DEF",
 			],
@@ -31,7 +31,7 @@ define(function()
 			"ClassNum": 0
 		},
 			"50001": {
-			"identifiedDisplayName": "Hauberk",
+			"identifiedDisplayName": "Steel Chainmail",
 			"identifiedResourceName": "\xb8\xde\xc0\xcf",
 			"identifiedDescriptionName": [
 				"Heavy Armor $r$",
@@ -48,7 +48,7 @@ define(function()
 			"ClassNum": 0
 		},
 			"50002": {
-			"identifiedDisplayName": "Platemail",
+			"identifiedDisplayName": "Tempered Platemail",
 			"identifiedResourceName": "\xc7\xc3\xb7\xb9\xc0\xcc\xc6\xae",
 			"identifiedDescriptionName": [
 				"Heavy Armor $r$",
@@ -84,7 +84,7 @@ define(function()
 			"ClassNum": 0
 		},
 			"50004": {
-			"identifiedDisplayName": "Battlemage Robe",
+			"identifiedDisplayName": "Runic Doublet",
 			"identifiedResourceName": "\xc3\xb5\xbb\xe7\xc0\xc7\xb0\xa1\xc8\xa3",
 			"identifiedDescriptionName": [
 				"Mage Armor $r$",
@@ -103,7 +103,7 @@ define(function()
 			"ClassNum": 0
 		},
 			"50005": {
-			"identifiedDisplayName": "Hero's Garb",
+			"identifiedDisplayName": "Battlemage Regalia",
 			"identifiedResourceName": "\xbf\xc0\xb5\xf2\xc0\xc7\xc3\xe0\xba\xb9",
 			"identifiedDescriptionName": [
 				"Mage Armor $r$",
@@ -122,7 +122,7 @@ define(function()
 			"ClassNum": 0
 		},
 			"50006": {
-			"identifiedDisplayName": "Apprentice's Robe",
+			"identifiedDisplayName": "Apprentice Robe",
 			"identifiedResourceName": "\xb7\xd5\xc4\xda\xc6\xae",
 			"identifiedDescriptionName": [
 				"Light Armor $r$",
@@ -185,7 +185,7 @@ define(function()
 			"ClassNum": 0
 		},
 			"50009": {
-			"identifiedDisplayName": "Buckler",
+			"identifiedDisplayName": "Iron Buckler",
 			"identifiedResourceName": "\xb9\xf6\xc5\xac\xb7\xaf",
 			"identifiedDescriptionName": [
 				"Shield $r$",
@@ -193,36 +193,17 @@ define(function()
 				"Quality: $quality$%",
 				" ",
 				"+$hp$ HP",
-				"$def2$% Physical Block",
-				"$mdef2$% Magical Block"
+				"+$def2$% to Physical Block",
+				"+$mdef2$% to Magical Block"
 			],
 			"BaseHP": 22,
-			"BaseDEF2": 10,
-			"BaseMDEF2": 5,
+			"BaseDEF2": 100,
+			"BaseMDEF2": 50,
 			"Rating": 1,
 			"slotCount": 0,
 			"ClassNum": 1
 		},
 			"50010": {
-			"identifiedDisplayName": "Targe",
-			"identifiedResourceName": "\xc3\xca\xba\xb8\xc0\xda\xbf\xeb\xbd\xaf\xb5\xe5",
-			"identifiedDescriptionName": [
-				"Shield $r$",
-				"Item Level: $ilvl$",
-				"Quality: $quality$%",
-				" ",
-				"+$hp$ HP",
-				"$def2$% Physical Block",
-				"$mdef2$% Magical Block"
-			],
-			"BaseHP": 25,
-			"BaseDEF2": 12,
-			"BaseMDEF2": 6,
-			"Rating": 2,
-			"slotCount": 0,
-			"ClassNum": 1
-		},
-			"50011": {
 			"identifiedDisplayName": "Kite Shield",
 			"identifiedResourceName": "\xbd\xaf\xb5\xe5",
 			"identifiedDescriptionName": [
@@ -231,17 +212,262 @@ define(function()
 				"Quality: $quality$%",
 				" ",
 				"+$hp$ HP",
-				"$def2$% Physical Block",
-				"$mdef2$% Magical Block"
+				"+$def2$% to Physical Block",
+				"+$mdef2$% to Magical Block"
+			],
+			"BaseHP": 25,
+			"BaseDEF2": 120,
+			"BaseMDEF2": 60,
+			"Rating": 2,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50011": {
+			"identifiedDisplayName": "Angelic Shield",
+			"identifiedResourceName": "\xc7\xc3\xb7\xa1\xc6\xbc\xb3\xd1\xbd\xaf\xb5\xe5",
+			"identifiedDescriptionName": [
+				"Shield $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def2$% to Physical Block",
+				"+$mdef2$% to Magical Block"
 			],
 			"BaseHP": 28,
-			"BaseDEF2": 14,
-			"BaseMDEF2": 7,
+			"BaseDEF2": 140,
+			"BaseMDEF2": 70,
 			"Rating": 3,
 			"slotCount": 0,
 			"ClassNum": 1
 		},
 			"50012": {
+			"identifiedDisplayName": "Cantrip Spellbook",
+			"identifiedResourceName": "\xba\xcf",
+			"identifiedDescriptionName": [
+				"Off-Hand $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$mdef$ MDEF",
+				"+$mdef2$% to Magical Block",
+				"+$skilldmg$% Skill Damage"
+			],
+			"BaseMDEF": 24,
+			"BaseMDEF2": 150,
+			"BaseSKILLDMG": 12,
+			"Rating": 1,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50013": {
+			"identifiedDisplayName": "Ancient Spellbook",
+			"identifiedResourceName": "\xc7\xf6\xc0\xda\xc0\xc7\xc0\xcf\xb1\xe2",
+			"identifiedDescriptionName": [
+				"Off-Hand $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$mdef$ MDEF",
+				"+$mdef2$% to Magical Block",
+				"+$skilldmg$% Skill Damage"
+			],
+			"BaseMDEF": 27,
+			"BaseMDEF2": 170,
+			"BaseSKILLDMG": 13,
+			"Rating": 2,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50014": {
+			"identifiedDisplayName": "Magus Spellbook",
+			"identifiedResourceName": "\xb8\xde\xb8\xf0\xb6\xf3\xc0\xcc\xc1\xee\xba\xcf",
+			"identifiedDescriptionName": [
+				"Off-Hand $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$mdef$ MDEF",
+				"+$mdef2$% to Magical Block",
+				"+$skilldmg$% Skill Damage"
+			],
+			"BaseMDEF": 30,
+			"BaseMDEF2": 190,
+			"BaseSKILLDMG": 14,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50015": {
+			"identifiedDisplayName": "Iron Gauntlets",
+			"identifiedResourceName": "\xb9\xce\xc3\xb8\xc0\xc7\xb1\xdb\xb7\xaf\xba\xea",
+			"identifiedDescriptionName": [
+				"Gloves $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$bonus1$% CRIT"
+			],
+			"BaseHP": 17,
+			"BaseDEF": 8,
+			"BaseBonus1": 13,
+			"Multiplier1": 2,
+			"Rating": 1,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50016": {
+			"identifiedDisplayName": "Steel Gauntlets",
+			"identifiedResourceName": "\xb8\xed\xbb\xe7\xbc\xf6\xc0\xc7\xc0\xe5\xb0\xa9",
+			"identifiedDescriptionName": [
+				"Gloves $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$bonus1$% CRIT"
+			],
+			"BaseHP": 20,
+			"BaseDEF": 9,
+			"BaseBonus1": 13,
+			"Multiplier1": 2,
+			"Rating": 2,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50017": {
+			"identifiedDisplayName": "Soldier Gauntlets",
+			"identifiedResourceName": "\xbc\xf6\xb6\xf3\xc0\xc7\xc0\xe5\xb0\xa9",
+			"identifiedDescriptionName": [
+				"Gloves $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$bonus1$% CRIT"
+			],
+			"BaseHP": 23,
+			"BaseDEF": 10,
+			"BaseBonus1": 13,
+			"Multiplier1": 2,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50018": {
+			"identifiedDisplayName": "Woven Gloves",
+			"identifiedResourceName": "\xb1\xdb\xb7\xaf\xba\xea",
+			"identifiedDescriptionName": [
+				"Gloves $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$aspd$% ASPD",
+				"+$cspd$% Casting Speed"
+			],
+			"BaseHP": 14,
+			"BaseASPD": 9,
+			"BaseCSPD": 11,
+			"Rating": 1,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50019": {
+			"identifiedDisplayName": "Leather Gloves",
+			"identifiedResourceName": "\xbb\xe7\xbc\xad\xc0\xc7\xc0\xe5\xb0\xa9",
+			"identifiedDescriptionName": [
+				"Gloves $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$aspd$% ASPD",
+				"+$cspd$% Casting Speed"
+			],
+			"BaseHP": 16,
+			"BaseASPD": 10,
+			"BaseCSPD": 13,
+			"Rating": 2,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50020": {
+			"identifiedDisplayName": "Regal Gloves",
+			"identifiedResourceName": "\xbf\xc0\xb8\xa6\xb7\xb9\xbe\xd3\xc0\xc7\xc0\xe5\xb0\xa9",
+			"identifiedDescriptionName": [
+				"Gloves $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$aspd$% ASPD",
+				"+$cspd$% Casting Speed"
+			],
+			"BaseHP": 18,
+			"BaseASPD": 11,
+			"BaseCSPD": 15,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50021": {
+			"identifiedDisplayName": "Reinforced Belt",
+			"identifiedResourceName": "\xbd\xc3\xb3\xeb\xba\xf1\xc0\xc7\xc7\xe3\xb8\xae\xb6\xec",
+			"identifiedDescriptionName": [
+				"Belt $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$bonus1$ Base HP"
+			],
+			"BaseBonus1": 20,
+			"Multiplier1": 5,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50022": {
+			"identifiedDisplayName": "Leather Belt",
+			"identifiedResourceName": "\xba\xa7\xc6\xae",
+			"identifiedDescriptionName": [
+				"Belt $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$bonus1$% DEF"
+			],
+			"BaseHP": 15,
+			"BaseBonus1": 7,
+			"Multiplier1": 2,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50023": {
+			"identifiedDisplayName": "Silken Sash",
+			"identifiedResourceName": "\xb8\xf1\xba\xb8\xc8\xa3\xb4\xeb",
+			"identifiedDescriptionName": [
+				"Belt $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$bonus1$% MDEF"
+			],
+			"BaseHP": 15,
+			"BaseBonus1": 10,
+			"Multiplier1": 2,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50024": {
 			"identifiedDisplayName": "Layered Shawl",
 			"identifiedResourceName": "\xb8\xd3\xc7\xc3\xb7\xaf",
 			"identifiedDescriptionName": [
@@ -249,16 +475,16 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"+$def$ DEF",
+				"+$hp$ HP",
 				"+$eva$ EVA"
 			],
-			"BaseDEF": 6,
-			"BaseEVADE": 8,
+			"BaseHP": 6,
+			"BaseEVADE": 40,
 			"Rating": 1,
 			"slotCount": 0,
 			"ClassNum": 1
 		},
-			"50013": {
+			"50025": {
 			"identifiedDisplayName": "Wool Scarf",
 			"identifiedResourceName": "\xbf\xef\xbd\xba\xc4\xab\xc7\xc1",
 			"identifiedDescriptionName": [
@@ -266,16 +492,16 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"+$def$ DEF",
+				"+$hp$ HP",
 				"+$eva$ EVA"
 			],
-			"BaseDEF": 7,
-			"BaseEVADE": 9,
+			"BaseHP": 7,
+			"BaseEVADE": 45,
 			"Rating": 2,
 			"slotCount": 0,
 			"ClassNum": 1
 		},
-			"50014": {
+			"50026": {
 			"identifiedDisplayName": "Feathered Muffler",
 			"identifiedResourceName": "\xb8\xc5\xc0\xc7\xb3\xaf\xb0\xb3\xbf\xca",
 			"identifiedDescriptionName": [
@@ -283,16 +509,73 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"+$def$ DEF",
+				"+$hp$ HP",
 				"+$eva$ EVA"
 			],
-			"BaseDEF": 8,
-			"BaseEVADE": 10,
+			"BaseHP": 8,
+			"BaseEVADE": 50,
 			"Rating": 3,
 			"slotCount": 0,
 			"ClassNum": 1
 		},
-			"50015": {
+			"50027": {
+			"identifiedDisplayName": "Iron Spaulders",
+			"identifiedResourceName": "\xb0\xd4\xba\xea\xb3\xd7\xc0\xcc\xbe\xee\xb1\xfa\xc0\xe5\xbd\xc4",
+			"identifiedDescriptionName": [
+				"Robe $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$eva$ EVA"
+			],
+			"BaseHP": 19,
+			"BaseDEF": 12,
+			"BaseEVADE": 10,
+			"Rating": 1,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50028": {
+			"identifiedDisplayName": "Steel Pauldron",
+			"identifiedResourceName": "\xc6\xfa\xb5\xe5\xb7\xb1",
+			"identifiedDescriptionName": [
+				"Robe $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$eva$ EVA"
+			],
+			"BaseHP": 21,
+			"BaseDEF": 14,
+			"BaseEVADE": 11,
+			"Rating": 2,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50029": {
+			"identifiedDisplayName": "Runic Pauldron",
+			"identifiedResourceName": "\xbf\xec\xb8\xa3\xc0\xc7\xb8\xc1\xc5\xe4",
+			"identifiedDescriptionName": [
+				"Robe $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$eva$ EVA"
+			],
+			"BaseHP": 23,
+			"BaseDEF": 16,
+			"BaseEVADE": 12,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50030": {
 			"identifiedDisplayName": "Leather Shoes",
 			"identifiedResourceName": "\xbd\xb4\xc1\xee",
 			"identifiedDescriptionName": [
@@ -300,37 +583,33 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"+$hp$ HP",
-				"+$def$ DEF",
-				"+$cel$% MSPD"
+				"+$eva$ EVA",
+				"+$cel$% to MSPD"
 			],
-			"BaseHP": 13,
-			"BaseDEF": 7,
-			"BaseCEL": 6,
+			"BaseEVADE": 24,
+			"BaseCEL": 9,
 			"Rating": 1,
 			"slotCount": 0,
 			"ClassNum": 1
 		},
-			"50016": {
-			"identifiedDisplayName": "Reinforced Boots",
-			"identifiedResourceName": "\xba\xce\xc3\xf7",
+			"50031": {
+			"identifiedDisplayName": "Reinforced Shoes",
+			"identifiedResourceName": "\xc3\xca\xba\xb8\xc0\xda\xbf\xeb\xbd\xb4\xc1\xee",
 			"identifiedDescriptionName": [
 				"Shoes $r$",
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"+$hp$ HP",
-				"+$def$ DEF",
-				"+$cel$% MSPD"
+				"+$eva$ EVA",
+				"+$cel$% to MSPD"
 			],
-			"BaseHP": 14,
-			"BaseDEF": 8,
-			"BaseCEL": 7,
+			"BaseEVADE": 27,
+			"BaseCEL": 10,
 			"Rating": 2,
 			"slotCount": 0,
 			"ClassNum": 1
 		},
-			"50017": {
+			"50032": {
 			"identifiedDisplayName": "Groundpounders",
 			"identifiedResourceName": "\xba\xf1\xb4\xd9\xb8\xa3\xc0\xc7\xba\xce\xc3\xf7",
 			"identifiedDescriptionName": [
@@ -338,13 +617,234 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
+				"+$eva$ EVA",
+				"+$cel$% to MSPD"
+			],
+			"BaseEVADE": 30,
+			"BaseCEL": 11,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50033": {
+			"identifiedDisplayName": "Plated Boots",
+			"identifiedResourceName": "\xc7\xc1\xb8\xae\xc4\xda\xbd\xb4\xc1\xee",
+			"identifiedDescriptionName": [
+				"Shoes $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
 				"+$hp$ HP",
 				"+$def$ DEF",
-				"+$cel$% MSPD"
+				"+$cel$% to MSPD"
 			],
-			"BaseHP": 15,
+			"BaseHP": 16,
 			"BaseDEF": 9,
-			"BaseCEL": 8,
+			"BaseCEL": 6,
+			"Rating": 1,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50034": {
+			"identifiedDisplayName": "Ironscale Boots",
+			"identifiedResourceName": "\xb0\xd4\xba\xea\xb3\xd7\xc0\xcc\xc0\xc7\xb1\xba\xc8\xad",
+			"identifiedDescriptionName": [
+				"Shoes $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$cel$% to MSPD"
+			],
+			"BaseHP": 18,
+			"BaseDEF": 10,
+			"BaseCEL": 6,
+			"Rating": 2,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50035": {
+			"identifiedDisplayName": "Steel Greaves",
+			"identifiedResourceName": "\xb1\xd7\xb8\xae\xba\xea",
+			"identifiedDescriptionName": [
+				"Shoes $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$hp$ HP",
+				"+$def$ DEF",
+				"+$cel$% to MSPD"
+			],
+			"BaseHP": 20,
+			"BaseDEF": 11,
+			"BaseCEL": 7,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50036": {
+			"identifiedDisplayName": "Prayer Beads",
+			"identifiedResourceName": "\xb7\xce\xc0\xda\xb8\xae",
+			"identifiedDescriptionName": [
+				"Accessory $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$bonus1$ MDEF",
+			],
+			"BaseBonus1": 30,
+			"Multiplier1": 6,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50037": {
+			"identifiedDisplayName": "Ritual Incense",
+			"identifiedResourceName": "\xc7\xc7\xbb\xe7\xc7\xe2\xc6\xf7",
+			"identifiedDescriptionName": [
+				"Accessory $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$bonus1$% Skill Damage",
+				"+$bonus2$% Healing Power",
+			],
+			"BaseBonus1": 8,
+			"Multiplier1": 2,
+			"BaseBonus2": 10,
+			"Multiplier2": 2,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50038": {
+			"identifiedDisplayName": "Crystalline Ring",
+			"identifiedResourceName": "\xb4\xd9\xc0\xcc\xbe\xc6\xb9\xdd\xc1\xf6",
+			"identifiedDescriptionName": [
+				"Accessory $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$bonus1$ MP",
+			],
+			"BaseBonus1": 10,
+			"Multiplier1": 4,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50039": {
+			"identifiedDisplayName": "Diamond Necklace",
+			"identifiedResourceName": "\xb3\xd7\xc5\xac\xb8\xae\xbd\xba",
+			"identifiedDescriptionName": [
+				"Accessory $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$bonus1$% MP Regen",
+				"+$bonus2$% Casting Speed",
+			],
+			"BaseBonus1": 15,
+			"Multiplier1": 2,
+			"BaseBonus2": 8,
+			"Multiplier2": 2,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50040": {
+			"identifiedDisplayName": "Verdant Runestone",
+			"identifiedResourceName": "\xb7\xe9\xbd\xba\xc5\xe6_\xba\xa3\xb8\xa3\xc4\xab\xb3\xaa",
+			"identifiedDescriptionName": [
+				"Accessory $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$bonus1$% HP Regen",
+			],
+			"BaseBonus1": 20,
+			"Multiplier1": 3,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50041": {
+			"identifiedDisplayName": "Warding Herbs",
+			"identifiedResourceName": "\xb5\xb6\xc3\xca_\xbd\xba\xc4\xda\xc6\xfa\xb8\xae\xbe\xc6",
+			"identifiedDescriptionName": [
+				"Accessory $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"-$bonus1$% Status Ailment Duration",
+			],
+			"BaseBonus1": 10,
+			"Multiplier1": 2,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50042": {
+			"identifiedDisplayName": "Golden Coin",
+			"identifiedResourceName": "\xb0\xf1\xb5\xe5\xc4\xda\xc0\xce",
+			"identifiedDescriptionName": [
+				"Accessory $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$bonus1$ LUK",
+			],
+			"BaseBonus1": 5,
+			"Multiplier1": 10,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50043": {
+			"identifiedDisplayName": "Badge of Valor",
+			"identifiedResourceName": "\xc0\xfc\xc5\xf5\xc8\xd6\xc0\xe5",
+			"identifiedDescriptionName": [
+				"Accessory $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$bonus1$% Basic Attack Damage",
+			],
+			"BaseBonus1": 10,
+			"Multiplier1": 3,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50044": {
+			"identifiedDisplayName": "Silver Armlet",
+			"identifiedResourceName": "\xc0\xba\xbc\xbc\xb0\xf8\xc6\xc8\xc2\xee",
+			"identifiedDescriptionName": [
+				"Accessory $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$bonus3$% to CRIT",
+			],
+			"BaseBonus3": 10,
+			"Multiplier3": 4,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+			"50045": {
+			"identifiedDisplayName": "Iron Bangle",
+			"identifiedResourceName": "\xbe\xc6\xc0\xcc\xbe\xf0\xb8\xae\xbd\xba\xc6\xae",
+			"identifiedDescriptionName": [
+				"Accessory $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$bonus1$% to CRIT DMG",
+			],
+			"BaseBonus1": 10,
+			"Multiplier1": 4,
 			"Rating": 3,
 			"slotCount": 0,
 			"ClassNum": 1
@@ -354,7 +854,7 @@ define(function()
 			"identifiedResourceName": "\xbd\xc3\xb9\xcc\xc5\xcd",
 			"identifiedDescriptionName": [
 				"Shortsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -362,14 +862,14 @@ define(function()
 			"BaseATK": 8,
 			"Rating": 1,
 			"slotCount": 0,
-			"ClassNum": 1
+			"ClassNum": 2
 		},
 		"51001": {
 			"identifiedDisplayName": "Arming Sword",
 			"identifiedResourceName": "\xbd\xba\xc5\xb8\xba\xed\xb7\xb9\xc0\xcc\xb5\xe5",
 			"identifiedDescriptionName": [
 				"Shortsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -377,14 +877,14 @@ define(function()
 			"BaseATK": 9,
 			"Rating": 2,
 			"slotCount": 0,
-			"ClassNum": 1
+			"ClassNum": 2
 		},
 		"51002": {
 			"identifiedDisplayName": "Hallowed Sabre",
 			"identifiedResourceName": "\xbc\xbc\xc0\xcc\xb9\xf6",
 			"identifiedDescriptionName": [
 				"Shortsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -392,59 +892,14 @@ define(function()
 			"BaseATK": 10,
 			"Rating": 3,
 			"slotCount": 0,
-			"ClassNum": 1
+			"ClassNum": 2
 		},
 		"51003": {
-			"identifiedDisplayName": "Iron Blade",
-			"identifiedResourceName": "\xb9\xd9\xbd\xba\xc5\xb8\xb5\xe5\xbc\xd2\xb5\xe5",
-			"identifiedDescriptionName": [
-				"Knightsword $r$",
-				"Item Level $ilvl$",
-				"Quality: $quality$%",
-				" ",
-				"Weapon Power: $atk$",
-			],
-			"BaseATK": 10,
-			"Rating": 1,
-			"slotCount": 0,
-			"ClassNum": 3
-		},
-		"51004": {
-			"identifiedDisplayName": "Broadsword",
-			"identifiedResourceName": "\xba\xea\xb7\xce\xb5\xe5\xbc\xd2\xb5\xe5",
-			"identifiedDescriptionName": [
-				"Knightsword $r$",
-				"Item Level $ilvl$",
-				"Quality: $quality$%",
-				" ",
-				"Weapon Power: $atk$",
-			],
-			"BaseATK": 11,
-			"Rating": 2,
-			"slotCount": 0,
-			"ClassNum": 3
-		},
-		"51005": {
-			"identifiedDisplayName": "Claymore",
-			"identifiedResourceName": "\xc5\xa9\xb7\xb9\xc0\xcc\xb8\xf0\xbe\xee",
-			"identifiedDescriptionName": [
-				"Knightsword $r$",
-				"Item Level $ilvl$",
-				"Quality: $quality$%",
-				" ",
-				"Weapon Power: $atk$",
-			],
-			"BaseATK": 12,
-			"Rating": 3,
-			"slotCount": 0,
-			"ClassNum": 3
-		},
-		"51006": {
 			"identifiedDisplayName": "Cudgel",
 			"identifiedResourceName": "\xbd\xba\xb8\xc5\xbc\xc5",
 			"identifiedDescriptionName": [
-				"Maul $r$",
-				"Item Level $ilvl$",
+				"Mace $r$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -454,12 +909,12 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 8
 		},
-		"51007": {
+		"51004": {
 			"identifiedDisplayName": "Morningstar",
 			"identifiedResourceName": "\xb8\xf0\xb4\xd7\xbd\xba\xc5\xb8",
 			"identifiedDescriptionName": [
-				"Maul $r$",
-				"Item Level $ilvl$",
+				"Mace $r$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -469,12 +924,12 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 8
 		},
-		"51008": {
+		"51005": {
 			"identifiedDisplayName": "Aklys",
 			"identifiedResourceName": "\xc4\xab\xb8\xa3\xb0\xa1\xb8\xde\xc0\xcc\xbd\xba",
 			"identifiedDescriptionName": [
-				"Maul $r$",
-				"Item Level $ilvl$",
+				"Mace $r$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -484,47 +939,239 @@ define(function()
 			"slotCount": 0,
 			"ClassNum": 8
 		},
+		"51006": {
+			"identifiedDisplayName": "Spiritual Dagger",
+			"identifiedResourceName": "\xbe\xc6\xbd\xb4\xb6\xf3",
+			"identifiedDescriptionName": [
+				"Athame $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$mag$ MAG",
+				"+$cspd$% Casting Speed",
+			],
+			"BaseMAG": 7,
+			"BaseCSPD": 10,
+			"Rating": 1,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+		"51007": {
+			"identifiedDisplayName": "Ceremonial Dagger",
+			"identifiedResourceName": "\xbf\xa1\xc0\xce\xbc\xc7\xc6\xae\xb4\xeb\xb0\xc5",
+			"identifiedDescriptionName": [
+				"Athame $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$mag$ MAG",
+				"+$cspd$% Casting Speed",
+			],
+			"BaseMAG": 8,
+			"BaseCSPD": 10,
+			"Rating": 2,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
+		"51008": {
+			"identifiedDisplayName": "Ivory Dagger",
+			"identifiedResourceName": "\xc7\xcf\xc4\xed\xc1\xf8",
+			"identifiedDescriptionName": [
+				"Athame $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"+$mag$ MAG",
+				"+$cspd$% Casting Speed",
+			],
+			"BaseMAG": 9,
+			"BaseCSPD": 10,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 1
+		},
 		"51009": {
+			"identifiedDisplayName": "Longsword",
+			"identifiedResourceName": "\xb9\xd9\xbd\xba\xc5\xb8\xb5\xe5\xbc\xd2\xb5\xe5",
+			"identifiedDescriptionName": [
+				"Knightsword $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"Basic Attacks Cleave"
+			],
+			"BaseATK": 12,
+			"Rating": 1,
+			"slotCount": 0,
+			"ClassNum": 3
+		},
+		"51010": {
+			"identifiedDisplayName": "Claymore",
+			"identifiedResourceName": "\xc5\xa9\xb7\xb9\xc0\xcc\xb8\xf0\xbe\xee",
+			"identifiedDescriptionName": [
+				"Knightsword $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"Basic Attacks Cleave"
+			],
+			"BaseATK": 13,
+			"Rating": 2,
+			"slotCount": 0,
+			"ClassNum": 3
+		},
+		"51011": {
+			"identifiedDisplayName": "Zweihander",
+			"identifiedResourceName": "\xc1\xee\xb9\xd9\xc0\xcc\xc7\xda\xb4\xf5",
+			"identifiedDescriptionName": [
+				"Knightsword $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+				" ",
+				"Basic Attacks Cleave"
+			],
+			"BaseATK": 14,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 3
+		},
+		"51012": {
+			"identifiedDisplayName": "Broadaxe",
+			"identifiedResourceName": "\xb9\xe8\xc6\xb2\xbe\xd7\xbd\xba",
+			"identifiedDescriptionName": [
+				"Axe $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+			],
+			"BaseATK": 21,
+			"Rating": 1,
+			"slotCount": 0,
+			"ClassNum": 7
+		},
+		"51013": {
+			"identifiedDisplayName": "Battleaxe",
+			"identifiedResourceName": "\xbf\xc0\xc5\xb0\xbd\xac\xbe\xd7\xbd\xba",
+			"identifiedDescriptionName": [
+				"Axe $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+			],
+			"BaseATK": 22,
+			"Rating": 2,
+			"slotCount": 0,
+			"ClassNum": 7
+		},
+		"51014": {
+			"identifiedDisplayName": "Grand Labrys",
+			"identifiedResourceName": "\xb1\xd7\xb7\xb9\xc0\xcc\xc6\xae\xbe\xd7\xbd\xba",
+			"identifiedDescriptionName": [
+				"Axe $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+			],
+			"BaseATK": 23,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 7
+		},
+		"51015": {
+			"identifiedDisplayName": "Cedar Bow",
+			"identifiedResourceName": "\xba\xb8\xbf\xec",
+			"identifiedDescriptionName": [
+				"Bow $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+			],
+			"BaseATK": 13,
+			"Rating": 1,
+			"slotCount": 0,
+			"ClassNum": 11
+		},
+		"51016": {
+			"identifiedDisplayName": "Composite Bow",
+			"identifiedResourceName": "\xb5\xb5\xb5\xcf\xc0\xc7\xc8\xb0",
+			"identifiedDescriptionName": [
+				"Bow $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+			],
+			"BaseATK": 14,
+			"Rating": 2,
+			"slotCount": 0,
+			"ClassNum": 11
+		},
+		"51017": {
+			"identifiedDisplayName": "Hunting Bow",
+			"identifiedResourceName": "\xc7\xe5\xc5\xcd\xba\xb8\xbf\xec",
+			"identifiedDescriptionName": [
+				"Bow $r$",
+				"Item Level: $ilvl$",
+				"Quality: $quality$%",
+				" ",
+				"Weapon Power: $atk$",
+			],
+			"BaseATK": 15,
+			"Rating": 3,
+			"slotCount": 0,
+			"ClassNum": 11
+		},
+		"51018": {
 			"identifiedDisplayName": "Oak Staff",
 			"identifiedResourceName":  "\xb7\xd4\xb5\xe5",
 			"identifiedDescriptionName": [
 				"Staff $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"+$mag$ MAG",
 			],
-			"BaseMAG": 10,
+			"BaseMAG": 16,
 			"Rating": 1,
 			"slotCount": 0,
 			"ClassNum": 10
 		},
-		"51010": {
+		"51019": {
 			"identifiedDisplayName": "Arcane Wand",
 			"identifiedResourceName": "\xbe\xc6\xc5\xa9\xbf\xcf\xb5\xe5",
 			"identifiedDescriptionName": [
 				"Staff $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"+$mag$ MAG",
 			],
-			"BaseMAG": 11,
+			"BaseMAG": 17,
 			"Rating": 2,
 			"slotCount": 0,
 			"ClassNum": 10
 		},
-		"51011": {
+		"51020": {
 			"identifiedDisplayName": "Ruby Rod",
 			"identifiedResourceName": "\xc4\xa1\xc0\xaf\xc0\xc7\xc1\xf6\xc6\xce\xc0\xcc",
 			"identifiedDescriptionName": [
 				"Staff $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"+$mag$ MAG",
 			],
-			"BaseMAG": 12,
+			"BaseMAG": 18,
 			"Rating": 3,
 			"slotCount": 0,
 			"ClassNum": 10
@@ -662,7 +1309,7 @@ define(function()
 				"+$hp$ HP",
 				"+$mp$ MP",
 				"+$def$ DEF",
-				"+$cel$% MSPD",
+				"+$cel$% to MSPD",
 			],
 			"BaseHP": 39,
 			"BaseMP": 14,
@@ -1059,7 +1706,7 @@ define(function()
 				"Quality: $quality$%",
 				" ",
 				"+$eva$ EVA",
-				"+$cel$% MSPD",
+				"+$cel$% to MSPD",
 			],
 			"BaseEVADE": 12,
 			"BaseCEL": 4,
@@ -1113,7 +1760,7 @@ define(function()
 				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
-				"+$cel$% MSPD",
+				"+$cel$% to MSPD",
 			],
 			"BaseCEL": 13,
 			"Rating": 4,
@@ -1130,7 +1777,7 @@ define(function()
 				" ",
 				"+$hp$ HP",
 				"+$def$ DEF",
-				"+$cel$% MSPD",
+				"+$cel$% to MSPD",
 				"+35 LUK",
 			],
 			"BaseHP": 10,
@@ -1150,7 +1797,7 @@ define(function()
 				" ",
 				"+$hp$ HP",
 				"+$def$ DEF",
-				"+$cel$% MSPD",
+				"+$cel$% to MSPD",
 				" ",
 				"Grants [Shadowstep].",
 			],
@@ -1171,7 +1818,7 @@ define(function()
 				" ",
 				"+$hp$ HP",
 				"+$def$ DEF",
-				"+$cel$% MSPD",
+				"+$cel$% to MSPD",
 				" ",
 				"Grants [Rest].",
 				" ",
@@ -1211,7 +1858,7 @@ define(function()
 				" ",
 				"+$hp$ HP",
 				"+$def$ DEF",
-				"+$cel$% MSPD",
+				"+$cel$% to MSPD",
 				" ",
 				"You rapidly regenerate HP\nwhile moving.",
 			],
@@ -1361,7 +2008,7 @@ define(function()
 			"identifiedResourceName": "\x68\x79\x64\x72\x61\x6E\x67\x65\x61",
 			"identifiedDescriptionName": [
 				"Knightsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1383,7 +2030,7 @@ define(function()
 			"identifiedResourceName": "\xbe\xee\xbb\xf5\xbd\xc5\xb4\xeb\xb0\xc5",
 			"identifiedDescriptionName": [
 				"Shortsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1404,7 +2051,7 @@ define(function()
 			"identifiedResourceName": "\xc8\xab\xb7\xc3\xc0\xc7\xb0\xcb",
 			"identifiedDescriptionName": [
 				"Shortsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1423,7 +2070,7 @@ define(function()
 			"identifiedResourceName": "\xc5\xd7\xc0\xcf\xc7\xce",
 			"identifiedDescriptionName": [
 				"Shortsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1442,7 +2089,7 @@ define(function()
 			"identifiedResourceName": "\xc5\xc2\xbe\xe7\xb0\xcb",
 			"identifiedDescriptionName": [
 				"Shortsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1459,7 +2106,7 @@ define(function()
 			"identifiedResourceName": "\xbf\xa4\xb7\xb9\xb8\xe0\xc5\xbb\xbc\xd2\xb5\xe5",
 			"identifiedDescriptionName": [
 				"Shortsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1476,7 +2123,7 @@ define(function()
 			"identifiedResourceName": "\xbf\xa2\xbd\xba\xc4\xae\xb8\xae\xb9\xf6",
 			"identifiedDescriptionName": [
 				"Shortsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1495,7 +2142,7 @@ define(function()
 			"identifiedResourceName": "\xbd\xb4\xb9\xd9\xc0\xcc\xc3\xbc\xb8\xa3\xbb\xfe\xba\xa7",
 			"identifiedDescriptionName": [
 				"Shortsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1514,7 +2161,7 @@ define(function()
 			"identifiedResourceName": "\xbe\xc6\xc0\xcc\xbd\xba\xc6\xc8\xbd\xc3\xbf\xc2",
 			"identifiedDescriptionName": [
 				"Shortsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1533,7 +2180,7 @@ define(function()
 			"identifiedResourceName": "\xbf\xc0\xc5\xb0\xbd\xac\xbc\xd2\xb5\xe5",
 			"identifiedDescriptionName": [
 				"Shortsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1550,7 +2197,7 @@ define(function()
 			"identifiedResourceName": "\xb7\xe7\xba\xa3\xb8\xa3",
 			"identifiedDescriptionName": [
 				"Shortsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1569,7 +2216,7 @@ define(function()
 			"identifiedResourceName": "\xba\xed\xb7\xaf\xb5\xf0\xc0\xcc\xc5\xcd",
 			"identifiedDescriptionName": [
 				"Knightsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1590,7 +2237,7 @@ define(function()
 			"identifiedResourceName": "\xbe\xcb\xc4\xab\xba\xea\xb8\xb5\xb0\xc5",
 			"identifiedDescriptionName": [
 				"Knightsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1610,7 +2257,7 @@ define(function()
 			"identifiedResourceName": "\xbe\xc6\xc6\xae\xb7\xce\xbd\xba\xc0\xc7\xc8\xe4\xb1\xe2",
 			"identifiedDescriptionName": [
 				"Knightsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1630,7 +2277,7 @@ define(function()
 			"identifiedResourceName": "\xc4\xab\xc3\xf7\xb9\xdf\xb0\xd4\xb8\xa3",
 			"identifiedDescriptionName": [
 				"Knightsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1651,7 +2298,7 @@ define(function()
 			"identifiedResourceName": "\xc5\xa9\xb7\xd2\xb8\xde\xc5\xbb\xc5\xf5\xc7\xda\xb5\xe5\xbc\xd2\xb5\xe5",
 			"identifiedDescriptionName": [
 				"Knightsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1673,7 +2320,7 @@ define(function()
 			"identifiedResourceName": "\xc1\xd7\xc0\xbd\xc0\xc7\xc0\xce\xb5\xb5\xc0\xda",
 			"identifiedDescriptionName": [
 				"Knightsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1690,7 +2337,7 @@ define(function()
 			"identifiedResourceName": "\xb5\xe5\xb7\xa1\xb0\xef\xbd\xbd\xb7\xb9\xc0\xcc\xbe\xee",
 			"identifiedDescriptionName": [
 				"Knightsword $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1707,7 +2354,7 @@ define(function()
 			"identifiedResourceName": "\xb1\xe6\xb7\xce\xc6\xbe",
 			"identifiedDescriptionName": [
 				"Maul $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1724,7 +2371,7 @@ define(function()
 			"identifiedResourceName": "\xb9\xf6\xb5\xf0\xbd\xb4",
 			"identifiedDescriptionName": [
 				"Maul $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1741,7 +2388,7 @@ define(function()
 			"identifiedResourceName": "\xba\xea\xb6\xf3\xb5\xf0\xbf\xf2\xb5\xb9\xb8\xc1\xc4\xa1",
 			"identifiedDescriptionName": [
 				"Maul $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1761,7 +2408,7 @@ define(function()
 			"identifiedResourceName": "\xb1\xd7\xb7\xb9\xc0\xcc\xc6\xae\xbe\xd7\xbd\xba",
 			"identifiedDescriptionName": [
 				"Maul $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1778,7 +2425,7 @@ define(function()
 			"identifiedResourceName": "\xba\xa3\xc5\xd7\xb6\xfb\xbe\xd7\xbd\xba",
 			"identifiedDescriptionName": [
 				"Maul $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1798,7 +2445,7 @@ define(function()
 			"identifiedResourceName": "\xc7\xd8\xb0\xf1\xc1\xf6\xc6\xce\xc0\xcc",
 			"identifiedDescriptionName": [
 				"Maul $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1817,7 +2464,7 @@ define(function()
 			"identifiedResourceName": "\xba\xa3\xc5\xd7\xb6\xfb\xc7\xdc\xb8\xd3",
 			"identifiedDescriptionName": [
 				"Maul $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1836,7 +2483,7 @@ define(function()
 			"identifiedResourceName": "\xbd\xba\xc6\xd0\xb3\xca",
 			"identifiedDescriptionName": [
 				"Maul $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1853,7 +2500,7 @@ define(function()
 			"identifiedResourceName": "\xbe\xc6\xc0\xcc\xbe\xf0\xb5\xe5\xb6\xf3\xc0\xcc\xb9\xf6",
 			"identifiedDescriptionName": [
 				"Maul $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
@@ -1872,12 +2519,12 @@ define(function()
 			"identifiedResourceName": "\xb0\xed\xbe\xe7\xc0\xcc\xc5\xac\xb7\xb4",
 			"identifiedDescriptionName": [
 				"Maul $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"Weapon Power: $atk$",
 				" ",
-				"+$cel$% MSPD",
+				"+$cel$% to MSPD",
 				"$bonus1$% Chance to Bleed on Hit",
 			],
 			"BaseATK": 1,
@@ -1893,7 +2540,7 @@ define(function()
 			"identifiedResourceName": "\xba\xfb\xc0\xc7\xbc\xf6\xc8\xa3\xc1\xf6\xc6\xce\xc0\xcc",
 			"identifiedDescriptionName": [
 				"Staff $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"+$mag$ MAG",
@@ -1912,7 +2559,7 @@ define(function()
 			"identifiedResourceName": "\xbf\xe4\xb8\xa3\xb9\xae\xb0\xa3\xb5\xe5",
 			"identifiedDescriptionName": [
 				"Staff $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"+$mag$ MAG",
@@ -1929,7 +2576,7 @@ define(function()
 			"identifiedResourceName": "\xb8\xae\xc4\xa1\xc7\xd8\xb0\xf1\xc1\xf6\xc6\xce\xc0\xcc",
 			"identifiedDescriptionName": [
 				"Staff $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"+$mag$ MAG",
@@ -1946,7 +2593,7 @@ define(function()
 			"identifiedResourceName": "\xb8\xb1\xb8\xae\xc1\xee\xbf\xc0\xba\xea\xc0\xa7\xbd\xba",
 			"identifiedDescriptionName": [
 				"Staff $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"+$mag$ MAG",
@@ -1963,12 +2610,12 @@ define(function()
 			"identifiedResourceName": "\xbd\xba\xc5\xc2\xc7\xc1\xbf\xc0\xba\xea\xc0\xae",
 			"identifiedDescriptionName": [
 				"Staff $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"+$mag$ MAG",
 				" ",
-				"You gain $bonus1$% MSPD after hitting\nan enemy with a spell.",
+				"You gain $bonus1$% to MSPD after hitting\nan enemy with a spell.",
 			],
 			"BaseMAG": 9,
 			"BaseBonus1": 10,
@@ -1982,7 +2629,7 @@ define(function()
 			"identifiedResourceName": "\xb0\xed\xb8\xf1\xb3\xaa\xb9\xab\xc1\xf6\xc6\xce\xc0\xcc",
 			"identifiedDescriptionName": [
 				"Staff $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"+$mag$ MAG",
@@ -1999,7 +2646,7 @@ define(function()
 			"identifiedResourceName": "\xb8\xde\xc5\xbb\xbd\xba\xc5\xc2\xc7\xc1",
 			"identifiedDescriptionName": [
 				"Staff $r$",
-				"Item Level $ilvl$",
+				"Item Level: $ilvl$",
 				"Quality: $quality$%",
 				" ",
 				"+$mag$ MAG",
@@ -2017,8 +2664,8 @@ define(function()
 			"identifiedDescriptionName": [
 				"+$roll1$ STR",
 			],
-			"BaseRoll1": 4,
-			"RollMultiplier1": 3,
+			"BaseRoll1": 2,
+			"RollMultiplier1": 5,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2028,8 +2675,8 @@ define(function()
 			"identifiedDescriptionName": [
 				"+$roll1$ AGI",
 			],
-			"BaseRoll1": 4,
-			"RollMultiplier1": 3,
+			"BaseRoll1": 2,
+			"RollMultiplier1": 5,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2039,8 +2686,8 @@ define(function()
 			"identifiedDescriptionName": [
 				"+$roll1$ VIT",
 			],
-			"BaseRoll1": 4,
-			"RollMultiplier1": 3,
+			"BaseRoll1": 2,
+			"RollMultiplier1": 5,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2050,19 +2697,19 @@ define(function()
 			"identifiedDescriptionName": [
 				"+$roll1$ INT",
 			],
-			"BaseRoll1": 4,
-			"RollMultiplier1": 3,
+			"BaseRoll1": 2,
+			"RollMultiplier1": 5,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
 		"55004": {
-			"identifiedDisplayName": "Shard of Precision",
+			"identifiedDisplayName": "Shard of Mastery",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+$roll1$ PRE",
+				"+$roll1$ MST",
 			],
-			"BaseRoll1": 4,
-			"RollMultiplier1": 3,
+			"BaseRoll1": 2,
+			"RollMultiplier1": 5,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2125,10 +2772,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Critical Chance",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+$roll1$ CRIT",
+				"+$roll3$% to CRIT",
 			],
-			"BaseRoll1": 1,
-			"RollMultiplier1": 6,
+			"BaseRoll3": 10,
+			"RollMultiplier3": 6,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2136,7 +2783,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Critical Damage",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+$roll1$% CRIT DMG",
+				"+$roll1$% to CRIT DMG",
 			],
 			"BaseRoll1": 6,
 			"RollMultiplier1": 2,
@@ -2160,8 +2807,8 @@ define(function()
 			"identifiedDescriptionName": [
 				"+$roll1$ EVA",
 			],
-			"BaseRoll1": 1,
-			"RollMultiplier1": 4,
+			"BaseRoll1": 5,
+			"RollMultiplier1": 5,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2169,7 +2816,7 @@ define(function()
 			"identifiedDisplayName": "Shard of Movespeed",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+$roll1$% MSPD",
+				"+$roll1$% to MSPD",
 			],
 			"BaseRoll1": 4,
 			"RollMultiplier1": 2,
@@ -2202,10 +2849,10 @@ define(function()
 			"identifiedDisplayName": "Shard of Lifesteal",
 			"identifiedResourceName": "\xc5\xa9\xb8\xae\xbd\xba\xc5\xbb\xc5\xb0",
 			"identifiedDescriptionName": [
-				"+$roll1$% Lifesteal",
+				"+$roll3$% Lifesteal",
 			],
-			"BaseRoll1": 1,
-			"RollMultiplier1": 5,
+			"BaseRoll3": 5,
+			"RollMultiplier3": 10,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
@@ -2246,18 +2893,18 @@ define(function()
 			"identifiedDisplayName": "Seal of Lethality",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+$roll1$ CRIT",
-				"+$roll2$% CRIT DMG",
+				"+$roll3$% to CRIT",
+				"+$roll2$% to CRIT DMG",
 			],
-			"BaseRoll1": 4,
-			"RollMultiplier1": 3,
+			"BaseRoll3": 40,
+			"RollMultiplier3": 3,
 			"BaseRoll2": 10,
 			"RollMultiplier2": 3,
 			"slotCount": 0,
 			"ClassNum": 0
 		},
 		"55103": {
-			"identifiedDisplayName": "Seal of Mastery",
+			"identifiedDisplayName": "Seal of Aptitude",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
 				"-$roll1$% MP Consumption",
@@ -2327,8 +2974,8 @@ define(function()
 			"identifiedDisplayName": "Seal of Paralysis",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+$roll1$% Chance to Stun on hit",
-				"+$roll2$% Chance to Stun attackers",
+				"+$roll1$% Chance to Stun with attacks",
+				"+$roll2$% Chance to Stun when hit",
 			],
 			"BaseRoll1": 5,
 			"RollMultiplier1": 2,
@@ -2341,8 +2988,8 @@ define(function()
 			"identifiedDisplayName": "Seal of Venom",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+$roll1$% Chance to Poison on hit",
-				"+$roll2$% Chance to Poison attackers",
+				"+$roll1$% Chance to Poison with attacks",
+				"+$roll2$% Chance to Poison when hit",
 			],
 			"BaseRoll1": 10,
 			"RollMultiplier1": 2,
@@ -2355,8 +3002,8 @@ define(function()
 			"identifiedDisplayName": "Seal of Hoarfrost",
 			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
 			"identifiedDescriptionName": [
-				"+$roll1$% Chance to Freeze on hit",
-				"+$roll2$% Chance to Freeze attackers",
+				"+$roll1$% Chance to Freeze with attacks",
+				"+$roll2$% Chance to Freeze when hit",
 			],
 			"BaseRoll1": 5,
 			"RollMultiplier1": 2,
@@ -2373,60 +3020,6 @@ define(function()
 			],
 			"BaseRoll1": 15,
 			"RollMultiplier1": 2,
-			"slotCount": 0,
-			"ClassNum": 0
-		},
-		"55113": {
-			"identifiedDisplayName": "Seal of Sunder",
-			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
-			"identifiedDescriptionName": [
-				"+1 to [Sunder]",
-			],
-			"slotCount": 0,
-			"ClassNum": 0
-		},
-		"55114": {
-			"identifiedDisplayName": "Seal of Cleave",
-			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
-			"identifiedDescriptionName": [
-				"+1 to [Cleave]",
-			],
-			"slotCount": 0,
-			"ClassNum": 0
-		},
-		"55115": {
-			"identifiedDisplayName": "Seal of Echo Blade",
-			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
-			"identifiedDescriptionName": [
-				"+1 to [Echo Blade]",
-			],
-			"slotCount": 0,
-			"ClassNum": 0
-		},
-		"55116": {
-			"identifiedDisplayName": "Seal of Terraspine",
-			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
-			"identifiedDescriptionName": [
-				"+1 to [Terraspine]",
-			],
-			"slotCount": 0,
-			"ClassNum": 0
-		},
-		"55117": {
-			"identifiedDisplayName": "Seal of Expunge",
-			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
-			"identifiedDescriptionName": [
-				"+2 to [Expunge]",
-			],
-			"slotCount": 0,
-			"ClassNum": 0
-		},
-		"55118": {
-			"identifiedDisplayName": "Seal of Quake",
-			"identifiedResourceName": "\xb8\xb6\xb7\xc2\xbc\xae_\xb3\xeb\xb6\xfb",
-			"identifiedDescriptionName": [
-				"+2 to [Quake]",
-			],
 			"slotCount": 0,
 			"ClassNum": 0
 		},

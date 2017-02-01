@@ -177,6 +177,9 @@ define( function( require )
 				// Already set
 				case 'sex':
 				case 'job':
+					if(unit.classes) {
+						this.job = parseClass(unit.classes);
+					}
 					break;
 
 				// Not used ?
@@ -253,7 +256,42 @@ define( function( require )
 		}
 	};
 
-
+	function parseClass( classes ) {
+		switch ((classes>>24) & 0xFF) {
+			case 0x00: return 0; break;
+			case 0x01: return 1; break;
+			case 0x02: return 7; break;
+			case 0x03: return 14; break;
+			case 0x04: return 4008; break;
+			case 0x05: return 4015; break;
+			case 0x06: return 6; break;
+			case 0x07: return 12; break;
+			case 0x08: return 17; break;
+			case 0x09: return 4013; break;
+			case 0x0A: return 4018; break;
+			case 0x0B: return 4; break;
+			case 0x0C: return 8; break;
+			case 0x0D: return 15; break;
+			case 0x0E: return 4009; break;
+			case 0x0F: return 4016; break;
+			case 0x10: return 3; break;
+			case 0x11: return 11; break;
+			case 0x12: return 19; break;
+			case 0x13: return 4012; break;
+			case 0x14: return 4020; break;
+			case 0x15: return 2; break;
+			case 0x16: return 9; break;
+			case 0x17: return 16; break;
+			case 0x18: return 4010; break;
+			case 0x19: return 4017; break;
+			case 0x1A: return 5; break;
+			case 0x1B: return 10; break;
+			case 0x1C: return 18; break;
+			case 0x1D: return 4011; break;
+			case 0x1E: return 4019; break;
+		}
+		return 1;
+	}
 	/**
 	 * Remove Entity's attached GUI
 	 */

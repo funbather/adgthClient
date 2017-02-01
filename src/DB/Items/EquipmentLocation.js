@@ -24,6 +24,8 @@ define(function()
 		ACCESSORY2:  1 << 7,
 		HEAD_TOP:    1 << 8,
 		HEAD_MID:    1 << 9,
-		AMMO:        1 << 15
+		AMMO:        1 << 15,
+		GLOVES:      1 << 16,
+		BELT:        1 << 19
 	};
 });

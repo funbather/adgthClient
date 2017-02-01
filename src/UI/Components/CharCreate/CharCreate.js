@@ -78,8 +78,12 @@ define(function(require)
 		this.ui.find('.statbutton'    ).mousedown(updateStats);
 		this.ui.find('.male'          ).mousedown(updateCharacterGeneric('sex', 1));
 		this.ui.find('.female'        ).mousedown(updateCharacterGeneric('sex', 0));
-		this.ui.find('.pickWR'        ).mousedown(updateCharacterGeneric('job', 31));
-		this.ui.find('.pickTR'        ).mousedown(updateCharacterGeneric('job', 32));
+		this.ui.find('.pickSWD'       ).mousedown(updateCharacterGeneric('job', 0x01000001));
+		this.ui.find('.pickTHF'       ).mousedown(updateCharacterGeneric('job', 0x06000010));
+		this.ui.find('.pickACO'       ).mousedown(updateCharacterGeneric('job', 0x0B000100));
+		this.ui.find('.pickARC'       ).mousedown(updateCharacterGeneric('job', 0x10001000));
+		this.ui.find('.pickMGN'       ).mousedown(updateCharacterGeneric('job', 0x15010000));
+		this.ui.find('.pickMRC'       ).mousedown(updateCharacterGeneric('job', 0x1A100000));
 		//this.ui.find('.graph button'  ).mousedown(updateStats);
 
 		this.ui.find('input').mousedown(function(event){
@@ -111,7 +115,7 @@ define(function(require)
 		_chargen.render = true;
 		_chargen.entity.set({
 			sex:_accountSex,
-			job:    31,
+			job:    1,
 			head:   2,
 			action: 0
 		});
@@ -190,15 +194,27 @@ define(function(require)
 			parseInt( ui.find('.info .agi').text(), 10),
 			parseInt( ui.find('.info .vit').text(), 10),
 			parseInt( ui.find('.info .int').text(), 10),
-			parseInt( ui.find('.info .pre').text(), 10),
+			parseInt( ui.find('.info .mst').text(), 10),
 			0,
 			_chargen.entity.head,
 			_chargen.entity.headpalette,
 			_chargen.entity.sex,
-			_chargen.entity.job
+			33,
+			parseJobClass( ui.find('.jobname').text())
 		);
 	}
 
+	function parseJobClass( name ) {
+		switch (name) {
+			case "Swordsman": return 0x01000001;
+			case "Thief": return 0x06000010;
+			case "Acolyte": return 0x0B000100;
+			case "Archer": return 0x10001000;
+			case "Magician": return 0x15010000;
+			case "Merchant": return 0x1A100000;
+		}
+		return 0x01000001;
+	}
 
 	/**
 	 * Exit the window
@@ -242,16 +258,32 @@ define(function(require)
 				break;
 				
 			case 'job':
-				_chargen.entity.job = increment;
+				//_chargen.entity.classes = increment;
 				
 				switch (increment) {
-					case 31:
-						CharCreate.ui.find('.jobname').text("Warrior");
-						CharCreate.ui.find('.jobdesc').text("Versatile Physical Fighter\n\nCan wield two-handed weapons in one hand.");
+					case 0x01000001:
+						_chargen.entity.job = 1;
+						CharCreate.ui.find('.jobname').text("Swordsman");
 						break;
-					case 32:
-						CharCreate.ui.find('.jobname').text("Terramancer");
-						CharCreate.ui.find('.jobdesc').text("Support Spellcaster.\n\nMastery over Earth and Poison elements.");
+					case 0x06000010:
+						_chargen.entity.job = 6;
+						CharCreate.ui.find('.jobname').text("Thief");
+						break;
+					case 0x0B000100:
+						_chargen.entity.job = 4;
+						CharCreate.ui.find('.jobname').text("Acolyte");
+						break;
+					case 0x10001000:
+						_chargen.entity.job = 3;
+						CharCreate.ui.find('.jobname').text("Archer");
+						break;
+					case 0x15010000:
+						_chargen.entity.job = 2;
+						CharCreate.ui.find('.jobname').text("Magician");
+						break;
+					case 0x1A100000:
+						_chargen.entity.job = 5;
+						CharCreate.ui.find('.jobname').text("Merchant");
 						break;
 				}
 				break;
@@ -325,11 +357,11 @@ define(function(require)
 	function render( tick )
 	{
 		// Update direction each 500ms
-		if (_chargen.tick + 1000 < tick) {
-			Camera.direction++;
-			Camera.direction %= 8;
-			_chargen.tick = tick;
-		}
+		//if (_chargen.tick + 1000 < tick) {
+		//	Camera.direction++;
+		//	Camera.direction %= 8;
+		//	_chargen.tick = tick;
+		//}
 
 		// Rendering
 		SpriteRenderer.bind2DContext(_chargen.ctx, 32, 115);

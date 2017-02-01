@@ -25,7 +25,55 @@ define(['./StatusConst'], function( SC )
 
 
 	var StatusInfo = {};
-	
+
+	StatusInfo[SC.SWASHBUCKLING] = {
+		icon: "\xc7\xc1\xb7\xce\xba\xb8\xc5\xa9.tga",
+		descript: [
+			["Swashbuckling", COLOR_TITLE_BUFF],
+			["ATK reduced."],
+		]
+	};
+
+	StatusInfo[SC.SECONDWIND] = {
+		icon: "\xbc\xf6\xc1\xdd\xc0\xba\xc7\xcf\xb7\xe7\xc0\xc7\xbf\xec\xbf\xef.tga",
+		descript: [
+			["Second Wind", COLOR_TITLE_BUFF],
+			["Rapidly regenerating HP."],
+		]
+	};
+
+	StatusInfo[SC.EYETOEYE] = {
+		icon: "\xc4\xc9\xb9\xcc\xc4\xc3\xc7\xc1\xb7\xce\xc5\xd8\xbc\xc7\x5b\xbd\xaf\xb5\xe5\x5d.tga",
+		descript: [
+			["Eye to Eye", COLOR_TITLE_BUFF],
+			["Block chance increased."],
+		]
+	};
+
+	StatusInfo[SC.ENDURE_] = {
+		icon: "earthenshield.tga",
+		descript: [
+			["Endure", COLOR_TITLE_BUFF],
+			["HP barrier active."],
+		]
+	};
+
+	StatusInfo[SC.CAMO] = {
+		icon: "\xc7\xcf\xc0\xcc\xb5\xf9.tga",
+		descript: [
+			["Camouflage", COLOR_TITLE_BUFF],
+			["EVA increased."],
+		]
+	};
+
+	StatusInfo[SC.DOUBLETEAM] = {
+		icon: "\xc5\xf5\xc7\xda\xb5\xe5\xc4\xfb\xc5\xab.tga",
+		descript: [
+			["Double Team", COLOR_TITLE_BUFF],
+			["ASPD and Double Strike chance increased."],
+		]
+	};
+
   StatusInfo[3001] = {
 		icon: "\xc7\xc1\xb7\xce\xbd\xba\xc6\xae\xbf\xfe\xc6\xf9.tga",
 		descript: [

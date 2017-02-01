@@ -569,7 +569,7 @@ define(function( require )
 	{
 		// setTimeout isn't accurate, so reduce the value
 		// to avoid possible errors.
-		if (_walkLastTick + 450 > Renderer.tick) {
+		if (_walkLastTick + 250 > Renderer.tick) {
 			return;
 		}
 
@@ -589,7 +589,7 @@ define(function( require )
 		}
 
 		Events.clearTimeout(_walkTimer);
-		_walkTimer    =  Events.setTimeout( walkIntervalProcess, 500);
+		_walkTimer    =  Events.setTimeout( walkIntervalProcess, 300 );
 		_walkLastTick = +Renderer.tick;
 	}
 

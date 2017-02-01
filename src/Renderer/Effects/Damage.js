@@ -188,7 +188,7 @@ define(function( require )
 			obj.color[0] = 0.9;
 			obj.color[1] = 0.9;
 			obj.color[2] = 0.15;
-			obj.delay    = 3000;
+			obj.delay    = 1000;
 		} 	
 		else if (obj.type & Damage.TYPE.CRIT) {
 			obj.color[0] = 1.0;
@@ -421,7 +421,13 @@ define(function( require )
 			if (damage.type & Damage.TYPE.MISS) // Miss looks a little too wide in-client
 				SpriteRenderer.size[1] = damage.height * 0.8;
 				
-			damage.color[3]        = 1.0 - perc;
+			if ( !(damage.type & Damage.TYPE.COMBO) )
+				damage.color[3] = 1.0 - perc;
+			else
+				if( perc < 0.8 )
+					damage.color[3] = 1.0;
+				else
+					damage.color[3] = 1.0 - (perc - 0.8) * 5;
 
 			SpriteRenderer.color.set( damage.color );
 			SpriteRenderer.image.texture = damage.texture;

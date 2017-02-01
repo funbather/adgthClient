@@ -102,7 +102,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.sex = 0;
 	};
 	PACKET.CH.MAKE_CHAR.prototype.build = function() {
-		var pkt_len = 2 + 24 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 2 + 1 + 2;
+		var pkt_len = 2 + 24 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 2 + 2 + 1 + 2 + 4;
 		var pkt_buf = new BinaryWriter(pkt_len);
 
 		pkt_buf.writeShort(0x67);
@@ -118,6 +118,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		pkt_buf.writeShort(this.head);
 		pkt_buf.writeUChar(this.sex);
 		pkt_buf.writeShort(this.job);
+		pkt_buf.writeULong(this.classes);
 		return pkt_buf;
 	};
 
@@ -384,7 +385,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 
 		pkt.writeShort(ver[1]);
 		pkt.view.setUint16(ver[3], this.index, true);
-		pkt.view.setUint16(ver[4], this.wearLocation, true);
+		pkt.view.setUint32(ver[4], this.wearLocation, true);
 		return pkt;
 	};
 
@@ -5128,7 +5129,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 	};
 	PACKET.ZC.WAIT_DIALOG.size = 6;
 
-	// 0xdee5
+	// 0x555
 	PACKET.ZC.CLEAR_TEXT = function PACKET_ZC_CLEAR_TEXT(fp, end) {
 		this.NAID = fp.readULong();
 	};
@@ -10296,13 +10297,13 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.count = fp.readShort();
 		this.quality = fp.readUChar();
 		this.ilvl = fp.readUChar();
-		this.slot1 = fp.readUChar();
-		this.slot2 = fp.readUChar();
-		this.slot3 = fp.readUChar();
-		this.slot4 = fp.readUChar();
+		this.slot1 = fp.readUShort();
+		this.slot2 = fp.readUShort();
+		this.slot3 = fp.readUShort();
+		this.slot4 = fp.readUShort();
 		this.rolls = fp.readULong();
 	};
-	PACKET.ZC.ITEM_FALL_ENTRY2.size = 29;
+	PACKET.ZC.ITEM_FALL_ENTRY2.size = 33;
 
 
 	// 0x856
@@ -10335,6 +10336,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.ySize = fp.readUChar();
 		this.clevel = fp.readShort();
 		this.font = fp.readShort();
+		this.classes = fp.readULong();
 		this.name = fp.readString(24);
 	};
 	PACKET.ZC.NOTIFY_MOVEENTRY6.size = -1;
@@ -10369,6 +10371,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.ySize = fp.readUChar();
 		this.clevel = fp.readShort();
 		this.font = fp.readShort();
+		this.classes = fp.readULong();
 		this.name = fp.readString(end - fp.tell());
 	};
 	PACKET.ZC.NOTIFY_STANDENTRY6.size = -1;
@@ -10404,6 +10407,7 @@ define(['Utils/BinaryWriter', './PacketVerManager'], function(BinaryWriter, PACK
 		this.state = fp.readUChar();
 		this.clevel = fp.readShort();
 		this.font = fp.readShort();
+		this.classes = fp.readULong();
 		this.name = fp.readString(end - fp.tell());
 	};
 	PACKET.ZC.NOTIFY_NEWENTRY6.size = -1;

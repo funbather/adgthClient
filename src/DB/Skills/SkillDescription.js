@@ -15,13 +15,237 @@ define(["./SkillConst"], function( SKID )
 
 	var SkillDescription = {};
 
+	SkillDescription[SKID.SWD_SOUL] = [
+		"Swordsman Soul",
+		"Innate Passive",
+		" ",
+		"+20% VIT",
+		"+15% HP",
+		"-10% Physical Damage Taken",
+	].join("\n");
+
+	SkillDescription[SKID.SWD_HARDHEARTED] = [
+		"Hardhearted",
+		"Passive",
+		" ",
+		"You take $x% less physical damage from attacks. The damage reduction grows as you lose HP, up to $y% when at ^4488BBCritical HP^000000.",
+	].join("\n");
+
+	SkillDescription[SKID.SWD_DAUNTLESS] = [
+		"Dauntless",
+		"Passive",
+		" ",
+		"Gain +$x% DEF for each enemy attacking you.",
+	].join("\n");
+
+	SkillDescription[SKID.SWD_MAINTENANCE] = [
+		"Maintenance",
+		"Passive",
+		" ",
+		"+$x% DEF",
+	].join("\n");
+
+	SkillDescription[SKID.SWD_PAVISE] = [
+		"Pavise",
+		"Passive",
+		"Requires: ^4488BBShield^000000",
+		" ",
+		"Gain +$x% to Physical Block Chance and +$y% to Magical Block Chance while wearing a shield.",
+	].join("\n");
+
+	SkillDescription[SKID.SWD_SWASHBUCKLING] = [
+		"Swashbuckling",
+		"Active",
+		"PBAoE Range: $y",
+		" ",
+		"^4488BBProvoke^000000 nearby enemies into attacking you, while lowering their ATK by $x% for 8 seconds.",
+	].join("\n");
+
+	SkillDescription[SKID.SWD_SECONDWIND] = [
+		"Second Wind",
+		"Active",
+		"Cooldown: $zs, Requires: ^99BBFFCritical HP^000000",
+		" ",
+		"Heal $x% of your maximum HP over $y seconds, and cleanse yourself of ^4488BBPoison, Ignite, Bleeding, and Blind^000000.",
+	].join("\n");
+
+	SkillDescription[SKID.SWD_EYETOEYE] = [
+		"Eye To Eye",
+		"Active",
+		"Cooldown: 4s, Range: 9",
+		" ",
+		"^4488BBProvoke^000000 an enemy, and gain +$x% Physical and Magical Block Chance against their attacks for 8 seconds.",
+	].join("\n");
+
+	SkillDescription[SKID.SWD_ENDURE] = [
+		"Endure",
+		"Active",
+		"Cooldown: 12s",
+		" ",
+		"Gain a barrier for 8 seconds that absorbs incoming damage, up to $x% of your maximum HP.",
+	].join("\n");
+
+	SkillDescription[SKID.SWD_UMBOBLOW] = [
+		"Umbo Blow",
+		"Active - Physical",
+		"Cooldown: 4s, Range: 2, Requires: ^99BBFFShield^000000",
+		" ",
+		"Deal $x% ATK damage with a powerful strike from your shield.",
+		" ",
+		"Damage dealt with this attack is increased by $y% for every 1% Physical Block Chance you have.",
+	].join("\n");
+
+	SkillDescription[SKID.SWD_SHIELDBOOMERANG] = [
+		"Shield Boomerang",
+		"Active - Physical",
+		"Cooldown: 4s, Range: 9, Requires: ^99BBFFShield^000000",
+		" ",
+		"Deal $x% ATK damage and ^4488BBProvoke^000000 an enemy by flinging your shield at them.",
+	].join("\n");
+
+	SkillDescription[SKID.SWD_HILTBASH] = [
+		"Hilt Bash",
+		"Active - Physical",
+		"Cooldown: 4s, Range: 2",
+		" ",
+		"Deal $x% ATK damage and ^4488BBStun^000000 an enemy for $y seconds.",
+	].join("\n");
+
+	SkillDescription[SKID.SWD_HEAVYSWING] = [
+		"Heavy Swing",
+		"Active - Physical",
+		"Cooldown: 4s, Range: 2",
+		" ",
+		"Deal $x% ATK damage with a powerful blow.",
+	].join("\n");
+
+	SkillDescription[SKID.SWD_SLEDGEHAMMER] = [
+		"Sledgehammer",
+		"Active - Physical",
+		"Range: 2",
+		" ",
+		"Deal $x% ATK damage by slamming your weapon into the enemy.",
+		" ",
+		"This skill can only be used as a follow-up to Heavy Swing.",
+	].join("\n");
+
+	SkillDescription[SKID.THF_SOUL] = [
+		"Thief Soul",
+		"Innate Passive",
+		" ",
+		"+20% AGI",
+		"+15% Physical Damage Dealt",
+		"+0.2 to Base Attack Speed",
+	].join("\n");
+
+	SkillDescription[SKID.THF_QUICKHANDS] = [
+		"Quick Hands",
+		"Passive",
+		" ",
+		"+$x% ASPD",
+	].join("\n");
+
+	SkillDescription[SKID.THF_REFLEXES] = [
+		"Reflexes",
+		"Passive",
+		" ",
+		"+$x% EVA",
+	].join("\n");
+
+	SkillDescription[SKID.THF_MERCILESS] = [
+		"Merciless",
+		"Passive",
+		" ",
+		"+$x% to CRIT",
+		"+$y% to CRIT DMG",
+	].join("\n");
+
+	SkillDescription[SKID.THF_ADRENALINERUSH] = [
+		"Adrenaline Rush",
+		"Passive",
+		" ",
+		"+$x% MSPD while in combat.",
+	].join("\n");
+
+	SkillDescription[SKID.THF_CAMOUFLAGE] = [
+		"Camouflage",
+		"Active",
+		"Cooldown: 20s",
+		" ",
+		"Blend into your surroundings, gaining +$x% EVA for 8 seconds.",
+	].join("\n");
+
+	SkillDescription[SKID.THF_DOUBLETEAM] = [
+		"Double Team",
+		"Active",
+		"Cooldown: 20s",
+		" ",
+		"Create an afterimage of yourself for $x seconds that copies all of your attacks. While the afterimage is active, you gain +$y% ASPD and your attacks will always Double Strike.",
+		" ",
+		"Using an offensive skill ends this effect.",
+	].join("\n");
+
+	SkillDescription[SKID.THF_SONICSTRIKE] = [
+		"Sonic Strike",
+		"Active - Physical",
+		"Cooldown: 8s, Range: $x",
+		" ",
+		"Dash towards an enemy and deal $y% ATK damage on impact.",
+		" ",
+		"Sonic Strike's cooldown is refreshed when killing an enemy.",
+	].join("\n");
+
+	SkillDescription[SKID.THF_BONECUTTER] = [
+		"Bonecutter",
+		"Active - Physical",
+		"Range: 2",
+		" ",
+		"Deal $x% ATK damage with a deadly slash.",
+		" ",
+		"Bonecutter can Double Strike.",
+	].join("\n");
+
+	SkillDescription[SKID.THF_BLADEFLOURISH] = [
+		"Blade Flourish",
+		"Active - Physical",
+		"Cooldown: 4s, PBAoE Range: 4",
+		" ",
+		"Deal $x% ATK damage to all enemies around you with a wide slash.",
+	].join("\n");
+
+	SkillDescription[SKID.THF_HAMSTRING] = [
+		"Hamstring",
+		"Active - Physical",
+		"Cooldown: 8s, Range: 2",
+		" ",
+		"Deal $x% ATK damage and ^4488BBStun^000000 an enemy for 2 seconds.",
+	].join("\n");
+
+	SkillDescription[SKID.THF_STIFLE] = [
+		"Stifle",
+		"Active - Physical",
+		"Cooldown: 8s, Range: 2",
+		" ",
+		"Deal $x% ATK damage and ^4488BBSilence^000000 an enemy for 4 seconds.",
+		" ",
+		"If this skill interrupts an enemy's spellcasting, it deals double damage.",
+	].join("\n");
+
+	SkillDescription[SKID.THF_PUNCTURE] = [
+		"Puncture",
+		"Active - Physical",
+		"Cooldown: 8s, Range: 2",
+		" ",
+		"Deal $x% ATK damage and inflict ^4488BBBleeding^000000 on an enemy for $y seconds.",
+	].join("\n");
+	
 	SkillDescription[SKID.ALL_RESURRECTION] = [
 		"Recucitate",
 		"Active - Support",
 		" ",
 		"Revive a fallen ally.",
 	].join("\n");
-
+	
 	SkillDescription[SKID.AL_WARP] = [
 		"Town Portal",
 		"Active - Support",
@@ -33,7 +257,7 @@ define(["./SkillConst"], function( SKID )
 
 	SkillDescription[SKID.AL_TELEPORT] = [
 		"Teleportation",
-		"Active - Self",
+		"Active",
 		" ",
 		"Teleport yourself to either your current save point, or your current checkpoint.",
 		" ",
@@ -153,7 +377,7 @@ define(["./SkillConst"], function( SKID )
 		"First Aid",
 		"Active - Support",
 		" ",
-		"Remove Poison, Bleeding, Silence, and Blind status effects from yourself or an ally.",
+		"Remove minor status ailments from yourself or an ally.",
 	].join("\n");
 	
 	SkillDescription[SKID.ALL_TENACITY] = [

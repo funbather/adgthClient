@@ -14,8 +14,8 @@ define(function()
 
 	return {
 		0: "Recruit",
-		1: "Swordman",
-		2: "Mage",
+		1: "Swordsman",
+		2: "Magician",
 		3: "Archer",
 		4: "Acolyte",
 		5: "Merchant",
@@ -41,6 +41,7 @@ define(function()
 		30: "Sorcerer",
 		31: "Warrior",
 		32: "Terramancer",
+		33: "Freelancer",
 		//45: "1_ETC_01",
 		46: "1_ETC_01",
 		47: "1_M_01",

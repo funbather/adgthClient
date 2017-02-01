@@ -240,7 +240,7 @@ define(function( require )
 			case 4:  // endure
 			case 8:  // double attack
 			case 9:  // endure (multi-hit)
-			case 10: // critital
+			case 10: // critical
 			case 20: // double attack crit
 			case 21: // blocked attack
 				if (dstEntity) {
@@ -271,19 +271,19 @@ define(function( require )
 							case 9:
 							case 4:
 							case 0:
-                				Damage.add( pkt.damage, target, Renderer.tick + pkt.attackMT );
+								Damage.add( pkt.damage, target, Renderer.tick + pkt.attackMT);
 								break;
 
 							// double attack
 							case 8:
 								// Display combo only if entity is mob and the attack don't miss
 								if (dstEntity.objecttype === Entity.TYPE_MOB && pkt.damage > 0) {
-									//Damage.add( pkt.damage / 2, dstEntity, Renderer.tick + pkt.attackMT * 1, Damage.TYPE.COMBO );
-									Damage.add( pkt.damage ,    dstEntity, Renderer.tick + pkt.attackMT * 1.3, Damage.TYPE.COMBO | Damage.TYPE.COMBO_FINAL );
+									Damage.add( pkt.damage / 2, dstEntity, Renderer.tick + pkt.attackMT * 1, Damage.TYPE.COMBO );
+									Damage.add( pkt.damage ,    dstEntity, Renderer.tick + pkt.attackMT * 1.5, Damage.TYPE.COMBO | Damage.TYPE.COMBO_FINAL );
 								}
 
 								Damage.add( pkt.damage / 2, target, Renderer.tick + pkt.attackMT * 1 );
-								Damage.add( pkt.damage / 2, target, Renderer.tick + pkt.attackMT * 1.3 );
+								Damage.add( pkt.damage / 2, target, Renderer.tick + pkt.attackMT * 1.5 );
 								break;
 
 							// TODO: critical damage
@@ -298,16 +298,16 @@ define(function( require )
 
 							case 20:
 								if (dstEntity.objecttype === Entity.TYPE_MOB && pkt.damage > 0) {
-									//Damage.add( pkt.damage / 2, dstEntity, Renderer.tick + pkt.attackMT * 1, Damage.TYPE.COMBO );
-									Damage.add( pkt.damage ,    dstEntity, Renderer.tick + pkt.attackMT * 1.3, Damage.TYPE.COMBO | Damage.TYPE.COMBO_FINAL );
+									Damage.add( pkt.damage / 2, dstEntity, Renderer.tick + pkt.attackMT * 1, Damage.TYPE.COMBO );
+									Damage.add( pkt.damage ,    dstEntity, Renderer.tick + pkt.attackMT * 1.5, Damage.TYPE.COMBO | Damage.TYPE.COMBO_FINAL );
 								}
 
 								Damage.add( pkt.damage / 2, target, Renderer.tick + pkt.attackMT * 1, Damage.TYPE.CRIT  );
-								Damage.add( pkt.damage / 2, target, Renderer.tick + pkt.attackMT * 1.3, Damage.TYPE.CRIT  );
+								Damage.add( pkt.damage / 2, target, Renderer.tick + pkt.attackMT * 1.5, Damage.TYPE.CRIT  );
 								break;
 							
 							case 21:
-								Damage.add( 0, dstEntity, Renderer.tick, Damage.TYPE.BLOCKED );
+								Damage.add( 0, dstEntity, Renderer.tick + pkt.attackMT, Damage.TYPE.BLOCKED );
 								break;
 						}
 					}
@@ -324,7 +324,7 @@ define(function( require )
 					repeat: false,
 					play:   true,
 					next: {
-					  delay:  Renderer.tick + pkt.attackMT + 5,
+					  delay:  Renderer.tick + pkt.attackMT,
 					  action: srcEntity.ACTION.READYFIGHT,
 					  frame:  0,
 					  repeat: true,
@@ -644,7 +644,7 @@ define(function( require )
 		var dstEntity = EntityManager.get(pkt.targetID);
 
 		if (srcEntity) {
-			pkt.attackMT = Math.min( 450, pkt.attackMT ); // FIXME: cap value ?
+			pkt.attackMT = Math.min( 2000, pkt.attackMT ); // FIXME: cap value ?
 			pkt.attackMT = Math.max(   1, pkt.attackMT );
 			srcEntity.attack_speed = pkt.attackMT;
 
@@ -720,7 +720,7 @@ define(function( require )
 					Events.setTimeout( addDamage(i), pkt.attackMT + (200 * i)); //TOFIX: why 200 ?
 				}
 			} else if (pkt.action == 21) { // Target blocked damage?
-				Damage.add( 0, dstEntity, Renderer.tick, Damage.TYPE.BLOCKED);
+				Damage.add( 0, dstEntity, Renderer.tick + pkt.attackMT, Damage.TYPE.BLOCKED);
 			}
 		}
 

@@ -331,7 +331,7 @@ define(function( require )
 	 * @param {number} sex - character gender
 	 * @param {number} job - job class
 	 */
-	function onCharCreationRequest( name, Str, Agi, Vit, Int, Dex, Luk, hair, color, sex, job )
+	function onCharCreationRequest( name, Str, Agi, Vit, Int, Dex, Luk, hair, color, sex, job, classes )
 	{
 		var pkt;
 
@@ -355,6 +355,7 @@ define(function( require )
 		pkt.CharNum = _creationSlot;
 		pkt.sex = sex;
 		pkt.job = job;
+		pkt.classes = classes;
 
 		Network.sendPacket(pkt);
 	}

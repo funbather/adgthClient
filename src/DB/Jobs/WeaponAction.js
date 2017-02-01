@@ -322,6 +322,7 @@ define(['./JobConst', 'DB/Items/WeaponType'], function( JobId, WeaponType )
 
 	// Inherit
 	duplicateEntry(JobId.NOVICE,     JobId.NOVICE_H,     JobId.NOVICE_B);
+	duplicateEntry(JobId.SUPERNOVICE,JobId.COMMON);
 	duplicateEntry(JobId.SWORDMAN,   JobId.SWORDMAN_H,   JobId.SWORDMAN_B);
 	duplicateEntry(JobId.MAGICIAN,   JobId.MAGICIAN_H,   JobId.MAGICIAN_B);
 	duplicateEntry(JobId.ARCHER,     JobId.ARCHER_H,     JobId.ARCHER_B);
@@ -338,7 +339,7 @@ define(['./JobConst', 'DB/Items/WeaponType'], function( JobId, WeaponType )
 	duplicateEntry(JobId.CRUSADER,   JobId.CRUSADER_B,   JobId.CRUSADER_H,   JobId.ROYAL_GUARD,      JobId.ROYAL_GUARD_H,      JobId.ROYAL_GUARD_B);
 	duplicateEntry(JobId.CRUSADER2,  JobId.CRUSADER2_B,  JobId.CRUSADER2_H,  JobId.ROYAL_GUARD2,     JobId.ROYAL_GUARD2_H,     JobId.ROYAL_GUARD2_B);
 	duplicateEntry(JobId.MONK,       JobId.MONK_B,       JobId.MONK_H,       JobId.SURA,             JobId.SURA_H,             JobId.SURA_B);
-	duplicateEntry(JobId.SAGE,       JobId.SAGE_B,       JobId.SAGE_H,       JobId.SORCERER,         JobId.SORCERER_H,         JobId.SORCERER_B,						 JobId.TERRAMANCER);
+	duplicateEntry(JobId.SAGE,       JobId.SAGE_B,       JobId.SAGE_H,       JobId.SORCERER,         JobId.SORCERER_H,         JobId.SORCERER_B,             JobId.TERRAMANCER);
 	duplicateEntry(JobId.ROGUE,      JobId.ROGUE_B,      JobId.ROGUE_H,      JobId.SHADOW_CHASER,    JobId.SHADOW_CHASER_H,    JobId.SHADOW_CHASER_B);
 	duplicateEntry(JobId.ALCHEMIST,  JobId.ALCHEMIST_B,  JobId.ALCHEMIST_H,  JobId.GENETIC,          JobId.GENETIC_H,          JobId.GENETIC_B);
 	duplicateEntry(JobId.BARD,       JobId.BARD_B,       JobId.BARD_H,       JobId.MINSTREL,         JobId.MINSTREL_H,         JobId.MINSTREL_B);

@@ -412,7 +412,7 @@ define(function(require)
 			character.effectColor.set(_cleanColor);
 
 			// Rendering
-			SpriteRenderer.bind2DContext( _ctx, 30, 130 );
+			SpriteRenderer.bind2DContext( _ctx, 30, 156 );
 			_ctx.clearRect(0, 0, _ctx.canvas.width, _ctx.canvas.height );
 			character.renderEntity();
 
@@ -447,6 +447,8 @@ define(function(require)
 		if (location & EquipLocation.ACCESSORY1)  selector.push('.accessory1');
 		if (location & EquipLocation.ACCESSORY2)  selector.push('.accessory2');
 		if (location & EquipLocation.AMMO)        selector.push('.ammo');
+		if (location & EquipLocation.GLOVES)      selector.push('.gloves');
+		if (location & EquipLocation.BELT)        selector.push('.belt');
 
 		return selector.join(', ');
 	}
@@ -579,10 +581,7 @@ define(function(require)
 		var pos     = jQuery(this).position();
 		var it = DB.getItemInfo( item.ITID );
 		var rarity = 0;
-		var desc = '';
-		var enchdesc = '';
-		var enchant;
-		var enchroll = 0;
+		var desc = DB.formatDesc(item);
 		
 
 		// Possible jquery error
@@ -606,39 +605,6 @@ define(function(require)
       case 3: overlay.css({color: "#8aa5ff"}); overlay.css({border: "4px solid #8aa5ff"}); break;
       case 4: overlay.css({color: "#bb91ff"}); overlay.css({border: "4px solid #bb91ff"}); break;
     }
-    
-		for(i = 0; i < 4; i++) {
-      		if(item.slot['card' + (i+1)]) { 
-        		if(i == 0) {
-							enchdesc = '\n-------------------\n';
-            }
-        	
-						enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));
-						
-						enchroll = (item.rolls >> (i * 8)) & 0xFF;
-				
-						enchdesc += enchant.identifiedDescriptionName + '\n';
-						enchdesc = enchdesc.replace('$roll1$','^99BBFF' + (Math.floor(enchroll * (enchant.BaseRoll1 * (enchant.RollMultiplier1-1) + 1) / 100) + enchant.BaseRoll1) + '^FFFFFF');
-						enchdesc = enchdesc.replace('$roll2$','^99BBFF' + (Math.floor(enchroll * (enchant.BaseRoll2 * (enchant.RollMultiplier2-1) + 1) / 100) + enchant.BaseRoll2) + '^FFFFFF');
-      		}
-		}
-		
-		desc = item.count > 1 ? DB.getItemName(item) + ' ' + (item.count || 1) + ' ea\n\n^FFFFFF'+it.condensedDesc + enchdesc : DB.getItemName(item) + '\n\n^FFFFFF'+it.condensedDesc + enchdesc;
-		desc = desc.replace('$ilvl$', '^99BBFF'+item.IsDamaged+'^FFFFFF');
-		desc = desc.replace('$quality$', '^99BBFF'+item.RefiningLevel+'^FFFFFF');
-		desc = desc.replace('$hp$', '^99BBFF'+getStatValue(it.BaseHP, DB._mult["HP"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$mp$', '^99BBFF'+getStatValue(it.BaseMP, DB._mult["MP"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$def$', '^99BBFF'+getStatValue(it.BaseDEF, DB._mult["DEF"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$mdef$', '^99BBFF'+getStatValue(it.BaseMDEF, DB._mult["MDEF"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$atk$', '^99BBFF'+getStatValue(it.BaseATK, DB._mult["ATK"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$mag$', '^99BBFF'+getStatValue(it.BaseMAG, DB._mult["MAG"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$eva$', '^99BBFF'+getStatValue(it.BaseEVADE, DB._mult["EVA"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$cel$', '^99BBFF'+getStatValue(it.BaseCEL, DB._mult["CEL"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$crit$', '^99BBFF'+getStatValue(it.BaseCRIT, DB._mult["CRIT"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$def2$', '^99BBFF'+getStatValue(it.BaseDEF2, DB._mult["DEF2"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$mdef2$', '^99BBFF'+getStatValue(it.BaseMDEF2, DB._mult["MDEF2"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$bonus1$', '^99BBFF'+getStatValue(it.BaseBonus1, it.Multiplier1, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$bonus2$', '^99BBFF'+getStatValue(it.BaseBonus2, it.Multiplier2, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
     
 		overlay.css({top: pos.top, left:pos.left+28});
 		overlay.text(desc);

@@ -73,16 +73,20 @@ define(function(require)
 	
 	// For use with dynamic item descriptions
 	DB._mult = { "HP":15,
-	             "MP":11,
+	             "MP":12,
 	             "DEF":6,
 	             "MDEF":6,
 	             "ATK":11,
 	             "MAG":11,
-	             "EVA":2,
+	             "EVA":7,
 	             "CEL":3,
 	             "CRIT":2,
 	             "DEF2":2,
-	             "MDEF2":2 }
+	             "MDEF2":2,
+	             "ASPD":2,
+	             "CSPD":2,
+	             "SKILLDMG":2,
+	             "SPELLDMG":2 }
 
 
 	/**
@@ -521,7 +525,7 @@ define(function(require)
 				var ratings = ["","\u2605\u2606\u2606","\u2605\u2605\u2606","\u2605\u2605\u2605","\u272A"];
 				
 				item.identifiedDescriptionName   = item.identifiedDescriptionName   ? TextEncoding.decodeString(item.identifiedDescriptionName.join('\n'))   : '';
-				item.unidentifiedDescriptionName = item.unidentifiedDescriptionName ? TextEncoding.decodeString(item.unidentifiedDescriptionName.join('\n')) : '';				
+				item.unidentifiedDescriptionName = item.unidentifiedDescriptionName ? TextEncoding.decodeString(item.unidentifiedDescriptionName.join('\n')) : '';
 				item.identifiedDisplayName       = TextEncoding.decodeString(item.identifiedDisplayName);
 				item.unidentifiedDisplayName     = TextEncoding.decodeString(item.unidentifiedDisplayName);
 				item.prefixNameTable             = TextEncoding.decodeString(item.prefixNameTable || '');
@@ -535,19 +539,28 @@ define(function(require)
 				item.BaseEVADE                   = item.BaseEVADE || 0;
 				item.BaseCRIT                    = item.BaseCRIT  || 0;
 				item.BaseCEL                     = item.BaseCEL   || 0;
-				item.BaseMAG										 = item.BaseMAG   || 0;
+				item.BaseMAG                     = item.BaseMAG   || 0;
 				item.BaseCRIT                    = item.BaseCRIT  || 0;
 				item.BaseDEF2                    = item.BaseDEF2  || 0;
-				item.BaseMDEF2                   = item.BaseMDEF2  || 0;
+				item.BaseMDEF2                   = item.BaseMDEF2 || 0;
+				item.BaseBHP                     = item.BaseBHP   || 0;
+				item.BaseASPD                    = item.BaseASPD  || 0;
+				item.BaseCSPD                    = item.BaseCSPD  || 0;
+				item.BaseSKILLDMG                = item.BaseSKILLDMG || 0;
+				item.BaseSPELLDMG                = item.BaseSPELLDMG || 0;
 				item.BaseBonus1                  = item.BaseBonus1 || 0;
 				item.BaseBonus2                  = item.BaseBonus2 || 0;
+				item.BaseBonus3                  = item.BaseBonus3 || 0;
 				item.Multiplier1                 = item.Multiplier1 || 0;
 				item.Multiplier2                 = item.Multiplier2 || 0;
+				item.Multiplier3                 = item.Multiplier3 || 0;
 				item.BaseRoll1                   = item.BaseRoll1 || 0;
 				item.BaseRoll2                   = item.BaseRoll2 || 0;
+				item.BaseRoll3                   = item.BaseRoll3 || 0;
 				item.RollMultiplier1             = item.RollMultiplier1 || 0;
 				item.RollMultiplier2             = item.RollMultiplier2 || 0;
-								
+				item.RollMultiplier3             = item.RollMultiplier3 || 0;
+
 				item.Rating                      = item.Rating || 0;
 				item.identifiedDescriptionName   = item.identifiedDescriptionName.replace('$r$',ratings[item.Rating]);
 				item.condensedDesc               = item.condensedDesc.replace('$r$',ratings[item.Rating]);
@@ -560,9 +573,63 @@ define(function(require)
 	}();
 
 	DB.getStatMultiplier = function getMultiplier( stat ) {
-		
+
 	}
 
+	DB.formatDesc = function formatDesc( item ) {
+		var it = DB.getItemInfo( item.ITID );
+		var desc, bonusdesc, bonus, bval;
+		
+		if(item.slot && item.slot['card1']) {
+			bonusdesc = "\n------------\n";
+			
+			for(var i=0; i<4; i++) {
+				if(item.slot['card' + (i+1)]) {
+					bonus = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));
+					
+					bval = (item.rolls >> (i * 8)) & 0xFF;
+					
+					bonusdesc += bonus.identifiedDescriptionName + '\n';
+					bonusdesc = bonusdesc.replace('$roll1$','^99BBFF' + (Math.floor(bval * (bonus.BaseRoll1 * (bonus.RollMultiplier1-1) + 1) / 100) + bonus.BaseRoll1) + '^FFFFFF');
+					bonusdesc = bonusdesc.replace('$roll2$','^99BBFF' + (Math.floor(bval * (bonus.BaseRoll2 * (bonus.RollMultiplier2-1) + 1) / 100) + bonus.BaseRoll2) + '^FFFFFF');
+					bonusdesc = bonusdesc.replace('$roll3$','^99BBFF' + ((Math.floor(bval * (bonus.BaseRoll3 * (bonus.RollMultiplier3-1) + 1) / 100) + bonus.BaseRoll3) / 10).toFixed(1) + '^FFFFFF');
+				}
+			}
+		} else {
+			bonusdesc = "";
+		}
+			
+		//var desc = item.count > 1 ? DB.getItemName(item) + ' ' + (item.count || 1) + ' ea\n\n^FFFFFF'+it.condensedDesc + bonusdesc : DB.getItemName(item) + '\n\n^FFFFFF'+it.condensedDesc + bonusdesc;
+		var desc = '^FFFFFF' + it.condensedDesc + bonusdesc;
+	
+		desc = desc.replace('$ilvl$', '^99BBFF'+item.IsDamaged+'^FFFFFF');
+		desc = desc.replace('$quality$', '^99BBFF'+item.RefiningLevel+'^FFFFFF');
+		desc = desc.replace('$hp$', '^99BBFF'+getStatValue(it.BaseHP, DB._mult["HP"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$mp$', '^99BBFF'+getStatValue(it.BaseMP, DB._mult["MP"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$def$', '^99BBFF'+getStatValue(it.BaseDEF, DB._mult["DEF"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$mdef$', '^99BBFF'+getStatValue(it.BaseMDEF, DB._mult["MDEF"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$atk$', '^99BBFF'+getStatValue(it.BaseATK, DB._mult["ATK"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$mag$', '^99BBFF'+getStatValue(it.BaseMAG, DB._mult["MAG"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$eva$', '^99BBFF'+getStatValue(it.BaseEVADE, DB._mult["EVA"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$cel$', '^99BBFF'+getStatValue(it.BaseCEL, DB._mult["CEL"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$crit$', '^99BBFF'+(getStatValue(it.BaseCRIT, DB._mult["CRIT"], item.RefiningLevel, item.IsDamaged) / 10).toFixed(1)+'^FFFFFF');
+		desc = desc.replace('$def2$', '^99BBFF'+(getStatValue(it.BaseDEF2, DB._mult["DEF2"], item.RefiningLevel, item.IsDamaged) / 10).toFixed(1)+'^FFFFFF');
+		desc = desc.replace('$mdef2$', '^99BBFF'+(getStatValue(it.BaseMDEF2, DB._mult["MDEF2"], item.RefiningLevel, item.IsDamaged) / 10).toFixed(1)+'^FFFFFF');
+		desc = desc.replace('$skilldmg$', '^99BBFF'+getStatValue(it.BaseSKILLDMG, DB._mult["SKILLDMG"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$spelldmg$', '^99BBFF'+getStatValue(it.BaseSPELLDMG, DB._mult["SPELLDMG"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$aspd$', '^99BBFF'+getStatValue(it.BaseASPD, DB._mult["ASPD"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$cspd$', '^99BBFF'+getStatValue(it.BaseCSPD, DB._mult["CSPD"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$bonus1$', '^99BBFF'+getStatValue(it.BaseBonus1, it.Multiplier1, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$bonus2$', '^99BBFF'+getStatValue(it.BaseBonus2, it.Multiplier2, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
+		desc = desc.replace('$bonus3$', '^99BBFF'+(getStatValue(it.BaseBonus3, it.Multiplier3, item.RefiningLevel, item.IsDamaged) / 10).toFixed(1)+'^FFFFFF');
+		
+		return desc;
+	};
+	
+	function getStatValue( base, multiplier, quality, ilvl ) {
+		return Math.floor(Math.floor((multiplier-1) * ilvl * 2 * base / 100 + base) * quality / 100);
+	}
+	
 	/**
 	 * Get back item path
 	 *

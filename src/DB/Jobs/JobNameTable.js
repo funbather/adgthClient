@@ -17,7 +17,8 @@ define(["./JobConst"], function( JobId )
 	
 	JobNameTable[JobId.SORC_]            = "\xC7\xCF\xC0\xCC\xC0\xA7\xC0\xFA\xB5\xE5";
 	JobNameTable[JobId.WARRIOR]          = "\xB7\xCE\xB5\xE5\xB3\xAA\xC0\xCC\xC6\xAE";
-	JobNameTable[JobId.TERRAMANCER]			 = "\xC7\xC1\xB7\xCE\xC6\xE4\xBC\xAD";
+	JobNameTable[JobId.TERRAMANCER]      = "\xC7\xC1\xB7\xCE\xC6\xE4\xBC\xAD";
+	JobNameTable[JobId.COMMON]           = "\xBD\xB4\xC6\xDB\xB3\xEB\xBA\xF1\xBD\xBA";
 	
 	JobNameTable[JobId.NOVICE]           = "\xC3\xCA\xBA\xB8\xC0\xDA";
 

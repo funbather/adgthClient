@@ -206,6 +206,11 @@ define(function( require )
 			this._healthStateColor[2] *= 0.4;
 		}
 		
+		// Camouflage
+		if (value & StatusConst.HealthState.CAMO) {
+			this._healthStateColor[3] *= 0.4;
+		}
+				
 		// Silence
 		if (value & StatusConst.HealthState.SILENCE) {
 

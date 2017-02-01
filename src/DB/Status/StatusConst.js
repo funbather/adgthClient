@@ -794,5 +794,11 @@ define(function()
 		EARTHENSHIELD:                          837,
 		MANABATTERY:                            838,
 		LODESTONE_CHARGED:                      839,
+		SWASHBUCKLING:                          840,
+		SECONDWIND:                             841,
+		EYETOEYE:                               842,
+		ENDURE_:                                843,
+		CAMO:                                   844,
+		DOUBLETEAM:                             845,
 	};
 });

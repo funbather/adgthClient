@@ -683,7 +683,7 @@ define(function(require)
     
 		overlay.css({top: pos.top+20, left:pos.left+70});
 
-		var desc = dynamicDescription(item);
+		var desc = item.count > 1 ? DB.getItemName(item) + ' ' + (item.count || 1) + ' ea\n\n^FFFFFF' + DB.formatDesc(item) : DB.getItemName(item) + '\n\n^FFFFFF' + DB.formatDesc(item);
 		var _str;
 		var _ls = Equipment.getEquips();
 		
@@ -691,7 +691,7 @@ define(function(require)
 		
 		for (var j in _ls) {
 			if (item.location == _ls[j].location || item.location & _ls[j].location & 1 << 1)
-				_str = dynamicDescription(_ls[j], 1);
+				_str = DB.getItemName(_ls[j]) + " \uFF3B\uFF25\uFF3D\n\n^FFFFFF" + DB.formatDesc(_ls[j]);
 		}
 		
 		if (!_str)
@@ -703,57 +703,7 @@ define(function(require)
 			compare.text(_str);	
 		}
 	}
-
-	function getStatValue( base, multiplier, quality, ilvl ) {
-		return Math.floor(Math.floor((multiplier-1) * ilvl * 2 * base / 100 + base) * quality / 100);
-	}
-
-	function dynamicDescription( item, equipped ) {
-		var it = DB.getItemInfo( item.ITID );
-		var enchdesc = '';
-		var enchant = '';
-		var desc = '';
-		var enchroll = 0;
-		
-		for(var i = 0; i < 4; i++) {
-			if(item.slot['card' + (i+1)]) { 
-				if(i == 0) {
-					enchdesc = '\n-------------------\n';
-				}
-
-				enchant = DB.getItemInfo((item.slot && item.slot['card' + (i+1)]));
-
-				enchroll = (item.rolls >> (i * 8)) & 0xFF;
-				
-				enchdesc += enchant.identifiedDescriptionName + '\n';
-				enchdesc = enchdesc.replace('$roll1$','^99BBFF' + (Math.floor(enchroll * (enchant.BaseRoll1 * (enchant.RollMultiplier1-1) + 1) / 100) + enchant.BaseRoll1) + '^FFFFFF');
-				enchdesc = enchdesc.replace('$roll2$','^99BBFF' + (Math.floor(enchroll * (enchant.BaseRoll2 * (enchant.RollMultiplier2-1) + 1) / 100) + enchant.BaseRoll2) + '^FFFFFF');
-			}
-		}
-
-		if (equipped)
-			desc = DB.getItemName(item) + ' \uFF3B\uFF25\uFF3D\n\n^FFFFFF' + it.condensedDesc + enchdesc;
-		else
-			desc = item.count > 1 ? DB.getItemName(item) + ' ' + (item.count || 1) + ' ea\n\n^FFFFFF'+it.condensedDesc + enchdesc : DB.getItemName(item) + '\n\n^FFFFFF'+it.condensedDesc + enchdesc;
-			
-		desc = desc.replace('$ilvl$', '^99BBFF'+item.IsDamaged+'^FFFFFF');
-		desc = desc.replace('$quality$', '^99BBFF'+item.RefiningLevel+'^FFFFFF');
-		desc = desc.replace('$hp$', '^99BBFF'+getStatValue(it.BaseHP, DB._mult["HP"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$mp$', '^99BBFF'+getStatValue(it.BaseMP, DB._mult["MP"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$def$', '^99BBFF'+getStatValue(it.BaseDEF, DB._mult["DEF"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$mdef$', '^99BBFF'+getStatValue(it.BaseMDEF, DB._mult["MDEF"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$atk$', '^99BBFF'+getStatValue(it.BaseATK, DB._mult["ATK"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$mag$', '^99BBFF'+getStatValue(it.BaseMAG, DB._mult["MAG"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$eva$', '^99BBFF'+getStatValue(it.BaseEVADE, DB._mult["EVA"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$cel$', '^99BBFF'+getStatValue(it.BaseCEL, DB._mult["CEL"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$crit$', '^99BBFF'+getStatValue(it.BaseCRIT, DB._mult["CRIT"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$def2$', '^99BBFF'+getStatValue(it.BaseDEF2, DB._mult["DEF2"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$mdef2$', '^99BBFF'+getStatValue(it.BaseMDEF2, DB._mult["MDEF2"], item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$bonus1$', '^99BBFF'+getStatValue(it.BaseBonus1, it.Multiplier1, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		desc = desc.replace('$bonus2$', '^99BBFF'+getStatValue(it.BaseBonus2, it.Multiplier2, item.RefiningLevel, item.IsDamaged)+'^FFFFFF');
-		
-		return desc;
-	}
+	
 	/**
 	 * Hide the item name
 	 */
