@@ -51,7 +51,10 @@ define(function( require )
 		SP:          1 << 6,
 		CRIT:        1 << 7,
 		MULTICRIT:   1 << 8,
-		BLOCKED:     1 << 9
+		BLOCKED:     1 << 9,
+		POISON:      1 << 10,
+		BLEEDING:    1 << 11,
+		IGNITE:      1 << 12
 	};
 
 
@@ -179,6 +182,27 @@ define(function( require )
 			// green
 			obj.color[1] = 1.0;
 		}
+		else if (obj.type & Damage.TYPE.POISON) {
+			PADDING = 0;
+			obj.color[0] = 0.45;
+			obj.color[1] = 1.0;
+			obj.color[2] = 0.45;
+			obj.delay = 600;
+		}
+		else if (obj.type & Damage.TYPE.BLEEDING) {
+			PADDING = 0;
+			obj.color[0] = 0.5;
+			obj.color[1] = 0.1;
+			obj.color[2] = 0.1;
+			obj.delay = 600;
+		}
+		else if (obj.type & Damage.TYPE.IGNITE) {
+			PADDING = 0;
+			obj.color[0] = 1.0;
+			obj.color[1] = 0.4;
+			obj.color[2] = 0.4;
+			obj.delay = 600;
+		}
 		else if (obj.type & Damage.TYPE.ENEMY) {
 			// red
 			obj.color[0] = 1.0;
@@ -196,7 +220,7 @@ define(function( require )
 			obj.color[2] = 0.3;
 			obj.delay    = 1500; // Signify critical hit to render, fix later
 		}
-		else if (obj.type == Damage.TYPE.BLOCKED) {
+		else if (obj.type & Damage.TYPE.BLOCKED) {
 			obj.color[0] = 1.0;
 			obj.color[1] = 1.0;
 			obj.color[2] = 1.0;
@@ -372,9 +396,6 @@ define(function( require )
 			// Damage
 			else if (damage.type & Damage.TYPE.DAMAGE) {
         size = 2;
-				//SpriteRenderer.position[0] = damage.entity.position[0];
-				//SpriteRenderer.position[1] = damage.entity.position[1];
-				//SpriteRenderer.position[2] = damage.entity.position[2] + 2 + perc * 15;
 				SpriteRenderer.position[0] = damage.entity.position[0] + perc * 7;
 				SpriteRenderer.position[1] = damage.entity.position[1] - perc * 7;
 				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + Math.sin( -Math.PI/2 + ( Math.PI * (0.5 + perc * 1.5 ) ) ) * 5;
@@ -415,13 +436,37 @@ define(function( require )
 				SpriteRenderer.position[2] = damage.entity.position[2] + 3.5 + perc;
 			}
 
+			// Poison
+			else if (damage.type & Damage.TYPE.POISON) {
+        size = 1.5;
+				SpriteRenderer.position[0] = damage.entity.position[0];
+				SpriteRenderer.position[1] = damage.entity.position[1];
+				SpriteRenderer.position[2] = damage.entity.position[2] + 2 + perc / 3;
+			}
+
+			// Bleeding
+			else if (damage.type & Damage.TYPE.BLEEDING) {
+        size = 1.5;
+				SpriteRenderer.position[0] = damage.entity.position[0];
+				SpriteRenderer.position[1] = damage.entity.position[1];
+				SpriteRenderer.position[2] = damage.entity.position[2] + 1 + perc / 3;
+			}
+
+			// Ignite
+			else if (damage.type & Damage.TYPE.IGNITE) {
+        size = 1.5;
+				SpriteRenderer.position[0] = damage.entity.position[0];
+				SpriteRenderer.position[1] = damage.entity.position[1];
+				SpriteRenderer.position[2] = damage.entity.position[2] + perc / 3;
+			}
+
 			SpriteRenderer.size[0] = damage.width  * size;
 			SpriteRenderer.size[1] = damage.height * size;
 			
-			if (damage.type & Damage.TYPE.MISS) // Miss looks a little too wide in-client
+			if (damage.type & Damage.TYPE.MISS)
 				SpriteRenderer.size[1] = damage.height * 0.8;
 				
-			if ( !(damage.type & Damage.TYPE.COMBO) )
+			if ( !(damage.type & Damage.TYPE.COMBO) && (damage.type < Damage.TYPE.POISON) )
 				damage.color[3] = 1.0 - perc;
 			else
 				if( perc < 0.8 )

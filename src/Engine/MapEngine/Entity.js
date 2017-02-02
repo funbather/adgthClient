@@ -243,6 +243,9 @@ define(function( require )
 			case 10: // critical
 			case 20: // double attack crit
 			case 21: // blocked attack
+			case 22: // poison
+			case 23: // bleeding
+			case 24: // ignite
 				if (dstEntity) {
 					if (pkt.damage) {
 						dstEntity.setAction({
@@ -308,6 +311,18 @@ define(function( require )
 							
 							case 21:
 								Damage.add( 0, dstEntity, Renderer.tick + pkt.attackMT, Damage.TYPE.BLOCKED );
+								break;
+
+							case 22:
+								Damage.add( pkt.damage, target, Renderer.tick + pkt.attackMT, Damage.TYPE.POISON );
+								break;
+
+							case 23:
+								Damage.add( pkt.damage, target, Renderer.tick + pkt.attackMT, Damage.TYPE.BLEEDING );
+								break;
+
+							case 24:
+								Damage.add( pkt.damage, target, Renderer.tick + pkt.attackMT, Damage.TYPE.IGNITE );
 								break;
 						}
 					}

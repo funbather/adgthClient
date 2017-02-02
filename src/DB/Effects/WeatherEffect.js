@@ -30,6 +30,7 @@ define(function()
 	Weather.sky['sch_gld.rsw']     = { skyColor:[0.4, 0.6, 0.8, 1.0], cloudColor:[1.0, 1.0, 1.0] };
 	Weather.sky['valkyrie.rsw']    = { skyColor:[0.4, 0.6, 0.8, 1.0], cloudColor:[1.0, 1.0, 1.0] };
 	Weather.sky['yuno.rsw']        = { skyColor:[0.4, 0.6, 0.8, 1.0], cloudColor:[1.0, 1.0, 1.0] };
+	Weather.sky['gld2_ald.rsw']    = { skyColor:[0.1, 0.15, 0.2, 1.0], cloudColor:[1.0, 1.0, 1.0] }; // Trial Site 1
 
 	// Extras
 	Weather.sky['5@tower.rsw']     = { skyColor:[0.2, 0.0, 0.2, 1.0],    cloudColor:[1.0, 0.7, 0.7] };
