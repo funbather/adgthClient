@@ -435,9 +435,7 @@ define(function(require)
 
 		var info = _slots[_index];
 		$charinfo.find('.name').text( info.name );
-		//$charinfo.find('.job').text( MonsterTable[info.job] || '' );
-		//$charinfo.find('.job').text( (info.classes).toString(16) );
-		$charinfo.find('.job').text( ((info.classes>>24) & 0xFF).toString(16) );
+		$charinfo.find('.job').text( MonsterTable[parseClass(info.classes)] || '' );
 		$charinfo.find('.lvl').text( info.level );
 		$charinfo.find('.exp').text( info.exp );
 		$charinfo.find('.hp').text( info.hp );
