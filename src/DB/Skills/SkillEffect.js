@@ -14,6 +14,28 @@ define(['./SkillConst'], function( SK )
 
 
 	var SkillEffect = {};
+
+	SkillEffect[SK.SWD_SWASHBUCKLING] = { effectId: 2024 };
+	SkillEffect[SK.SWD_SECONDWIND] = { effectId: 2025 };
+	SkillEffect[SK.SWD_EYETOEYE] = { effectId: 2026 };
+	SkillEffect[SK.SWD_ENDURE] = { effectId: 2029 };
+
+	SkillEffect[SK.SWD_UMBOBLOW] = { effectId: 2012 };
+	SkillEffect[SK.SWD_SHIELDBOOMERANG] = { effectId: 2013 };
+	SkillEffect[SK.SWD_HILTBASH] = { effectId: 3 };
+	SkillEffect[SK.SWD_HEAVYSWING] = { effectId: 2008 };
+	SkillEffect[SK.SWD_SLEDGEHAMMER] = { effectId: 2023 };
+
+	SkillEffect[SK.THF_CAMOUFLAGE] = { effectId: 2027 };
+	SkillEffect[SK.THF_DOUBLETEAM] = { effectId: 2030 };
+
+	SkillEffect[SK.THF_SONICSTRIKE] = { effectId: 3 };
+	SkillEffect[SK.THF_BONECUTTER] = { effectId: 2031 };
+	SkillEffect[SK.THF_BLADEFLOURISH] = { hitEffectId: 2008, effectId: 2032 };
+	SkillEffect[SK.THF_HAMSTRING] = { effectId: 2028 };
+	SkillEffect[SK.THF_STIFLE] = { effectId: 3 };
+	SkillEffect[SK.THF_PUNCTURE] = { effectId: 2033 };
+
   SkillEffect[SK.AL_WARP] = {
 		groundEffectId: 2000
 	};

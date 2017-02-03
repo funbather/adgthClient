@@ -215,6 +215,83 @@ define(function( require )
 			tickTime: 4000,
 			attachedEntity: true
 		}],
+		
+		2023: [{
+			type: 'STR',
+			file: 'powerswing',
+			wav: 'effect/black_hammerfall',
+			attachedEntity: true
+		}],
+		
+		2024: [{
+			type: 'STR',
+			file: 'loud',
+			wav: 'effect/ef_stonecurse',
+			attachedEntity: true
+		}],
+		
+		2025: [{
+			type: 'STR',
+			file: 'invincibleoff2',
+			wav: 'effect/black_adrenalinerush_b',
+			attachedEntity: true
+		}],
+		
+		2026: [{
+			type: 'STR',
+			file: 'mil_shield',
+			wav: 'effect/black_maximize_power_sword',
+			attachedEntity: true
+		}],
+		
+		2027: [{
+			type: 'STR',
+			file: 'thief_invenom',
+			wav: 'effect/ef_hiding',
+			attachedEntity: true
+		}],
+		
+		2028: [{
+			type: 'STR',
+			file: 'tinder',
+			wav: 'effect/ef_hit5',
+			attachedEntity: true
+		}],
+		
+		2029: [{
+			type: 'STR',
+			file: 'ramadan',
+			wav: 'effect/ef_endure',
+			attachedEntity: true
+		}],
+		
+		2030: [{
+			type: 'STR',
+			file: '¸ÅÁ÷·Îµå',
+			wav: 'effect/lg_prestige',
+			attachedEntity: true
+		}],
+
+		2031: [{
+			type: 'STR',
+			file: 'moonlight_2',
+			wav: '_hit_sword',
+			attachedEntity: true
+		}],
+
+		2032: [{
+			type: 'STR',
+			file: 'bowling',
+			wav: 'effect/knight_brandish_spear',
+			attachedEntity: true
+		}],
+
+		2033: [{
+			type: 'STR',
+			file: '¹ö¼­Å©',
+			wav: 'effect/ef_hit5',
+			attachedEntity: true
+		}],
 				
 		666: [{
 			type: 'SPR',

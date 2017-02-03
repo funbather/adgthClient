@@ -688,6 +688,7 @@ define(function( require )
 		if (dstEntity) {
 			var target = pkt.damage ? dstEntity : srcEntity;
 			var i;
+			var splash;
 
 			if (pkt.damage && target) {
 
@@ -739,7 +740,9 @@ define(function( require )
 			}
 		}
 
-		if (srcEntity && dstEntity) {
+		if( pkt.SKID == 4085 ) { splash = 1; } // Do not play skill effect on splash damage targets
+
+		if (srcEntity && dstEntity && !splash) {
 			EffectManager.spamSkill( pkt.SKID, dstEntity.GID, null, Renderer.tick + pkt.attackMT);
 		}
 	}
