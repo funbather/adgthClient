@@ -570,7 +570,7 @@ define(function( require )
 				// stored in a long value (uint16 and uint16 in uint32)
 				// source: https://github.com/rathena/rathena/blob/master/src/map/clif.c#L3162
 				if (pkt instanceof PACKET.ZC.SPRITE_CHANGE2) {
-					entity.shield = pkt.value >> 16;
+					entity.shield = (pkt.value >>> 16) >>> 0; // you have to do... whatever this is to properly shift uint32 in js
 					entity.weapon = pkt.value & 0x00FFFF;
 				}
 				else {

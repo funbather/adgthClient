@@ -330,11 +330,8 @@ define(function(require)
 		if (id === 0) {
 			return null;
 		}
-		
-		// Dual weapon (based on range id)
-		if (id > 500 && (id < 2100 || id > 2200)) {
-			return DB.getWeaponPath(id, job, sex);
-		}
+
+		// Took out dual-wield code... for now
 
 		var baseClass = WeaponJobTable[job] || WeaponJobTable[0];
 		

@@ -171,12 +171,8 @@ define(['Core/Configs'], function( Configs )
 			out[i].job = fp.readShort();
 			out[i].head = fp.readShort();
 
-			if (blockSize >= 146) {
-				out[i].weapon = fp.readLong();
-			}
-			else {
-				out[i].weapon = fp.readShort();
-			}
+			out[i].weapon = fp.readShort(); // There are two blank bytes here in the packet for some reason?
+			out[i].weapon = fp.readShort(); // Just eat it and continue. (char_mmo_char_tobuf)
 
 			out[i].level = fp.readShort();
 			out[i].sppoint = fp.readShort();
