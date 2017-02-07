@@ -73,7 +73,7 @@ define(function(require)
 	
 	// For use with dynamic item descriptions
 	DB._mult = { "HP":15,
-	             "MP":12,
+	             "MP":10,
 	             "DEF":6,
 	             "MDEF":6,
 	             "ATK":11,
@@ -424,9 +424,12 @@ define(function(require)
 			if (gunGranade.indexOf(id) > -1) return WeaponType.GUN_GRANADE;
 			
 			if(id >= 51000 && id <= 51002)   return WeaponType.SWORD;
-			if(id >= 51003 && id <= 51005)   return WeaponType.TWOHANDSWORD;
-			if(id >= 51006 && id <= 51008)   return WeaponType.MACE;
-			if(id >= 51009 && id <= 51011)   return WeaponType.ROD;
+			if(id >= 51003 && id <= 51005)   return WeaponType.MACE;
+			if(id >= 51006 && id <= 51008)   return WeaponType.DAGGER;
+			if(id >= 51009 && id <= 51011)   return WeaponType.TWOHANDSWORD;
+			if(id >= 51012 && id <= 51014)   return WeaponType.AXE;
+			if(id >= 51015 && id <= 51017)   return WeaponType.BOW;
+			if(id >= 51018 && id <= 51020)   return WeaponType.ROD;
       
 			// Ranges
 			return (
@@ -578,7 +581,7 @@ define(function(require)
 		var desc, bonusdesc, bonus, bval;
 		
 		if(item.slot && item.slot['card1']) {
-			bonusdesc = "\n------------\n";
+			bonusdesc = "\n\n";
 			
 			for(var i=0; i<4; i++) {
 				if(item.slot['card' + (i+1)]) {
@@ -587,6 +590,8 @@ define(function(require)
 					bval = (item.rolls >> (i * 8)) & 0xFF;
 					
 					bonusdesc += bonus.identifiedDescriptionName + '\n';
+					bonusdesc = bonusdesc.replace(/\$shard/g,'\u25C6');
+					bonusdesc = bonusdesc.replace(/\$seal/g,'\u2756');
 					bonusdesc = bonusdesc.replace('$roll1$','^99BBFF' + (Math.floor(bval * (bonus.BaseRoll1 * (bonus.RollMultiplier1-1) + 1) / 100) + bonus.BaseRoll1) + '^FFFFFF');
 					bonusdesc = bonusdesc.replace('$roll2$','^99BBFF' + (Math.floor(bval * (bonus.BaseRoll2 * (bonus.RollMultiplier2-1) + 1) / 100) + bonus.BaseRoll2) + '^FFFFFF');
 					bonusdesc = bonusdesc.replace('$roll3$','^99BBFF' + ((Math.floor(bval * (bonus.BaseRoll3 * (bonus.RollMultiplier3-1) + 1) / 100) + bonus.BaseRoll3) / 10).toFixed(1) + '^FFFFFF');
@@ -596,7 +601,6 @@ define(function(require)
 			bonusdesc = "";
 		}
 			
-		//var desc = item.count > 1 ? DB.getItemName(item) + ' ' + (item.count || 1) + ' ea\n\n^FFFFFF'+it.condensedDesc + bonusdesc : DB.getItemName(item) + '\n\n^FFFFFF'+it.condensedDesc + bonusdesc;
 		var desc = '^FFFFFF' + it.condensedDesc + bonusdesc;
 	
 		desc = desc.replace('$ilvl$', '^99BBFF'+item.IsDamaged+'^FFFFFF');

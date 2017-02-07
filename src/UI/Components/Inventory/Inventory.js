@@ -675,15 +675,15 @@ define(function(require)
 
     switch(rarity) {
       case 0: overlay.css({color: "#ffffff"}); overlay.css({border: "4px solid #bbbbbb"}); break;
-      case 1: overlay.css({color: "#ffefad"}); overlay.css({border: "4px solid #ffefad"}); break;
-      case 2: overlay.css({color: "#b9ffad"}); overlay.css({border: "4px solid #b9ffad"}); break;
-      case 3: overlay.css({color: "#8aa5ff"}); overlay.css({border: "4px solid #8aa5ff"}); break;
-      case 4: overlay.css({color: "#bb91ff"}); overlay.css({border: "4px solid #bb91ff"}); break;
+      case 1: overlay.css({color: "#ffffff"}); overlay.css({border: "4px solid #ffefad"}); break;
+      case 2: overlay.css({color: "#ffffff"}); overlay.css({border: "4px solid #b9ffad"}); break;
+      case 3: overlay.css({color: "#ffffff"}); overlay.css({border: "4px solid #8aa5ff"}); break;
+      case 4: overlay.css({color: "#ffffff"}); overlay.css({border: "4px solid #bb91ff"}); break;
     }
     
 		overlay.css({top: pos.top+20, left:pos.left+70});
 
-		var desc = item.count > 1 ? DB.getItemName(item) + ' ' + (item.count || 1) + ' ea\n\n^FFFFFF' + DB.formatDesc(item) : DB.getItemName(item) + '\n\n^FFFFFF' + DB.formatDesc(item);
+		var desc = item.count > 1 ? DB.getItemName(item) + ' x ' + (item.count || 1) + '\n\n' + DB.formatDesc(item) : "^bo" + DB.getItemName(item) + "^ld\n\n" + DB.formatDesc(item);
 		var _str;
 		var _ls = Equipment.getEquips();
 		
@@ -691,7 +691,7 @@ define(function(require)
 		
 		for (var j in _ls) {
 			if (item.location == _ls[j].location || item.location & _ls[j].location & 1 << 1)
-				_str = DB.getItemName(_ls[j]) + " \uFF3B\uFF25\uFF3D\n\n^FFFFFF" + DB.formatDesc(_ls[j]);
+				_str = "^bo" + DB.getItemName(_ls[j]) + "^ld\uFF3B\uFF25\uFF3D\n\n^FFFFFF" + DB.formatDesc(_ls[j]);
 		}
 		
 		if (!_str)

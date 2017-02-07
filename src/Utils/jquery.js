@@ -43,6 +43,11 @@ define( ['jquery', 'DB/DBManager'], function( jQuery, DB )
 				txt = txt.replace( result[0], DB.getItemInfo(result[1]).identifiedDisplayName );
 			}
 
+			// Bold
+			txt = txt.replace(/\^bo/g, '<strong>');
+			// Unbold
+			txt = txt.replace(/\^ld/g, '</strong>');
+						
 			// Line feed feature
 			txt = txt.replace(/\n/g, '<br/>');
 

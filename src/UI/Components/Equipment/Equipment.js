@@ -581,7 +581,7 @@ define(function(require)
 		var pos     = jQuery(this).position();
 		var it = DB.getItemInfo( item.ITID );
 		var rarity = 0;
-		var desc = DB.formatDesc(item);
+		var desc = "^bo" + DB.getItemName(item) + "^ld\n\n" + DB.formatDesc(item);
 		
 
 		// Possible jquery error
@@ -600,18 +600,14 @@ define(function(require)
     
     switch(rarity) {
       case 0: overlay.css({color: "#ffffff"}); overlay.css({border: "4px solid #bbbbbb"}); break;
-      case 1: overlay.css({color: "#ffefad"}); overlay.css({border: "4px solid #ffefad"}); break;
-      case 2: overlay.css({color: "#b9ffad"}); overlay.css({border: "4px solid #b9ffad"}); break;
-      case 3: overlay.css({color: "#8aa5ff"}); overlay.css({border: "4px solid #8aa5ff"}); break;
-      case 4: overlay.css({color: "#bb91ff"}); overlay.css({border: "4px solid #bb91ff"}); break;
+      case 1: overlay.css({color: "#ffffff"}); overlay.css({border: "4px solid #ffefad"}); break;
+      case 2: overlay.css({color: "#ffffff"}); overlay.css({border: "4px solid #b9ffad"}); break;
+      case 3: overlay.css({color: "#ffffff"}); overlay.css({border: "4px solid #8aa5ff"}); break;
+      case 4: overlay.css({color: "#ffffff"}); overlay.css({border: "4px solid #bb91ff"}); break;
     }
     
 		overlay.css({top: pos.top, left:pos.left+28});
 		overlay.text(desc);
-	}
-
-	function getStatValue( base, multiplier, quality, ilvl ) {
-		return Math.floor(Math.floor((multiplier-1) * ilvl * 2 * base / 100 + base) * quality / 100);
 	}
 
 	/**
